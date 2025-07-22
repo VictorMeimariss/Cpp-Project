@@ -22,6 +22,12 @@ class matrix{
          * @brief Vector storing the size of each dimension.
          */
         std::vector<size_t> dim_size;
+
+        /**
+         * @brief Vector storing the number of elements separating adjacent values in each dimension of the tensor
+         */
+        std::vector<int> precomputed_strides;
+
     public:
         /**
          * @brief Default constructor.
@@ -45,6 +51,35 @@ class matrix{
         }
 
         /**
+         * @brief Move constructor, transfers the ownership of matrix A
+         * @param  A A matrix reference to be moved
+         */
+        matrix (matrix&& A){}
+
+        /**
+         * @brief Copy constructor, copies matrix A
+         * @param  A A constant matrix reference to be copied
+         */
+        matrix (matrix const& A){}
+
+        /**
+         * @brief Destructor, deletes data associated with the matrix
+         */
+         ~matrix{}
+
+        /**
+         * @brief Constructs an N by N identity matrix
+         * @param N the number of rows/columns in the square identity matrix
+         */
+        static matrix I(int N){}
+
+        /**
+         * @brief Operator =, creates a deep copy of the matrix and assigns it
+         * @param A A constant matrix reference used after the operator
+         */
+        matrix& operator=(matrix const& A){};
+
+        /**
          * @brief Operator +, adds the values of two matrices of same size and dimensions
          * @param A A constant matrix reference used after the operator
          */
@@ -57,16 +92,50 @@ class matrix{
         matrix operator*(matrix const& A){};
 
         /**
+         * @brief Operator *, multiplies a matrix by a real number
+         * @param x A numerical primitive used after the operator
+         * @tparam numerical_primative encompasses all primitive numerical data types
+         */
+        template <typename numerical_primitive>
+        matrix operator*(numerical_primitive x){};
+
+        /**
+         * @brief Operator *, multiplies a real number by a matrix
+         * @param x A numerical primitive used before the operator
+         * @tparam numerical_primative encompasses all primitive numerical data types
+         */
+        friend matrix operator * (numerical_primirive x, const matrix& A){}
+
+        /**
          * @brief Operator -, subtracts the values of second matrix from the first, both must have same size and dimensions
          * @param A A constant matrix reference used after the operator
          */
         matrix operator-(matrix const& A){};
 
         /**
-         * @brief Operator /, will see what will do with it.
-         * @param A A constant matrix reference used after the operator
+         * @brief Operator /, Performs column-wise augmentation
+         * @param A A constant matrix reference to be combined.
          */
         matrix operator/(matrix const& A){};
+
+        /**
+         * @brief Operator |, Performs row-wise augmentation
+         * @param A A constant matrix reference to be combined.
+         */
+        matrix operator|(matrix const& A){};
+
+        /**
+         * @brief Operator (), returns a writable reference to the value at the coordinates. Variadic index.
+         * @tparam index variadic argument for the coordinates of the value to be accesed
+         */
+        double& operator() (size_t index){}
+
+        /**
+         * @brief Operator (), returns a constant (non-writable) reference to the value at the coordinates. Variadic index.
+         * @tparam index variadic argument for the coordinates of the value to be accesed.
+         */
+        const double& operator() (Indices... indices){}
+
 
         /**
          * @brief Gets size of matrix.
@@ -100,8 +169,16 @@ class matrix{
         /**
          * @brief Sets all matrix values, clearing any previously stored values and then filling with zeros for the rest.
          * @tparam Types Variadic template arguments for the values to set.
-         * @param valuess The values to set into the matrix
+         * @param values The values to set into the matrix
          */
+         void matrix_multiplication(const CBLAS_LAYOUT Layout, const CBLAS_TRANSPOSE transa, const CBLAS_TRANSPOSE transb, const MKL_INT m, const MKL_INT n, const MKL_INT k, const double alpha, const double *a, const MKL_INT lda, const double *b, const MKL_INT ldb, const double beta, double *c, const MKL_INT ldc){}
+
+        /**
+         * @brief Low level implementation of matrix multiplication using BLAS. documentation at https://www.intel.com/content/www/us/en/docs/onemkl/developer-reference-c/2024-1/cblas-gemm-001.html#GUID-97718E5C-6E0A-44F0-B2B1-A551F0F164B2
+
+
+         */
+
         template<typename... Types>
         void set_values(Types... valuess){}
     };
