@@ -49,6 +49,15 @@ class matrix{
 
             // Resizing to the size of the matrix using a fold expression and initialising to 0.0.
             values.resize((static_cast<size_t>(1) * ... * static_cast<size_t>(dims)));
+
+            // Resizing to number of dimensions dk if needed
+            precomputed_strides.resize(dim_size.size());
+            if (!dim_size.empty()) {
+                precomputed_strides.back() = 1; // Last dimension has stride 1
+                for (int i = precomputed_strides.size() - 2; i >= 0; --i) {
+                    precomputed_strides[i] = precomputed_strides[i + 1] * dim_size[i + 1];
+                }
+            }
         }
 
         /**
@@ -181,5 +190,5 @@ class matrix{
          */
 
         template<typename... Types>
-        void set_values(Types... valuess){} // Thanasis 
+        void set_values(Types... valuess){} // Thanasis
     };
