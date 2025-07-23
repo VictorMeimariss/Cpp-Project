@@ -6,6 +6,7 @@
 
 #include <iostream>
 #include <vector>
+#include <mkl.h>
 
 /**
  * @class matrix
