@@ -1,0 +1,2 @@
+/usr/bin/ar qc /home/johnzik/Dev/Cpp-Project/lib/libCpp-Project_lib.a "CMakeFiles/Cpp-Project_lib.dir/src/main.cpp.o"
+/usr/bin/ranlib /home/johnzik/Dev/Cpp-Project/lib/libCpp-Project_lib.a

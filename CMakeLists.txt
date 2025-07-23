@@ -1,0 +1,48 @@
+cmake_minimum_required(VERSION 3.14)
+project(Cpp-Project LANGUAGES CXX)
+
+# Use c++17 or newer
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED True)
+
+# Set output folders
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/lib) # For *.a or *.lib
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/lib) # For *.so or *.dll
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/bin) # For executables
+
+# Use Intel's compiler for C++ if found
+find_program(ICPX_PATH icpx)
+if(NOT ICPX_PATH)
+    message(FATAL_ERROR "Intel icx compiler not found! Did you run source setvars.sh?")
+endif()
+set(CMAKE_CXX_COMPILER ${ICPX_PATH})
+
+# Inlcude folders
+include_directories(
+    $ENV{MKLROOT}/include
+    ${PROJECT_SOURCE_DIR}/inc
+)
+
+# Include library (STATIC or SHARED) - Create static library from my src files
+add_library(Cpp-Project_lib STATIC
+    src/main.cpp 
+    #add the extra files from src (main.cpp is just a placeholder for now)
+)
+
+# Link Intel's MKL
+set(MKL_LIBS "-lmkl_intel_lp64 -lmkl_sequential -lmkl_core -lpthread -lm -ldl")
+
+# Add main executable
+add_executable(main_exec
+    src/main.cpp
+)
+
+target_link_libraries(main_exec Cpp-Project_lib ${MKL_LIBS})
+
+# Add test executables
+# add_executable(unit_tests
+#     tests/tests_main.cpp
+#     # more files...
+# )
+
+# target_link_libraries(unit_tests Cpp-Project_lib ${MKL_LIBS})
