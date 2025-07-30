@@ -1,1 +1,0 @@
-/opt/intel/oneapi/compiler/2025.2/bin/icpx CMakeFiles/main_exec.dir/src/main.cpp.o -o /home/johnzik/Dev/Cpp-Project/bin/main_exec  /home/johnzik/Dev/Cpp-Project/lib/libCpp-Project_lib.a -lmkl_intel_lp64 -lmkl_sequential -lmkl_core -lpthread -lm -ldl 

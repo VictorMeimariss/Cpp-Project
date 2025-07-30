@@ -23,9 +23,11 @@ include_directories(
     ${PROJECT_SOURCE_DIR}/inc
 )
 
-# Include library (STATIC or SHARED) - Create static library from my src files
+# Create STATIC library from my src files
+file(GLOB_RECURSE SRC_FILES src/*.cpp)
 add_library(Cpp-Project_lib STATIC
-    src/main.cpp 
+    # src/main.cpp 
+    ${SRC_FILES}
     #add the extra files from src (main.cpp is just a placeholder for now)
 )
 
@@ -33,16 +35,18 @@ add_library(Cpp-Project_lib STATIC
 set(MKL_LIBS "-lmkl_intel_lp64 -lmkl_sequential -lmkl_core -lpthread -lm -ldl")
 
 # Add main executable
-add_executable(main_exec
-    src/main.cpp
-)
-
-target_link_libraries(main_exec Cpp-Project_lib ${MKL_LIBS})
-
-# Add test executables
-# add_executable(unit_tests
-#     tests/tests_main.cpp
-#     # more files...
+# add_executable(main_exec
+#     src/main.cpp
 # )
+# target_link_libraries(main_exec Cpp-Project_lib ${MKL_LIBS})
 
-# target_link_libraries(unit_tests Cpp-Project_lib ${MKL_LIBS})
+# Automatically add test executables
+file(GLOB TEST_FILES tests/*.cpp)
+# Loop through each test file to create separate executables
+foreach(TEST_FILE ${TEST_FILES})
+    get_filename_component(TEST_NAME ${TEST_FILE} NAME_WE)
+
+    add_executable(${TEST_NAME} ${TEST_FILE})
+
+    target_link_libraries(${TEST_NAME} Cpp-Project_lib ${MKL_LIBS})
+endforeach()

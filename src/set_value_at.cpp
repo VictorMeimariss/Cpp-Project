@@ -1,4 +1,4 @@
-#include <./inc/dense.hpp>
+#include <../inc/dense.hpp>
 using namespace std;
 
 /**

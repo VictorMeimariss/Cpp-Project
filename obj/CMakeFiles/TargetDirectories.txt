@@ -1,4 +1,0 @@
-/home/johnzik/Dev/Cpp-Project/obj/CMakeFiles/Cpp-Project_lib.dir
-/home/johnzik/Dev/Cpp-Project/obj/CMakeFiles/main_exec.dir
-/home/johnzik/Dev/Cpp-Project/obj/CMakeFiles/edit_cache.dir
-/home/johnzik/Dev/Cpp-Project/obj/CMakeFiles/rebuild_cache.dir
