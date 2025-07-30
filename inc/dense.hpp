@@ -74,7 +74,7 @@ class matrix{
          * @brief Copy constructor, copies matrix A
          * @param  A A constant matrix reference to be copied
          */
-        matrix (matrix const& A){} // Ioannis
+        matrix (matrix const& A); // Ioannis
 
         /**
          * @brief Destructor, deletes data associated with the matrix
