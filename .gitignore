@@ -1,5 +1,8 @@
 # VS Code files
 .vscode/
-bin/
-obj/
-lib/
+bin/*
+!bin/
+obj/*
+!obj/
+lib/*
+!lib/
