@@ -2,7 +2,10 @@
 .vscode/
 bin/*
 !bin/
+!bin/.gitkeep
 obj/*
 !obj/
+!obj/.gitkeep
 lib/*
 !lib/
+!lib/.gitkeep
