@@ -156,24 +156,24 @@ class matrix{
         /**
          * @brief Gets size of matrix.
          */
-        size_t get_size() const //Thanasis
+        size_t get_size() const; //Thanasis
 
         /**
          * @brief Gets number of dimensions.
          */
-        size_t get_nod() const // Ioanis
+        size_t get_nod() const; // Ioanis
 
         /**
          * @brief Gets specified dimension's size using an index.
          * @param index The linear 0-based index in the dim_size vector.
          */
-        size_t get_dim_size(size_t index) const // Vic
+        size_t get_dim_size(size_t index) const; // Vic
 
         /**
          * @brief Gets value at a given index.
          * @param index The linear 0-based index in the flat values vector.
          */
-        T get_value_at(size_t index) const // Thanasis
+        T get_value_at(size_t index) const; // Thanasis
 
         /**
          * @brief Sets value at a given index.
