@@ -98,11 +98,13 @@ class matrix{
          * @param A A constant matrix reference used after the operator
          */
         matrix operator+(matrix const& A); // Vic
+        matrix operator+(matrix const& A); // Vic
 
         /**
          * @brief Operator *, multiplies two 2D matrices
          * @param A A constant matrix reference used after the operator
          */
+        matrix operator*(matrix const& A); // Vic
         matrix operator*(matrix const& A); // Vic
 
         /**
