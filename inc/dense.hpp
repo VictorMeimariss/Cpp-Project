@@ -6,18 +6,21 @@
 
 #include <iostream>
 #include <vector>
+#include <complex>
 #include <mkl.h>
 
 /**
  * @class matrix
  * @brief A class to create a dense matrix object of any number of dimensions.
+ * @tparam T The scalar type used for matrix elements.
  */
+template<typename T>
 class matrix{
     private:
         /**
          * @brief Flat vector storing all matrix values.
          */
-        std::vector<long double> values; 
+        std::vector<T> values; 
 
         /**
          * @brief Vector storing the size of each dimension.
