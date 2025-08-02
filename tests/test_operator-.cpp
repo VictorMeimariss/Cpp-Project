@@ -15,6 +15,6 @@ int main()
 
     matrix<float> res(2, 2);
     res = M1 - M2;
-    std::cout << "Test Expected Answer:\n" << "[2, -3; 2.5, 0]\n" << "Test Result:" << std::endl;
+    std::cout << "Test Expected Answer:\n" << "[2, -3; 2.5, 0]\n\n" << "Test Result:" << std::endl;
     res.print2D();
 }
