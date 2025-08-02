@@ -9,18 +9,21 @@
 
 #include <iostream>
 #include <vector>
+#include <complex>
 #include <mkl.h>
 
 /**
  * @class matrix
  * @brief A class to create a dense matrix object of any number of dimensions.
+ * @tparam T The scalar type used for matrix elements
  */
+template<typename T>
 class matrix{
     private:
         /**
          * @brief Flat vector storing all matrix values.
          */
-        std::vector<long double> values; 
+        std::vector<T> values; 
 
         /**
          * @brief Vector storing the size of each dimension.
@@ -143,14 +146,14 @@ class matrix{
          * @brief Operator (), returns a writable reference to the value at the coordinates. Variadic index.
          * @tparam index variadic argument for the coordinates of the value to be accesed
          */
-        double& operator() (size_t index); //Vic
+        T& operator() (size_t index); //Vic
 
         /**
          * @brief Operator (), returns a constant (non-writable) reference to the value at the coordinates. Variadic index.
          * @tparam index variadic argument for the coordinates of the value to be accesed.
          */
         template<typename... Indices>
-        const double& operator() (Indices... indices);
+        const T& operator() (Indices... indices);
 
 
         /**
@@ -173,14 +176,14 @@ class matrix{
          * @brief Gets value at a given index.
          * @param index The linear 0-based index in the flat values vector.
          */
-        double get_value_at(size_t index) const; // Thanasis
+        T get_value_at(size_t index) const; // Thanasis
 
         /**
          * @brief Sets value at a given index.
          * @param index The linear 0-based index in the flat values vector.
-         * @param value The long double value to set.
+         * @param value The templated value to set.
          */
-        void set_value_at(size_t index, long double value); // Ioannis
+        void set_value_at(size_t index, T value); // Ioannis
 
         /**
          * @brief Sets all matrix values, clearing any previously stored values and then filling with zeros for the rest.
@@ -195,6 +198,10 @@ class matrix{
 
         template<typename... Types>
         void set_values(Types... valuess); // Thanasis
-    };
 
+        /**
+         * @brief Prints the values of 2D array
+         */
+        void print2D();
+    };
 #endif

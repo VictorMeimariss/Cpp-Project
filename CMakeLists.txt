@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.14)
 project(Cpp-Project LANGUAGES CXX)
 
-# Use c++17 or newer
+# Use C++17 or newer
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
@@ -26,19 +26,12 @@ include_directories(
 # Create STATIC library from my src files
 file(GLOB_RECURSE SRC_FILES src/*.cpp)
 add_library(Cpp-Project_lib STATIC
-    # src/main.cpp 
     ${SRC_FILES}
-    #add the extra files from src (main.cpp is just a placeholder for now)
+    #adds the files from src automatically
 )
 
 # Link Intel's MKL
 set(MKL_LIBS "-lmkl_intel_lp64 -lmkl_sequential -lmkl_core -lpthread -lm -ldl")
-
-# Add main executable
-# add_executable(main_exec
-#     src/main.cpp
-# )
-# target_link_libraries(main_exec Cpp-Project_lib ${MKL_LIBS})
 
 # Automatically add test executables
 file(GLOB TEST_FILES tests/*.cpp)

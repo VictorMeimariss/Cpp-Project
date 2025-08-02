@@ -4,7 +4,7 @@
 
 int main()
 {
-    matrix M(4, 2);
+    matrix<int> M(4, 2, 2);
 
     std::cout << "Matrix dimensions = " << M.get_nod() << std::endl;
 }

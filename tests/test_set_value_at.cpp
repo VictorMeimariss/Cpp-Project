@@ -1,14 +1,14 @@
 #include<iostream>
-#include<mkl.h>
 #include <../inc/dense.hpp>
 
 int main()
 {
-    matrix M(4, 2);
+    matrix<float> M(4, 2);
 
-    M.set_value_at(1, 2.5);
-    M.set_value_at(2, 3.5);
-    M.set_value_at(3, 4.5);
+    M.set_value_at(1, 2);
+    M.set_value_at(2, 3);
+    M.set_value_at(3, 4);
 
-    std::cout << "Set value test runned" << std::endl;
+    std::cout << "Test Expected Answer:\n" << "[0, 2; 3, 4; 0, 0; 0, 0]\n\n" << "Test Result:" << std::endl;
+    M.print2D();
 }
