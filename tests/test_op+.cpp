@@ -1,4 +1,4 @@
-#include "dense.hpp"
+#include <dense.hpp>
 
 int main() {
     matrix<float> A(3,1);

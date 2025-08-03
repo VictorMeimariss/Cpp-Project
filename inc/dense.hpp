@@ -37,7 +37,7 @@ class matrix{
          * @brief Default constructor.
          * Initializes an empty matrix with zero dimensions and size.
          */
-        matrix ();
+        matrix (){};
 
         /**
          * @brief Constructor with variadic template input for dimensions.
@@ -74,12 +74,16 @@ class matrix{
          * @brief Copy constructor, copies matrix A
          * @param  A A constant matrix reference to be copied
          */
-        matrix (matrix const& A); // Ioannis
+        inline matrix (matrix const& A){  //delete when merge
+            this->dim_size = A.dim_size;
+            this->precomputed_strides = A.precomputed_strides;
+            this->values = A.values;
+        }; // Ioannis
 
         /**
          * @brief Destructor, deletes data associated with the matrix
          */
-         ~matrix(); // Vic
+         ~matrix() = default;
 
         /**
          * @brief Constructs an N by N identity matrix
@@ -91,20 +95,25 @@ class matrix{
          * @brief Operator =, creates a deep copy of the matrix and assigns it
          * @param A A constant matrix reference used after the operator
          */
-        matrix& operator=(matrix const& A); // Ioannis
+        inline matrix& operator=(matrix const& A){ //delete when merge
+            if (this != &A) {
+            this->dim_size = A.dim_size;
+            this->precomputed_strides = A.precomputed_strides;
+            this->values = A.values;
+    }
+    return *this;
+        }; // Ioannis
 
         /**
          * @brief Operator +, adds the values of two matrices of same size and dimensions
          * @param A A constant matrix reference used after the operator
          */
         matrix operator+(matrix const& A); // Vic
-        matrix operator+(matrix const& A); // Vic
 
         /**
          * @brief Operator *, multiplies two 2D matrices
          * @param A A constant matrix reference used after the operator
          */
-        matrix operator*(matrix const& A); // Vic
         matrix operator*(matrix const& A); // Vic
 
         /**
