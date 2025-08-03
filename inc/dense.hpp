@@ -1,3 +1,6 @@
+#ifndef DENSE_HPP
+#define DENSE_HPP
+
 /**
  * @file dense.hpp
  * @brief Master header file for the matrix class and its associated functions.
@@ -37,7 +40,7 @@ class matrix{
          * @brief Default constructor.
          * Initializes an empty matrix with zero dimensions and size.
          */
-        matrix ();
+        matrix (){};
 
         /**
          * @brief Constructor with variadic template input for dimensions.
@@ -79,7 +82,7 @@ class matrix{
         /**
          * @brief Destructor, deletes data associated with the matrix
          */
-         ~matrix(); // Vic
+         ~matrix() = default; // Vic
 
         /**
          * @brief Constructs an N by N identity matrix
@@ -195,4 +198,10 @@ class matrix{
 
         template<typename... Types>
         void set_values(Types... valuess); // Thanasis
+
+        /**
+         * @brief Prints the values of 2D array
+         */
+        void print2D();
     };
+#endif
