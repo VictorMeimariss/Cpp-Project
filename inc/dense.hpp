@@ -1,3 +1,6 @@
+#ifndef DENSE_HPP
+#define DENSE_HPP
+
 /**
  * @file dense.hpp
  * @brief Master header file for the matrix class and its associated functions.
@@ -74,16 +77,12 @@ class matrix{
          * @brief Copy constructor, copies matrix A
          * @param  A A constant matrix reference to be copied
          */
-        inline matrix (matrix const& A){  //delete when merge
-            this->dim_size = A.dim_size;
-            this->precomputed_strides = A.precomputed_strides;
-            this->values = A.values;
-        }; // Ioannis
+        matrix (matrix const& A); // Ioannis
 
         /**
          * @brief Destructor, deletes data associated with the matrix
          */
-         ~matrix() = default;
+         ~matrix() = default; // Vic
 
         /**
          * @brief Constructs an N by N identity matrix
@@ -95,14 +94,7 @@ class matrix{
          * @brief Operator =, creates a deep copy of the matrix and assigns it
          * @param A A constant matrix reference used after the operator
          */
-        inline matrix& operator=(matrix const& A){ //delete when merge
-            if (this != &A) {
-            this->dim_size = A.dim_size;
-            this->precomputed_strides = A.precomputed_strides;
-            this->values = A.values;
-    }
-    return *this;
-        }; // Ioannis
+        matrix& operator=(matrix const& A); // Ioannis
 
         /**
          * @brief Operator +, adds the values of two matrices of same size and dimensions
@@ -206,4 +198,10 @@ class matrix{
 
         template<typename... Types>
         void set_values(Types... valuess); // Thanasis
+
+        /**
+         * @brief Prints the values of 2D array
+         */
+        void print2D();
     };
+#endif
