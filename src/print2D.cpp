@@ -31,3 +31,6 @@ void matrix<T>::print2D()
 }
 
 template void matrix<float>::print2D();
+template void matrix<double>::print2D();
+template void matrix<std::complex<float>>::print2D();
+template void matrix<std::complex<double>>::print2D();
