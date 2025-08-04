@@ -1,11 +1,9 @@
-#include <../inc/dense.hpp>
+#include "dense.hpp"
 
 template<typename T>
-matrix<T>::matrix(matrix<T> const& A)
-    : values(A.values), dim_size(A.dim_size), precomputed_strides(A.precomputed_strides)
-{
-
-}
+size_t matrix<T>::get_size() const{
+    return values.size();
+};
 
 template class matrix<float>;
 template class matrix<double>;

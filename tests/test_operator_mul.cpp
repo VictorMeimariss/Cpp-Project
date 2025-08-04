@@ -12,6 +12,7 @@ int main() {
     B.set_value_at(1, 5.2);
 
     matrix<std::complex<double>> C = A * B;
+    
     std::cout << "Test Expected Answer:\n" << "[(1,1), (5.2,5.2); (3.5,1), (18.2,5.2)]\n\n" << "Test Result:" << std::endl;
     C.print2D();
     std::cout << "A(expected [(1,1); (3.5,1)]):"<<std::endl;
