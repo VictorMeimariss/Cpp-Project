@@ -11,5 +11,7 @@ matrix<T>& matrix<T>::operator=(matrix<T> const& A)
     return *this;
 }
 
-template matrix<float>& matrix<float>::operator=(matrix<float> const& A);
-// template matrix<complex<float>>& matrix<complex<float>>::operator=(matrix<complex<float>> const& A);
+template class matrix<float>;
+template class matrix<double>;
+template class matrix<std::complex<float>>;
+template class matrix<std::complex<double>>;

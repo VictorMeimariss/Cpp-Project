@@ -109,20 +109,18 @@ class matrix{
         matrix operator*(matrix const& A); // Vic
 
         /**
-         * @brief Operator *, multiplies a matrix by a real number
+         * @brief Operator *, multiplies a matrix by a number
          * @param x A numerical primitive used after the operator
-         * @tparam numerical_primative encompasses all primitive numerical data types
+         * @tparam T encompasses all primitive numerical data types
          */
-        template <typename numerical_primitive>
-        matrix operator*(numerical_primitive x); 
+        matrix operator*(T x);
 
         /**
-         * @brief Operator *, multiplies a real number by a matrix
+         * @brief Operator *, multiplies a number by a matrix
          * @param x A numerical primitive used before the operator
-         * @tparam numerical_primative encompasses all primitive numerical data types
+         * @tparam T encompasses all primitive numerical data types
          */
-        template <typename numerical_primitive>
-        friend matrix operator * (numerical_primitive x, const matrix& A);
+        friend matrix operator * (T x, const matrix& A);
 
         /**
          * @brief Operator -, subtracts the values of second matrix from the first, both must have same size and dimensions

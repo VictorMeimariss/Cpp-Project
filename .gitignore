@@ -1,11 +1,12 @@
 # VS Code files
 .vscode/
-bin/*
-!bin/
+
+# Ignore contents of bin, obj and lib
+bin/
+obj/
+lib/
+
+# Keep gitkeep
 !bin/.gitkeep
-obj/*
-!obj/
 !obj/.gitkeep
-lib/*
-!lib/
 !lib/.gitkeep

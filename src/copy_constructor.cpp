@@ -7,5 +7,7 @@ matrix<T>::matrix(matrix<T> const& A)
 
 }
 
-// template matrix<int>::matrix(matrix<int> const& A);
-template matrix<float>::matrix(matrix<float> const& A);
+template class matrix<float>;
+template class matrix<double>;
+template class matrix<std::complex<float>>;
+template class matrix<std::complex<double>>;
