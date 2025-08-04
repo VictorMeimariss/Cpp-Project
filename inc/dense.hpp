@@ -116,13 +116,6 @@ class matrix{
         matrix operator*(T x);
 
         /**
-         * @brief Operator *, multiplies a number by a matrix
-         * @param x A numerical primitive used before the operator
-         * @tparam T encompasses all primitive numerical data types
-         */
-        friend matrix operator * (T x, const matrix& A);
-
-        /**
          * @brief Operator -, subtracts the values of second matrix from the first, both must have same size and dimensions
          * @param A A constant matrix reference used after the operator
          */
@@ -157,7 +150,7 @@ class matrix{
         /**
          * @brief Gets size of matrix.
          */
-        size_t get_size() const; //Thanasis
+        size_t get_size() const; //Victor
 
         /**
          * @brief Gets number of dimensions.
@@ -168,13 +161,18 @@ class matrix{
          * @brief Gets specified dimension's size using an index.
          * @param index The linear 0-based index in the dim_size vector.
          */
-        size_t get_dim_size(size_t index) const; // Vic
+        size_t get_dim_size(size_t index) const; // Thanasis
 
         /**
          * @brief Gets value at a given index.
          * @param index The linear 0-based index in the flat values vector.
          */
         T get_value_at(size_t index) const; // Thanasis
+
+        /**
+         * @brief Gets all values data.
+         */
+        T* get_values_data(); // Victor
 
         /**
          * @brief Sets value at a given index.
@@ -202,4 +200,11 @@ class matrix{
          */
         void print2D();
     };
+    /**
+     * @brief Operator *, multiplies a number by a matrix
+     * @param x A numerical primitive used before the operator
+     * @tparam U encompasses all primitive numerical data types and T all matrix datatypes
+     */
+    template<typename T, typename U>
+    matrix<T> operator*(U x, const matrix<T>& A);
 #endif
