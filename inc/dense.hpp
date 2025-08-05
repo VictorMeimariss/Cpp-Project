@@ -199,12 +199,62 @@ class matrix{
          * @brief Prints the values of 2D array
          */
         void print2D();
+
+        /**
+         * @brief Reshapes matrix after default constuctor initialisation
+         * @tparam Dims A variadic pack representing dimension sizes.
+         * @param dims The sizes of each dimension.
+        */
+       template<typename... Dims>
+       void reshape(Dims... dims){
+        //Clear previous dimensions size
+        dim_size.clear();
+        // Add dimension sizes to the dim_size vector
+        (dim_size.push_back(dims), ...);
+
+        // Resizing to the size of the matrix using a fold expression and initialising to 0.0.
+        values.resize((static_cast<size_t>(1) * ... * static_cast<size_t>(dims)));
+
+        // Resizing to number of dimensions
+        precomputed_strides.resize(dim_size.size());
+        if (!precomputed_strides.empty()) { 
+            precomputed_strides.back() = 1; // Last dimension has stride 1
+
+            for (int i = precomputed_strides.size() - 2; i >= 0; --i) {
+                precomputed_strides[i] = precomputed_strides[i + 1] * dim_size[i + 1];
+            }
+        }
+        };
     };
     /**
-     * @brief Operator *, multiplies a number by a matrix
+     * @brief Operator *, multiplies a number by a type float matrix
      * @param x A numerical primitive used before the operator
-     * @tparam U encompasses all primitive numerical data types and T all matrix datatypes
+     * @tparam U encompasses all primitive numerical data types
      */
-    template<typename T, typename U>
-    matrix<T> operator*(U x, const matrix<T>& A);
+    template<typename U>
+    matrix<float> operator*(U x, const matrix<float>& A);
+
+    /**
+     * @brief Operator *, multiplies a number by a type double matrix
+     * @param x A numerical primitive used before the operator
+     * @tparam U encompasses all primitive numerical data types
+     */
+    template<typename U>
+    matrix<double> operator*(U x, const matrix<double>& A);
+
+    /**
+     * @brief Operator *, multiplies a number by a type complex float matrix
+     * @param x A numerical primitive used before the operator
+     * @tparam U encompasses all primitive numerical data types
+     */
+    template<typename U>
+    matrix<std::complex<float>> operator*(U x, const matrix<std::complex<float>>& A);
+
+    /**
+     * @brief Operator *, multiplies a number by a type complex double matrix
+     * @param x A numerical primitive used before the operator
+     * @tparam U encompasses all primitive numerical data types
+     */
+    template<typename U>
+    matrix<std::complex<double>> operator*(U x, const matrix<std::complex<double>>& A);
 #endif

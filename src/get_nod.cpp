@@ -14,3 +14,4 @@ size_t matrix<T>::get_nod() const
 template size_t matrix<int>::get_nod() const;
 template size_t matrix<float>::get_nod() const;
 template size_t matrix<complex<float>>::get_nod() const;
+template size_t matrix<complex<double>>::get_nod() const;
