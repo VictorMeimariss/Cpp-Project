@@ -71,8 +71,8 @@ class matrix{
          * @brief Move constructor, transfers the ownership of matrix A
          * @param  A A matrix reference to be moved
          */
-        matrix (matrix&& A); // Thanasis
-
+        matrix (matrix&& A) noexcept
+        : values(std::move(A.values)), dim_size(std::move(A.dim_size)), precomputed_strides(std::move(A.precomputed_strides)) {}
         /**
          * @brief Copy constructor, copies matrix A
          * @param  A A constant matrix reference to be copied
