@@ -184,20 +184,24 @@ class matrix{
         /**
          * @brief Sets all matrix values, clearing any previously stored values and then filling with zeros for the rest.
          * @tparam Types Variadic template arguments for the values to set.
-         * @param values The values to set into the matrix
+         * @param valuess The values to set into the matrix
          */
-        // Thanasis
-         void matrix_multiplication(const CBLAS_LAYOUT Layout, const CBLAS_TRANSPOSE transa, const CBLAS_TRANSPOSE transb, const MKL_INT m, const MKL_INT n, const MKL_INT k, const double alpha, const double *a, const MKL_INT lda, const double *b, const MKL_INT ldb, const double beta, double *c, const MKL_INT ldc);
-        /**
-         * @brief Low level implementation of matrix multiplication using BLAS. documentation at https://www.intel.com/content/www/us/en/docs/onemkl/developer-reference-c/2024-1/cblas-gemm-001.html#GUID-97718E5C-6E0A-44F0-B2B1-A551F0F164B2
-         */
-        T* v_data();
-        const T* v_data();
         template<typename... Types>
         void set_values(Types... valuess){
             values = std::forward<Types>(valuess);
-        }// Thanasis
-
+        }
+        /**
+         * @brief Low level implementation of matrix multiplication using BLAS. documentation at https://www.intel.com/content/www/us/en/docs/onemkl/developer-reference-c/2024-1/cblas-gemm-001.html#GUID-97718E5C-6E0A-44F0-B2B1-A551F0F164B2
+         */
+        void matrix_multiplication(const CBLAS_LAYOUT Layout, const CBLAS_TRANSPOSE transa, const CBLAS_TRANSPOSE transb, const MKL_INT m, const MKL_INT n, const MKL_INT k, const double alpha, const double *a, const MKL_INT lda, const double *b, const MKL_INT ldb, const double beta, double *c, const MKL_INT ldc);
+        /**
+         * @brief returns a pointer to the underlying vector array values
+         */
+        T* v_data();
+         /**
+         * @brief returns a constant pointer to the underlying vector array values
+         */
+        const T* v_data();
         /**
          * @brief Prints the values of 2D array
          */
