@@ -191,9 +191,12 @@ class matrix{
         /**
          * @brief Low level implementation of matrix multiplication using BLAS. documentation at https://www.intel.com/content/www/us/en/docs/onemkl/developer-reference-c/2024-1/cblas-gemm-001.html#GUID-97718E5C-6E0A-44F0-B2B1-A551F0F164B2
          */
-
+        T* v_data();
+        const T* v_data();
         template<typename... Types>
-        void set_values(Types... valuess); // Thanasis
+        void set_values(Types... valuess){
+            values = std::forward<Types>(valuess);
+        }// Thanasis
 
         /**
          * @brief Prints the values of 2D array
