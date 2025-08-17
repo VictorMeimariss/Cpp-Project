@@ -10,7 +10,7 @@
 #include <iostream>
 #include <vector>
 #include <complex>
-#include <mkl.h>
+#include "def.hpp"
 
 /**
  * @class matrix
@@ -73,6 +73,7 @@ class matrix{
          */
         matrix (matrix&& A) noexcept
         : values(std::move(A.values)), dim_size(std::move(A.dim_size)), precomputed_strides(std::move(A.precomputed_strides)) {}
+        
         /**
          * @brief Copy constructor, copies matrix A
          * @param  A A constant matrix reference to be copied
@@ -187,17 +188,15 @@ class matrix{
          * @param valuess The values to set into the matrix
          */
         template<typename... Types>
-        void set_values(Types... valuess){
-            values = std::forward<Types>(valuess);
+        void set_values(Types&&... valuess){
+            values = { std::forward<Types>(valuess)... };
         }
-        /**
-         * @brief Low level implementation of matrix multiplication using BLAS. documentation at https://www.intel.com/content/www/us/en/docs/onemkl/developer-reference-c/2024-1/cblas-gemm-001.html#GUID-97718E5C-6E0A-44F0-B2B1-A551F0F164B2
-         */
-        void matrix_multiplication(const CBLAS_TRANSPOSE transa, const CBLAS_TRANSPOSE transb,const T beta, matrix<T> const& A, matrix<T> const &B, matrix<T> &C, const T alpha);
+
         /**
          * @brief returns a constant pointer to the underlying vector array values
          */
         const T* v_data();
+        
         /**
          * @brief Prints the values of 2D array
          */
@@ -230,34 +229,17 @@ class matrix{
         };
     };
     /**
+     * @brief Low level implementation of matrix multiplication using BLAS. documentation at https://www.intel.com/content/www/us/en/docs/onemkl/developer-reference-c/2024-1/cblas-gemm-001.html#GUID-97718E5C-6E0A-44F0-B2B1-A551F0F164B2
+     * @tparam T encompasses matrix type
+     */
+    template<typename T>
+    void matrix_multiplication(const CBLAS_TRANSPOSE transa, const CBLAS_TRANSPOSE transb,const T beta, matrix<T> const& A, matrix<T> const &B, matrix<T> &C, const T alpha);
+    
+    /**
      * @brief Operator *, multiplies a number by a type float matrix
      * @param x A numerical primitive used before the operator
-     * @tparam U encompasses all primitive numerical data types
+     * @tparam U encompasses all primitive numerical data types and T, the matrix type
      */
-    template<typename U>
-    matrix<float> operator*(U x, const matrix<float>& A);
-
-    /**
-     * @brief Operator *, multiplies a number by a type double matrix
-     * @param x A numerical primitive used before the operator
-     * @tparam U encompasses all primitive numerical data types
-     */
-    template<typename U>
-    matrix<double> operator*(U x, const matrix<double>& A);
-
-    /**
-     * @brief Operator *, multiplies a number by a type complex float matrix
-     * @param x A numerical primitive used before the operator
-     * @tparam U encompasses all primitive numerical data types
-     */
-    template<typename U>
-    matrix<std::complex<float>> operator*(U x, const matrix<std::complex<float>>& A);
-
-    /**
-     * @brief Operator *, multiplies a number by a type complex double matrix
-     * @param x A numerical primitive used before the operator
-     * @tparam U encompasses all primitive numerical data types
-     */
-    template<typename U>
-    matrix<std::complex<double>> operator*(U x, const matrix<std::complex<double>>& A);
+    template<typename T, typename U>
+    matrix<T> operator*(U x, const matrix<T>& A);
 #endif
