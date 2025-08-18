@@ -195,7 +195,7 @@ class matrix{
         /**
          * @brief returns a constant pointer to the underlying vector array values
          */
-        const T* v_data();
+        const T* get_const_values_data();
         
         /**
          * @brief Prints the values of 2D array
