@@ -18,7 +18,7 @@
  * @tparam T The scalar type used for matrix elements.
  */
 template<typename T>
-class matrix{
+class matrix {
     private:
         /**
          * @brief Flat vector storing all matrix values.
@@ -89,7 +89,7 @@ class matrix{
          * @brief Constructs an N by N identity matrix
          * @param N the number of rows/columns in the square identity matrix
          */
-        static matrix I(int N); // Thanasis 
+        matrix I(int N); // Thanasis 
 
         /**
          * @brief Operator =, creates a deep copy of the matrix and assigns it
@@ -108,7 +108,26 @@ class matrix{
          * @param A A constant matrix reference used after the operator
          */
         matrix operator*(matrix const& A); // Vic
-
+        /**
+         * @brief Operator ==, compares two matricies
+         * @param A A constant matrix reference used after the operator
+         */
+        bool operator==(matrix const& A){
+            if (dim_size.size() != A.dim_size.size())
+                return false;
+            else{
+                for (int i = 0; i<dim_size.size(); i++){
+                    if (dim_size[i]!=A.dim_size[i]){
+                        return false;
+                    }
+                }
+                for (int i=0; i<values.size(); i++){
+                    if (values[i]!=A.values[i])
+                        return false;
+                }
+            }
+            return true;
+        }
         /**
          * @brief Operator *, multiplies a matrix by a number
          * @param x A numerical primitive used after the operator
@@ -189,7 +208,9 @@ class matrix{
          */
         template<typename... Types>
         void set_values(Types&&... valuess){
-            values = { std::forward<Types>(valuess)... };
+            std::vector<T> v;
+            (v.push_back(valuess), ...);
+            values = std::move(v);
         }
 
         /**
@@ -227,14 +248,12 @@ class matrix{
             }
         }
         };
-    };
     /**
      * @brief Low level implementation of matrix multiplication using BLAS. documentation at https://www.intel.com/content/www/us/en/docs/onemkl/developer-reference-c/2024-1/cblas-gemm-001.html#GUID-97718E5C-6E0A-44F0-B2B1-A551F0F164B2
      * @tparam T encompasses matrix type
      */
-    template<typename T>
-    void matrix_multiplication(const CBLAS_TRANSPOSE transa, const CBLAS_TRANSPOSE transb,const T beta, matrix<T> const& A, matrix<T> const &B, matrix<T> &C, const T alpha);
-    
+    void low_level_matrix_multiplication(const CBLAS_TRANSPOSE transa, const CBLAS_TRANSPOSE transb, const T beta, matrix<T> const &A, matrix<T> const &B, matrix<T> &C, const T alpha);    
+    };
     /**
      * @brief Operator *, multiplies a number by a type float matrix
      * @param x A numerical primitive used before the operator
