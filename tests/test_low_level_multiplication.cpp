@@ -25,7 +25,8 @@ int main()
     C.set_value_at(0,std::complex<float>(4.0,1.0));
     matrix<std::complex<float>> A3(2,2);
     matrix<std::complex<float>> Ic = matrix<std::complex<float>>().I(2);
-    Ic.low_level_matrix_multiplication(CblasNoTrans,CblasNoTrans,static_cast<std::complex<float>>(0.0),C,Ic,A3,static_cast<std::complex<float>>(1.0));
+    Ic.low_level_matrix_multiplication(CblasNoTrans,CblasNoTrans,std::complex<float>(0.0f),C,Ic,A3,std::complex<float>(1.0f));
     A3.print2D();
     system("pause");
+
 }
