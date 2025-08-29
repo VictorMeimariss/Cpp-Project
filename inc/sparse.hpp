@@ -150,7 +150,7 @@ class matrix
     /**
          * @brief Returns a constant vector reference containing the diagonal elements of a matrix. For reading.
          */
-    const std::vector<t>& diag const;
+    const std::vector<t>& diag() const;
     /**
          * @brief Operator *, multiplies a matrix by an stl vector
          * @param v A vector used after the operator
