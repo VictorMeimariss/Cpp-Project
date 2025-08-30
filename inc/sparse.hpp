@@ -40,8 +40,18 @@ class matrix
          * @brief Columns size.
          */
         size_t col_size;
-
-        bool ownership; // True if ours, false if intels
+        /**
+         * @brief MKL sparse matrix handle, saved for reusability and better chaining performance.
+         */
+        sparse_matrix_t handle;
+        /**
+         * @brief False if the raw csr data (values, row_idx, col_idx) has been modified since the handle was last updated (say by a setter call), True if csr and handle data are expected to be in agreement.
+         */
+        bool valid_handle;
+        /**
+         * @brief Keeps track of csr data (values, row_idx, col_idx) ownership.
+         */
+        bool ownership;
     public:
     /**
          * @brief Sparse matrix constructor
