@@ -137,12 +137,6 @@ class matrix
          */ 
     set_value_at(size_t index, T value);
     /**
-         * @brief Returns a mutable reference to a non-zero value in the matrix.
-         * @param c The column of the value to be returned.
-         * @param r The row of the value to be returned.
-         */   
-    T& operator() (size_t r, size_t c);
-    /**
          * @brief Returns a constant value in the matrix.
          * @param c The column of the value to be returned.
          * @param r The row of the value to be returned.
