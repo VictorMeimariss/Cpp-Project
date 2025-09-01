@@ -69,7 +69,7 @@ class matrix_s
     /**
          * @brief Sparse matrix destructor
          */
-    ~matrix_s;
+    ~matrix_s();
     /**
          * @brief Move constructor, transfers the ownership of matrix A
          * @param  A A matrix reference to be moved
