@@ -12,7 +12,7 @@ namespace rixoratory{
  * @tparam T The scalar type used for matrix elements.
  */
 template <typename T>
-class matrix
+class matrix_s
 {
     private:
 
@@ -61,7 +61,7 @@ class matrix
          * @param rows sets row size
          * @param cols sets column size
          */
-    matrix(const std::vector<T>& values, const std::vector<T>& col_idx, const std::vector<T>& row_idx, size_t rows, size_t cols)
+    matrix_s(const std::vector<T>& values, const std::vector<T>& col_idx, const std::vector<T>& row_idx, size_t rows, size_t cols)
     : values(values), col_idx(col_idx), row_idx(row_idx), row_size(rows), col_size(cols), ownership(true)
     {
 
@@ -69,12 +69,12 @@ class matrix
     /**
          * @brief Sparse matrix destructor
          */
-    ~matrix;
+    ~matrix_s;
     /**
          * @brief Move constructor, transfers the ownership of matrix A
          * @param  A A matrix reference to be moved
          */
-    matrix (matrix&& A) noexcept        
+    matrix_s (matrix_s&& A) noexcept        
     : values(std::move(A.values)), col_idx(std::move(A.col_idx)), row_idx(std::move(A.row_idx),row_size(A.rows), col_size(A.cols), ownership(A.ownership)) {
         A.row_size=0;
         A.col_size=0;
@@ -84,12 +84,12 @@ class matrix
          * @brief Matrix copy constructor
          * @param A A constant sparse matrix reference to be copied 
          */
-    matrix (matrix const& A);
+    matrix_s (matrix const& A);
     /**
          * @brief Constructs an N by N identity matrix
          * @param N the number of rows/columns in the square identity matrix
          */
-    matrix I(int N);
+    matrix_s I(int N);
     
     //operators
     
@@ -97,33 +97,33 @@ class matrix
          * @brief Operator =, creates a deep copy of the matrix and assigns it
          * @param A A constant matrix reference used after the operator
          */
-    matrix& operator=(matrix const& A); 
+    matrix_s& operator=(matrix_s const& A); 
     /**
          * @brief Operator +, adds the values of two matrices of same size and dimensions
          * @param A A constant matrix reference used after the operator
          */
-    matrix operator+(matrix const& A);
+    matrix_s operator+(matrix_s const& A);
     /**
          * @brief Operator *, multiplies two 2D matrices
          * @param A A constant matrix reference used after the operator
          */
-    matrix operator*(matrix const& A);//Could be excluded (for now)
+    matrix_s operator*(matrix_s const& A);//Could be excluded (for now)
     /**
          * @brief Operator *, multiplies a matrix by a number
          * @param x A numerical primitive used after the operator
          * @tparam T encompasses all primitive numerical data types
          */
-    matrix operator*(T x);
+    matrix_s operator*(T x);
     /**
          * @brief Operator -, subtracts the values of second matrix from the first, both must have same size and dimensions
          * @param A A constant matrix reference used after the operator
          */
-    matrix operator-(matrix const& A);
+    matrix_s operator-(matrix_s const& A);
     /**
          * @brief Operator ==, compares two matricies
          * @param A A constant matrix reference used after the operator
          */
-    bool operator==(matrix const& A);
+    bool operator==(matrix_s const& A);
     //getters-setters
     /**
          * @brief Gets value at a given index.
@@ -147,10 +147,6 @@ class matrix
          */  
     vector<size_t> shape() const;
     //sparse specific (for solvers etc)
-    /**
-         * @brief Returns a mutable vector reference containing the diagonal elements of a matrix. For writting.
-         */ 
-    std::vector<T>& diag();
     /**
          * @brief Returns a constant vector reference containing the diagonal elements of a matrix. For reading.
          */
