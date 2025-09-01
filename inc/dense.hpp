@@ -17,6 +17,7 @@
  * @brief A class to create a dense matrix object of any number of dimensions.
  * @tparam T The scalar type used for matrix elements.
  */
+namespace rixoratory{
 template<typename T>
 class matrix {
     private:
@@ -261,4 +262,5 @@ class matrix {
      */
     template<typename T, typename U>
     matrix<T> operator*(U x, const matrix<T>& A);
-#endif
+}
+    #endif
