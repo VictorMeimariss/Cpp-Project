@@ -1,6 +1,4 @@
 #include "../inc/sparse.hpp"
-#define MKL_Complex16 std::complex<double>
-#define MKL_Complex8 std::complex<float>
 template <typename T>
 rixoratory::matrix_s<T>:: operator+(matrix_s<T> const& A){
     // refresh handles if required
