@@ -52,6 +52,10 @@ class matrix_s
          * @brief Keeps track of csr data (values, row_idx, col_idx) ownership.
          */
         bool ownership;
+        /**
+         * @brief rebuilds a valid handle according to csr vectors.
+         */
+        void refresh_handle();
     public:
     /**
          * @brief Sparse matrix constructor
@@ -62,10 +66,18 @@ class matrix_s
          * @param cols sets column size
          */
     matrix_s(const std::vector<T>& values, const std::vector<T>& col_idx, const std::vector<T>& row_idx, size_t rows, size_t cols)
-    : values(values), col_idx(col_idx), row_idx(row_idx), row_size(rows), col_size(cols), ownership(true)
+    : values(values), col_idx(col_idx), row_idx(row_idx), row_size(rows), col_size(cols), ownership(true), valid_handle(false), handle(nullptr)
     {
-
+    
     }
+    /**
+    *@brief Sparse matrix object constructor from MKL handle.
+    * @param h MKL sparse matrix handle.
+    * @param rows number of rows.
+    * @param cols number of columns.
+    * @param own CSR arrays ownership.
+    */
+    matrix_s(const sparse_matrix_t h, size_t rows, size_t cols, bool own);
     /**
          * @brief Sparse matrix destructor
          */
