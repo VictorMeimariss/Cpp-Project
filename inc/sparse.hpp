@@ -167,7 +167,7 @@ class matrix_s
          * @brief Operator *, multiplies a matrix by a vector (stored as a dense matrix). Returns a dense matrix object
          * @param v A vector used after the operator
          */
-    rixoratpry::matrix<T> operator*(rixoratory::matrix<T> const& v);
+    std::vector<T> operator*(std::vector<T> const& v);
 };
 }
 #endif
