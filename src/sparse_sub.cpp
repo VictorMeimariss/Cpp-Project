@@ -1,6 +1,6 @@
 #include "../inc/sparse.hpp"
 template <typename T>
-rixoratory::matrix_s<T>:: operator-(matrix_s<T> const& A){
+rixoratory::matrix_s<T> rixoratory::matrix_s<T>::operator-(matrix_s<T> const& A){
     return *this+(A*(-1));
 }
 template class matrix_s<float>;
