@@ -1,7 +1,7 @@
 #include "../inc/sparse.hpp"
 
 template <typename T>
-rixoratory::matrix_s<T>::matrix_s operator*(T x){
+rixoratory::matrix_s<T> rixoratory::matrix_s<T>::matrix_s operator*(T x){
     const MKL_INT n = this->rows*this->cols;
     std::vector<T> n_vals(this->values); //_scal operates in place
     if constexpr (std::is_same_v<T, float>)
