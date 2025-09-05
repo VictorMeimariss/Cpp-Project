@@ -2,7 +2,7 @@
 #define MKL_Complex8 std::complex<float>
 #define MKL_Complex16 std::complex<double>
 template <typename T>
-rixoratory::matrix_s<T>:: operator+(matrix_s<T> const& A){
+rixoratory::matrix_s<T> rixoratory::matrix_s<T>::operator+(matrix_s<T> const& A){
     // refresh handles if required
     if (!valid_handle)
         this->refresh_handle();
