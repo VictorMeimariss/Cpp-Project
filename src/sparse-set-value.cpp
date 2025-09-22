@@ -13,6 +13,7 @@ void rixoratory::matrix_s::set_value_at(size_t index, T value){
             return;
         }
     }
+    
     throw std::invalid_arguement("Can only set non-zero values");
 }
 template class matrix_s<float>;
