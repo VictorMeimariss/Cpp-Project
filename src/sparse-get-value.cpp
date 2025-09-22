@@ -1,6 +1,6 @@
 #include "../inc/sparse.hpp"
 template <typename T>
-T rixoratory::matrix_s::get_value_at(size_t index) const{
+void rixoratory::matrix_s::set_value_at(size_t index, T value){
     //index = c + col_size*r
     size_t c = index%col_size;
     size_t r = index/col_size;
@@ -8,8 +8,9 @@ T rixoratory::matrix_s::get_value_at(size_t index) const{
     size_t row_end = row_idx[r+1];
 
     for (int i = row_start; i<row_end; i++){
-        if (col_idx[i] == c)
-            return values[i]
+        if (col_idx[i] == c){
+            return values[i];
+        }
     }
     return 0;
 }
