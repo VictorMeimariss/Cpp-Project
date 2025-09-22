@@ -7,8 +7,9 @@ void rixoratory::matrix_s::set_value_at(size_t index, T value){
     size_t row_start = row_idx[r];
     size_t row_end = row_idx[r+1];
 
-    for (int i = row_start; i<row_end; i++){
+    for (size_t i = row_start; i<row_end; i++){
         if (col_idx[i] == c){
+            values[i] = value;
             return;
         }
     }
