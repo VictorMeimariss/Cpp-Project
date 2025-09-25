@@ -1,6 +1,6 @@
 #include "../inc/sparse.hpp"
 template <typename T>
-void rixoratory::matrix_s::set_value_at(size_t index, T value){
+void sparse::matrix::set_value_at(size_t index, T value){
     //index = c + col_size*r
     size_t c = index%col_size;
     size_t r = index/col_size;
@@ -14,7 +14,7 @@ void rixoratory::matrix_s::set_value_at(size_t index, T value){
     }
     return 0;
 }
-template class matrix_s<float>;
-template class matrix_s<double>;
-template class matrix_s<std::complex<float>>;
-template class matrix_s<std::complex<double>>;
+template class matrix<float>;
+template class matrix<double>;
+template class matrix<std::complex<float>>;
+template class matrix<std::complex<double>>;
