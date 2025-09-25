@@ -1,6 +1,6 @@
 #include "../inc/sparse.hpp"
 template <typename T>
-rixoratory::matrix_s<T> rixoratory::matrix_s<T>:: operator+(matrix_s<T> const& A){
+sparse::matrix<T> sparse::matrix<T>:: operator+(matrix<T> const& A){
     // refresh handles if required
     if (!valid_handle)
         this->refresh_handle();
@@ -10,9 +10,9 @@ rixoratory::matrix_s<T> rixoratory::matrix_s<T>:: operator+(matrix_s<T> const& A
     A.valid_handle = true;
     sparse_handle_t ret;
     mkl_sparse_spmm(SPARSE_OPERATION_NON_TRANSPOSE, this->handle, A.handle, &ret);
-    return matrix_z<T>(ret,this->rows, A.cols, false);
+    return matrix<T>(ret,this->rows, A.cols, false);
 }
-template class matrix_s<float>;
-template class matrix_s<double>;
-template class matrix_s<std::complex<float>>;
-template class matrix_s<std::complex<double>>;
+template class matrix<float>;
+template class matrix<double>;
+template class matrix<std::complex<float>>;
+template class matrix<std::complex<double>>;
