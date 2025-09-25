@@ -1,5 +1,6 @@
 #include "dense.hpp"
 using namespace dense;
+
 template<typename T>
 size_t matrix<T>::get_size() const{
     return values.size();

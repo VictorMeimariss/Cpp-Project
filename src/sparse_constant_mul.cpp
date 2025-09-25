@@ -1,7 +1,8 @@
 #include "../inc/sparse.hpp"
+using namespace sparse;
 
 template <typename T>
-sparse::matrix<T> sparse::matrix<T>::matrix operator*(T x){
+matrix<T> matrix<T>::operator*(T x){
     const MKL_INT n = this->rows*this->cols;
     std::vector<T> n_vals(this->values); //_scal operates in place
     if constexpr (std::is_same_v<T, float>)

@@ -1,6 +1,8 @@
 #include "../inc/sparse.hpp"
+using namespace sparse;
+
 template <typename T>
-void sparse::matrix::matrix(const sparse_matrix_t h, size_t rows, size_t cols, bool own){
+matrix<T>::matrix(const sparse_matrix_t h, size_t rows, size_t cols, bool own){
     this->handle = h;
     this->rows = rows;
     this->cols = cols; 
@@ -11,16 +13,16 @@ void sparse::matrix::matrix(const sparse_matrix_t h, size_t rows, size_t cols, b
     std::vector<T> col_idx;
     std::vector<T> val;
     if constexpr(std::is_same_v<T, float>){
-        mkl_sparse_s_export_csr(h, SPARSE_INDEX_BASE_ZERO, rows, cols, row_start.data(), row_end.data(), col_idx.data(), val.data());
+        sparse_s_export_csr(h, SPARSE_INDEX_BASE_ZERO, rows, cols, row_start.data(), row_end.data(), col_idx.data(), val.data());
     }
     else if constexpr(std::is_same_v<T, double>){
-        mkl_sparse_s_export_csr(h, SPARSE_INDEX_BASE_ZERO, rows, cols, row_start.data(), row_end.data(), col_idx.data(), val.data());
+        sparse_d_export_csr(h, SPARSE_INDEX_BASE_ZERO, rows, cols, row_start.data(), row_end.data(), col_idx.data(), val.data());
     }
     else if constexpr(std::is_same_v<T, std::complex<float>>){
-        mkl_sparse_s_export_csr(h, SPARSE_INDEX_BASE_ZERO, rows, cols, row_start.data(), row_end.data(), col_idx.data(), val.data());
+        sparse_c_export_csr(h, SPARSE_INDEX_BASE_ZERO, rows, cols, row_start.data(), row_end.data(), col_idx.data(), val.data());
     }
     if constexpr(std::is_same_v<T, std::complex<double>>){
-        mkl_sparse_s_export_csr(h, SPARSE_INDEX_BASE_ZERO, rows, cols, row_start.data(), row_end.data(), col_idx.data(), val.data());
+        sparse_z_export_csr(h, SPARSE_INDEX_BASE_ZERO, rows, cols, row_start.data(), row_end.data(), col_idx.data(), val.data());
     }
     vector<T> row_idx(rows+1);
     row_idx[0] = row_start[0];

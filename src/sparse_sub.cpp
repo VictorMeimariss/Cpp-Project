@@ -1,6 +1,8 @@
 #include "../inc/sparse.hpp"
+using namespace sparse;
+
 template <typename T>
-sparse::matrix<T> sparse::matrix<T>::operator-(matrix<T> const& A){
+matrix<T> matrix<T>::operator-(matrix<T> const& A){
     return *this+(A*(-1));
 }
 template class matrix<float>;

@@ -1,6 +1,8 @@
 #include "../inc/sparse.hpp"
+using namespace sparse;
+
 template <typename T>
-sparse::matrix<T> sparse::matrix<T>:: operator+(matrix<T> const& A){
+matrix<T> matrix<T>:: operator*(matrix<T> const& A){
     // refresh handles if required
     if (!valid_handle)
         this->refresh_handle();
@@ -9,7 +11,7 @@ sparse::matrix<T> sparse::matrix<T>:: operator+(matrix<T> const& A){
     this->valid_handle = true;
     A.valid_handle = true;
     sparse_handle_t ret;
-    mkl_sparse_spmm(SPARSE_OPERATION_NON_TRANSPOSE, this->handle, A.handle, &ret);
+    sparse_spmm(SPARSE_OPERATION_NON_TRANSPOSE, this->handle, A.handle, &ret);
     return matrix<T>(ret,this->rows, A.cols, false);
 }
 template class matrix<float>;

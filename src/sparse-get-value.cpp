@@ -1,6 +1,8 @@
 #include "../inc/sparse.hpp"
+using namespace sparse;
+
 template <typename T>
-void sparse::matrix::set_value_at(size_t index, T value){
+T matrix<T>::get_value_at(size_t index) const{
     //index = c + col_size*r
     size_t c = index%col_size;
     size_t r = index/col_size;
@@ -12,7 +14,7 @@ void sparse::matrix::set_value_at(size_t index, T value){
             return values[i];
         }
     }
-    return 0;
+    return T{};
 }
 template class matrix<float>;
 template class matrix<double>;

@@ -8,5 +8,6 @@
 
 #include "dense.hpp"
 #include "sparse.hpp"
+#include "cross.hpp"
 
 #endif // MATRIX_HPP

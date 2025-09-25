@@ -1,6 +1,8 @@
 #include "../inc/sparse.hpp"
+using namespace sparse;
+
 template <typename T>
-void sparse::matrix::set_value_at(size_t index, T value){
+void matrix<T>::set_value_at(size_t index, T value){
     //index = c + col_size*r
     size_t c = index%col_size;
     size_t r = index/col_size;
@@ -10,7 +12,6 @@ void sparse::matrix::set_value_at(size_t index, T value){
     for (size_t i = row_start; i<row_end; i++){
         if (col_idx[i] == c){
             values[i] = value;
-            return;
         }
     }
     

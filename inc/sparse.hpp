@@ -1,6 +1,11 @@
 #ifndef SPARSE_HPP
 #define SPARSE_HPP
 
+/**
+ * @file sparse.hpp
+ * @brief Header file for the matrix class for sparse matrices and its associated functions.
+ */
+
 #include <iostream>
 #include <vector>
 #include <complex>
@@ -72,9 +77,7 @@ class matrix
                 */
           matrix(const std::vector<T>& values, const std::vector<T>& col_idx, const std::vector<T>& row_idx, size_t rows, size_t cols)
           : values(values), col_idx(col_idx), row_idx(row_idx), row_size(rows), col_size(cols), ownership(true), valid_handle(false), handle(nullptr)
-          {
-          
-          }
+          {}; //Thanasis
 
           /**
            *@brief Sparse matrix object constructor from MKL handle.
@@ -83,35 +86,35 @@ class matrix
           * @param cols number of columns.
           * @param own CSR arrays ownership.
           */
-          matrix(const sparse_matrix_t h, size_t rows, size_t cols, bool own); //Victor
+          matrix(const sparse_matrix_t h, size_t rows, size_t cols, bool own); //Thanasis
 
           /**
                 * @brief Sparse matrix destructor
                 */
-          ~matrix(); //John
+          ~matrix(); // John
 
           /**
                 * @brief Move constructor, transfers the ownership of matrix A
                 * @param  A A matrix reference to be moved
                 */
-          matrix (matrix&& A) noexcept        
+          matrix (matrix&& A) noexcept  //Thanasis      
           : values(std::move(A.values)), col_idx(std::move(A.col_idx)), row_idx(std::move(A.row_idx),row_size(A.rows), col_size(A.cols), ownership(A.ownership)) {
                A.row_size=0;
                A.col_size=0;
                ownership=false;    
-          }
+          };
 
           /**
                 * @brief Matrix copy constructor
                 * @param A A constant sparse matrix reference to be copied 
                 */
-          matrix (matrix const& A); //Thanasis
+          matrix (matrix const& A); // Victor
 
           /**
                 * @brief Constructs an N by N identity matrix
                 * @param N the number of rows/columns in the square identity matrix
                 */
-          matrix I(int N); //Victor
+          matrix I(int N); // Victor
           
           //operators
           
@@ -119,7 +122,7 @@ class matrix
                 * @brief Operator =, creates a deep copy of the matrix and assigns it
                 * @param A A constant matrix reference used after the operator
                 */
-          matrix& operator=(matrix const& A); //John
+          matrix& operator=(matrix const& A); // John
 
           /**
                 * @brief Operator +, adds the values of two matrices of same size and dimensions
@@ -131,14 +134,14 @@ class matrix
                 * @brief Operator *, multiplies two 2D sparse matrices
                 * @param A A constant matrix reference used after the operator
                 */
-          matrix operator*(matrix const& A);// Victor
+          matrix operator*(matrix const& A);// Thanasis
 
           /**
                 * @brief Operator *, multiplies a sparse matrix by a number
                 * @param x A numerical primitive used after the operator
                 * @tparam T encompasses all primitive numerical data types
                 */
-          matrix operator*(T x);// John
+          matrix operator*(T x);// Victor
 
           /**
                 * @brief Operator -, subtracts the values of second matrix from the first, both must have same size and dimensions
@@ -150,14 +153,14 @@ class matrix
                 * @brief Operator ==, compares two matricies
                 * @param A A constant matrix reference used after the operator
                 */
-          bool operator==(matrix const& A);// Victor
+          bool operator==(matrix const& A);// John
 
           //getters-setters
           /**
                 * @brief Gets value at a given index.
                 * @param index The linear 0-based index in the flat values vector.
                 */
-          T get_value_at(size_t index) const;// John
+          T get_value_at(size_t index) const;// Thanasis
 
           /**
                 * @brief Sets value at a given index.
@@ -171,7 +174,7 @@ class matrix
                 * @param c The column of the value to be returned.
                 * @param r The row of the value to be returned.
                 */  
-          const T operator() (size_t r, size_t c) const;// Victor
+          const T operator() (size_t r, size_t c) const;// Thanasis
 
           /**
                 * @brief Returns the shape (dimensions) of a matrix

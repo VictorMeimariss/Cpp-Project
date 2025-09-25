@@ -1,6 +1,8 @@
 #include "../inc/sparse.hpp"
+using namespace sparse;
+
 template <typename T>
-const T sparse::matrix::operator () (size_t r, size_t c) const{
+const T matrix<T>::operator () (size_t r, size_t c) const{
     size_t row_start = row_idx[r];
     size_t row_end = row_idx[r+1];
 
@@ -9,7 +11,7 @@ const T sparse::matrix::operator () (size_t r, size_t c) const{
             return vaules[i];
         }
     }
-    return 0;
+    return T{};
 }
 template class matrix<float>;
 template class matrix<double>;

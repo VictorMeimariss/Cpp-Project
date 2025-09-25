@@ -3,7 +3,7 @@
 
 /**
  * @file dense.hpp
- * @brief Master header file for the matrix class and its associated functions.
+ * @brief Header file for the matrix class for dense matrices and its associated functions.
  */
 
 #include <iostream>
