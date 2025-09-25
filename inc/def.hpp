@@ -6,6 +6,7 @@
  */
 #include <mkl.h>
 
+// Dense blass functions
 #define saxpy cblas_saxpy
 #define daxpy cblas_daxpy
 #define caxpy cblas_caxpy
@@ -20,3 +21,5 @@
 #define dgemm cblas_dgemm
 #define cgemm cblas_cgemm
 #define zgemm cblas_zgemm
+
+// Sparse blass functions

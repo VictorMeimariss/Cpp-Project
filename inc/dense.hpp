@@ -5,19 +5,18 @@
  * @file dense.hpp
  * @brief Master header file for the matrix class and its associated functions.
  */
-#pragma once
 
 #include <iostream>
 #include <vector>
 #include <complex>
 #include "def.hpp"
 
+namespace dense{
 /**
  * @class matrix
  * @brief A class to create a dense matrix object of any number of dimensions.
  * @tparam T The scalar type used for matrix elements.
  */
-namespace rixoratory{
 template<typename T>
 class matrix {
     private:

@@ -1,6 +1,8 @@
 #include<iostream>
 #include <../inc/dense.hpp>
 
+using namespace dense;
+
 int main()
 {
     matrix<float> M(2,2);

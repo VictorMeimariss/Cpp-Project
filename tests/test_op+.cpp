@@ -1,4 +1,6 @@
 #include <dense.hpp>
+using namespace dense;
+
 
 int main() {
     matrix<float> A(3,1);

@@ -2,6 +2,8 @@
 #include<mkl.h>
 #include <../inc/dense.hpp>
 
+using namespace dense;
+
 int main()
 {
     matrix<int> M(4, 2, 2);

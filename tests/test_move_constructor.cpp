@@ -1,5 +1,7 @@
 #include<iostream>
 #include <../inc/dense.hpp>
+using namespace dense;
+
 
 int main()
 {

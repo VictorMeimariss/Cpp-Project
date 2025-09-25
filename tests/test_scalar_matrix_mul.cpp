@@ -1,4 +1,6 @@
 #include <dense.hpp>
+using namespace dense;
+
 
 int main() {
     using cd = std::complex<double>;
