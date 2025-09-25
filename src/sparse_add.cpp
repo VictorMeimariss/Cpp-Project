@@ -2,7 +2,7 @@
 #define MKL_Complex8 std::complex<float>
 #define MKL_Complex16 std::complex<double>
 template <typename T>
-rixoratory::matrix_s<T> rixoratory::matrix_s<T>::operator+(matrix_s<T> const& A){
+sparse::matrix<T> sparse::matrix<T>::operator+(matrix<T> const& A){
     // refresh handles if required
     if (!valid_handle)
         this->refresh_handle();
@@ -27,9 +27,9 @@ rixoratory::matrix_s<T> rixoratory::matrix_s<T>::operator+(matrix_s<T> const& A)
             const MKL_Complex16 a(1, 0);
             mkl_sparse_z_add (SPARSE_OPERATION_NON_TRANSPOSE, A.handle, a, this->handle, &ret.handle);
         }
-        return matrix_s<T>(ret, rows, cols, false);
+        return matrix<T>(ret, rows, cols, false);
 }
-template class matrix_s<float>;
-template class matrix_s<double>;
-template class matrix_s<std::complex<float>>;
-template class matrix_s<std::complex<double>>;
+template class matrix<float>;
+template class matrix<double>;
+template class matrix<std::complex<float>>;
+template class matrix<std::complex<double>>;
