@@ -1,7 +1,7 @@
 #include "../inc/sparse.hpp"
 
 template <typename T>
-rixoratory::matrix_s<T> rixoratory::matrix_s<T>::matrix_s operator*(T x){
+sparse::matrix<T> sparse::matrix<T>::matrix operator*(T x){
     const MKL_INT n = this->rows*this->cols;
     std::vector<T> n_vals(this->values); //_scal operates in place
     if constexpr (std::is_same_v<T, float>)
@@ -13,10 +13,10 @@ rixoratory::matrix_s<T> rixoratory::matrix_s<T>::matrix_s operator*(T x){
     else if constexpr (std::is_same_v<T, std::complex<double>>)
         zscal(n, &x, n_vals.data() 1);
     //reused code from scal_mn.cpp
-    return matrix_s<T>(n_vals, this->col_idx, this->row_idx, this->rows, this->cols);
+    return matrix<T>(n_vals, this->col_idx, this->row_idx, this->rows, this->cols);
 }
 
-template class matrix_s<float>;
-template class matrix_s<double>;
-template class matrix_s<std::complex<float>>;
-template class matrix_s<std::complex<double>>;
+template class matrix<float>;
+template class matrix<double>;
+template class matrix<std::complex<float>>;
+template class matrix<std::complex<double>>;
