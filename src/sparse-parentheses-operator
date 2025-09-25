@@ -1,6 +1,6 @@
 #include "../inc/sparse.hpp"
 template <typename T>
-const T rixoratory::matrix_s::operator () (size_t r, size_t c) const{
+const T sparse::matrix::operator () (size_t r, size_t c) const{
     size_t row_start = row_idx[r];
     size_t row_end = row_idx[r+1];
 
@@ -11,7 +11,7 @@ const T rixoratory::matrix_s::operator () (size_t r, size_t c) const{
     }
     return 0;
 }
-template class matrix_s<float>;
-template class matrix_s<double>;
-template class matrix_s<std::complex<float>>;
-template class matrix_s<std::complex<double>>;
+template class matrix<float>;
+template class matrix<double>;
+template class matrix<std::complex<float>>;
+template class matrix<std::complex<double>>;
