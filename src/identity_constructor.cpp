@@ -1,4 +1,5 @@
 #include "../inc/dense.hpp"
+using namespace dense;
 template<typename T>
 matrix<T> matrix<T>::I(int N){
     matrix<T> res(N,N);

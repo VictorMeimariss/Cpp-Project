@@ -1,4 +1,5 @@
 #include "dense.hpp"
+using namespace dense;
 
 template <typename T, typename U>
 matrix<T> operator*(U x, const matrix<T>& A){

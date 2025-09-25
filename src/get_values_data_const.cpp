@@ -1,4 +1,5 @@
 #include "../inc/dense.hpp"
+using namespace dense;
 template<typename T>
 const T* matrix<T>::get_const_values_data(){
     return values.data();

@@ -1,5 +1,5 @@
 #include <../inc/dense.hpp>
-using namespace std;
+using namespace dense;
 
 /**
  * @brief Sets value at a given index.
@@ -15,5 +15,5 @@ void matrix<T>::set_value_at(size_t index, T value)
 template void matrix<int>::set_value_at(size_t index, int value);
 template void matrix<float>::set_value_at(size_t index, float value);
 template void matrix<double>::set_value_at(size_t index, double value);
-template void matrix<complex<float>>::set_value_at(size_t index, complex<float> value);
-template void matrix<complex<double>>::set_value_at(size_t index, complex<double> value);
+template void matrix<std::complex<float>>::set_value_at(size_t index, std::complex<float> value);
+template void matrix<std::complex<double>>::set_value_at(size_t index, std::complex<double> value);

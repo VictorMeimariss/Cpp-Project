@@ -1,5 +1,5 @@
 #include "dense.hpp"
-
+using namespace dense;
 template <typename T>
 matrix<T> matrix<T>:: operator*(matrix<T> const& A){
     matrix<T> B((*this).dim_size[0], A.dim_size[1]);

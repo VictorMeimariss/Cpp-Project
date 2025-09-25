@@ -104,7 +104,7 @@ class matrix {
         matrix operator+(matrix const& A); // Vic
 
         /**
-         * @brief Operator *, multiplies two 2D matrices
+         * @brief Operator *, multiplies two 2D dense matrices
          * @param A A constant matrix reference used after the operator
          */
         matrix operator*(matrix const& A); // Vic
@@ -248,14 +248,14 @@ class matrix {
             }
         }
         };
+        /**
+         * @brief Low level implementation of matrix multiplication using BLAS. documentation at https://www.intel.com/content/www/us/en/docs/onemkl/developer-reference-c/2024-1/cblas-gemm-001.html#GUID-97718E5C-6E0A-44F0-B2B1-A551F0F164B2
+         * @tparam T encompasses matrix type
+         */
+        void low_level_matrix_multiplication(const CBLAS_TRANSPOSE transa, const CBLAS_TRANSPOSE transb, const T beta, matrix<T> const &A, matrix<T> const &B, matrix<T> &C, const T alpha);    
+        };
     /**
-     * @brief Low level implementation of matrix multiplication using BLAS. documentation at https://www.intel.com/content/www/us/en/docs/onemkl/developer-reference-c/2024-1/cblas-gemm-001.html#GUID-97718E5C-6E0A-44F0-B2B1-A551F0F164B2
-     * @tparam T encompasses matrix type
-     */
-    void low_level_matrix_multiplication(const CBLAS_TRANSPOSE transa, const CBLAS_TRANSPOSE transb, const T beta, matrix<T> const &A, matrix<T> const &B, matrix<T> &C, const T alpha);    
-    };
-    /**
-     * @brief Operator *, multiplies a number by a type float matrix
+     * @brief Operator *, multiplies a number by a dense matrix
      * @param x A numerical primitive used before the operator
      * @tparam U encompasses all primitive numerical data types and T, the matrix type
      */

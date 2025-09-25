@@ -60,7 +60,7 @@ class matrix
         /**
          * @brief rebuilds a valid handle according to csr vectors.
          */
-        void refresh_handle();
+        void refresh_handle(); //Thanasis
     public:
           /**
                 * @brief Sparse matrix constructor
@@ -83,12 +83,12 @@ class matrix
           * @param cols number of columns.
           * @param own CSR arrays ownership.
           */
-          matrix(const sparse_matrix_t h, size_t rows, size_t cols, bool own);
+          matrix(const sparse_matrix_t h, size_t rows, size_t cols, bool own); //Victor
 
           /**
                 * @brief Sparse matrix destructor
                 */
-          ~matrix();
+          ~matrix(); //John
 
           /**
                 * @brief Move constructor, transfers the ownership of matrix A
@@ -105,13 +105,13 @@ class matrix
                 * @brief Matrix copy constructor
                 * @param A A constant sparse matrix reference to be copied 
                 */
-          matrix (matrix const& A);
+          matrix (matrix const& A); //Thanasis
 
           /**
                 * @brief Constructs an N by N identity matrix
                 * @param N the number of rows/columns in the square identity matrix
                 */
-          matrix I(int N);
+          matrix I(int N); //Victor
           
           //operators
           
@@ -119,81 +119,83 @@ class matrix
                 * @brief Operator =, creates a deep copy of the matrix and assigns it
                 * @param A A constant matrix reference used after the operator
                 */
-          matrix& operator=(matrix const& A); 
+          matrix& operator=(matrix const& A); //John
 
           /**
                 * @brief Operator +, adds the values of two matrices of same size and dimensions
                 * @param A A constant matrix reference used after the operator
                 */
-          matrix operator+(matrix const& A);
+          matrix operator+(matrix const& A); //Thanasis
 
           /**
-                * @brief Operator *, multiplies two 2D matrices
+                * @brief Operator *, multiplies two 2D sparse matrices
                 * @param A A constant matrix reference used after the operator
                 */
-          matrix operator*(matrix const& A);//Could be excluded (for now)
+          matrix operator*(matrix const& A);// Victor
 
           /**
-                * @brief Operator *, multiplies a matrix by a number
+                * @brief Operator *, multiplies a sparse matrix by a number
                 * @param x A numerical primitive used after the operator
                 * @tparam T encompasses all primitive numerical data types
                 */
-          matrix operator*(T x);
+          matrix operator*(T x);// John
 
           /**
                 * @brief Operator -, subtracts the values of second matrix from the first, both must have same size and dimensions
                 * @param A A constant matrix reference used after the operator
                 */
-          matrix operator-(matrix const& A);
+          matrix operator-(matrix const& A);// Thanasis
 
           /**
                 * @brief Operator ==, compares two matricies
                 * @param A A constant matrix reference used after the operator
                 */
-          bool operator==(matrix const& A);
+          bool operator==(matrix const& A);// Victor
 
           //getters-setters
           /**
                 * @brief Gets value at a given index.
                 * @param index The linear 0-based index in the flat values vector.
                 */
-          T get_value_at(size_t index) const;
+          T get_value_at(size_t index) const;// John
 
           /**
                 * @brief Sets value at a given index.
                 * @param index The linear 0-based index in the flat values vector.
                 * @param value The value to set.
                 */ 
-          void set_value_at(size_t index, T value);
+          void set_value_at(size_t index, T value);// Thanasis
 
           /**
                 * @brief Returns a constant value in the matrix.
                 * @param c The column of the value to be returned.
                 * @param r The row of the value to be returned.
                 */  
-          const T operator() (size_t r, size_t c) const;
+          const T operator() (size_t r, size_t c) const;// Victor
 
           /**
                 * @brief Returns the shape (dimensions) of a matrix
                 */  
-          std::vector<size_t> shape() const;
+          std::vector<size_t> shape() const;// John
 
           //sparse specific (for solvers etc)
           /**
                 * @brief Returns a constant vector reference containing the diagonal elements of a matrix. For reading.
                 */
-          const std::vector<T>& diag() const;
-
-          /**
-                * @brief Operator *, multiplies a matrix by a vector (stored as a dense matrix). Returns a dense matrix object
-                * @param v A vector used after the operator
-                */
-          std::vector<T> operator*(std::vector<T> const& v);
+          const std::vector<T>& diag() const;// Thanasis
 
           /**
                * @brief Prints the values of 2D array
          */
-          void print2D();
+          void print2D(); // Victor
 };
+/**
+ * @brief Operator *, multiplies a number by a sparse matrix
+ * @param x A numerical primitive used before the operator
+ * @tparam U encompasses all primitive numerical data types and T, the matrix type
+ */
+template<typename T, typename U>
+matrix<T> operator*(U x, const matrix<T>& A); // John
+
 }
 #endif

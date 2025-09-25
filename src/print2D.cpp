@@ -1,6 +1,6 @@
 #include <iostream>
 #include <../inc/dense.hpp>
-
+using namespace dense;
 template<typename T>
 void matrix<T>::print2D()
 {

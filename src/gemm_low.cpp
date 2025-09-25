@@ -1,4 +1,5 @@
 #include "../inc/dense.hpp"
+using namespace dense;
 template<typename T>
 void matrix_multiplication(const CBLAS_TRANSPOSE transa, const CBLAS_TRANSPOSE transb,const T beta, matrix<T> const& A, matrix<T> const &B, matrix<T> &C, const T alpha){
     if constexpr (std::is_same_v<T, float>)

@@ -1,5 +1,5 @@
 #include "dense.hpp"
-
+using namespace dense;
 template <typename T>
 matrix<T> matrix<T>:: operator*(T x){
     matrix<T> B = *this;
