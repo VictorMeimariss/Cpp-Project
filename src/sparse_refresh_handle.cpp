@@ -2,7 +2,7 @@
 #define MKL_Complex16 std::complex<double>
 #define MKL_Complex8 std::complex<float>
 template <typename T>
-void rixoratory::matrix_s::refresh_handle(){
+void sparse::matrix::refresh_handle(){
     std::vector<T> val(this->values);
     std::vector<T> row_start(this->row_idx.begin(), this->row_idx.end()-1);
     std::vector<T> row_end(this->row_idx.begin()+1, this->row_idx.end());
@@ -32,7 +32,7 @@ void rixoratory::matrix_s::refresh_handle(){
     col_idx = std::vector<T>();
     return;
 }
-template class matrix_s<float>;
-template class matrix_s<double>;
-template class matrix_s<std::complex<float>>;
-template class matrix_s<std::complex<double>>;
+template class matrix<float>;
+template class matrix<double>;
+template class matrix<std::complex<float>>;
+template class matrix<std::complex<double>>;
