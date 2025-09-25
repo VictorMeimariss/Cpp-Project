@@ -1,6 +1,6 @@
 #include "../inc/sparse.hpp"
 template <typename T>
-void rixoratory::matrix_s::matrix_s(const sparse_matrix_t h, size_t rows, size_t cols, bool own){
+void sparse::matrix::matrix(const sparse_matrix_t h, size_t rows, size_t cols, bool own){
     this->handle = h;
     this->rows = rows;
     this->cols = cols; 
