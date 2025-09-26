@@ -50,3 +50,8 @@
 #define dcsrmv mkl_dcsrmv
 #define ccsrmv mkl_ccsrmv
 #define zcsrmv mkl_zcsrmv
+
+#define sparse_s_mm mkl_sparse_s_mm
+#define sparse_d_mm mkl_sparse_d_mm
+#define sparse_c_mm mkl_sparse_c_mm
+#define sparse_z_mm mkl_sparse_z_mm

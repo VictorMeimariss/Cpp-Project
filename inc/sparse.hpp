@@ -68,6 +68,11 @@ class matrix
         void refresh_handle(); //Thanasis
     public:
           /**
+                * @brief Default sparse matrix constructor
+                */
+          matrix() = default;
+          
+          /**
                 * @brief Sparse matrix constructor
                 * @param values sets the values vector
                 * @param col_idx sets the col_idx vector
@@ -97,12 +102,15 @@ class matrix
                 * @brief Move constructor, transfers the ownership of matrix A
                 * @param  A A matrix reference to be moved
                 */
-          matrix (matrix&& A) noexcept  //Thanasis      
-          : values(std::move(A.values)), col_idx(std::move(A.col_idx)), row_idx(std::move(A.row_idx),row_size(A.rows), col_size(A.cols), ownership(A.ownership)) {
-               A.row_size=0;
-               A.col_size=0;
-               ownership=false;    
-          };
+          matrix(matrix&& A) noexcept // Thanasis and Victor
+            : values(std::move(A.values)), col_idx(std::move(A.col_idx)), row_idx(std::move(A.row_idx)),
+            row_size(A.row_size), col_size(A.col_size), handle(A.handle), valid_handle(A.valid_handle), ownership(A.ownership){
+            A.row_size = 0;
+            A.col_size = 0;
+            A.handle   = nullptr;
+            A.valid_handle = false;
+            A.ownership = false;
+            }
 
           /**
                 * @brief Matrix copy constructor
@@ -114,7 +122,7 @@ class matrix
                 * @brief Constructs an N by N identity matrix
                 * @param N the number of rows/columns in the square identity matrix
                 */
-          matrix I(int N); // Victor
+          static matrix I(int N); // Victor
           
           //operators
           

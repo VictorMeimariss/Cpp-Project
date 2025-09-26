@@ -27,5 +27,6 @@ dense::matrix<T> operator*(const dense::matrix<T>& A, const sparse::matrix<T>& B
 * @param B A constant matrix reference used after the operator
 */
 template<typename T>
-dense::matrix<T> operator*(const sparse::matrix<T>& A, const dense::matrix<T>& B);// Victor
+dense::matrix<T> operator*(const sparse::matrix<T>& B, const dense::matrix<T>& A);// Thanasis and Victor
+
 #endif
