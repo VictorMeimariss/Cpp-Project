@@ -19,7 +19,7 @@
 * @param B A constant matrix reference used after the operator
 */
 template<typename T>
-dense::matrix<T> operator*(const dense::matrix<T>& A, const sparse::matrix<T>& B);
+dense::matrix<T> operator*(const dense::matrix<T>& A, const sparse::matrix<T>& B); // Victor
 
 /**
 * @brief Operator *, multiplies two 2D sparse and dense matrices returning a dense matrix
@@ -27,6 +27,5 @@ dense::matrix<T> operator*(const dense::matrix<T>& A, const sparse::matrix<T>& B
 * @param B A constant matrix reference used after the operator
 */
 template<typename T>
-dense::matrix<T> operator*(const sparse::matrix<T>& A, const dense::matrix<T>& B);
-
+dense::matrix<T> operator*(const sparse::matrix<T>& A, const dense::matrix<T>& B);// Victor
 #endif
