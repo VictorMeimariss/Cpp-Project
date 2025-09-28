@@ -4,29 +4,59 @@ using namespace sparse;
 template <typename T>
 matrix<T>::matrix(const sparse_matrix_t h, size_t rows, size_t cols, bool own){
     this->handle = h;
-    this->rows = rows;
-    this->cols = cols; 
     this->valid_handle = true;
     this->ownership = own;
-    std::vector<T> row_start(rows); //pointer B
-    std::vector<T> row_end(rows); //pointer E
-    std::vector<T> col_idx;
-    std::vector<T> val;
+
+    sparse_index_base_t indexing;
+    MKL_INT mkl_rows, mkl_cols;
+    MKL_INT* row_start;
+    MKL_INT* row_end;
+    MKL_INT* col_idx_ptr;
+
     if constexpr(std::is_same_v<T, float>){
-        sparse_s_export_csr(h, SPARSE_INDEX_BASE_ZERO, rows, cols, row_start.data(), row_end.data(), col_idx.data(), val.data());
+        float* val_ptr;
+        sparse_s_export_csr(h, &indexing, &mkl_rows, &mkl_cols,
+                            &row_start, &row_end, &col_idx_ptr, &val_ptr);
+        this->values = std::vector<float>(val_ptr, val_ptr + (row_end[mkl_rows-1] - row_start[0]));
     }
     else if constexpr(std::is_same_v<T, double>){
-        sparse_d_export_csr(h, SPARSE_INDEX_BASE_ZERO, rows, cols, row_start.data(), row_end.data(), col_idx.data(), val.data());
+        double* val_ptr;
+        sparse_d_export_csr(h, &indexing, &mkl_rows, &mkl_cols,
+                            &row_start, &row_end, &col_idx_ptr, &val_ptr);
+        this->values = std::vector<double>(val_ptr, val_ptr + (row_end[mkl_rows-1] - row_start[0]));
     }
     else if constexpr(std::is_same_v<T, std::complex<float>>){
-        sparse_c_export_csr(h, SPARSE_INDEX_BASE_ZERO, rows, cols, row_start.data(), row_end.data(), col_idx.data(), val.data());
+        MKL_Complex8* val_ptr;
+        sparse_c_export_csr(h, &indexing, &mkl_rows, &mkl_cols,
+                            &row_start, &row_end, &col_idx_ptr, &val_ptr);
+        this->values = std::vector<std::complex<float>>(
+            reinterpret_cast<std::complex<float>*>(val_ptr),
+            reinterpret_cast<std::complex<float>*>(val_ptr + (row_end[mkl_rows-1] - row_start[0]))
+        );
     }
-    if constexpr(std::is_same_v<T, std::complex<double>>){
-        sparse_z_export_csr(h, SPARSE_INDEX_BASE_ZERO, rows, cols, row_start.data(), row_end.data(), col_idx.data(), val.data());
+    else if constexpr(std::is_same_v<T, std::complex<double>>){
+        MKL_Complex16* val_ptr;
+        sparse_z_export_csr(h, &indexing, &mkl_rows, &mkl_cols,
+                            &row_start, &row_end, &col_idx_ptr, &val_ptr);
+        this->values = std::vector<std::complex<double>>(
+            reinterpret_cast<std::complex<double>*>(val_ptr),
+            reinterpret_cast<std::complex<double>*>(val_ptr + (row_end[mkl_rows-1] - row_start[0]))
+        );
     }
-    vector<T> row_idx(rows+1);
+
+
+    this->col_idx = std::vector<MKL_INT>(col_idx_ptr,
+        col_idx_ptr + (row_end[mkl_rows-1] - row_start[0]));
+
+    std::vector<MKL_INT> row_idx(mkl_rows+1);
     row_idx[0] = row_start[0];
-    row_idx.insert(row_idx.end(), std::make_move_iterator(row_start.begin()), make_move_iterator(row_start.end())); // same functionality as insert(v.end(), v1.begin(), v1.end()), uses moving instead of copying for better performance since pointer B and pointer E are useless to us
-    row_start = std::vector<T>();
-    row_end = std::vector<T>();
-   }
+    for(size_t i=0;i<mkl_rows;i++){
+        row_idx[i+1] = row_end[i];
+    }
+    this->row_idx = std::move(row_idx);
+}
+
+template class sparse::matrix<float>;
+template class sparse::matrix<double>;
+template class sparse::matrix<std::complex<float>>;
+template class sparse::matrix<std::complex<double>>;

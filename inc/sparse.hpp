@@ -11,6 +11,11 @@
 #include <complex>
 #include "def.hpp"
 
+namespace dense {
+    template<typename T>
+    class matrix; // forward declaration
+}
+
 namespace sparse{
 /**
  * @class matrix
@@ -30,12 +35,12 @@ class matrix
         /**
          * @brief Flat vector storing the columns of non-zero elements
          */
-        std::vector<size_t> col_idx;
+        std::vector<MKL_INT> col_idx;
 
         /**
          * @brief Flat vector marking the begining of each row in the values vector
          */
-        std::vector<size_t> row_idx;
+        std::vector<MKL_INT> row_idx;
 
         /**
          * @brief Rows size.
@@ -50,12 +55,12 @@ class matrix
         /**
          * @brief MKL sparse matrix handle, saved for reusability and better chaining performance.
          */
-        sparse_matrix_t handle;
+        mutable sparse_matrix_t handle;
 
         /**
          * @brief False if the raw csr data (values, row_idx, col_idx) has been modified since the handle was last updated (say by a setter call), True if csr and handle data are expected to be in agreement.
          */
-        bool valid_handle;
+        mutable bool valid_handle;
 
         /**
          * @brief Keeps track of csr data (values, row_idx, col_idx) ownership.
@@ -65,7 +70,7 @@ class matrix
         /**
          * @brief rebuilds a valid handle according to csr vectors.
          */
-        void refresh_handle(); //Thanasis
+        void refresh_handle() const; //Thanasis
     public:
           /**
                 * @brief Default sparse matrix constructor
@@ -80,7 +85,8 @@ class matrix
                 * @param rows sets row size
                 * @param cols sets column size
                 */
-          matrix(const std::vector<T>& values, const std::vector<T>& col_idx, const std::vector<T>& row_idx, size_t rows, size_t cols)
+          template<typename U>
+          matrix(const std::vector<T>& values, const std::vector<U>& col_idx, const std::vector<U>& row_idx, size_t rows, size_t cols)
           : values(values), col_idx(col_idx), row_idx(row_idx), row_size(rows), col_size(cols), ownership(true), valid_handle(false), handle(nullptr)
           {}; //Thanasis
 
@@ -94,9 +100,13 @@ class matrix
           matrix(const sparse_matrix_t h, size_t rows, size_t cols, bool own); //Thanasis
 
           /**
-                * @brief Sparse matrix destructor
-                */
-          ~matrix(); // John
+          * @brief Sparse matrix destructor
+          */
+          ~matrix(){ // Victor
+            if (valid_handle) {
+                  mkl_sparse_destroy(handle);
+                  valid_handle = false;}
+            };
 
           /**
                 * @brief Move constructor, transfers the ownership of matrix A
@@ -116,13 +126,13 @@ class matrix
                 * @brief Matrix copy constructor
                 * @param A A constant sparse matrix reference to be copied 
                 */
-          matrix (matrix const& A); // Victor
+          matrix (matrix const& A); // John
 
           /**
                 * @brief Constructs an N by N identity matrix
                 * @param N the number of rows/columns in the square identity matrix
                 */
-          static matrix I(int N); // Victor
+          static matrix I(int N); // John
           
           //operators
           
@@ -187,25 +197,31 @@ class matrix
           /**
                 * @brief Returns the shape (dimensions) of a matrix
                 */  
-          std::vector<size_t> shape() const;// John
+          std::pair<size_t, size_t> shape() const;// Victor
 
           //sparse specific (for solvers etc)
           /**
                 * @brief Returns a constant vector reference containing the diagonal elements of a matrix. For reading.
                 */
-          const std::vector<T>& diag() const;// Thanasis
+          std::vector<T> diag() const;// Thanasis
 
           /**
                * @brief Prints the values of 2D array
          */
           void print2D(); // Victor
+
+          template<typename U>
+          friend dense::matrix<U> operator*(const sparse::matrix<U>&, const dense::matrix<U>&);
+
+          template<typename U>
+          friend dense::matrix<U> operator*(const dense::matrix<U>&, const sparse::matrix<U>&);
 };
 /**
  * @brief Operator *, multiplies a number by a sparse matrix
  * @param x A numerical primitive used before the operator
  * @tparam U encompasses all primitive numerical data types and T, the matrix type
  */
-template<typename T, typename U>
+template<typename T, typename U ,typename = std::enable_if_t<std::is_arithmetic_v<U>>>
 matrix<T> operator*(U x, const matrix<T>& A); // John
 
 }

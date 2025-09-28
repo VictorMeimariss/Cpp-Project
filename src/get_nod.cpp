@@ -11,7 +11,7 @@ size_t matrix<T>::get_nod() const
 }
 
 // template class matrix<int>;
-template size_t matrix<int>::get_nod() const;
-template size_t matrix<float>::get_nod() const;
-template size_t matrix<std::complex<float>>::get_nod() const;
-template size_t matrix<std::complex<double>>::get_nod() const;
+template size_t dense::matrix<int>::get_nod() const;
+template size_t dense::matrix<float>::get_nod() const;
+template size_t dense::matrix<std::complex<float>>::get_nod() const;
+template size_t dense::matrix<std::complex<double>>::get_nod() const;

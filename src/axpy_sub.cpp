@@ -19,7 +19,7 @@ matrix<T> matrix<T>:: operator-(matrix<T> const& A){
         zaxpy(static_cast<int>(A.values.size()), &a, A.values.data(), 1, B.values.data(), 1);}
     return B;
 }
-template class matrix<float>;
-template class matrix<double>;
-template class matrix<std::complex<float>>;
-template class matrix<std::complex<double>>;
+template class dense::matrix<float>;
+template class dense::matrix<double>;
+template class dense::matrix<std::complex<float>>;
+template class dense::matrix<std::complex<double>>;

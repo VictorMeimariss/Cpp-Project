@@ -15,9 +15,9 @@ void matrix<T>::set_value_at(size_t index, T value){
         }
     }
     
-    throw std::invalid_arguement("Can only set non-zero values");
+    throw std::invalid_argument("Can only set non-zero values");
 }
-template class matrix<float>;
-template class matrix<double>;
-template class matrix<std::complex<float>>;
-template class matrix<std::complex<double>>;
+template class sparse::matrix<float>;
+template class sparse::matrix<double>;
+template class sparse::matrix<std::complex<float>>;
+template class sparse::matrix<std::complex<double>>;

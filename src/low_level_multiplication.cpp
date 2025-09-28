@@ -17,7 +17,7 @@ void matrix<T>::low_level_matrix_multiplication(const CBLAS_TRANSPOSE transa, co
     }
 }
 
-template void matrix<float>::low_level_matrix_multiplication(const CBLAS_TRANSPOSE transa, const CBLAS_TRANSPOSE transb,const float beta, matrix<float> const& A, matrix<float> const &B, matrix<float> &C, const float alpha);
-template void matrix<double>::low_level_matrix_multiplication(const CBLAS_TRANSPOSE transa, const CBLAS_TRANSPOSE transb,const double beta, matrix<double> const& A, matrix<double> const &B, matrix<double> &C, const double alpha);
-template void matrix<std::complex<double>>::low_level_matrix_multiplication(const CBLAS_TRANSPOSE transa, const CBLAS_TRANSPOSE transb,const std::complex<double> beta, matrix<std::complex<double>> const& A, matrix<std::complex<double>> const &B, matrix<std::complex<double>> &C, const std::complex<double> alpha);
-template void matrix<std::complex<float>>::low_level_matrix_multiplication(const CBLAS_TRANSPOSE transa, const CBLAS_TRANSPOSE transb,const std::complex<float> beta, matrix<std::complex<float>> const& A, matrix<std::complex<float>> const &B, matrix<std::complex<float>> &C, const std::complex<float> alpha);
+template void dense::matrix<float>::low_level_matrix_multiplication(const CBLAS_TRANSPOSE transa, const CBLAS_TRANSPOSE transb,const float beta, matrix<float> const& A, matrix<float> const &B, matrix<float> &C, const float alpha);
+template void dense::matrix<double>::low_level_matrix_multiplication(const CBLAS_TRANSPOSE transa, const CBLAS_TRANSPOSE transb,const double beta, matrix<double> const& A, matrix<double> const &B, matrix<double> &C, const double alpha);
+template void dense::matrix<std::complex<double>>::low_level_matrix_multiplication(const CBLAS_TRANSPOSE transa, const CBLAS_TRANSPOSE transb,const std::complex<double> beta, matrix<std::complex<double>> const& A, matrix<std::complex<double>> const &B, matrix<std::complex<double>> &C, const std::complex<double> alpha);
+template void dense::matrix<std::complex<float>>::low_level_matrix_multiplication(const CBLAS_TRANSPOSE transa, const CBLAS_TRANSPOSE transb,const std::complex<float> beta, matrix<std::complex<float>> const& A, matrix<std::complex<float>> const &B, matrix<std::complex<float>> &C, const std::complex<float> alpha);

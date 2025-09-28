@@ -6,7 +6,7 @@ T* matrix<T>::get_values_data(){
     return values.data();
 }
 
-template class matrix<float>;
-template class matrix<double>;
-template class matrix<std::complex<float>>;
-template class matrix<std::complex<double>>;
+template class dense::matrix<float>;
+template class dense::matrix<double>;
+template class dense::matrix<std::complex<float>>;
+template class dense::matrix<std::complex<double>>;

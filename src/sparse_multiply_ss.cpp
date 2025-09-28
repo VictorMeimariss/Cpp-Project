@@ -10,11 +10,11 @@ matrix<T> matrix<T>:: operator*(matrix<T> const& A){
         A.refresh_handle();
     this->valid_handle = true;
     A.valid_handle = true;
-    sparse_handle_t ret;
+    sparse_matrix_t ret;
     sparse_spmm(SPARSE_OPERATION_NON_TRANSPOSE, this->handle, A.handle, &ret);
-    return matrix<T>(ret,this->rows, A.cols, false);
+    return matrix<T>(ret,this->row_size, A.col_size, false);
 }
-template class matrix<float>;
-template class matrix<double>;
-template class matrix<std::complex<float>>;
-template class matrix<std::complex<double>>;
+template class sparse::matrix<float>;
+template class sparse::matrix<double>;
+template class sparse::matrix<std::complex<float>>;
+template class sparse::matrix<std::complex<double>>;

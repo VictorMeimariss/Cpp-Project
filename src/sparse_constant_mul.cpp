@@ -2,22 +2,22 @@
 using namespace sparse;
 
 template <typename T>
-matrix<T> matrix<T>::operator*(T x){
-    const MKL_INT n = this->rows*this->cols;
+sparse::matrix<T> sparse::matrix<T>::operator*(T x){
+    const MKL_INT n = this->row_size*this->col_size;
     std::vector<T> n_vals(this->values); //_scal operates in place
     if constexpr (std::is_same_v<T, float>)
         sscal(n, x, n_vals.data(), 1);
     else if constexpr (std::is_same_v<T, double>)
         dscal(n, x, n_vals.data(), 1);
     else if constexpr (std::is_same_v<T, std::complex<float>>)
-        cscal(n, &x, n_vals.data() 1);
+        cscal(n, &x, n_vals.data(), 1);
     else if constexpr (std::is_same_v<T, std::complex<double>>)
-        zscal(n, &x, n_vals.data() 1);
+        zscal(n, &x, n_vals.data(), 1);
     //reused code from scal_mn.cpp
-    return matrix<T>(n_vals, this->col_idx, this->row_idx, this->rows, this->cols);
+    return sparse::matrix<T>(n_vals, this->col_idx, this->row_idx, this->row_size, this->col_size);
 }
 
-template class matrix<float>;
-template class matrix<double>;
-template class matrix<std::complex<float>>;
-template class matrix<std::complex<double>>;
+template class sparse::matrix<float>;
+template class sparse::matrix<double>;
+template class sparse::matrix<std::complex<float>>;
+template class sparse::matrix<std::complex<double>>;

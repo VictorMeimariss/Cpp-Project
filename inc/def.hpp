@@ -5,6 +5,7 @@
  * @brief Wrapper header file for the blass functions.
  */
 #include <mkl.h>
+#include <mkl_spblas.h>
 
 // Dense blass functions
 #define saxpy cblas_saxpy
@@ -23,9 +24,6 @@
 #define zgemm cblas_zgemm
 
 // Sparse functions
-
-#define MKL_Complex8 std::complex<float>
-#define MKL_Complex16 std::complex<double>
 
 #define sparse_s_create_csr mkl_sparse_s_create_csr
 #define sparse_d_create_csr mkl_sparse_d_create_csr

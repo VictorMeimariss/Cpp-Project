@@ -16,7 +16,7 @@ T matrix<T>::get_value_at(size_t index) const{
     }
     return T{};
 }
-template class matrix<float>;
-template class matrix<double>;
-template class matrix<std::complex<float>>;
-template class matrix<std::complex<double>>;
+template class sparse::matrix<float>;
+template class sparse::matrix<double>;
+template class sparse::matrix<std::complex<float>>;
+template class sparse::matrix<std::complex<double>>;

@@ -8,12 +8,12 @@ const T matrix<T>::operator () (size_t r, size_t c) const{
 
     for (size_t i = row_start; i<row_end; i++){
         if (col_idx[i] == c){
-            return vaules[i];
+            return values[i];
         }
     }
     return T{};
 }
-template class matrix<float>;
-template class matrix<double>;
-template class matrix<std::complex<float>>;
-template class matrix<std::complex<double>>;
+template class sparse::matrix<float>;
+template class sparse::matrix<double>;
+template class sparse::matrix<std::complex<float>>;
+template class sparse::matrix<std::complex<double>>;

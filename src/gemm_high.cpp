@@ -33,7 +33,7 @@ matrix<T> matrix<T>:: operator*(matrix<T> const& A){
                 A.values.data(), A.precomputed_strides[0], &b, B.values.data(), B.precomputed_strides[0]);}
     return B;
 }
-template class matrix<float>;
-template class matrix<double>;
-template class matrix<std::complex<float>>;
-template class matrix<std::complex<double>>;
+template class dense::matrix<float>;
+template class dense::matrix<double>;
+template class dense::matrix<std::complex<float>>;
+template class dense::matrix<std::complex<double>>;

@@ -11,6 +11,11 @@
 #include <complex>
 #include "def.hpp"
 
+namespace sparse {
+    template<typename T>
+    class matrix;  // forward declaration
+}
+
 namespace dense{
 /**
  * @class matrix
@@ -107,7 +112,8 @@ class matrix {
          * @brief Operator *, multiplies two 2D dense matrices
          * @param A A constant matrix reference used after the operator
          */
-        matrix operator*(matrix const& A); // Vic
+        matrix<T> operator*(matrix<T> const& A); // Vic
+
         /**
          * @brief Operator ==, compares two matricies
          * @param A A constant matrix reference used after the operator
@@ -216,7 +222,7 @@ class matrix {
         /**
          * @brief returns a constant pointer to the underlying vector array values
          */
-        const T* get_const_values_data();
+        const T* get_const_values_data() const;
         
         /**
          * @brief Prints the values of 2D array
@@ -253,6 +259,12 @@ class matrix {
          * @tparam T encompasses matrix type
          */
         void low_level_matrix_multiplication(const CBLAS_TRANSPOSE transa, const CBLAS_TRANSPOSE transb, const T beta, matrix<T> const &A, matrix<T> const &B, matrix<T> &C, const T alpha);    
+        
+        // template<typename U>
+        // friend dense::matrix<U> operator*(const sparse::matrix<U>&, const dense::matrix<U>&);
+
+        // template<typename U>
+        // friend dense::matrix<U> operator*(const dense::matrix<U>&, const sparse::matrix<U>&);
         };
     /**
      * @brief Operator *, multiplies a number by a dense matrix
@@ -262,4 +274,4 @@ class matrix {
     template<typename T, typename U>
     matrix<T> operator*(U x, const matrix<T>& A);
 }
-    #endif
+#endif
