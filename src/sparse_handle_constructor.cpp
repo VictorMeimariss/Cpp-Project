@@ -1,4 +1,5 @@
 #include "../inc/sparse.hpp"
+#include <algorithm>
 using namespace sparse;
 
 template <typename T>
@@ -54,6 +55,8 @@ matrix<T>::matrix(const sparse_matrix_t h, size_t rows, size_t cols, bool own){
         row_idx[i+1] = row_end[i];
     }
     this->row_idx = std::move(row_idx);
+    this->row_size = (size_t)row_idx.size()-1;
+    this->col_size = (size_t) *std::max_element(col_idx.begin(), col_idx.end())+1;
 }
 
 template class sparse::matrix<float>;
