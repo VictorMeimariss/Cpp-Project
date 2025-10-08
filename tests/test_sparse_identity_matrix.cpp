@@ -9,8 +9,7 @@ int main()
     int N = 5;
     std::cout << "Sparse Identity Matrix size: " << N << std::endl;
 
-    matrix<float> A;
-    A.I(N);
+    matrix<float> A = matrix<float>::I(N);
 
-    
+    A.print2D();
 }
