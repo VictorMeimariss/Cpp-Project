@@ -24,3 +24,8 @@ void matrix<T>::print2D()
 
     std::cout << std::endl;
 }
+
+template class sparse::matrix<float>;
+template class sparse::matrix<double>;
+template class sparse::matrix<std::complex<float>>;
+template class sparse::matrix<std::complex<double>>;
