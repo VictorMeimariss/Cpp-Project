@@ -96,6 +96,8 @@ class matrix {
          */
         matrix I(int N); // Thanasis 
 
+        explicit matrix(const sparse::matrix<T>& other); // prevent implicit conversions
+
         /**
          * @brief Operator =, creates a deep copy of the matrix and assigns it
          * @param A A constant matrix reference used after the operator
@@ -112,7 +114,9 @@ class matrix {
          * @brief Operator *, multiplies two 2D dense matrices
          * @param A A constant matrix reference used after the operator
          */
-        matrix<T> operator*(matrix<T> const& A); // Vic
+        template<typename U = T>
+        std::enable_if_t<std::is_same_v<U, T>, matrix<T>>
+        operator*(const matrix<T>& A) const; // Vic
 
         /**
          * @brief Operator ==, compares two matricies
@@ -258,13 +262,7 @@ class matrix {
          * @brief Low level implementation of matrix multiplication using BLAS. documentation at https://www.intel.com/content/www/us/en/docs/onemkl/developer-reference-c/2024-1/cblas-gemm-001.html#GUID-97718E5C-6E0A-44F0-B2B1-A551F0F164B2
          * @tparam T encompasses matrix type
          */
-        void low_level_matrix_multiplication(const CBLAS_TRANSPOSE transa, const CBLAS_TRANSPOSE transb, const T beta, matrix<T> const &A, matrix<T> const &B, matrix<T> &C, const T alpha);    
-        
-        // template<typename U>
-        // friend dense::matrix<U> operator*(const sparse::matrix<U>&, const dense::matrix<U>&);
-
-        // template<typename U>
-        // friend dense::matrix<U> operator*(const dense::matrix<U>&, const sparse::matrix<U>&);
+        void low_level_matrix_multiplication(const CBLAS_TRANSPOSE transa, const CBLAS_TRANSPOSE transb, const T beta, matrix<T> const &A, matrix<T> const &B, matrix<T> &C, const T alpha);
         };
     /**
      * @brief Operator *, multiplies a number by a dense matrix
@@ -272,6 +270,6 @@ class matrix {
      * @tparam U encompasses all primitive numerical data types and T, the matrix type
      */
     template<typename T, typename U>
-    matrix<T> operator*(U x, const matrix<T>& A);
+    matrix<T> operator*(U x, const matrix<T>& A); // Victor
 }
 #endif

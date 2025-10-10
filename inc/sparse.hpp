@@ -207,14 +207,24 @@ class matrix
 
           /**
                * @brief Prints the values of 2D array
-         */
-          void print2D(); // Victor
+          */
+          void print2D(); // John
 
-          template<typename U>
-          friend dense::matrix<U> operator*(const sparse::matrix<U>&, const dense::matrix<U>&);
+          /**
+          * @brief Returns MKL handle (const access for read-only use in operations).
+          */
+           const sparse_matrix_t& get_handle() const { return handle; }
 
-          template<typename U>
-          friend dense::matrix<U> operator*(const dense::matrix<U>&, const sparse::matrix<U>&);
+          /**
+          * @brief Returns whether handle is valid.
+          */
+          bool is_handle_valid() const { return valid_handle; }
+
+          /**
+          * @brief Rebuilds MKL handle if needed.
+          */
+          void ensure_handle() const { if (!valid_handle) refresh_handle(); }
+
 };
 /**
  * @brief Operator *, multiplies a number by a sparse matrix
@@ -222,7 +232,7 @@ class matrix
  * @tparam U encompasses all primitive numerical data types and T, the matrix type
  */
 template<typename T, typename U ,typename = std::enable_if_t<std::is_arithmetic_v<U>>>
-matrix<T> operator*(U x, const matrix<T>& A); // John
+matrix<T> operator*(U x, const matrix<T>& A); // Victor
 
 }
 #endif
