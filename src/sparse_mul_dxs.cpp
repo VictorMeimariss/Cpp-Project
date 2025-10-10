@@ -1,55 +1,49 @@
 #include "matrix.hpp"
-#include <mkl.h> //Chat gbt written
+#include <mkl.h>
 
 namespace dense {
+
 template<typename T>
 dense::matrix<T> operator*(const dense::matrix<T>& A, const sparse::matrix<T>& B) {
     if (!B.is_handle_valid()) B.ensure_handle();
-    dense::matrix<T> C(A.get_dim_size(0), B.shape().second);
-
-    // Matrix descriptor for MKL
-    matrix_descr descr{};
-    descr.type = SPARSE_MATRIX_TYPE_GENERAL;
-    descr.mode = SPARSE_FILL_MODE_FULL;
-    descr.diag = SPARSE_DIAG_NON_UNIT;
 
     const MKL_INT m = A.get_dim_size(0);
     const MKL_INT k = A.get_dim_size(1);
     const MKL_INT n = B.shape().second;
 
-    // Build A^T (dense, k x m)
-    std::vector<T> At(k * m);
-    for (size_t i = 0; i < k; ++i)
-        for (size_t j = 0; j < m; ++j)
-            At[i * m + j] = A.get_value_at(j * k + i);
+    dense::matrix<T> C(m, n);
 
-    // Buffer for C^T (n x m)
-    std::vector<T> Ct(n * m, T(0));
+    // Matrix descriptor
+    matrix_descr descr{};
+    descr.type = SPARSE_MATRIX_TYPE_GENERAL;
+    descr.mode = SPARSE_FILL_MODE_FULL;
+    descr.diag = SPARSE_DIAG_NON_UNIT;
 
     if constexpr (std::is_same_v<T, float>) {
         const float a = 1.0f, b = 0.0f;
-        sparse_s_mm(SPARSE_OPERATION_TRANSPOSE, a, B.get_handle(), descr, SPARSE_LAYOUT_ROW_MAJOR,
-                    At.data(), m, m, b, Ct.data(), m);
+        sparse_s_mm(SPARSE_OPERATION_TRANSPOSE, a, B.get_handle(), descr,
+                    SPARSE_LAYOUT_ROW_MAJOR, A.get_const_values_data(),
+                    k, n, b, C.get_values_data(), n);
     } else if constexpr (std::is_same_v<T, double>) {
         const double a = 1.0, b = 0.0;
-        sparse_d_mm(SPARSE_OPERATION_TRANSPOSE, a, B.get_handle(), descr, SPARSE_LAYOUT_ROW_MAJOR,
-                    At.data(), m, m, b, Ct.data(), m);
+        sparse_d_mm(SPARSE_OPERATION_TRANSPOSE, a, B.get_handle(), descr,
+                    SPARSE_LAYOUT_ROW_MAJOR, A.get_const_values_data(),
+                    k, n, b, C.get_values_data(), n);
     } else if constexpr (std::is_same_v<T, std::complex<float>>) {
         const MKL_Complex8 a = {1, 0}, b = {0, 0};
-        sparse_c_mm(SPARSE_OPERATION_TRANSPOSE, a, B.get_handle(), descr, SPARSE_LAYOUT_ROW_MAJOR,
-                    reinterpret_cast<const MKL_Complex8*>(At.data()), m, m, b,
-                    reinterpret_cast<MKL_Complex8*>(Ct.data()), m);
+        sparse_c_mm(SPARSE_OPERATION_TRANSPOSE, a, B.get_handle(), descr,
+                    SPARSE_LAYOUT_ROW_MAJOR,
+                    reinterpret_cast<const MKL_Complex8*>(A.get_const_values_data()),
+                    k, n, b,
+                    reinterpret_cast<MKL_Complex8*>(C.get_values_data()), n);
     } else if constexpr (std::is_same_v<T, std::complex<double>>) {
         const MKL_Complex16 a = {1, 0}, b = {0, 0};
-        sparse_z_mm(SPARSE_OPERATION_TRANSPOSE, a, B.get_handle(), descr, SPARSE_LAYOUT_ROW_MAJOR,
-                    reinterpret_cast<const MKL_Complex16*>(At.data()), m, m, b,
-                    reinterpret_cast<MKL_Complex16*>(Ct.data()), m);
+        sparse_z_mm(SPARSE_OPERATION_TRANSPOSE, a, B.get_handle(), descr,
+                    SPARSE_LAYOUT_ROW_MAJOR,
+                    reinterpret_cast<const MKL_Complex16*>(A.get_const_values_data()),
+                    k, n, b,
+                    reinterpret_cast<MKL_Complex16*>(C.get_values_data()), n);
     }
-
-    // Transpose Ct (n x m) -> C (m x n)
-    for (size_t i = 0; i < m; ++i)
-        for (size_t j = 0; j < n; ++j)
-            C.set_value_at(i * n + j, Ct[j * m + i]);
 
     return C;
 }
@@ -59,4 +53,4 @@ template dense::matrix<double> operator*(const dense::matrix<double>&, const spa
 template dense::matrix<std::complex<float>> operator*(const dense::matrix<std::complex<float>>&, const sparse::matrix<std::complex<float>>&);
 template dense::matrix<std::complex<double>> operator*(const dense::matrix<std::complex<double>>&, const sparse::matrix<std::complex<double>>&);
 
-}
+} 

@@ -96,8 +96,6 @@ class matrix {
          */
         matrix I(int N); // Thanasis 
 
-        explicit matrix(const sparse::matrix<T>& other); // prevent implicit conversions
-
         /**
          * @brief Operator =, creates a deep copy of the matrix and assigns it
          * @param A A constant matrix reference used after the operator
@@ -150,6 +148,11 @@ class matrix {
          * @param A A constant matrix reference used after the operator
          */
         matrix operator-(matrix const& A); //Ioannis
+
+        /**
+         * @brief Function that transposes the matrix in 2D
+         */
+        matrix transpose() const; // Victor
 
         /**
          * @brief Operator /, Performs column-wise augmentation

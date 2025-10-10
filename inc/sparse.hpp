@@ -159,7 +159,7 @@ class matrix
                 * @param x A numerical primitive used after the operator
                 * @tparam T encompasses all primitive numerical data types
                 */
-          matrix operator*(T x);// Victor
+          matrix operator*(T x);// Victor pending
 
           /**
                 * @brief Operator -, subtracts the values of second matrix from the first, both must have same size and dimensions
@@ -213,17 +213,22 @@ class matrix
           /**
           * @brief Returns MKL handle (const access for read-only use in operations).
           */
-           const sparse_matrix_t& get_handle() const { return handle; }
+           const sparse_matrix_t& get_handle() const { return handle; } // Victor
 
           /**
           * @brief Returns whether handle is valid.
           */
-          bool is_handle_valid() const { return valid_handle; }
+          bool is_handle_valid() const { return valid_handle; } // Victor
 
           /**
           * @brief Rebuilds MKL handle if needed.
           */
-          void ensure_handle() const { if (!valid_handle) refresh_handle(); }
+          void ensure_handle() const { if (!valid_handle) refresh_handle(); } // Victor
+          
+          /**
+          * @brief Function that transposes the matrix in 2D
+          */
+          matrix transpose() const; // Victor
 
 };
 /**
@@ -232,7 +237,7 @@ class matrix
  * @tparam U encompasses all primitive numerical data types and T, the matrix type
  */
 template<typename T, typename U ,typename = std::enable_if_t<std::is_arithmetic_v<U>>>
-matrix<T> operator*(U x, const matrix<T>& A); // Victor
+matrix<T> operator*(U x, const matrix<T>& A); // Victor pending
 
 }
 #endif

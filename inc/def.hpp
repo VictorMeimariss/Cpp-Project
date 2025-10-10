@@ -23,6 +23,11 @@
 #define cgemm cblas_cgemm
 #define zgemm cblas_zgemm
 
+#define somatcopy mkl_somatcopy
+#define domatcopy mkl_domatcopy
+#define comatcopy mkl_comatcopy
+#define zomatcopy mkl_zomatcopy
+
 // Sparse functions
 
 #define sparse_s_create_csr mkl_sparse_s_create_csr
@@ -32,7 +37,14 @@
 
 #define sparse_destroy mkl_sparse_destroy
 
+#define sparse_convert_csr mkl_sparse_convert_csr
+
 #define sparse_spmm mkl_sparse_spmm
+
+#define sparse_s_export_csr mkl_sparse_s_export_csr
+#define sparse_d_export_csr mkl_sparse_d_export_csr
+#define sparse_c_export_csr mkl_sparse_c_export_csr
+#define sparse_z_export_csr mkl_sparse_z_export_csr
 
 #define sparse_s_export_csr mkl_sparse_s_export_csr
 #define sparse_d_export_csr mkl_sparse_d_export_csr
