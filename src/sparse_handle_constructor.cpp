@@ -7,6 +7,9 @@ matrix<T>::matrix(const sparse_matrix_t h, size_t rows, size_t cols, bool own){
     this->handle = h;
     this->valid_handle = true;
     this->ownership = own;
+    this->row_size = rows;
+    this->col_size = cols;
+
 
     sparse_index_base_t indexing;
     MKL_INT mkl_rows, mkl_cols;
@@ -55,8 +58,6 @@ matrix<T>::matrix(const sparse_matrix_t h, size_t rows, size_t cols, bool own){
         row_idx[i+1] = row_end[i];
     }
     this->row_idx = std::move(row_idx);
-    this->row_size = (size_t)row_idx.size()-1;
-    this->col_size = (size_t) *std::max_element(col_idx.begin(), col_idx.end())+1;
 }
 
 template class sparse::matrix<float>;
