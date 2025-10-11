@@ -65,3 +65,8 @@
 #define sparse_d_mm mkl_sparse_d_mm
 #define sparse_c_mm mkl_sparse_c_mm
 #define sparse_z_mm mkl_sparse_z_mm
+
+#define sparse_s_mv mkl_sparse_s_mv
+#define sparse_d_mv mkl_sparse_d_mv
+#define sparse_c_mv mkl_sparse_c_mv
+#define sparse_z_mv mkl_sparse_z_mv
