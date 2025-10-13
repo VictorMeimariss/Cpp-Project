@@ -215,11 +215,6 @@ class matrix
            const sparse_matrix_t& get_handle() const { return handle; } // Victor
 
           /**
-          * @brief Returns whether handle is valid.
-          */
-          bool is_handle_valid() const { return valid_handle; } // Victor
-
-          /**
           * @brief Invalidates handle.
           */
           void invalidate_handle() { handle = nullptr; valid_handle = false; } // Victor
