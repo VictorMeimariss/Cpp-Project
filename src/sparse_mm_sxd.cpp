@@ -4,7 +4,7 @@
 namespace sparse{
 template<typename T>
 dense::matrix<T> operator*(const sparse::matrix<T>& B, const dense::matrix<T>& A){
-    if(!B.is_handle_valid()) B.ensure_handle();
+    B.refresh_handle();
     dense::matrix<T> C(B.shape().first, A.get_dim_size(1));
 
     // Matrix description for mkl_sparse_?_mm

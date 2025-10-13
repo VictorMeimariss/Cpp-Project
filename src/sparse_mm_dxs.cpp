@@ -5,7 +5,7 @@ namespace dense {
 
 template<typename T>
 dense::matrix<T> operator*(const dense::matrix<T>& A, const sparse::matrix<T>& B) {
-    if (!B.is_handle_valid()) B.ensure_handle();
+    B.refresh_handle();
 
     // Εxisting sparse × dense operator
     auto result = (B.transpose() * A.transpose()).transpose();
