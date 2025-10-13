@@ -67,16 +67,15 @@ class matrix
          */
         bool ownership;
 
-        /**
-         * @brief rebuilds a valid handle according to csr vectors.
-         */
-        void refresh_handle() const; //Thanasis
     public:
           /**
                 * @brief Default sparse matrix constructor
                 */
           matrix() = default;
-          
+        /**
+         * @brief rebuilds a valid handle according to csr vectors.
+         */
+          void refresh_handle() const; //Thanasis
           /**
                 * @brief Sparse matrix constructor
                 * @param values sets the values vector
@@ -219,11 +218,6 @@ class matrix
           * @brief Returns whether handle is valid.
           */
           bool is_handle_valid() const { return valid_handle; } // Victor
-
-          /**
-          * @brief Rebuilds MKL handle.
-          */
-          void ensure_handle() const { if (!valid_handle) refresh_handle();} // Victor
 
           /**
           * @brief Invalidates handle.
