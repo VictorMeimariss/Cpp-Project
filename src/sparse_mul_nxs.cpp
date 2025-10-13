@@ -4,7 +4,7 @@ namespace sparse {
 
 template <typename T, typename U>
 matrix<T> operator*(U x, const matrix<T>& A){
-    if (!A.is_handle_valid()) A.refresh_handle();
+    A.refresh_handle();
     matrix<T> result(A);
 
     auto& vals = result.get_values_data();
