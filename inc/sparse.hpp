@@ -165,7 +165,7 @@ class matrix
                 * @param x A vector used after the operator
                 * @tparam T encompasses all primitive numerical data types
                 */
-          matrix operator*(std::vector<T> x);// John
+          std::vector<T> operator*(const std::vector<T> x);// John
 
           /**
                 * @brief Operator -, subtracts the values of second matrix from the first, both must have same size and dimensions

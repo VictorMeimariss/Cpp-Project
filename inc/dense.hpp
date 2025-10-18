@@ -144,11 +144,11 @@ class matrix {
         matrix operator*(T x);
 
         /**
-         * @brief Operator *, multiplies a matrix by a vector
+         * @brief Operator *, multiplies a matrix of n collumns by a vector of n rows
          * @param x A vector used after the operator
          * @tparam T encompasses all primitive numerical data types //Victor
          */
-        matrix operator*(std::vector<T> x);
+        std::vector<T> operator*(const std::vector<T> x);
 
         /**
          * @brief Operator -, subtracts the values of second matrix from the first, both must have same size and dimensions
@@ -283,11 +283,11 @@ class matrix {
     matrix<T> operator*(U x, const matrix<T>& A); // Victor
 
     /**
-     * @brief Operator *, multiplies a vector by a dense matrix
+     * @brief Operator *, multiplies a vector of n collumns by a dense matrix of n rows
      * @param x A vector used before the operator
      * @tparam T encompasses all primitive numerical data types and the matrix type
      */
     template<typename T>
-    matrix<T> operator*(std::vector<T> x, const matrix<T>& A); // John
+    std::vector<T> operator*(std::vector<T> x, const matrix<T>& A); // John
 }
 #endif

@@ -23,6 +23,11 @@
 #define cgemm cblas_cgemm
 #define zgemm cblas_zgemm
 
+#define sgemv cblas_sgemv
+#define dgemv cblas_dgemv
+#define cgemv cblas_cgemv
+#define zgemv cblas_zgemv
+
 #define somatcopy mkl_somatcopy
 #define domatcopy mkl_domatcopy
 #define comatcopy mkl_comatcopy
