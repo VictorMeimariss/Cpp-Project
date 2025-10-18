@@ -161,6 +161,13 @@ class matrix
           matrix operator*(T x);// Victor
 
           /**
+                * @brief Operator *, multiplies a sparse matrix by a vector
+                * @param x A vector used after the operator
+                * @tparam T encompasses all primitive numerical data types
+                */
+          matrix operator*(std::vector<T> x);// John
+
+          /**
                 * @brief Operator -, subtracts the values of second matrix from the first, both must have same size and dimensions
                 * @param A A constant matrix reference used after the operator
                 */
@@ -242,6 +249,14 @@ class matrix
  */
 template<typename T, typename U>
 matrix<T> operator*(U x, const matrix<T>& A); // Victor
+
+/**
+ * @brief Operator *, multiplies a vector by a sparse matrix
+ * @param x A vector used before the operator
+ * @tparam U encompasses all primitive numerical data types and T, the matrix type
+ */
+template<typename T, typename U>
+matrix<T> operator*(std::vector<U> x, const matrix<T>& A); // Victor
 
 }
 #endif

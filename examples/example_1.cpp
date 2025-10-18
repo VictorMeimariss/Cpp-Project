@@ -1,7 +1,7 @@
 #include "dense.hpp"
 
 int main(){
-    matrix<float> A, B, C, D, E;
+    dense::matrix<float> A, B, C, D, E;
     A.reshape(2, 1);
     A.set_value_at(0, 1);
     A.set_value_at(1, 1);
