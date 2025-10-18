@@ -256,7 +256,7 @@ matrix<T> operator*(U x, const matrix<T>& A); // Victor
  * @tparam T encompasses all primitive numerical data types and the matrix type
  */
 template<typename T>
-std::vector<T> operator*(std::vector<T> x, const matrix<T>& A); // Victor
+std::vector<T> operator*(const std::vector<T> x, const matrix<T>& A); // Victor
 
 }
 #endif

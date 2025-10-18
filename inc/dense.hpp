@@ -288,6 +288,6 @@ class matrix {
      * @tparam T encompasses all primitive numerical data types and the matrix type
      */
     template<typename T>
-    std::vector<T> operator*(std::vector<T> x, const matrix<T>& A); // John
+    std::vector<T> operator*(const std::vector<T> x, const matrix<T>& A); // John
 }
 #endif
