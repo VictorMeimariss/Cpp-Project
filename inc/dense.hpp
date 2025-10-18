@@ -285,9 +285,9 @@ class matrix {
     /**
      * @brief Operator *, multiplies a vector by a dense matrix
      * @param x A vector used before the operator
-     * @tparam U encompasses all primitive numerical data types and T, the matrix type
+     * @tparam T encompasses all primitive numerical data types and the matrix type
      */
-    template<typename T, typename U>
-    matrix<T> operator*(std::vector<U> x, const matrix<T>& A); // John
+    template<typename T>
+    matrix<T> operator*(std::vector<T> x, const matrix<T>& A); // John
 }
 #endif

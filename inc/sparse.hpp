@@ -253,10 +253,10 @@ matrix<T> operator*(U x, const matrix<T>& A); // Victor
 /**
  * @brief Operator *, multiplies a vector by a sparse matrix
  * @param x A vector used before the operator
- * @tparam U encompasses all primitive numerical data types and T, the matrix type
+ * @tparam T encompasses all primitive numerical data types and the matrix type
  */
-template<typename T, typename U>
-matrix<T> operator*(std::vector<U> x, const matrix<T>& A); // Victor
+template<typename T>
+std::vector<T> operator*(std::vector<T> x, const matrix<T>& A); // Victor
 
 }
 #endif
