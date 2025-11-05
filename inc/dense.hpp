@@ -250,30 +250,32 @@ class matrix {
         */
        template<typename... Dims>
        void reshape(Dims... dims){
-        //Clear previous dimensions size
-        dim_size.clear();
-        // Add dimension sizes to the dim_size vector
-        (dim_size.push_back(dims), ...);
+            //Clear previous dimensions size
+            dim_size.clear();
+            // Add dimension sizes to the dim_size vector
+            (dim_size.push_back(dims), ...);
 
-        // Resizing to the size of the matrix using a fold expression and initialising to 0.0.
-        values.resize((static_cast<size_t>(1) * ... * static_cast<size_t>(dims)));
+            // Resizing to the size of the matrix using a fold expression and initialising to 0.0.
+            values.resize((static_cast<size_t>(1) * ... * static_cast<size_t>(dims)));
 
-        // Resizing to number of dimensions
-        precomputed_strides.resize(dim_size.size());
-        if (!precomputed_strides.empty()) { 
-            precomputed_strides.back() = 1; // Last dimension has stride 1
+            // Resizing to number of dimensions
+            precomputed_strides.resize(dim_size.size());
+            if (!precomputed_strides.empty()) { 
+                precomputed_strides.back() = 1; // Last dimension has stride 1
 
-            for (int i = precomputed_strides.size() - 2; i >= 0; --i) {
-                precomputed_strides[i] = precomputed_strides[i + 1] * dim_size[i + 1];
+                for (int i = precomputed_strides.size() - 2; i >= 0; --i) {
+                    precomputed_strides[i] = precomputed_strides[i + 1] * dim_size[i + 1];
+                }
             }
-        }
         };
+        
         /**
          * @brief Low level implementation of matrix multiplication using BLAS. documentation at https://www.intel.com/content/www/us/en/docs/onemkl/developer-reference-c/2024-1/cblas-gemm-001.html#GUID-97718E5C-6E0A-44F0-B2B1-A551F0F164B2
          * @tparam T encompasses matrix type
          */
         void low_level_matrix_multiplication(const CBLAS_TRANSPOSE transa, const CBLAS_TRANSPOSE transb, const T beta, matrix<T> const &A, matrix<T> const &B, matrix<T> &C, const T alpha);
-        };
+    };
+
     /**
      * @brief Operator *, multiplies a number by a dense matrix
      * @param x A numerical primitive used before the operator
