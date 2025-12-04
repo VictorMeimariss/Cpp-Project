@@ -215,6 +215,10 @@ class matrix
                * @brief Prints the values of 2D array
           */
           void print2D(); // John
+          /**
+               * @brief Prints the sparse matrix row by row
+          */
+          void print_matrix(); // Thanasis
 
           /**
           * @brief Returns MKL handle (const access for read-only use in operations).
