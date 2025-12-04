@@ -13,6 +13,7 @@ void matrix<T>::set_value_at(size_t index, T value){
         if (col_idx[i] == c){
             values[i] = value;
             valid_handle = false;
+            return;
         }
     }
     
