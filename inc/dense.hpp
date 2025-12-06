@@ -291,5 +291,7 @@ class matrix {
      */
     template<typename T>
     std::vector<T> operator*(const std::vector<T> x, const matrix<T>& A); // John
+    template<typename T>
+    std::vector<T> LU_solver (dense::matrix<T>& A,std::vector<T> b); // Thanasis
 }
 #endif

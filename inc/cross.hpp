@@ -8,6 +8,7 @@
 
 #include "dense.hpp"
 #include "sparse.hpp"
+#include <mkl.h>
 
 namespace dense{
 /**
