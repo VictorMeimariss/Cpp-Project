@@ -14,20 +14,20 @@ std::vector<T> operator*(std::vector<T> x, const matrix<T>& A){
     descr.diag = SPARSE_DIAG_NON_UNIT;
 
     if constexpr(std::is_same_v<T, float>){
-        sparse_s_mv(SPARSE_OPERATION_TRANSPOSE, 1.0f, A.get_handle(), descr, x.data(), 0.0f, result.data());
+        sparse_s_mv(SPARSE_OPERATION_NON_TRANSPOSE, 1.0f, A.get_handle(), descr, x.data(), 0.0f, result.data());
     }
     else if constexpr(std::is_same_v<T, double>){
-        sparse_d_mv(SPARSE_OPERATION_TRANSPOSE, 1.0, A.get_handle(), descr, x.data(), 0.0, result.data());
+        sparse_d_mv(SPARSE_OPERATION_NON_TRANSPOSE, 1.0, A.get_handle(), descr, x.data(), 0.0, result.data());
     }
     else if constexpr(std::is_same_v<T, std::complex<float>>){
         MKL_Complex8 a = {1.0f, 0.0f};
         MKL_Complex8 b = {0.0f, 0.0f};
-        sparse_c_mv(SPARSE_OPERATION_TRANSPOSE, a, A.get_handle(), descr, reinterpret_cast<const MKL_Complex8*>(x.data()), b, reinterpret_cast<MKL_Complex8*>(result.data()));
+        sparse_c_mv(SPARSE_OPERATION_NON_TRANSPOSE, a, A.get_handle(), descr, reinterpret_cast<const MKL_Complex8*>(x.data()), b, reinterpret_cast<MKL_Complex8*>(result.data()));
     }
     else if constexpr(std::is_same_v<T, std::complex<double>>){
         MKL_Complex16 a = {1.0, 0.0};
         MKL_Complex16 b = {0.0, 0.0};
-        sparse_z_mv(SPARSE_OPERATION_TRANSPOSE, a, A.get_handle(), descr, reinterpret_cast<const MKL_Complex16*>(x.data()), b, reinterpret_cast<MKL_Complex16*>(result.data()));
+        sparse_z_mv(SPARSE_OPERATION_NON_TRANSPOSE, a, A.get_handle(), descr, reinterpret_cast<const MKL_Complex16*>(x.data()), b, reinterpret_cast<MKL_Complex16*>(result.data()));
     }
     return result;
 }
