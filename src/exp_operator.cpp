@@ -57,6 +57,8 @@ matrix<T> matrix<T>::operator ^ (int n){
     }
 }
 template class dense::matrix<float>;
+template class dense::matrix<int>;
+template class dense::matrix<unsigned long long>;
 template class dense::matrix<double>;
 template class dense::matrix<std::complex<float>>;
 template class dense::matrix<std::complex<double>>;
