@@ -12,8 +12,8 @@ std::vector<double> FGMRES_dsolve(matrix<double> & A, std::vector<double> & b, s
     }
 
     size_t mem2 = b.size()*sizeof(double);
-    double* b_data = (double*) mkl_malloc(mem2, 64);
-    memcpy(b_data, b.data(), mem2);
+    double* b_save = (double*) mkl_malloc(mem2, 64);
+    memcpy(b_save, b.data(), mem2);
 
     int n = (int) r;
     int RCI_request;
@@ -34,10 +34,10 @@ std::vector<double> FGMRES_dsolve(matrix<double> & A, std::vector<double> & b, s
         }
         if (RCI_request == 2){
             ipar[12]=1;
-            // retrieve solution to b_data
-            dfgmres_get(&n, x.data(), b_data, &RCI_request, ipar, dpar, tmp, &itercount);
+            // retrieve solution to b_save
+            dfgmres_get(&n, x.data(), b_save, &RCI_request, ipar, dpar, tmp, &itercount);
             //perform simple residual test
-            std::vector<double> sol(b_data, b_data + n);
+            std::vector<double> sol(b_save, b_save + n);
             cblas_daxpy((MKL_INT) n, -1.0, b.data(), 0, (sol*A).data(), 0);
             double res = cblas_dnrm2((MKL_INT) n, (sol*A).data(), 0);
             if (res > epsilon){
@@ -61,6 +61,6 @@ std::vector<double> FGMRES_dsolve(matrix<double> & A, std::vector<double> & b, s
         }
     }
     ipar[12]=0;
-    dfgmres_get(&n, x.data(), b.data(), &RCI_request, ipar, dpar, tmp, &itercount); // need original b, not b_data which is different
+    dfgmres_get(&n, x.data(), b.data(), &RCI_request, ipar, dpar, tmp, &itercount); // need original b, not b_save which is different
     return x;
 }
