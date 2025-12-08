@@ -87,8 +87,16 @@ class matrix {
 
         /**
          * @brief Destructor, deletes data associated with the matrix
+
          */
-         ~matrix() = default; // Vic
+        ~matrix() = default; // Vic
+        /**
+         * @brief Vectors constructor, builds a new matrix from the 3 vectors
+           @param v vector storing all matrix values.
+           @param d storing the size of each dimension.
+           @param p storing the number of elements separating adjacent values in each dimension of the tensor
+         */
+        matrix (std::vector<T> v, std::vector<size_t> d, std::vector<int> p); //Thanasis
 
         /**
          * @brief Constructs an N by N identity matrix
@@ -159,8 +167,13 @@ class matrix {
         /**
          * @brief Function that transposes the matrix in 2D
          */
-        matrix transpose() const; // Victor
 
+        matrix transpose() const; // Victor
+        /**
+         * @brief Returns A^n
+           @param A n integer power, negative values return (inv(A))^(-n)
+         */
+        matrix operator ^(int n); //Thanasis
         /**
          * @brief Operator /, Performs column-wise augmentation
          * @param A A constant matrix reference to be combined.
