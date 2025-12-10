@@ -62,5 +62,6 @@ std::vector<double> FGMRES_dsolve(matrix<double> & A, std::vector<double> & b, s
     }
     ipar[12]=0;
     dfgmres_get(&n, x.data(), b.data(), &RCI_request, ipar, dpar, tmp, &itercount); // need original b, not b_save which is different
+    mkl_free(b_save);
     return x;
 }
