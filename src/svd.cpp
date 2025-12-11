@@ -15,9 +15,7 @@ void matrix<T>::svd(matrix<T>& u, matrix<T>& s, matrix<T>& v){
     size_t mem1 = n*m*sizeof(T);
     T* A_data = (T*) mkl_malloc(mem1, 64);
     memcpy(A_data, values.data(), mem1);
-
-    std::cout<<m<<' '<<n<<std::endl;
-
+    
     std::vector<T> u_vec(m*m, 0);
     std::vector<T> v_vec(n*n, 0);
     if constexpr (std::is_same_v<T, float>){
