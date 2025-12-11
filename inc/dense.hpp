@@ -46,6 +46,7 @@ class matrix {
          * Initializes an empty matrix with zero dimensions and size.
          */
         matrix (){};
+        matrix(std::vector<T> diag, int n, int m);
 
         /**
          * @brief Constructor with variadic template input for dimensions.
@@ -221,6 +222,7 @@ class matrix {
          * @param index The linear 0-based index in the flat values vector.
          */
         T get_value_at(size_t index) const; // Thanasis
+        void svd(matrix<T>& u, matrix<T>& s, matrix<T>& v);
 
         /**
          * @brief Gets all values data.
