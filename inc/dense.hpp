@@ -46,6 +46,13 @@ class matrix {
          * Initializes an empty matrix with zero dimensions and size.
          */
         matrix (){};
+        /**
+         * @brief Constructs a diagonal matrix
+         * @param diag An std vector storing the diagonal elements
+         * @param n The number of rows
+         * @param m The number of columns
+         */
+        matrix(std::vector<T> diag, int n, int m);
 
         /**
          * @brief Constructor with variadic template input for dimensions.
@@ -221,6 +228,13 @@ class matrix {
          * @param index The linear 0-based index in the flat values vector.
          */
         T get_value_at(size_t index) const; // Thanasis
+        /**
+         * @brief Computes the SVD of the matrix
+         * @param u A dense matrix, will store the left side singular vectors
+         * @param s A dense matrix, will store the singular values in its main diagonal
+         * @param v A dense matrix, will store the right side singular vectors
+         */
+        void svd(matrix<T>& u, matrix<T>& s, matrix<T>& v); // Thansis
 
         /**
          * @brief Gets all values data.
