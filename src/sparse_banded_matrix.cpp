@@ -32,7 +32,8 @@ matrix<T> matrix<T>::banded(int N, int kl, int ku, T val)
         }
     }
 
-    row_idx[N] = current_nnz_count; // // The last element of the row_idx vector in CSR must always be nnz, i.e. the size of the value vector
+    row_idx[N] = current_nnz_count; // The last element of the row_idx vector in CSR must always be nnz, 
+                                    // i.e. the size of the value vector
 
     // Shrink the over-estimated reserved memory
     values.shrink_to_fit();
