@@ -265,4 +265,12 @@ std::vector<T> operator*(const std::vector<T> x, const matrix<T>& A); // Victor
 }
 std::vector<double> FGMRES_dsolve(sparse::matrix<double> & A, std::vector<double> & b, std::vector<double> & x0);
 
+/**
+ * @brief Double Conjugate Gradient solver for a single right-hand side (SRHS) system
+ * @param A SPD Coefficient Matrix 
+ * @param b RHS vector
+ * @param x0 Initial guess vector (usually its set to 0)
+ */
+std::vector<double> CG_dsolve(matrix<double> & A, std::vector<double> & b, std::vector<double> & x0);
+
 #endif
