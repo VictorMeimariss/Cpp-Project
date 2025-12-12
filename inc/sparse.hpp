@@ -133,7 +133,16 @@ class matrix
                 * @param N the number of rows/columns in the square identity matrix
                 */
           static matrix I(int N); // John
-          
+
+          /**
+           * @brief Contsructs an N by N banded matrix
+           * @param N The number of rows/columns
+           * @param kl The number of elements below the main diagonal
+           * @param ku The number of the elements above the main diagonal
+           * @param val The type <T> value of all the bands
+           */
+          static matrix banded(int N, int kl, int ku, T val);
+
           //operators
           
           /**
