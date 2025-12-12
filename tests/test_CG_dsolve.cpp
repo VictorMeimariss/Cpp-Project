@@ -19,13 +19,10 @@ int main() {
     std::vector<MKL_INT> col = {0, 1,      0, 1, 2,      1, 2, 3,      2, 3, 4,      3, 4};
     std::vector<MKL_INT> row = {0, 2, 5, 8, 11, 13};
 
-    // 2. Setup RHS 'b' with messy floats to test real convergence
     std::vector<double> b = {0.1, 0.5, 0.2, 0.8, 0.3};
     
-    // 3. Initial Guess (Zero vector is fine)
     std::vector<double> x_guess(5, 0.0);
 
-    // 4. Create Matrix and Solve
     sparse::matrix<double> A(val, col, row, 5, 5);
 
     std::vector<double> s = CG_dsolve(A, b, x_guess);
