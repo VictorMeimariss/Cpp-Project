@@ -263,6 +263,7 @@ matrix<T> operator*(U x, const matrix<T>& A); // Victor
 template<typename T>
 std::vector<T> operator*(const std::vector<T> x, const matrix<T>& A); // Victor
 }
+
 std::vector<double> FGMRES_dsolve(sparse::matrix<double> & A, std::vector<double> & b, std::vector<double> & x0);
 
 /**
@@ -271,6 +272,6 @@ std::vector<double> FGMRES_dsolve(sparse::matrix<double> & A, std::vector<double
  * @param b RHS vector
  * @param x0 Initial guess vector (usually its set to 0)
  */
-std::vector<double> CG_dsolve(matrix<double> & A, std::vector<double> & b, std::vector<double> & x0);
+std::vector<double> CG_dsolve(sparse::matrix<double> & A, std::vector<double> & b, std::vector<double> & x0);
 
 #endif

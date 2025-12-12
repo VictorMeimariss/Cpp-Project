@@ -1,4 +1,5 @@
 #include "../inc/sparse.hpp"
+#include <cstring>
 using namespace sparse;
 
 std::vector<double> CG_dsolve(matrix<double> & A, std::vector<double> & b, std::vector<double> & x0)
@@ -13,9 +14,9 @@ std::vector<double> CG_dsolve(matrix<double> & A, std::vector<double> & b, std::
     }
 
     // Initialize CG parameters
-    int n = (int) row;
-    int RCI_request;
-    int ipar[128];
+    MKL_INT n = (MKL_INT) row;
+    MKL_INT RCI_request;
+    MKL_INT ipar[128];
     double dpar[128];
     std::vector<double> tmp(n*4);   // Double array of size (n*4) for SRHS
                                     // We must store tmp on the heap to avoid stack overflow
@@ -44,23 +45,23 @@ std::vector<double> CG_dsolve(matrix<double> & A, std::vector<double> & b, std::
 
         if (RCI_request == -1)
         {
-            std::cout << "Maximum number of iterations was reached, but the relative stopping criterion was not met" << std::endl;
+            std::cout << "Maximum number of iterations was reached, but the relative stopping criterion was not met." << std::endl;
             break;
         }
         else if (RCI_request == -2)
         {
-            std::cout << "Attempted to divide by zero" << std::endl;
+            std::cout << "Attempted to divide by zero!" << std::endl;
             break;
         }
         else if (RCI_request == 1)
         {
-            memcpy(vec.data(), tmp.data(), n*sizeof(double));       // copy temp to vec
+            memcpy(vec.data(), tmp.data(), n*sizeof(double));           // copy temp to vec
             memcpy(tmp.data() + n, (A*vec).data(), n*sizeof(double));   // put the result in the tmp[n:2*n - 1]
             continue;
         }
         else if (RCI_request == 0)
         {
-            std::cout << "Converged succesfully" << std::endl;
+            std::cout << "Converged succesfully!" << std::endl;
             break;
         }
     }
