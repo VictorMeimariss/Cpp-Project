@@ -1,4 +1,16 @@
 cmake_minimum_required(VERSION 3.14)
+
+# Use Intel's compiler for C++ if found
+find_program(ICPX_PATH icpx)
+if(ICPX_PATH)
+    message(STATUS "Intel icpx found. Using: ${ICPX_PATH}")
+    set(CMAKE_CXX_COMPILER ${ICPX_PATH})
+    set(MKL_INTERFACE_LAYER "-lmkl_intel_lp64")
+else()
+    message(STATUS "Intel icx compiler not found! (Did you run source setvars.sh?) Falling back to default system compiler.")
+    set(MKL_INTERFACE_LAYER "-lmkl_gf_lp64")
+endif()
+
 project(Cpp-Project LANGUAGES CXX)
 
 # Use C++17 or newer
@@ -9,13 +21,6 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/lib) # For *.a or *.lib
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/lib) # For *.so or *.dll
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/bin) # For executables
-
-# Use Intel's compiler for C++ if found
-find_program(ICPX_PATH icpx)
-if(NOT ICPX_PATH)
-    message(FATAL_ERROR "Intel icx compiler not found! Did you run source setvars.sh?")
-endif()
-set(CMAKE_CXX_COMPILER ${ICPX_PATH})
 
 # Inlcude folders
 include_directories(
