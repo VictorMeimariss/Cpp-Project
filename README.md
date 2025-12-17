@@ -10,9 +10,9 @@ for numerical computing and HPC applications.
 The following build and compile instructions are for Linux. If you use Windows you may encounter problems.
 
 ### Requirements
-*Git
-*CMake
-*Intel oneAPI Base Toolkit (https://www.intel.com/content/www/us/en/developer/tools/oneapi/base-toolkit-download.html)
+* Git
+* CMake
+* Intel oneAPI Base Toolkit (https://www.intel.com/content/www/us/en/developer/tools/oneapi/base-toolkit-download.html)
 
 ### Build Instructions
 First you will need to clone the repository to your desired destination.
