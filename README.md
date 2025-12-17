@@ -12,18 +12,24 @@ The following build and compile instructions are for Linux (we will assume that 
 ### Requirements
 Make sure you have **all of the following installed** before reading the Setup Instructions section. 
 * Git 
+
     https://git-scm.com/install/linux
+
     or
+
     ```
     sudo apt-get install git
     ```
 * CMake
+
     ```
     sudo apt-get install cmake
     ```
 * Intel oneAPI Base Toolkit 
+
     https://www.intel.com/content/www/us/en/developer/tools/oneapi/base-toolkit-download.html
 * VS Code (or you IDE of preference but we will assume you use VS Code below)
+
     You usually can install it directly from the App Center or from [here](https://code.visualstudio.com/download)
 
 ### Setup Instructions
