@@ -56,7 +56,9 @@ Make sure you have **all of the following installed** before reading the Setup I
     ```
     The path above is usually the default, it may vary if you changed anything in the installation process
 
-3. **Open your IDE. For VS Code do:**
+3. **Open your IDE:**
+   
+   For VS Code do:
     ```
     code .
     ```
