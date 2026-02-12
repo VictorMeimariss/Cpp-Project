@@ -32,22 +32,19 @@ std::vector<double> FGMRES_dsolve(matrix<double> & A, std::vector<double> & b, s
 
     while (1){
         dfgmres(&n, x.data(), b.data(), &RCI_request, ipar, dpar, tmp);
-        if (RCI_request == 1)
-        {
+        if (RCI_request == 1){
             memcpy(vec.data(), tmp + ipar[21]-1, n*sizeof(double));           
             memcpy(tmp + ipar[22]-1, (A*vec).data(), n*sizeof(double));
             
             continue;
         }
-        else if (RCI_request == 3)
-        {
+        else if (RCI_request == 3){
            memcpy(vec.data(), tmp + ipar[21]-1, n*sizeof(double));
            memcpy(tmp + ipar[22]-1, (M*vec).data(), n*sizeof(double));
 
             continue;
         }
-        if (RCI_request == 0)
-        {
+        if (RCI_request == 0){
            break;
         }
     }
