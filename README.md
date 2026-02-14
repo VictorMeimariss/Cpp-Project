@@ -1,4 +1,4 @@
-# Dense and CSR Sprase matrix library in C++ leveraging Intel oneMKL (CBLAS)
+# Dense and CSR Sparse matrix library in C++ leveraging Intel oneMKL (CBLAS)
 
 ## What this project does
 
