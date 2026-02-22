@@ -48,3 +48,16 @@ foreach(TEST_FILE ${TEST_FILES})
 
     target_link_libraries(${TEST_NAME} Cpp-Project_lib ${MKL_LIBS})
 endforeach()
+
+# Install the lib into /usr/local/lib
+install(
+    TARGETS Cpp-Project_lib
+    ARCHIVE DESTINATION lib
+    LIBRARY DESTINATION lib
+)
+
+# Install the headers to /usr/local/include
+install(
+    DIRECTORY inc/
+    DESTINATION include/CppProject
+)
