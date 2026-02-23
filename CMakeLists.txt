@@ -19,7 +19,7 @@ if (ICX_PATH)
 endif()
 
 
-project(Cpp-Project LANGUAGES CXX)
+project(Cpp-Project LANGUAGES C CXX)
 
 # Use C++17 or newer
 set(CMAKE_CXX_STANDARD 17)
@@ -37,7 +37,7 @@ include_directories(
 )
 
 # Create STATIC library from my src files
-file(GLOB_RECURSE SRC_FILES src/*.cpp)
+file(GLOB_RECURSE SRC_FILES src/*.cpp src/*.c)
 add_library(Cpp-Project_lib STATIC
     ${SRC_FILES}
     #adds the files from src automatically
