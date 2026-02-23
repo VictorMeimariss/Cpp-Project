@@ -10,7 +10,13 @@
 #include <iostream>
 #include <vector>
 #include <complex>
+#include <stdexcept>
 #include "def.hpp"
+
+extern "C" 
+{
+      #include "../inc/mmio.h"
+}
 
 namespace dense {
     template<typename T>
@@ -254,6 +260,14 @@ class matrix
           * @brief Function that transposes the matrix in 2D
           */
           matrix transpose() const; // Victor
+
+          /**
+           * @brief Reads a Matrix Market (MM) sparse matrix, converts it from COO to CSR format 
+           *        and returns a CSR matrix obj (with a handle cosntructor)
+           * @param MMpath A string with the path to the MM matrix
+           * @returns A sparse matrix object created with the handle constructor
+           */
+          static matrix sparse_readMM(const std::string& MMpath);
 
 };
 /**

@@ -3,13 +3,21 @@ cmake_minimum_required(VERSION 3.14)
 # Use Intel's compiler for C++ if found
 find_program(ICPX_PATH icpx)
 if(ICPX_PATH)
-    message(STATUS "Intel icpx found. Using: ${ICPX_PATH}")
+    message(STATUS "Intel icpx found. Using: ${ICPX_PATH} for C++ compilation")
     set(CMAKE_CXX_COMPILER ${ICPX_PATH})
     set(MKL_INTERFACE_LAYER "-lmkl_intel_lp64")
 else()
     message(STATUS "Intel icx compiler not found! (Did you run source setvars.sh?) Falling back to default system compiler.")
     set(MKL_INTERFACE_LAYER "-lmkl_gf_lp64")
 endif()
+
+# Use Intel's compiler for C
+find_program(ICX_PATH icx)
+if (ICX_PATH)
+    message(STATUS "Intel icx found. Using: ${ICX_PATH} for C compilation")
+    set(CMAKE_C_COMPILER ${ICX_PATH})
+endif()
+
 
 project(Cpp-Project LANGUAGES CXX)
 
