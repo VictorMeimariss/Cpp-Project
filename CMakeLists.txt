@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.14)
 # Use Intel's compiler for C++ if found
 find_program(ICPX_PATH icpx)
 if(ICPX_PATH)
-    message(STATUS "Intel icpx found. Using: ${ICPX_PATH}")
+    message(STATUS "Intel icpx found. Using: ${ICPX_PATH} for C++ compilation")
     set(CMAKE_CXX_COMPILER ${ICPX_PATH})
     set(MKL_INTERFACE_LAYER "-lmkl_intel_lp64")
 else()
@@ -11,7 +11,15 @@ else()
     set(MKL_INTERFACE_LAYER "-lmkl_gf_lp64")
 endif()
 
-project(Cpp-Project LANGUAGES CXX)
+# Use Intel's compiler for C
+find_program(ICX_PATH icx)
+if (ICX_PATH)
+    message(STATUS "Intel icx found. Using: ${ICX_PATH} for C compilation")
+    set(CMAKE_C_COMPILER ${ICX_PATH})
+endif()
+
+
+project(Cpp-Project LANGUAGES C CXX)
 
 # Use C++17 or newer
 set(CMAKE_CXX_STANDARD 17)
@@ -29,7 +37,7 @@ include_directories(
 )
 
 # Create STATIC library from my src files
-file(GLOB_RECURSE SRC_FILES src/*.cpp)
+file(GLOB_RECURSE SRC_FILES src/*.cpp src/*.c)
 add_library(Cpp-Project_lib STATIC
     ${SRC_FILES}
     #adds the files from src automatically
