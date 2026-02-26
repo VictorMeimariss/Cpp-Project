@@ -54,6 +54,7 @@ matrix<T> matrix<T>::sparse_readMM(const std::string& MMpath)
         {
             if(fscanf(f, "%d %d %f\n", &rows[i], &cols[i], &val[i]) != 3)
             {
+                fclose(f);
                 throw std::runtime_error("Error: File ended unexpectedly at line " + std::to_string(i));
             }
             // Convert 1-based to 0-based for C

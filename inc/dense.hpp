@@ -9,7 +9,13 @@
 #include <iostream>
 #include <vector>
 #include <complex>
+#include <stdexcept>
 #include "def.hpp"
+
+extern "C" 
+{
+      #include "../inc/mmio.h"
+}
 
 namespace sparse {
     template<typename T>
@@ -301,6 +307,14 @@ class matrix {
          * @tparam T encompasses matrix type
          */
         void low_level_matrix_multiplication(const CBLAS_TRANSPOSE transa, const CBLAS_TRANSPOSE transb, const T beta, matrix<T> const &A, matrix<T> const &B, matrix<T> &C, const T alpha);
+
+        /**
+           * @brief Reads a Matrix Market (MM) sparse matrix, converts it from COO to CSR format 
+           *        and returns a CSR matrix obj (with a handle cosntructor)
+           * @param MMpath A string with the path to the MM matrix
+           * @returns A sparse matrix object created with the handle constructor
+        */
+        static matrix dense_readMM(const std::string& MMpath);
     };
 
     /**
