@@ -1,0 +1,31 @@
+\doxysection{axpy\+\_\+add.\+cpp}
+\hypertarget{axpy__add_8cpp_source}{}\label{axpy__add_8cpp_source}\index{/home/johnzik/Dev/Cpp-\/Project/src/axpy\_add.cpp@{/home/johnzik/Dev/Cpp-\/Project/src/axpy\_add.cpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{axpy__add_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{dense_8hpp}{dense.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{axpy__add_8cpp_source_l00002}00002\ \textcolor{keyword}{using\ namespace\ }dense;}
+\DoxyCodeLine{\Hypertarget{axpy__add_8cpp_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{axpy__add_8cpp_source_l00004}00004\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{axpy__add_8cpp_source_l00005}\mbox{\hyperlink{classdense_1_1matrix_aff3f92d1bcd6b9d633f838dabff1a82e}{00005}}\ \mbox{\hyperlink{classdense_1_1matrix}{matrix<T>}}\ \mbox{\hyperlink{classdense_1_1matrix_aff3f92d1bcd6b9d633f838dabff1a82e}{matrix<T>::\ operator+}}(\mbox{\hyperlink{classdense_1_1matrix}{matrix<T>}}\ \textcolor{keyword}{const}\&\ \mbox{\hyperlink{classdense_1_1matrix}{A}})\{}
+\DoxyCodeLine{\Hypertarget{axpy__add_8cpp_source_l00006}00006\ \ \ \ \ \mbox{\hyperlink{classdense_1_1matrix}{matrix<T>}}\ \mbox{\hyperlink{classdense_1_1matrix}{B}}\ =\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{axpy__add_8cpp_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{axpy__add_8cpp_source_l00008}00008\ \ \ \ \ \textcolor{keywordflow}{if}\ \textcolor{keyword}{constexpr}\ (std::is\_same\_v<T,\ float>)\{}
+\DoxyCodeLine{\Hypertarget{axpy__add_8cpp_source_l00009}00009\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classdense_1_1matrix}{a}}\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{axpy__add_8cpp_source_l00010}00010\ \ \ \ \ \ \ \ \ saxpy(\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(\mbox{\hyperlink{classdense_1_1matrix}{A}}.values.size()),\ \mbox{\hyperlink{classdense_1_1matrix}{a}},\ \mbox{\hyperlink{classdense_1_1matrix}{A}}.values.data(),\ 1,\ \mbox{\hyperlink{classdense_1_1matrix}{B}}.values.data(),\ 1);\}}
+\DoxyCodeLine{\Hypertarget{axpy__add_8cpp_source_l00011}00011\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ \textcolor{keyword}{constexpr}\ (std::is\_same\_v<T,\ double>)\{}
+\DoxyCodeLine{\Hypertarget{axpy__add_8cpp_source_l00012}00012\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classdense_1_1matrix}{a}}\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{axpy__add_8cpp_source_l00013}00013\ \ \ \ \ \ \ \ \ daxpy(\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(\mbox{\hyperlink{classdense_1_1matrix}{A}}.values.size()),\ \mbox{\hyperlink{classdense_1_1matrix}{a}},\ \mbox{\hyperlink{classdense_1_1matrix}{A}}.values.data(),\ 1,\ \mbox{\hyperlink{classdense_1_1matrix}{B}}.values.data(),\ 1);\}}
+\DoxyCodeLine{\Hypertarget{axpy__add_8cpp_source_l00014}00014\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ \textcolor{keyword}{constexpr}\ (std::is\_same\_v<T,\ std::complex<float>>)\{}
+\DoxyCodeLine{\Hypertarget{axpy__add_8cpp_source_l00015}00015\ \ \ \ \ \ \ \ \ std::complex<float>\ \mbox{\hyperlink{classdense_1_1matrix_a2f5c551af9f436909bd076a03f90e946}{a}}(1,\ 0);}
+\DoxyCodeLine{\Hypertarget{axpy__add_8cpp_source_l00016}00016\ \ \ \ \ \ \ \ \ caxpy(\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(\mbox{\hyperlink{classdense_1_1matrix}{A}}.values.size()),\ \&\mbox{\hyperlink{classdense_1_1matrix}{a}},\ \mbox{\hyperlink{classdense_1_1matrix}{A}}.values.data(),\ 1,\ \mbox{\hyperlink{classdense_1_1matrix}{B}}.values.data(),\ 1);\}}
+\DoxyCodeLine{\Hypertarget{axpy__add_8cpp_source_l00017}00017\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ \textcolor{keyword}{constexpr}\ (std::is\_same\_v<T,\ std::complex<double>>)\{}
+\DoxyCodeLine{\Hypertarget{axpy__add_8cpp_source_l00018}00018\ \ \ \ \ \ \ \ \ std::complex<double>\ \mbox{\hyperlink{classdense_1_1matrix_a2f5c551af9f436909bd076a03f90e946}{a}}(1,\ 0);}
+\DoxyCodeLine{\Hypertarget{axpy__add_8cpp_source_l00019}00019\ \ \ \ \ \ \ \ \ zaxpy(\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(\mbox{\hyperlink{classdense_1_1matrix}{A}}.values.size()),\ \&\mbox{\hyperlink{classdense_1_1matrix}{a}},\ \mbox{\hyperlink{classdense_1_1matrix}{A}}.values.data(),\ 1,\ \mbox{\hyperlink{classdense_1_1matrix}{B}}.values.data(),\ 1);\}}
+\DoxyCodeLine{\Hypertarget{axpy__add_8cpp_source_l00020}00020\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classdense_1_1matrix_a2f5c551af9f436909bd076a03f90e946}{B}};}
+\DoxyCodeLine{\Hypertarget{axpy__add_8cpp_source_l00021}00021\ \}}
+\DoxyCodeLine{\Hypertarget{axpy__add_8cpp_source_l00022}00022\ \textcolor{keyword}{template}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classdense_1_1matrix}{dense::matrix<float>}};}
+\DoxyCodeLine{\Hypertarget{axpy__add_8cpp_source_l00023}00023\ \textcolor{keyword}{template}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classdense_1_1matrix}{dense::matrix<double>}};}
+\DoxyCodeLine{\Hypertarget{axpy__add_8cpp_source_l00024}00024\ \textcolor{keyword}{template}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classdense_1_1matrix}{dense::matrix<std::complex<float>}}>;}
+\DoxyCodeLine{\Hypertarget{axpy__add_8cpp_source_l00025}00025\ \textcolor{keyword}{template}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classdense_1_1matrix}{dense::matrix<std::complex<double>}}>;}
+
+\end{DoxyCode}

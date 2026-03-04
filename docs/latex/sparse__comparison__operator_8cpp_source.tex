@@ -1,0 +1,30 @@
+\doxysection{sparse\+\_\+comparison\+\_\+operator.\+cpp}
+\hypertarget{sparse__comparison__operator_8cpp_source}{}\label{sparse__comparison__operator_8cpp_source}\index{/home/johnzik/Dev/Cpp-\/Project/src/sparse\_comparison\_operator.cpp@{/home/johnzik/Dev/Cpp-\/Project/src/sparse\_comparison\_operator.cpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{sparse__comparison__operator_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}../inc/sparse.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{sparse__comparison__operator_8cpp_source_l00002}00002\ \textcolor{keyword}{using\ namespace\ }sparse;}
+\DoxyCodeLine{\Hypertarget{sparse__comparison__operator_8cpp_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{sparse__comparison__operator_8cpp_source_l00004}00004\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{sparse__comparison__operator_8cpp_source_l00005}\mbox{\hyperlink{classsparse_1_1matrix_a1b40956797f5fd30919e89c93afaf683}{00005}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classsparse_1_1matrix_a1b40956797f5fd30919e89c93afaf683}{matrix<T>::operator==}}(\mbox{\hyperlink{classsparse_1_1matrix}{matrix}}\ \textcolor{keyword}{const}\&\ \mbox{\hyperlink{classsparse_1_1matrix}{A}})}
+\DoxyCodeLine{\Hypertarget{sparse__comparison__operator_8cpp_source_l00006}00006\ \{}
+\DoxyCodeLine{\Hypertarget{sparse__comparison__operator_8cpp_source_l00007}00007\ \ \ \ \ \textcolor{comment}{//\ Check\ for\ self-\/assignment}}
+\DoxyCodeLine{\Hypertarget{sparse__comparison__operator_8cpp_source_l00008}00008\ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{this}\ ==\ \&\mbox{\hyperlink{classsparse_1_1matrix}{A}})\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};\ }
+\DoxyCodeLine{\Hypertarget{sparse__comparison__operator_8cpp_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{sparse__comparison__operator_8cpp_source_l00010}00010\ \ \ \ \ \textcolor{comment}{//\ Dimensions\ check}}
+\DoxyCodeLine{\Hypertarget{sparse__comparison__operator_8cpp_source_l00011}00011\ \ \ \ \ \textcolor{keywordflow}{if}\ (row\_size\ !=\ \mbox{\hyperlink{classsparse_1_1matrix}{A}}.row\_size\ ||\ col\_size\ !=\ \mbox{\hyperlink{classsparse_1_1matrix}{A}}.col\_size)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{sparse__comparison__operator_8cpp_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{sparse__comparison__operator_8cpp_source_l00013}00013\ \ \ \ \ \textcolor{comment}{//\ Check\ CSR\ vectors}}
+\DoxyCodeLine{\Hypertarget{sparse__comparison__operator_8cpp_source_l00014}00014\ \ \ \ \ \textcolor{keywordflow}{if}\ (values\ !=\ \mbox{\hyperlink{classsparse_1_1matrix}{A}}.values)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{sparse__comparison__operator_8cpp_source_l00015}00015\ \ \ \ \ \textcolor{keywordflow}{if}\ (row\_idx\ !=\ \mbox{\hyperlink{classsparse_1_1matrix}{A}}.row\_idx)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{sparse__comparison__operator_8cpp_source_l00016}00016\ \ \ \ \ \textcolor{keywordflow}{if}\ (col\_idx\ !=\ \mbox{\hyperlink{classsparse_1_1matrix}{A}}.col\_idx)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{sparse__comparison__operator_8cpp_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{sparse__comparison__operator_8cpp_source_l00018}00018\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{sparse__comparison__operator_8cpp_source_l00019}00019\ \}}
+\DoxyCodeLine{\Hypertarget{sparse__comparison__operator_8cpp_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{sparse__comparison__operator_8cpp_source_l00021}00021\ \textcolor{keyword}{template}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classsparse_1_1matrix_a1b40956797f5fd30919e89c93afaf683}{sparse::matrix<float>::operator==}}(\mbox{\hyperlink{classsparse_1_1matrix}{matrix}}\ \textcolor{keyword}{const}\&\ \mbox{\hyperlink{classsparse_1_1matrix}{A}});}
+\DoxyCodeLine{\Hypertarget{sparse__comparison__operator_8cpp_source_l00022}00022\ \textcolor{keyword}{template}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classsparse_1_1matrix_a1b40956797f5fd30919e89c93afaf683}{sparse::matrix<double>::operator==}}(\mbox{\hyperlink{classsparse_1_1matrix}{matrix}}\ \textcolor{keyword}{const}\&\ \mbox{\hyperlink{classsparse_1_1matrix}{A}});}
+\DoxyCodeLine{\Hypertarget{sparse__comparison__operator_8cpp_source_l00023}00023\ \textcolor{keyword}{template}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classsparse_1_1matrix}{sparse::matrix<std::complex<float>}}>\mbox{\hyperlink{classsparse_1_1matrix}{::operator}}==(\mbox{\hyperlink{classsparse_1_1matrix}{matrix}}\ \textcolor{keyword}{const}\&\ \mbox{\hyperlink{classsparse_1_1matrix}{A}});}
+\DoxyCodeLine{\Hypertarget{sparse__comparison__operator_8cpp_source_l00024}00024\ \textcolor{keyword}{template}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classsparse_1_1matrix}{sparse::matrix<std::complex<double>}}>\mbox{\hyperlink{classsparse_1_1matrix}{::operator}}==(\mbox{\hyperlink{classsparse_1_1matrix}{matrix}}\ \textcolor{keyword}{const}\&\ \mbox{\hyperlink{classsparse_1_1matrix}{A}});}
+
+\end{DoxyCode}

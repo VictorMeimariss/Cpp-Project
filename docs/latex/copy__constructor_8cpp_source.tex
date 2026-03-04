@@ -1,0 +1,20 @@
+\doxysection{copy\+\_\+constructor.\+cpp}
+\hypertarget{copy__constructor_8cpp_source}{}\label{copy__constructor_8cpp_source}\index{/home/johnzik/Dev/Cpp-\/Project/src/copy\_constructor.cpp@{/home/johnzik/Dev/Cpp-\/Project/src/copy\_constructor.cpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{copy__constructor_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ <../inc/dense.hpp>}}
+\DoxyCodeLine{\Hypertarget{copy__constructor_8cpp_source_l00002}00002\ \textcolor{keyword}{using\ namespace\ }dense;}
+\DoxyCodeLine{\Hypertarget{copy__constructor_8cpp_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{copy__constructor_8cpp_source_l00004}00004\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{copy__constructor_8cpp_source_l00005}\mbox{\hyperlink{classdense_1_1matrix_afec396e982faca429ca46abe38a817d4}{00005}}\ \mbox{\hyperlink{classdense_1_1matrix_a2f5c551af9f436909bd076a03f90e946}{matrix<T>::matrix}}(\mbox{\hyperlink{classdense_1_1matrix}{matrix<T>}}\ \textcolor{keyword}{const}\&\ \mbox{\hyperlink{classdense_1_1matrix}{A}})}
+\DoxyCodeLine{\Hypertarget{copy__constructor_8cpp_source_l00006}00006\ \ \ \ \ :\ values(\mbox{\hyperlink{classdense_1_1matrix}{A}}.values),\ dim\_size(\mbox{\hyperlink{classdense_1_1matrix}{A}}.dim\_size),\ precomputed\_strides(\mbox{\hyperlink{classdense_1_1matrix}{A}}.precomputed\_strides)}
+\DoxyCodeLine{\Hypertarget{copy__constructor_8cpp_source_l00007}00007\ \{}
+\DoxyCodeLine{\Hypertarget{copy__constructor_8cpp_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{copy__constructor_8cpp_source_l00009}00009\ \}}
+\DoxyCodeLine{\Hypertarget{copy__constructor_8cpp_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{copy__constructor_8cpp_source_l00011}00011\ \textcolor{keyword}{template}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classdense_1_1matrix}{dense::matrix<float>}};}
+\DoxyCodeLine{\Hypertarget{copy__constructor_8cpp_source_l00012}00012\ \textcolor{keyword}{template}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classdense_1_1matrix}{dense::matrix<double>}};}
+\DoxyCodeLine{\Hypertarget{copy__constructor_8cpp_source_l00013}00013\ \textcolor{keyword}{template}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classdense_1_1matrix}{dense::matrix<std::complex<float>}}>;}
+\DoxyCodeLine{\Hypertarget{copy__constructor_8cpp_source_l00014}00014\ \textcolor{keyword}{template}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classdense_1_1matrix}{dense::matrix<std::complex<double>}}>;}
+
+\end{DoxyCode}

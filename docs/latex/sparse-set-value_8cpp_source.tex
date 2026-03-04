@@ -1,0 +1,31 @@
+\doxysection{sparse-\/set-\/value.cpp}
+\hypertarget{sparse-set-value_8cpp_source}{}\label{sparse-set-value_8cpp_source}\index{/home/johnzik/Dev/Cpp-\/Project/src/sparse-\/set-\/value.cpp@{/home/johnzik/Dev/Cpp-\/Project/src/sparse-\/set-\/value.cpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{sparse-set-value_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}../inc/sparse.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{sparse-set-value_8cpp_source_l00002}00002\ \textcolor{keyword}{using\ namespace\ }sparse;}
+\DoxyCodeLine{\Hypertarget{sparse-set-value_8cpp_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{sparse-set-value_8cpp_source_l00004}00004\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{sparse-set-value_8cpp_source_l00005}\mbox{\hyperlink{classsparse_1_1matrix_a84ce64aba83d6570b54d9f3941abb5fe}{00005}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classsparse_1_1matrix_a84ce64aba83d6570b54d9f3941abb5fe}{matrix<T>::set\_value\_at}}(\textcolor{keywordtype}{size\_t}\ index,\ \mbox{\hyperlink{classsparse_1_1matrix}{T}}\ \mbox{\hyperlink{classsparse_1_1matrix}{value}})\{}
+\DoxyCodeLine{\Hypertarget{sparse-set-value_8cpp_source_l00006}00006\ \ \ \ \ \textcolor{comment}{//index\ =\ c\ +\ col\_size*r}}
+\DoxyCodeLine{\Hypertarget{sparse-set-value_8cpp_source_l00007}00007\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classsparse_1_1matrix}{c}}\ =\ index\%col\_size;}
+\DoxyCodeLine{\Hypertarget{sparse-set-value_8cpp_source_l00008}00008\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classsparse_1_1matrix}{r}}\ =\ index/col\_size;}
+\DoxyCodeLine{\Hypertarget{sparse-set-value_8cpp_source_l00009}00009\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classsparse_1_1matrix}{row\_start}}\ =\ row\_idx[\mbox{\hyperlink{classsparse_1_1matrix_ae479d6e63c6c755205240ec74b0b31f6}{r}}];}
+\DoxyCodeLine{\Hypertarget{sparse-set-value_8cpp_source_l00010}00010\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classsparse_1_1matrix}{row\_end}}\ =\ row\_idx[\mbox{\hyperlink{classsparse_1_1matrix}{r}}+1];}
+\DoxyCodeLine{\Hypertarget{sparse-set-value_8cpp_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{sparse-set-value_8cpp_source_l00012}00012\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classsparse_1_1matrix}{i}}\ =\ \mbox{\hyperlink{classsparse_1_1matrix}{row\_start}};\ \mbox{\hyperlink{classsparse_1_1matrix}{i}}<\mbox{\hyperlink{classsparse_1_1matrix_ae479d6e63c6c755205240ec74b0b31f6}{row\_end}};\ \mbox{\hyperlink{classsparse_1_1matrix}{i}}++)\{}
+\DoxyCodeLine{\Hypertarget{sparse-set-value_8cpp_source_l00013}00013\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (col\_idx[\mbox{\hyperlink{classsparse_1_1matrix}{i}}]\ ==\ \mbox{\hyperlink{classsparse_1_1matrix}{c}})\{}
+\DoxyCodeLine{\Hypertarget{sparse-set-value_8cpp_source_l00014}00014\ \ \ \ \ \ \ \ \ \ \ \ \ values[\mbox{\hyperlink{classsparse_1_1matrix_ae479d6e63c6c755205240ec74b0b31f6}{i}}]\ =\ \mbox{\hyperlink{classsparse_1_1matrix_ae479d6e63c6c755205240ec74b0b31f6}{value}};}
+\DoxyCodeLine{\Hypertarget{sparse-set-value_8cpp_source_l00015}00015\ \ \ \ \ \ \ \ \ \ \ \ \ valid\_handle\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{sparse-set-value_8cpp_source_l00016}00016\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{sparse-set-value_8cpp_source_l00017}00017\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{sparse-set-value_8cpp_source_l00018}00018\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{sparse-set-value_8cpp_source_l00019}00019\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{sparse-set-value_8cpp_source_l00020}00020\ \ \ \ \ \textcolor{keywordflow}{throw}\ std::invalid\_argument(\textcolor{stringliteral}{"{}Can\ only\ set\ non-\/zero\ values"{}});}
+\DoxyCodeLine{\Hypertarget{sparse-set-value_8cpp_source_l00021}00021\ \}}
+\DoxyCodeLine{\Hypertarget{sparse-set-value_8cpp_source_l00022}00022\ \textcolor{keyword}{template}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classsparse_1_1matrix}{sparse::matrix<float>}};}
+\DoxyCodeLine{\Hypertarget{sparse-set-value_8cpp_source_l00023}00023\ \textcolor{keyword}{template}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classsparse_1_1matrix}{sparse::matrix<double>}};}
+\DoxyCodeLine{\Hypertarget{sparse-set-value_8cpp_source_l00024}00024\ \textcolor{keyword}{template}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classsparse_1_1matrix}{sparse::matrix<std::complex<float>}}>;}
+\DoxyCodeLine{\Hypertarget{sparse-set-value_8cpp_source_l00025}00025\ \textcolor{keyword}{template}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classsparse_1_1matrix}{sparse::matrix<std::complex<double>}}>;}
+
+\end{DoxyCode}

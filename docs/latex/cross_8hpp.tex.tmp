@@ -1,0 +1,77 @@
+\doxysection{/home/johnzik/\+Dev/\+Cpp-\/\+Project/inc/cross.hpp File Reference}
+\hypertarget{cross_8hpp}{}\label{cross_8hpp}\index{/home/johnzik/Dev/Cpp-\/Project/inc/cross.hpp@{/home/johnzik/Dev/Cpp-\/Project/inc/cross.hpp}}
+
+
+Header file for the cross product functions of dense and sparse matrices.  
+
+
+{\ttfamily \#include "{}dense.\+hpp"{}}\newline
+{\ttfamily \#include "{}sparse.\+hpp"{}}\newline
+{\ttfamily \#include $<$mkl.\+h$>$}\newline
+Include dependency graph for cross.\+hpp\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$\mbox{\hyperlink{classdense_1_1matrix}{typename}} \mbox{\hyperlink{classdense_1_1matrix}{T}} $>$ }\\\mbox{\hyperlink{classdense_1_1matrix}{dense\+::matrix}}$<$ \mbox{\hyperlink{classdense_1_1matrix}{T}} $>$ \mbox{\hyperlink{cross_8hpp_a75aab3432ded295cb06a541df4852536}{dense\+::operator\texorpdfstring{$\ast$}{*}}} (\mbox{\hyperlink{classdense_1_1matrix}{const}} \mbox{\hyperlink{classdense_1_1matrix}{dense\+::matrix}}$<$ \mbox{\hyperlink{classdense_1_1matrix}{T}} $>$ \&\mbox{\hyperlink{classdense_1_1matrix}{A}}, \mbox{\hyperlink{classdense_1_1matrix}{const}} \mbox{\hyperlink{classsparse_1_1matrix}{sparse\+::matrix}}$<$ \mbox{\hyperlink{classdense_1_1matrix}{T}} $>$ \&\mbox{\hyperlink{classdense_1_1matrix}{B}})
+\begin{DoxyCompactList}\small\item\em Operator \texorpdfstring{$\ast$}{*}, multiplies two 2D dense and sparse matrices returning a dense matrix. \end{DoxyCompactList}\item 
+{\footnotesize template$<$\mbox{\hyperlink{classsparse_1_1matrix}{typename}} \mbox{\hyperlink{classsparse_1_1matrix}{T}} $>$ }\\\mbox{\hyperlink{classdense_1_1matrix}{dense\+::matrix}}$<$ \mbox{\hyperlink{classsparse_1_1matrix}{T}} $>$ \mbox{\hyperlink{cross_8hpp_a0aae8fc3da7d106339753d0a74fa05ef}{sparse\+::operator\texorpdfstring{$\ast$}{*}}} (\mbox{\hyperlink{classsparse_1_1matrix}{const}} \mbox{\hyperlink{classsparse_1_1matrix}{sparse\+::matrix}}$<$ \mbox{\hyperlink{classsparse_1_1matrix}{T}} $>$ \&\mbox{\hyperlink{classsparse_1_1matrix}{B}}, \mbox{\hyperlink{classsparse_1_1matrix}{const}} \mbox{\hyperlink{classdense_1_1matrix}{dense\+::matrix}}$<$ \mbox{\hyperlink{classsparse_1_1matrix}{T}} $>$ \&\mbox{\hyperlink{classsparse_1_1matrix}{A}})
+\begin{DoxyCompactList}\small\item\em Operator \texorpdfstring{$\ast$}{*}, multiplies two 2D sparse and dense matrices returning a dense matrix. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header file for the cross product functions of dense and sparse matrices. 
+
+
+
+Definition in file \mbox{\hyperlink{cross_8hpp_source}{cross.\+hpp}}.
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{cross_8hpp_a75aab3432ded295cb06a541df4852536}\label{cross_8hpp_a75aab3432ded295cb06a541df4852536} 
+\index{cross.hpp@{cross.hpp}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}}
+\index{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!cross.hpp@{cross.hpp}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classdense_1_1matrix}{dense\+::matrix}}$<$ T $>$ \mbox{\hyperlink{classdense_1_1matrix}{dense\+::operator}}\texorpdfstring{$\ast$}{*} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classdense_1_1matrix}{const}} \mbox{\hyperlink{classdense_1_1matrix}{dense\+::matrix}}$<$ \mbox{\hyperlink{classdense_1_1matrix}{T}} $>$ \&}]{A,  }\item[{\mbox{\hyperlink{classdense_1_1matrix}{const}} \mbox{\hyperlink{classsparse_1_1matrix}{sparse\+::matrix}}$<$ \mbox{\hyperlink{classdense_1_1matrix}{T}} $>$ \&}]{B }\end{DoxyParamCaption})}
+
+
+
+Operator \texorpdfstring{$\ast$}{*}, multiplies two 2D dense and sparse matrices returning a dense matrix. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em A} & A constant matrix reference used after the operator \\
+\hline
+{\em B} & A constant matrix reference used after the operator \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{sparse__mm__dxs_8cpp_source_l00007}{7}} of file \mbox{\hyperlink{sparse__mm__dxs_8cpp_source}{sparse\+\_\+mm\+\_\+dxs.\+cpp}}.
+
+\Hypertarget{cross_8hpp_a0aae8fc3da7d106339753d0a74fa05ef}\label{cross_8hpp_a0aae8fc3da7d106339753d0a74fa05ef} 
+\index{cross.hpp@{cross.hpp}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}}
+\index{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!cross.hpp@{cross.hpp}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classdense_1_1matrix}{dense\+::matrix}}$<$ T $>$ \mbox{\hyperlink{classsparse_1_1matrix}{sparse\+::operator}}\texorpdfstring{$\ast$}{*} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsparse_1_1matrix}{const}} \mbox{\hyperlink{classsparse_1_1matrix}{sparse\+::matrix}}$<$ \mbox{\hyperlink{classsparse_1_1matrix}{T}} $>$ \&}]{B,  }\item[{\mbox{\hyperlink{classsparse_1_1matrix}{const}} \mbox{\hyperlink{classdense_1_1matrix}{dense\+::matrix}}$<$ \mbox{\hyperlink{classsparse_1_1matrix}{T}} $>$ \&}]{A }\end{DoxyParamCaption})}
+
+
+
+Operator \texorpdfstring{$\ast$}{*}, multiplies two 2D sparse and dense matrices returning a dense matrix. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em A} & A constant matrix reference used after the operator \\
+\hline
+{\em B} & A constant matrix reference used after the operator \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{sparse__mm__sxd_8cpp_source_l00006}{6}} of file \mbox{\hyperlink{sparse__mm__sxd_8cpp_source}{sparse\+\_\+mm\+\_\+sxd.\+cpp}}.
+

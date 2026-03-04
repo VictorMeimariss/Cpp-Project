@@ -1,0 +1,67 @@
+\doxysection{CG\+\_\+dsolve.\+cpp}
+\hypertarget{CG__dsolve_8cpp_source}{}\label{CG__dsolve_8cpp_source}\index{/home/johnzik/Dev/Cpp-\/Project/src/CG\_dsolve.cpp@{/home/johnzik/Dev/Cpp-\/Project/src/CG\_dsolve.cpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{CG__dsolve_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}../inc/sparse.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{CG__dsolve_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ <cstring>}}
+\DoxyCodeLine{\Hypertarget{CG__dsolve_8cpp_source_l00003}00003\ \textcolor{keyword}{using\ namespace\ }sparse;}
+\DoxyCodeLine{\Hypertarget{CG__dsolve_8cpp_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{CG__dsolve_8cpp_source_l00005}\mbox{\hyperlink{sparse_8hpp_a842d649f6f6bcdbf6d43cfc71c2d5d9b}{00005}}\ std::vector<double>\ \mbox{\hyperlink{sparse_8hpp_a842d649f6f6bcdbf6d43cfc71c2d5d9b}{CG\_dsolve}}(\mbox{\hyperlink{classsparse_1_1matrix}{matrix<double>}}\ \&\ \mbox{\hyperlink{classsparse_1_1matrix}{A}},\ std::vector<double>\ \&\ \mbox{\hyperlink{classsparse_1_1matrix}{b}},\ std::vector<double>\ \&\ \mbox{\hyperlink{classsparse_1_1matrix}{x0}})}
+\DoxyCodeLine{\Hypertarget{CG__dsolve_8cpp_source_l00006}00006\ \{}
+\DoxyCodeLine{\Hypertarget{CG__dsolve_8cpp_source_l00007}00007\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classsparse_1_1matrix}{tol}}\ =\ 1\mbox{\hyperlink{classsparse_1_1matrix}{e}}-\/12;}
+\DoxyCodeLine{\Hypertarget{CG__dsolve_8cpp_source_l00008}00008\ \ \ \ \ std::vector<double>\ \mbox{\hyperlink{classsparse_1_1matrix}{x}}\ =\ \mbox{\hyperlink{classsparse_1_1matrix}{x0}};}
+\DoxyCodeLine{\Hypertarget{CG__dsolve_8cpp_source_l00009}00009\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classsparse_1_1matrix}{row}}\ =\ \mbox{\hyperlink{classsparse_1_1matrix}{A}}.\mbox{\hyperlink{classsparse_1_1matrix_a75c405f72f89d967922ee244b2db4816}{shape}}().first;}
+\DoxyCodeLine{\Hypertarget{CG__dsolve_8cpp_source_l00010}00010\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classsparse_1_1matrix}{col}}\ =\ \mbox{\hyperlink{classsparse_1_1matrix}{A}}.\mbox{\hyperlink{classsparse_1_1matrix_a75c405f72f89d967922ee244b2db4816}{shape}}().second;}
+\DoxyCodeLine{\Hypertarget{CG__dsolve_8cpp_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{CG__dsolve_8cpp_source_l00012}00012\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classsparse_1_1matrix}{row}}!=\mbox{\hyperlink{classsparse_1_1matrix}{col}})\{}
+\DoxyCodeLine{\Hypertarget{CG__dsolve_8cpp_source_l00013}00013\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::invalid\_argument(\textcolor{stringliteral}{"{}Can\ only\ solve\ square\ matrices"{}});}
+\DoxyCodeLine{\Hypertarget{CG__dsolve_8cpp_source_l00014}00014\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{CG__dsolve_8cpp_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{CG__dsolve_8cpp_source_l00016}00016\ \ \ \ \ \textcolor{comment}{//\ Initialize\ CG\ parameters}}
+\DoxyCodeLine{\Hypertarget{CG__dsolve_8cpp_source_l00017}00017\ \ \ \ \ \mbox{\hyperlink{classsparse_1_1matrix}{MKL\_INT}}\ \mbox{\hyperlink{classsparse_1_1matrix}{n}}\ =\ (\mbox{\hyperlink{classsparse_1_1matrix}{MKL\_INT}})\ \mbox{\hyperlink{classsparse_1_1matrix}{row}};}
+\DoxyCodeLine{\Hypertarget{CG__dsolve_8cpp_source_l00018}00018\ \ \ \ \ \mbox{\hyperlink{classsparse_1_1matrix}{MKL\_INT}}\ \mbox{\hyperlink{classsparse_1_1matrix}{RCI\_request}};}
+\DoxyCodeLine{\Hypertarget{CG__dsolve_8cpp_source_l00019}00019\ \ \ \ \ \mbox{\hyperlink{classsparse_1_1matrix}{MKL\_INT}}\ \mbox{\hyperlink{classsparse_1_1matrix}{ipar}}[128];}
+\DoxyCodeLine{\Hypertarget{CG__dsolve_8cpp_source_l00020}00020\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classsparse_1_1matrix}{dpar}}[128];}
+\DoxyCodeLine{\Hypertarget{CG__dsolve_8cpp_source_l00021}00021\ \ \ \ \ std::vector<double>\ \mbox{\hyperlink{classsparse_1_1matrix}{tmp}}(\mbox{\hyperlink{classsparse_1_1matrix}{n}}*4);\ \ \ \textcolor{comment}{//\ Double\ array\ of\ size\ (n*4)\ for\ SRHS}}
+\DoxyCodeLine{\Hypertarget{CG__dsolve_8cpp_source_l00022}00022\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ We\ must\ store\ tmp\ on\ the\ heap\ to\ avoid\ stack\ overflow}}
+\DoxyCodeLine{\Hypertarget{CG__dsolve_8cpp_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{CG__dsolve_8cpp_source_l00028}00028\ \ \ \ \ \mbox{\hyperlink{classsparse_1_1matrix}{dcg\_init}}(\&\mbox{\hyperlink{classsparse_1_1matrix}{n}},\ \mbox{\hyperlink{classsparse_1_1matrix}{x}}.data(),\ \mbox{\hyperlink{classsparse_1_1matrix}{b}}.data(),\ \&\mbox{\hyperlink{classsparse_1_1matrix}{RCI\_request}},\ \mbox{\hyperlink{classsparse_1_1matrix}{ipar}},\ \mbox{\hyperlink{classsparse_1_1matrix}{dpar}},\ \mbox{\hyperlink{classsparse_1_1matrix}{tmp}}.data());}
+\DoxyCodeLine{\Hypertarget{CG__dsolve_8cpp_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{CG__dsolve_8cpp_source_l00035}00035\ \ \ \ \ \mbox{\hyperlink{classsparse_1_1matrix}{dcg\_check}}(\&\mbox{\hyperlink{classsparse_1_1matrix}{n}},\ \mbox{\hyperlink{classsparse_1_1matrix}{x}}.data(),\ \mbox{\hyperlink{classsparse_1_1matrix}{b}}.data(),\ \&\mbox{\hyperlink{classsparse_1_1matrix}{RCI\_request}},\ \mbox{\hyperlink{classsparse_1_1matrix}{ipar}},\ \mbox{\hyperlink{classsparse_1_1matrix}{dpar}},\ \mbox{\hyperlink{classsparse_1_1matrix}{tmp}}.data());}
+\DoxyCodeLine{\Hypertarget{CG__dsolve_8cpp_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{CG__dsolve_8cpp_source_l00037}00037\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classsparse_1_1matrix}{iter}};}
+\DoxyCodeLine{\Hypertarget{CG__dsolve_8cpp_source_l00038}00038\ \ \ \ \ \mbox{\hyperlink{classsparse_1_1matrix}{dpar}}[0]\ =\ \mbox{\hyperlink{classsparse_1_1matrix}{tol}};}
+\DoxyCodeLine{\Hypertarget{CG__dsolve_8cpp_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{CG__dsolve_8cpp_source_l00040}00040\ \ \ \ \ \textcolor{comment}{//\ Pre-\/allocate\ the\ vec\ for\ RCI\_request\ ==\ 1\ for\ efficiency\ (to\ avoid\ re-\/allocation\ in\ loop)}}
+\DoxyCodeLine{\Hypertarget{CG__dsolve_8cpp_source_l00041}00041\ \ \ \ \ std::vector<double>\ \mbox{\hyperlink{classsparse_1_1matrix}{vec}}(\mbox{\hyperlink{classsparse_1_1matrix}{n}});}
+\DoxyCodeLine{\Hypertarget{CG__dsolve_8cpp_source_l00042}00042\ \ \ \ \ \textcolor{keywordflow}{while}\ (1)}
+\DoxyCodeLine{\Hypertarget{CG__dsolve_8cpp_source_l00043}00043\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{CG__dsolve_8cpp_source_l00044}00044\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classsparse_1_1matrix}{dcg}}(\&\mbox{\hyperlink{classsparse_1_1matrix}{n}},\ \mbox{\hyperlink{classsparse_1_1matrix}{x}}.data(),\ \mbox{\hyperlink{classsparse_1_1matrix}{b}}.data(),\ \&\mbox{\hyperlink{classsparse_1_1matrix}{RCI\_request}},\ \mbox{\hyperlink{classsparse_1_1matrix}{ipar}},\ \mbox{\hyperlink{classsparse_1_1matrix}{dpar}},\ \mbox{\hyperlink{classsparse_1_1matrix}{tmp}}.data());}
+\DoxyCodeLine{\Hypertarget{CG__dsolve_8cpp_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{CG__dsolve_8cpp_source_l00046}00046\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classsparse_1_1matrix}{RCI\_request}}\ ==\ -\/1)}
+\DoxyCodeLine{\Hypertarget{CG__dsolve_8cpp_source_l00047}00047\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{CG__dsolve_8cpp_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Maximum\ number\ of\ iterations\ was\ reached,\ but\ the\ relative\ stopping\ criterion\ was\ not\ met."{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{CG__dsolve_8cpp_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{CG__dsolve_8cpp_source_l00050}00050\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{CG__dsolve_8cpp_source_l00051}00051\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classsparse_1_1matrix}{RCI\_request}}\ ==\ -\/2)}
+\DoxyCodeLine{\Hypertarget{CG__dsolve_8cpp_source_l00052}00052\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{CG__dsolve_8cpp_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Attempted\ to\ divide\ by\ zero!"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{CG__dsolve_8cpp_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{CG__dsolve_8cpp_source_l00055}00055\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{CG__dsolve_8cpp_source_l00056}00056\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classsparse_1_1matrix}{RCI\_request}}\ ==\ 1)}
+\DoxyCodeLine{\Hypertarget{CG__dsolve_8cpp_source_l00057}00057\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{CG__dsolve_8cpp_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classsparse_1_1matrix}{memcpy}}(\mbox{\hyperlink{classsparse_1_1matrix}{vec}}.data(),\ \mbox{\hyperlink{classsparse_1_1matrix}{tmp}}.data(),\ \mbox{\hyperlink{classsparse_1_1matrix}{n}}*\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{double}));\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ copy\ temp\ to\ vec}}
+\DoxyCodeLine{\Hypertarget{CG__dsolve_8cpp_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classsparse_1_1matrix}{memcpy}}(\mbox{\hyperlink{classsparse_1_1matrix}{tmp}}.data()\ +\ \mbox{\hyperlink{classsparse_1_1matrix}{n}},\ (\mbox{\hyperlink{classsparse_1_1matrix}{A}}*\mbox{\hyperlink{classsparse_1_1matrix}{vec}}).data(),\ \mbox{\hyperlink{classsparse_1_1matrix}{n}}*\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{double}));\ \ \ \textcolor{comment}{//\ put\ the\ result\ in\ the\ tmp[n:2*n\ -\/\ 1]}}
+\DoxyCodeLine{\Hypertarget{CG__dsolve_8cpp_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{CG__dsolve_8cpp_source_l00061}00061\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{CG__dsolve_8cpp_source_l00062}00062\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classsparse_1_1matrix}{RCI\_request}}\ ==\ 0)}
+\DoxyCodeLine{\Hypertarget{CG__dsolve_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{CG__dsolve_8cpp_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Converged\ succesfully!"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{CG__dsolve_8cpp_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{CG__dsolve_8cpp_source_l00066}00066\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{CG__dsolve_8cpp_source_l00067}00067\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{CG__dsolve_8cpp_source_l00068}00068\ \ \ \ \ \mbox{\hyperlink{classsparse_1_1matrix}{dcg\_get}}(\&\mbox{\hyperlink{classsparse_1_1matrix}{n}}\ ,\ \mbox{\hyperlink{classsparse_1_1matrix}{x}}.data(),\ \mbox{\hyperlink{classsparse_1_1matrix}{b}}.data(),\ \&\mbox{\hyperlink{classsparse_1_1matrix}{RCI\_request}},\ \mbox{\hyperlink{classsparse_1_1matrix}{ipar}},\ \mbox{\hyperlink{classsparse_1_1matrix}{dpar}},\ \mbox{\hyperlink{classsparse_1_1matrix}{tmp}}.data(),\ \&\mbox{\hyperlink{classsparse_1_1matrix}{iter}});}
+\DoxyCodeLine{\Hypertarget{CG__dsolve_8cpp_source_l00069}00069\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classsparse_1_1matrix}{x}};}
+\DoxyCodeLine{\Hypertarget{CG__dsolve_8cpp_source_l00070}00070\ \}}
+
+\end{DoxyCode}

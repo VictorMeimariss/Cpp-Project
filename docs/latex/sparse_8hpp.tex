@@ -1,0 +1,131 @@
+\doxysection{/home/johnzik/\+Dev/\+Cpp-\/\+Project/inc/sparse.hpp File Reference}
+\hypertarget{sparse_8hpp}{}\label{sparse_8hpp}\index{/home/johnzik/Dev/Cpp-\/Project/inc/sparse.hpp@{/home/johnzik/Dev/Cpp-\/Project/inc/sparse.hpp}}
+
+
+Header file for the matrix class for sparse matrices and its associated functions.  
+
+
+{\ttfamily \#include $<$cstring$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$complex$>$}\newline
+{\ttfamily \#include $<$stdexcept$>$}\newline
+{\ttfamily \#include "{}def.\+hpp"{}}\newline
+{\ttfamily \#include "{}../inc/mmio.\+h"{}}\newline
+Include dependency graph for sparse.\+hpp\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classsparse_1_1matrix}{sparse\+::matrix$<$ T $>$}}
+\begin{DoxyCompactList}\small\item\em A class to create a sparse matrix object in csr form. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$\mbox{\hyperlink{classsparse_1_1matrix}{typename}} \mbox{\hyperlink{classsparse_1_1matrix}{T}} , \mbox{\hyperlink{classsparse_1_1matrix}{typename}} \mbox{\hyperlink{classsparse_1_1matrix}{U}} $>$ }\\\mbox{\hyperlink{classsparse_1_1matrix}{matrix}}$<$ \mbox{\hyperlink{classsparse_1_1matrix}{T}} $>$ \mbox{\hyperlink{sparse_8hpp_ac7a1481905fad7b235f74410e4415054}{sparse\+::operator\texorpdfstring{$\ast$}{*}}} (\mbox{\hyperlink{classsparse_1_1matrix}{U}} \mbox{\hyperlink{classsparse_1_1matrix}{x}}, \mbox{\hyperlink{classsparse_1_1matrix}{const}} \mbox{\hyperlink{classsparse_1_1matrix}{matrix}}$<$ \mbox{\hyperlink{classsparse_1_1matrix}{T}} $>$ \&\mbox{\hyperlink{classsparse_1_1matrix}{A}})
+\begin{DoxyCompactList}\small\item\em Operator \texorpdfstring{$\ast$}{*}, multiplies a number by a sparse matrix. \end{DoxyCompactList}\item 
+{\footnotesize template$<$\mbox{\hyperlink{classsparse_1_1matrix}{typename}} \mbox{\hyperlink{classsparse_1_1matrix}{T}} $>$ }\\std\+::vector$<$ \mbox{\hyperlink{classsparse_1_1matrix}{T}} $>$ \mbox{\hyperlink{sparse_8hpp_a94f299ec33def6bc7d00c782d8e3e4c7}{sparse\+::operator\texorpdfstring{$\ast$}{*}}} (\mbox{\hyperlink{classsparse_1_1matrix}{const}} std\+::vector$<$ \mbox{\hyperlink{classsparse_1_1matrix}{T}} $>$ \mbox{\hyperlink{classsparse_1_1matrix}{x}}, \mbox{\hyperlink{classsparse_1_1matrix}{const}} \mbox{\hyperlink{classsparse_1_1matrix}{matrix}}$<$ \mbox{\hyperlink{classsparse_1_1matrix}{T}} $>$ \&\mbox{\hyperlink{classsparse_1_1matrix}{A}})
+\begin{DoxyCompactList}\small\item\em Operator \texorpdfstring{$\ast$}{*}, multiplies a vector by a sparse matrix. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{classsparse_1_1matrix}{double}} $>$ \mbox{\hyperlink{sparse_8hpp_a70699fa1f683514a428bc6002ee3c60f}{FGMRES\+\_\+dsolve}} (\mbox{\hyperlink{classsparse_1_1matrix}{sparse\+::matrix}}$<$ \mbox{\hyperlink{classsparse_1_1matrix}{double}} $>$ \&\mbox{\hyperlink{classsparse_1_1matrix}{A}}, std\+::vector$<$ \mbox{\hyperlink{classsparse_1_1matrix}{double}} $>$ \&\mbox{\hyperlink{classsparse_1_1matrix}{b}}, std\+::vector$<$ \mbox{\hyperlink{classsparse_1_1matrix}{double}} $>$ \&\mbox{\hyperlink{classsparse_1_1matrix}{x0}}, \mbox{\hyperlink{classsparse_1_1matrix}{bool}} \mbox{\hyperlink{classsparse_1_1matrix}{preconditioned}}, \mbox{\hyperlink{classsparse_1_1matrix}{sparse\+::matrix}}$<$ \mbox{\hyperlink{classsparse_1_1matrix}{double}} $>$ \&\mbox{\hyperlink{classsparse_1_1matrix}{M}})
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classsparse_1_1matrix}{double}} $>$ \mbox{\hyperlink{sparse_8hpp_a842d649f6f6bcdbf6d43cfc71c2d5d9b}{CG\+\_\+dsolve}} (\mbox{\hyperlink{classsparse_1_1matrix}{sparse\+::matrix}}$<$ \mbox{\hyperlink{classsparse_1_1matrix}{double}} $>$ \&\mbox{\hyperlink{classsparse_1_1matrix}{A}}, std\+::vector$<$ \mbox{\hyperlink{classsparse_1_1matrix}{double}} $>$ \&\mbox{\hyperlink{classsparse_1_1matrix}{b}}, std\+::vector$<$ \mbox{\hyperlink{classsparse_1_1matrix}{double}} $>$ \&\mbox{\hyperlink{classsparse_1_1matrix}{x0}})
+\begin{DoxyCompactList}\small\item\em Double Conjugate Gradient solver for a single right-\/hand side (SRHS) system. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header file for the matrix class for sparse matrices and its associated functions. 
+
+
+
+Definition in file \mbox{\hyperlink{sparse_8hpp_source}{sparse.\+hpp}}.
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{sparse_8hpp_a842d649f6f6bcdbf6d43cfc71c2d5d9b}\label{sparse_8hpp_a842d649f6f6bcdbf6d43cfc71c2d5d9b} 
+\index{sparse.hpp@{sparse.hpp}!CG\_dsolve@{CG\_dsolve}}
+\index{CG\_dsolve@{CG\_dsolve}!sparse.hpp@{sparse.hpp}}
+\doxysubsubsection{\texorpdfstring{CG\_dsolve()}{CG\_dsolve()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{classsparse_1_1matrix}{double}} $>$ CG\+\_\+dsolve (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsparse_1_1matrix}{sparse\+::matrix}}$<$ \mbox{\hyperlink{classsparse_1_1matrix}{double}} $>$ \&}]{A,  }\item[{std\+::vector$<$ \mbox{\hyperlink{classsparse_1_1matrix}{double}} $>$ \&}]{b,  }\item[{std\+::vector$<$ \mbox{\hyperlink{classsparse_1_1matrix}{double}} $>$ \&}]{x0 }\end{DoxyParamCaption})}
+
+
+
+Double Conjugate Gradient solver for a single right-\/hand side (SRHS) system. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em A} & SPD Coefficient Matrix \\
+\hline
+{\em b} & RHS vector \\
+\hline
+{\em x0} & Initial guess vector (usually its set to 0) \\
+\hline
+\end{DoxyParams}
+Initialize the solver Advanced users can skip this step and set the values in the ipar and dpar arrays directly.
+
+Check the consistency and correctness of the parameters to be passed to the solver routine. Only reduces the chance of making a mistake. Skip this operation only if you are sure that the correct data is specified in the solver parameters.
+
+Definition at line \mbox{\hyperlink{CG__dsolve_8cpp_source_l00005}{5}} of file \mbox{\hyperlink{CG__dsolve_8cpp_source}{CG\+\_\+dsolve.\+cpp}}.
+
+\Hypertarget{sparse_8hpp_a70699fa1f683514a428bc6002ee3c60f}\label{sparse_8hpp_a70699fa1f683514a428bc6002ee3c60f} 
+\index{sparse.hpp@{sparse.hpp}!FGMRES\_dsolve@{FGMRES\_dsolve}}
+\index{FGMRES\_dsolve@{FGMRES\_dsolve}!sparse.hpp@{sparse.hpp}}
+\doxysubsubsection{\texorpdfstring{FGMRES\_dsolve()}{FGMRES\_dsolve()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{classsparse_1_1matrix}{double}} $>$ FGMRES\+\_\+dsolve (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsparse_1_1matrix}{sparse\+::matrix}}$<$ \mbox{\hyperlink{classsparse_1_1matrix}{double}} $>$ \&}]{A,  }\item[{std\+::vector$<$ \mbox{\hyperlink{classsparse_1_1matrix}{double}} $>$ \&}]{b,  }\item[{std\+::vector$<$ \mbox{\hyperlink{classsparse_1_1matrix}{double}} $>$ \&}]{x0,  }\item[{\mbox{\hyperlink{classsparse_1_1matrix}{bool}}}]{preconditioned,  }\item[{\mbox{\hyperlink{classsparse_1_1matrix}{sparse\+::matrix}}$<$ \mbox{\hyperlink{classsparse_1_1matrix}{double}} $>$ \&}]{M }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{FGMRES__dsolve_8cpp_source_l00004}{4}} of file \mbox{\hyperlink{FGMRES__dsolve_8cpp_source}{FGMRES\+\_\+dsolve.\+cpp}}.
+
+\Hypertarget{sparse_8hpp_a94f299ec33def6bc7d00c782d8e3e4c7}\label{sparse_8hpp_a94f299ec33def6bc7d00c782d8e3e4c7} 
+\index{sparse.hpp@{sparse.hpp}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}}
+\index{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!sparse.hpp@{sparse.hpp}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::vector$<$ T $>$ \mbox{\hyperlink{classsparse_1_1matrix}{sparse\+::operator}}\texorpdfstring{$\ast$}{*} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsparse_1_1matrix}{const}} std\+::vector$<$ \mbox{\hyperlink{classsparse_1_1matrix}{T}} $>$}]{x,  }\item[{\mbox{\hyperlink{classsparse_1_1matrix}{const}} \mbox{\hyperlink{classsparse_1_1matrix}{matrix}}$<$ \mbox{\hyperlink{classsparse_1_1matrix}{T}} $>$ \&}]{A }\end{DoxyParamCaption})}
+
+
+
+Operator \texorpdfstring{$\ast$}{*}, multiplies a vector by a sparse matrix. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & A vector used before the operator \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & encompasses all primitive numerical data types and the matrix type \\
+\hline
+\end{DoxyTemplParams}
+
+
+Definition at line \mbox{\hyperlink{sparse__vxs_8cpp_source_l00006}{6}} of file \mbox{\hyperlink{sparse__vxs_8cpp_source}{sparse\+\_\+vxs.\+cpp}}.
+
+\Hypertarget{sparse_8hpp_ac7a1481905fad7b235f74410e4415054}\label{sparse_8hpp_ac7a1481905fad7b235f74410e4415054} 
+\index{sparse.hpp@{sparse.hpp}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}}
+\index{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!sparse.hpp@{sparse.hpp}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T , typename U $>$ \\
+matrix$<$ T $>$ \mbox{\hyperlink{classsparse_1_1matrix}{sparse\+::operator}}\texorpdfstring{$\ast$}{*} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsparse_1_1matrix}{U}}}]{x,  }\item[{\mbox{\hyperlink{classsparse_1_1matrix}{const}} \mbox{\hyperlink{classsparse_1_1matrix}{matrix}}$<$ \mbox{\hyperlink{classsparse_1_1matrix}{T}} $>$ \&}]{A }\end{DoxyParamCaption})}
+
+
+
+Operator \texorpdfstring{$\ast$}{*}, multiplies a number by a sparse matrix. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & A numerical primitive used before the operator \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em U} & encompasses all primitive numerical data types and T, the matrix type \\
+\hline
+\end{DoxyTemplParams}
+
+
+Definition at line \mbox{\hyperlink{sparse__mul__nxs_8cpp_source_l00006}{6}} of file \mbox{\hyperlink{sparse__mul__nxs_8cpp_source}{sparse\+\_\+mul\+\_\+nxs.\+cpp}}.
+

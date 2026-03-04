@@ -1,0 +1,796 @@
+\doxysection{dense\+::matrix\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{classdense_1_1matrix}{}\label{classdense_1_1matrix}\index{dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}}
+
+
+A class to create a dense matrix object of any number of dimensions.  
+
+
+
+
+{\ttfamily \#include $<$dense.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classdense_1_1matrix_a2f5c551af9f436909bd076a03f90e946}{matrix}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. Initializes an empty matrix with zero dimensions and size. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classdense_1_1matrix_a134f4a884a4cb976880d9855ce07cd3e}{matrix}} (std\+::vector$<$ \mbox{\hyperlink{classdense_1_1matrix}{T}} $>$ diag, \mbox{\hyperlink{classdense_1_1matrix}{int}} \mbox{\hyperlink{classdense_1_1matrix}{n}}, \mbox{\hyperlink{classdense_1_1matrix}{int}} \mbox{\hyperlink{classdense_1_1matrix}{m}})
+\begin{DoxyCompactList}\small\item\em Constructs a diagonal matrix. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename... Dims$>$ }\\\mbox{\hyperlink{classdense_1_1matrix_aba58d5a6b7f8e77b8ffb35f436f6cacd}{matrix}} (Dims... \mbox{\hyperlink{classdense_1_1matrix}{dims}})
+\begin{DoxyCompactList}\small\item\em Constructor with variadic template input for dimensions. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classdense_1_1matrix_afa3eb619ad0653e0ff1e2ee469ac9401}{matrix}} (\mbox{\hyperlink{classdense_1_1matrix}{matrix}} \&\&\mbox{\hyperlink{classdense_1_1matrix}{A}}) \mbox{\hyperlink{classdense_1_1matrix}{noexcept}}
+\begin{DoxyCompactList}\small\item\em Move constructor, transfers the ownership of matrix A. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classdense_1_1matrix_afec396e982faca429ca46abe38a817d4}{matrix}} (\mbox{\hyperlink{classdense_1_1matrix}{matrix}} \mbox{\hyperlink{classdense_1_1matrix}{const}} \&\mbox{\hyperlink{classdense_1_1matrix}{A}})
+\begin{DoxyCompactList}\small\item\em Copy constructor, copies matrix A. \end{DoxyCompactList}\item 
+\Hypertarget{classdense_1_1matrix_aa0f4e7b608f9c54facb7acb5726f9e3f}\label{classdense_1_1matrix_aa0f4e7b608f9c54facb7acb5726f9e3f} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}matrix} ()=\mbox{\hyperlink{classdense_1_1matrix}{default}}
+\begin{DoxyCompactList}\small\item\em Destructor, deletes data associated with the matrix. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classdense_1_1matrix_a6e1bf136f546e36d534011329d023837}{matrix}} (std\+::vector$<$ \mbox{\hyperlink{classdense_1_1matrix}{T}} $>$ \mbox{\hyperlink{classdense_1_1matrix}{v}}, std\+::vector$<$ \mbox{\hyperlink{classdense_1_1matrix}{size\+\_\+t}} $>$ \mbox{\hyperlink{classdense_1_1matrix}{d}}, std\+::vector$<$ \mbox{\hyperlink{classdense_1_1matrix}{int}} $>$ \mbox{\hyperlink{classdense_1_1matrix}{p}})
+\begin{DoxyCompactList}\small\item\em Vectors constructor, builds a new matrix from the 3 vectors. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classdense_1_1matrix}{matrix}} \mbox{\hyperlink{classdense_1_1matrix_aab2e012dbfb09e7f56728d793dbe92d6}{I}} (\mbox{\hyperlink{classdense_1_1matrix}{int}} \mbox{\hyperlink{classdense_1_1matrix}{N}})
+\begin{DoxyCompactList}\small\item\em Constructs an N by N identity matrix. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classdense_1_1matrix}{matrix}} \& \mbox{\hyperlink{classdense_1_1matrix_a7b5922d3d4f77d8f83c9a60894ef9764}{operator=}} (\mbox{\hyperlink{classdense_1_1matrix}{matrix}} \mbox{\hyperlink{classdense_1_1matrix}{const}} \&\mbox{\hyperlink{classdense_1_1matrix}{A}})
+\begin{DoxyCompactList}\small\item\em Operator =, creates a deep copy of the matrix and assigns it. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classdense_1_1matrix}{matrix}} \mbox{\hyperlink{classdense_1_1matrix_aff3f92d1bcd6b9d633f838dabff1a82e}{operator+}} (\mbox{\hyperlink{classdense_1_1matrix}{matrix}} \mbox{\hyperlink{classdense_1_1matrix}{const}} \&\mbox{\hyperlink{classdense_1_1matrix}{A}})
+\begin{DoxyCompactList}\small\item\em Operator +, adds the values of two matrices of same size and dimensions. \end{DoxyCompactList}\item 
+{\footnotesize template$<$\mbox{\hyperlink{classdense_1_1matrix}{typename}} \mbox{\hyperlink{classdense_1_1matrix}{U}}  = T$>$ }\\std\+::enable\+\_\+if\+\_\+t$<$ std\+::is\+\_\+same\+\_\+v$<$ \mbox{\hyperlink{classdense_1_1matrix}{U}}, \mbox{\hyperlink{classdense_1_1matrix}{T}} $>$, \mbox{\hyperlink{classdense_1_1matrix}{matrix}}$<$ \mbox{\hyperlink{classdense_1_1matrix}{T}} $>$ $>$ \mbox{\hyperlink{classdense_1_1matrix_acadefba6bf6e0ce68e1afdd13787f6c6}{operator\texorpdfstring{$\ast$}{*}}} (\mbox{\hyperlink{classdense_1_1matrix}{const}} \mbox{\hyperlink{classdense_1_1matrix}{matrix}}$<$ \mbox{\hyperlink{classdense_1_1matrix}{T}} $>$ \&\mbox{\hyperlink{classdense_1_1matrix}{A}}) \mbox{\hyperlink{classdense_1_1matrix}{const}}
+\begin{DoxyCompactList}\small\item\em Operator \texorpdfstring{$\ast$}{*}, multiplies two 2D dense matrices. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classdense_1_1matrix}{bool}} \mbox{\hyperlink{classdense_1_1matrix_ab31ab44a2927bf765f8ef0590428c413}{operator==}} (\mbox{\hyperlink{classdense_1_1matrix}{matrix}} \mbox{\hyperlink{classdense_1_1matrix}{const}} \&\mbox{\hyperlink{classdense_1_1matrix}{A}})
+\begin{DoxyCompactList}\small\item\em Operator ==, compares two matricies. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classdense_1_1matrix}{matrix}} \mbox{\hyperlink{classdense_1_1matrix_adf62d5d2d773f698616ab834df464629}{operator\texorpdfstring{$\ast$}{*}}} (\mbox{\hyperlink{classdense_1_1matrix}{T}} \mbox{\hyperlink{classdense_1_1matrix}{x}})
+\begin{DoxyCompactList}\small\item\em Operator \texorpdfstring{$\ast$}{*}, multiplies a matrix by a number. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{classdense_1_1matrix}{T}} $>$ \mbox{\hyperlink{classdense_1_1matrix_a40aeeedc95ca4a884b0c84b895ce66ec}{operator\texorpdfstring{$\ast$}{*}}} (\mbox{\hyperlink{classdense_1_1matrix}{const}} std\+::vector$<$ \mbox{\hyperlink{classdense_1_1matrix}{T}} $>$ \mbox{\hyperlink{classdense_1_1matrix}{x}})
+\begin{DoxyCompactList}\small\item\em Operator \texorpdfstring{$\ast$}{*}, multiplies a matrix of n collumns by a vector of n rows. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classdense_1_1matrix}{matrix}} \mbox{\hyperlink{classdense_1_1matrix_a1543e27fe6aa0097c3b3c1ad9dc7402f}{operator-\/}} (\mbox{\hyperlink{classdense_1_1matrix}{matrix}} \mbox{\hyperlink{classdense_1_1matrix}{const}} \&\mbox{\hyperlink{classdense_1_1matrix}{A}})
+\begin{DoxyCompactList}\small\item\em Operator -\/, subtracts the values of second matrix from the first, both must have same size and dimensions. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classdense_1_1matrix}{matrix}} \mbox{\hyperlink{classdense_1_1matrix_a953334cf57cffd0907fa26d676d7bbe7}{transpose}} () \mbox{\hyperlink{classdense_1_1matrix}{const}}
+\begin{DoxyCompactList}\small\item\em Function that transposes the matrix in 2D. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classdense_1_1matrix}{matrix}} \mbox{\hyperlink{classdense_1_1matrix_ad486d623111dfb0fdbd0ad3ae691bd1f}{operator\texorpdfstring{$^\wedge$}{\string^}}} (\mbox{\hyperlink{classdense_1_1matrix}{int}} \mbox{\hyperlink{classdense_1_1matrix}{n}})
+\begin{DoxyCompactList}\small\item\em Returns A\texorpdfstring{$^\wedge$}{\string^}n. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classdense_1_1matrix}{matrix}} \mbox{\hyperlink{classdense_1_1matrix_afe1c55f9300b04f3e4c88204a8a98c8c}{operator/}} (\mbox{\hyperlink{classdense_1_1matrix}{matrix}} \mbox{\hyperlink{classdense_1_1matrix}{const}} \&\mbox{\hyperlink{classdense_1_1matrix}{A}})
+\begin{DoxyCompactList}\small\item\em Operator /, Performs column-\/wise augmentation. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classdense_1_1matrix}{matrix}} \mbox{\hyperlink{classdense_1_1matrix_a4921c8ceda25edc5a3bede5210c50d43}{operator\texorpdfstring{$\vert$}{|}}} (\mbox{\hyperlink{classdense_1_1matrix}{matrix}} \mbox{\hyperlink{classdense_1_1matrix}{const}} \&\mbox{\hyperlink{classdense_1_1matrix}{A}})
+\begin{DoxyCompactList}\small\item\em Operator \texorpdfstring{$\vert$}{|}, Performs row-\/wise augmentation. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classdense_1_1matrix}{T}} \& \mbox{\hyperlink{classdense_1_1matrix_a10b77097e03561b0c0c4fb83b1cbd966}{operator()}} (\mbox{\hyperlink{classdense_1_1matrix}{size\+\_\+t}} index)
+\begin{DoxyCompactList}\small\item\em Operator (), returns a writable reference to the value at the coordinates. Variadic index. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename... Indices$>$ }\\\mbox{\hyperlink{classdense_1_1matrix}{const}} \mbox{\hyperlink{classdense_1_1matrix}{T}} \& \mbox{\hyperlink{classdense_1_1matrix_a0141a7309a3b9c9022eb62c8c32bb640}{operator()}} (Indices... \mbox{\hyperlink{classdense_1_1matrix}{indices}})
+\begin{DoxyCompactList}\small\item\em Operator (), returns a constant (non-\/writable) reference to the value at the coordinates. Variadic index. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classdense_1_1matrix}{size\+\_\+t}} \mbox{\hyperlink{classdense_1_1matrix_a9437766c61180bd2ce4bb15810b572d8}{get\+\_\+size}} () \mbox{\hyperlink{classdense_1_1matrix}{const}}
+\begin{DoxyCompactList}\small\item\em Gets size of matrix. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classdense_1_1matrix}{size\+\_\+t}} \mbox{\hyperlink{classdense_1_1matrix_a7fbe9eeacd7041173694b7b992d66ea9}{get\+\_\+nod}} () \mbox{\hyperlink{classdense_1_1matrix}{const}}
+\begin{DoxyCompactList}\small\item\em Gets number of dimensions. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classdense_1_1matrix}{size\+\_\+t}} \mbox{\hyperlink{classdense_1_1matrix_afeebe71f33c56388aba63e72c10b8456}{get\+\_\+dim\+\_\+size}} (\mbox{\hyperlink{classdense_1_1matrix}{size\+\_\+t}} index) \mbox{\hyperlink{classdense_1_1matrix}{const}}
+\begin{DoxyCompactList}\small\item\em Gets specified dimension\textquotesingle{}s size using an index. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classdense_1_1matrix}{T}} \mbox{\hyperlink{classdense_1_1matrix_a0769b47965c785ca0422ad3e30c344ba}{get\+\_\+value\+\_\+at}} (\mbox{\hyperlink{classdense_1_1matrix}{size\+\_\+t}} index) \mbox{\hyperlink{classdense_1_1matrix}{const}}
+\begin{DoxyCompactList}\small\item\em Gets value at a given index. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classdense_1_1matrix}{void}} \mbox{\hyperlink{classdense_1_1matrix_a486b9b0f1440800bbfa89d860e5b26c2}{svd}} (\mbox{\hyperlink{classdense_1_1matrix}{matrix}}$<$ \mbox{\hyperlink{classdense_1_1matrix}{T}} $>$ \&\mbox{\hyperlink{classdense_1_1matrix}{u}}, \mbox{\hyperlink{classdense_1_1matrix}{matrix}}$<$ \mbox{\hyperlink{classdense_1_1matrix}{T}} $>$ \&\mbox{\hyperlink{classdense_1_1matrix}{s}}, \mbox{\hyperlink{classdense_1_1matrix}{matrix}}$<$ \mbox{\hyperlink{classdense_1_1matrix}{T}} $>$ \&\mbox{\hyperlink{classdense_1_1matrix}{v}})
+\begin{DoxyCompactList}\small\item\em Computes the SVD of the matrix. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classdense_1_1matrix}{T}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classdense_1_1matrix_a079c880557b10d257fe69d09de15ee9b}{get\+\_\+values\+\_\+data}} ()
+\begin{DoxyCompactList}\small\item\em Gets all values data. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classdense_1_1matrix}{void}} \mbox{\hyperlink{classdense_1_1matrix_a7b92c63ace1144eb27f9767443f63045}{set\+\_\+value\+\_\+at}} (\mbox{\hyperlink{classdense_1_1matrix}{size\+\_\+t}} index, \mbox{\hyperlink{classdense_1_1matrix}{T}} \mbox{\hyperlink{classdense_1_1matrix}{value}})
+\begin{DoxyCompactList}\small\item\em Sets value at a given index. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename... Types$>$ }\\\mbox{\hyperlink{classdense_1_1matrix}{void}} \mbox{\hyperlink{classdense_1_1matrix_ac2defaf221866d3b2ca222a62651cf5b}{set\+\_\+values}} (\mbox{\hyperlink{classdense_1_1matrix}{Types}} \&\&... \mbox{\hyperlink{classdense_1_1matrix}{valuess}})
+\begin{DoxyCompactList}\small\item\em Sets all matrix values, clearing any previously stored values and then filling with zeros for the rest. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classdense_1_1matrix}{const}} \mbox{\hyperlink{classdense_1_1matrix}{T}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classdense_1_1matrix_ab453610a31cb54bb61fe94a3cf0b117c}{get\+\_\+const\+\_\+values\+\_\+data}} () \mbox{\hyperlink{classdense_1_1matrix}{const}}
+\begin{DoxyCompactList}\small\item\em returns a constant pointer to the underlying vector array values \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classdense_1_1matrix}{void}} \mbox{\hyperlink{classdense_1_1matrix_a32aa6617957165f9bdef07326b558730}{print2D}} ()
+\begin{DoxyCompactList}\small\item\em Prints the values of 2D array. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename... Dims$>$ }\\\mbox{\hyperlink{classdense_1_1matrix}{void}} \mbox{\hyperlink{classdense_1_1matrix_a9eb86d15d2742284cf23ef041f4aac83}{reshape}} (Dims... \mbox{\hyperlink{classdense_1_1matrix}{dims}})
+\begin{DoxyCompactList}\small\item\em Reshapes matrix after default constuctor initialisation. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classdense_1_1matrix}{void}} \mbox{\hyperlink{classdense_1_1matrix_a7516a8a752919975dd10afd4c91aaae2}{low\+\_\+level\+\_\+matrix\+\_\+multiplication}} (\mbox{\hyperlink{classdense_1_1matrix}{const}} \mbox{\hyperlink{classdense_1_1matrix}{CBLAS\+\_\+\+TRANSPOSE}} \mbox{\hyperlink{classdense_1_1matrix}{transa}}, \mbox{\hyperlink{classdense_1_1matrix}{const}} \mbox{\hyperlink{classdense_1_1matrix}{CBLAS\+\_\+\+TRANSPOSE}} \mbox{\hyperlink{classdense_1_1matrix}{transb}}, \mbox{\hyperlink{classdense_1_1matrix}{const}} \mbox{\hyperlink{classdense_1_1matrix}{T}} \mbox{\hyperlink{classdense_1_1matrix}{beta}}, \mbox{\hyperlink{classdense_1_1matrix}{matrix}}$<$ \mbox{\hyperlink{classdense_1_1matrix}{T}} $>$ \mbox{\hyperlink{classdense_1_1matrix}{const}} \&\mbox{\hyperlink{classdense_1_1matrix}{A}}, \mbox{\hyperlink{classdense_1_1matrix}{matrix}}$<$ \mbox{\hyperlink{classdense_1_1matrix}{T}} $>$ \mbox{\hyperlink{classdense_1_1matrix}{const}} \&\mbox{\hyperlink{classdense_1_1matrix}{B}}, \mbox{\hyperlink{classdense_1_1matrix}{matrix}}$<$ \mbox{\hyperlink{classdense_1_1matrix}{T}} $>$ \&\mbox{\hyperlink{classdense_1_1matrix}{C}}, \mbox{\hyperlink{classdense_1_1matrix}{const}} \mbox{\hyperlink{classdense_1_1matrix}{T}} \mbox{\hyperlink{classdense_1_1matrix}{alpha}})
+\begin{DoxyCompactList}\small\item\em Low level implementation of matrix multiplication using BLAS. documentation at \href{https://www.intel.com/content/www/us/en/docs/onemkl/developer-reference-c/2024-1/cblas-gemm-001.html\#GUID-97718E5C-6E0A-44F0-B2B1-A551F0F164B2}{\texttt{ https\+://www.\+intel.\+com/content/www/us/en/docs/onemkl/developer-\/reference-\/c/2024-\/1/cblas-\/gemm-\/001.\+html\#\+GUID-\/97718\+E5\+C-\/6\+E0\+A-\/44\+F0-\/\+B2\+B1-\/\+A551\+F0\+F164\+B2}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classdense_1_1matrix}{static}} \mbox{\hyperlink{classdense_1_1matrix}{matrix}} \mbox{\hyperlink{classdense_1_1matrix_a74d5ad01c6b272f4ef61ef82115762e2}{dense\+\_\+read\+MM}} (\mbox{\hyperlink{classdense_1_1matrix}{const}} std\+::string \&\mbox{\hyperlink{classdense_1_1matrix}{MMpath}})
+\begin{DoxyCompactList}\small\item\em Reads a Matrix Market (MM) sparse matrix, converts it from COO to CSR format and returns a CSR matrix obj (with a handle cosntructor) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$\mbox{\hyperlink{classdense_1_1matrix_a2f5c551af9f436909bd076a03f90e946}{typename}} \mbox{\hyperlink{classdense_1_1matrix_a2f5c551af9f436909bd076a03f90e946}{T}}$>$\newline
+class dense\+::matrix$<$ T $>$}
+A class to create a dense matrix object of any number of dimensions. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The scalar type used for matrix elements. \\
+\hline
+\end{DoxyTemplParams}
+
+
+Definition at line \mbox{\hyperlink{dense_8hpp_source_l00032}{32}} of file \mbox{\hyperlink{dense_8hpp_source}{dense.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classdense_1_1matrix_a2f5c551af9f436909bd076a03f90e946}\label{classdense_1_1matrix_a2f5c551af9f436909bd076a03f90e946} 
+\index{dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}!matrix@{matrix}}
+\index{matrix@{matrix}!dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{matrix()}{matrix()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classdense_1_1matrix}{typename}} \mbox{\hyperlink{classdense_1_1matrix}{T}} $>$ \\
+\mbox{\hyperlink{classdense_1_1matrix}{dense\+::matrix}}$<$ \mbox{\hyperlink{classdense_1_1matrix}{T}} $>$\+::matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Default constructor. Initializes an empty matrix with zero dimensions and size. 
+
+
+
+Definition at line \mbox{\hyperlink{dense_8hpp_source_l00054}{54}} of file \mbox{\hyperlink{dense_8hpp_source}{dense.\+hpp}}.
+
+\Hypertarget{classdense_1_1matrix_a134f4a884a4cb976880d9855ce07cd3e}\label{classdense_1_1matrix_a134f4a884a4cb976880d9855ce07cd3e} 
+\index{dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}!matrix@{matrix}}
+\index{matrix@{matrix}!dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{matrix()}{matrix()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classdense_1_1matrix}{typename}} \mbox{\hyperlink{classdense_1_1matrix}{T}} $>$ \\
+matrix\+::matrix (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{classdense_1_1matrix}{T}} $>$}]{diag,  }\item[{\mbox{\hyperlink{classdense_1_1matrix}{int}}}]{n,  }\item[{\mbox{\hyperlink{classdense_1_1matrix}{int}}}]{m }\end{DoxyParamCaption})}
+
+
+
+Constructs a diagonal matrix. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em diag} & An std vector storing the diagonal elements \\
+\hline
+{\em n} & The number of rows \\
+\hline
+{\em m} & The number of columns \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{dense__diagonal__construct_8cpp_source_l00005}{5}} of file \mbox{\hyperlink{dense__diagonal__construct_8cpp_source}{dense\+\_\+diagonal\+\_\+construct.\+cpp}}.
+
+\Hypertarget{classdense_1_1matrix_aba58d5a6b7f8e77b8ffb35f436f6cacd}\label{classdense_1_1matrix_aba58d5a6b7f8e77b8ffb35f436f6cacd} 
+\index{dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}!matrix@{matrix}}
+\index{matrix@{matrix}!dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{matrix()}{matrix()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classdense_1_1matrix}{typename}} \mbox{\hyperlink{classdense_1_1matrix}{T}} $>$ \\
+template$<$typename... Dims$>$ \\
+\mbox{\hyperlink{classdense_1_1matrix}{dense\+::matrix}}$<$ \mbox{\hyperlink{classdense_1_1matrix}{T}} $>$\+::matrix (\begin{DoxyParamCaption}\item[{Dims...}]{dims }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor with variadic template input for dimensions. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Dims} & A variadic pack representing dimension sizes. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em dims} & The sizes of each dimension. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{dense_8hpp_source_l00069}{69}} of file \mbox{\hyperlink{dense_8hpp_source}{dense.\+hpp}}.
+
+\Hypertarget{classdense_1_1matrix_afa3eb619ad0653e0ff1e2ee469ac9401}\label{classdense_1_1matrix_afa3eb619ad0653e0ff1e2ee469ac9401} 
+\index{dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}!matrix@{matrix}}
+\index{matrix@{matrix}!dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{matrix()}{matrix()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classdense_1_1matrix}{typename}} \mbox{\hyperlink{classdense_1_1matrix}{T}} $>$ \\
+\mbox{\hyperlink{classdense_1_1matrix}{dense\+::matrix}}$<$ \mbox{\hyperlink{classdense_1_1matrix}{T}} $>$\+::matrix (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classdense_1_1matrix}{matrix}}$<$ \mbox{\hyperlink{classdense_1_1matrix}{T}} $>$ \&\&}]{A }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Move constructor, transfers the ownership of matrix A. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em A} & A matrix reference to be moved \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{dense_8hpp_source_l00092}{92}} of file \mbox{\hyperlink{dense_8hpp_source}{dense.\+hpp}}.
+
+\Hypertarget{classdense_1_1matrix_afec396e982faca429ca46abe38a817d4}\label{classdense_1_1matrix_afec396e982faca429ca46abe38a817d4} 
+\index{dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}!matrix@{matrix}}
+\index{matrix@{matrix}!dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{matrix()}{matrix()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classdense_1_1matrix}{typename}} \mbox{\hyperlink{classdense_1_1matrix}{T}} $>$ \\
+matrix\+::matrix (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classdense_1_1matrix}{matrix}}$<$ \mbox{\hyperlink{classdense_1_1matrix}{T}} $>$ \mbox{\hyperlink{classdense_1_1matrix}{const}} \&}]{A }\end{DoxyParamCaption})}
+
+
+
+Copy constructor, copies matrix A. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em A} & A constant matrix reference to be copied \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{copy__constructor_8cpp_source_l00005}{5}} of file \mbox{\hyperlink{copy__constructor_8cpp_source}{copy\+\_\+constructor.\+cpp}}.
+
+\Hypertarget{classdense_1_1matrix_a6e1bf136f546e36d534011329d023837}\label{classdense_1_1matrix_a6e1bf136f546e36d534011329d023837} 
+\index{dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}!matrix@{matrix}}
+\index{matrix@{matrix}!dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{matrix()}{matrix()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classdense_1_1matrix}{typename}} \mbox{\hyperlink{classdense_1_1matrix}{T}} $>$ \\
+matrix\+::matrix (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{classdense_1_1matrix}{T}} $>$}]{v,  }\item[{std\+::vector$<$ \mbox{\hyperlink{classdense_1_1matrix}{size\+\_\+t}} $>$}]{d,  }\item[{std\+::vector$<$ \mbox{\hyperlink{classdense_1_1matrix}{int}} $>$}]{p }\end{DoxyParamCaption})}
+
+
+
+Vectors constructor, builds a new matrix from the 3 vectors. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & vector storing all matrix values. \\
+\hline
+{\em d} & storing the size of each dimension. \\
+\hline
+{\em p} & storing the number of elements separating adjacent values in each dimension of the tensor \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{vectors__constructor_8cpp_source_l00005}{5}} of file \mbox{\hyperlink{vectors__constructor_8cpp_source}{vectors\+\_\+constructor.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classdense_1_1matrix_a74d5ad01c6b272f4ef61ef82115762e2}\label{classdense_1_1matrix_a74d5ad01c6b272f4ef61ef82115762e2} 
+\index{dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}!dense\_readMM@{dense\_readMM}}
+\index{dense\_readMM@{dense\_readMM}!dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{dense\_readMM()}{dense\_readMM()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classdense_1_1matrix}{typename}} \mbox{\hyperlink{classdense_1_1matrix}{T}} $>$ \\
+\mbox{\hyperlink{classdense_1_1matrix}{matrix}}$<$ \mbox{\hyperlink{classdense_1_1matrix}{T}} $>$ matrix\+::dense\+\_\+read\+MM (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classdense_1_1matrix}{const}} std\+::string \&}]{MMpath }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Reads a Matrix Market (MM) sparse matrix, converts it from COO to CSR format and returns a CSR matrix obj (with a handle cosntructor) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em MMpath} & A string with the path to the MM matrix \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A sparse matrix object created with the handle constructor 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dense__readMM_8cpp_source_l00006}{6}} of file \mbox{\hyperlink{dense__readMM_8cpp_source}{dense\+\_\+read\+MM.\+cpp}}.
+
+\Hypertarget{classdense_1_1matrix_ab453610a31cb54bb61fe94a3cf0b117c}\label{classdense_1_1matrix_ab453610a31cb54bb61fe94a3cf0b117c} 
+\index{dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}!get\_const\_values\_data@{get\_const\_values\_data}}
+\index{get\_const\_values\_data@{get\_const\_values\_data}!dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{get\_const\_values\_data()}{get\_const\_values\_data()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classdense_1_1matrix}{typename}} \mbox{\hyperlink{classdense_1_1matrix}{T}} $>$ \\
+\mbox{\hyperlink{classdense_1_1matrix}{template}} \mbox{\hyperlink{classdense_1_1matrix}{const}} std\+::complex$<$ \mbox{\hyperlink{classdense_1_1matrix}{double}} $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classdense_1_1matrix}{dense\+::matrix}}$<$ \mbox{\hyperlink{classdense_1_1matrix}{T}} $>$\+::get\+\_\+const\+\_\+values\+\_\+data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+returns a constant pointer to the underlying vector array values 
+
+
+
+Definition at line \mbox{\hyperlink{get__values__data__const_8cpp_source_l00005}{5}} of file \mbox{\hyperlink{get__values__data__const_8cpp_source}{get\+\_\+values\+\_\+data\+\_\+const.\+cpp}}.
+
+\Hypertarget{classdense_1_1matrix_afeebe71f33c56388aba63e72c10b8456}\label{classdense_1_1matrix_afeebe71f33c56388aba63e72c10b8456} 
+\index{dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}!get\_dim\_size@{get\_dim\_size}}
+\index{get\_dim\_size@{get\_dim\_size}!dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{get\_dim\_size()}{get\_dim\_size()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classdense_1_1matrix}{typename}} \mbox{\hyperlink{classdense_1_1matrix}{T}} $>$ \\
+\mbox{\hyperlink{classdense_1_1matrix}{template}} \mbox{\hyperlink{classdense_1_1matrix}{size\+\_\+t}} \mbox{\hyperlink{classdense_1_1matrix}{dense\+::matrix}}$<$ \mbox{\hyperlink{classdense_1_1matrix}{T}} $>$\+::get\+\_\+dim\+\_\+size (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classdense_1_1matrix}{size\+\_\+t}}}]{index }\end{DoxyParamCaption}) const}
+
+
+
+Gets specified dimension\textquotesingle{}s size using an index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & The linear 0-\/based index in the dim\+\_\+size vector. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{get__dim__size_8cpp_source_l00005}{5}} of file \mbox{\hyperlink{get__dim__size_8cpp_source}{get\+\_\+dim\+\_\+size.\+cpp}}.
+
+\Hypertarget{classdense_1_1matrix_a7fbe9eeacd7041173694b7b992d66ea9}\label{classdense_1_1matrix_a7fbe9eeacd7041173694b7b992d66ea9} 
+\index{dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}!get\_nod@{get\_nod}}
+\index{get\_nod@{get\_nod}!dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{get\_nod()}{get\_nod()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classdense_1_1matrix}{typename}} \mbox{\hyperlink{classdense_1_1matrix}{T}} $>$ \\
+\mbox{\hyperlink{classdense_1_1matrix}{template}} \mbox{\hyperlink{classdense_1_1matrix}{size\+\_\+t}} \mbox{\hyperlink{classdense_1_1matrix}{dense\+::matrix}}$<$ \mbox{\hyperlink{classdense_1_1matrix}{T}} $>$\+::get\+\_\+nod (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets number of dimensions. 
+
+
+
+Definition at line \mbox{\hyperlink{get__nod_8cpp_source_l00008}{8}} of file \mbox{\hyperlink{get__nod_8cpp_source}{get\+\_\+nod.\+cpp}}.
+
+\Hypertarget{classdense_1_1matrix_a9437766c61180bd2ce4bb15810b572d8}\label{classdense_1_1matrix_a9437766c61180bd2ce4bb15810b572d8} 
+\index{dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}!get\_size@{get\_size}}
+\index{get\_size@{get\_size}!dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{get\_size()}{get\_size()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classdense_1_1matrix}{typename}} \mbox{\hyperlink{classdense_1_1matrix}{T}} $>$ \\
+\mbox{\hyperlink{classdense_1_1matrix}{size\+\_\+t}} matrix\+::get\+\_\+size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets size of matrix. 
+
+
+
+Definition at line \mbox{\hyperlink{get__size_8cpp_source_l00005}{5}} of file \mbox{\hyperlink{get__size_8cpp_source}{get\+\_\+size.\+cpp}}.
+
+\Hypertarget{classdense_1_1matrix_a0769b47965c785ca0422ad3e30c344ba}\label{classdense_1_1matrix_a0769b47965c785ca0422ad3e30c344ba} 
+\index{dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}!get\_value\_at@{get\_value\_at}}
+\index{get\_value\_at@{get\_value\_at}!dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{get\_value\_at()}{get\_value\_at()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classdense_1_1matrix}{typename}} \mbox{\hyperlink{classdense_1_1matrix}{T}} $>$ \\
+\mbox{\hyperlink{classdense_1_1matrix}{T}} matrix\+::get\+\_\+value\+\_\+at (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classdense_1_1matrix}{size\+\_\+t}}}]{index }\end{DoxyParamCaption}) const}
+
+
+
+Gets value at a given index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & The linear 0-\/based index in the flat values vector. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{get__value__at_8cpp_source_l00005}{5}} of file \mbox{\hyperlink{get__value__at_8cpp_source}{get\+\_\+value\+\_\+at.\+cpp}}.
+
+\Hypertarget{classdense_1_1matrix_a079c880557b10d257fe69d09de15ee9b}\label{classdense_1_1matrix_a079c880557b10d257fe69d09de15ee9b} 
+\index{dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}!get\_values\_data@{get\_values\_data}}
+\index{get\_values\_data@{get\_values\_data}!dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{get\_values\_data()}{get\_values\_data()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classdense_1_1matrix}{typename}} \mbox{\hyperlink{classdense_1_1matrix}{T}} $>$ \\
+\mbox{\hyperlink{classdense_1_1matrix}{T}} \texorpdfstring{$\ast$}{*} matrix\+::get\+\_\+values\+\_\+data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets all values data. 
+
+
+
+Definition at line \mbox{\hyperlink{get__values__data_8cpp_source_l00005}{5}} of file \mbox{\hyperlink{get__values__data_8cpp_source}{get\+\_\+values\+\_\+data.\+cpp}}.
+
+\Hypertarget{classdense_1_1matrix_aab2e012dbfb09e7f56728d793dbe92d6}\label{classdense_1_1matrix_aab2e012dbfb09e7f56728d793dbe92d6} 
+\index{dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}!I@{I}}
+\index{I@{I}!dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{I()}{I()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classdense_1_1matrix}{typename}} \mbox{\hyperlink{classdense_1_1matrix}{T}} $>$ \\
+\mbox{\hyperlink{classdense_1_1matrix}{template}} \mbox{\hyperlink{classdense_1_1matrix}{dense\+::matrix}}$<$ std\+::complex$<$ \mbox{\hyperlink{classdense_1_1matrix}{double}} $>$ $>$ matrix\+::I (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classdense_1_1matrix}{int}}}]{N }\end{DoxyParamCaption})}
+
+
+
+Constructs an N by N identity matrix. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em N} & the number of rows/columns in the square identity matrix \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{identity__constructor_8cpp_source_l00005}{5}} of file \mbox{\hyperlink{identity__constructor_8cpp_source}{identity\+\_\+constructor.\+cpp}}.
+
+\Hypertarget{classdense_1_1matrix_a7516a8a752919975dd10afd4c91aaae2}\label{classdense_1_1matrix_a7516a8a752919975dd10afd4c91aaae2} 
+\index{dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}!low\_level\_matrix\_multiplication@{low\_level\_matrix\_multiplication}}
+\index{low\_level\_matrix\_multiplication@{low\_level\_matrix\_multiplication}!dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{low\_level\_matrix\_multiplication()}{low\_level\_matrix\_multiplication()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classdense_1_1matrix}{typename}} \mbox{\hyperlink{classdense_1_1matrix}{T}} $>$ \\
+\mbox{\hyperlink{classdense_1_1matrix}{template}} \mbox{\hyperlink{classdense_1_1matrix}{void}} \mbox{\hyperlink{classdense_1_1matrix}{dense\+::matrix}}$<$ \mbox{\hyperlink{classdense_1_1matrix}{T}} $>$\+::low\+\_\+level\+\_\+matrix\+\_\+multiplication (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classdense_1_1matrix}{const}} \mbox{\hyperlink{classdense_1_1matrix}{CBLAS\+\_\+\+TRANSPOSE}}}]{transa,  }\item[{\mbox{\hyperlink{classdense_1_1matrix}{const}} \mbox{\hyperlink{classdense_1_1matrix}{CBLAS\+\_\+\+TRANSPOSE}}}]{transb,  }\item[{\mbox{\hyperlink{classdense_1_1matrix}{const}} \mbox{\hyperlink{classdense_1_1matrix}{T}}}]{beta,  }\item[{\mbox{\hyperlink{classdense_1_1matrix}{matrix}}$<$ \mbox{\hyperlink{classdense_1_1matrix}{T}} $>$ \mbox{\hyperlink{classdense_1_1matrix}{const}} \&}]{A,  }\item[{\mbox{\hyperlink{classdense_1_1matrix}{matrix}}$<$ \mbox{\hyperlink{classdense_1_1matrix}{T}} $>$ \mbox{\hyperlink{classdense_1_1matrix}{const}} \&}]{B,  }\item[{\mbox{\hyperlink{classdense_1_1matrix}{matrix}}$<$ \mbox{\hyperlink{classdense_1_1matrix}{T}} $>$ \&}]{C,  }\item[{\mbox{\hyperlink{classdense_1_1matrix}{const}} \mbox{\hyperlink{classdense_1_1matrix}{T}}}]{alpha }\end{DoxyParamCaption})}
+
+
+
+Low level implementation of matrix multiplication using BLAS. documentation at \href{https://www.intel.com/content/www/us/en/docs/onemkl/developer-reference-c/2024-1/cblas-gemm-001.html\#GUID-97718E5C-6E0A-44F0-B2B1-A551F0F164B2}{\texttt{ https\+://www.\+intel.\+com/content/www/us/en/docs/onemkl/developer-\/reference-\/c/2024-\/1/cblas-\/gemm-\/001.\+html\#\+GUID-\/97718\+E5\+C-\/6\+E0\+A-\/44\+F0-\/\+B2\+B1-\/\+A551\+F0\+F164\+B2}}. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & encompasses matrix type \\
+\hline
+\end{DoxyTemplParams}
+
+
+Definition at line \mbox{\hyperlink{low__level__multiplication_8cpp_source_l00005}{5}} of file \mbox{\hyperlink{low__level__multiplication_8cpp_source}{low\+\_\+level\+\_\+multiplication.\+cpp}}.
+
+\Hypertarget{classdense_1_1matrix_a0141a7309a3b9c9022eb62c8c32bb640}\label{classdense_1_1matrix_a0141a7309a3b9c9022eb62c8c32bb640} 
+\index{dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}!operator()@{operator()}}
+\index{operator()@{operator()}!dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classdense_1_1matrix}{typename}} \mbox{\hyperlink{classdense_1_1matrix}{T}} $>$ \\
+template$<$typename... Indices$>$ \\
+\mbox{\hyperlink{classdense_1_1matrix}{const}} \mbox{\hyperlink{classdense_1_1matrix}{T}} \& \mbox{\hyperlink{classdense_1_1matrix}{dense\+::matrix}}$<$ \mbox{\hyperlink{classdense_1_1matrix}{T}} $>$\mbox{\hyperlink{classdense_1_1matrix_a2f5c551af9f436909bd076a03f90e946}{\+::operator}}() (\begin{DoxyParamCaption}\item[{Indices...}]{indices }\end{DoxyParamCaption})}
+
+
+
+Operator (), returns a constant (non-\/writable) reference to the value at the coordinates. Variadic index. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em index} & variadic argument for the coordinates of the value to be accesed. \\
+\hline
+\end{DoxyTemplParams}
+\Hypertarget{classdense_1_1matrix_a10b77097e03561b0c0c4fb83b1cbd966}\label{classdense_1_1matrix_a10b77097e03561b0c0c4fb83b1cbd966} 
+\index{dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}!operator()@{operator()}}
+\index{operator()@{operator()}!dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classdense_1_1matrix}{typename}} \mbox{\hyperlink{classdense_1_1matrix}{T}} $>$ \\
+\mbox{\hyperlink{classdense_1_1matrix}{T}} \& \mbox{\hyperlink{classdense_1_1matrix}{dense\+::matrix}}$<$ \mbox{\hyperlink{classdense_1_1matrix}{T}} $>$\mbox{\hyperlink{classdense_1_1matrix_a2f5c551af9f436909bd076a03f90e946}{\+::operator}}() (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classdense_1_1matrix}{size\+\_\+t}}}]{index }\end{DoxyParamCaption})}
+
+
+
+Operator (), returns a writable reference to the value at the coordinates. Variadic index. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em index} & variadic argument for the coordinates of the value to be accesed \\
+\hline
+\end{DoxyTemplParams}
+\Hypertarget{classdense_1_1matrix_acadefba6bf6e0ce68e1afdd13787f6c6}\label{classdense_1_1matrix_acadefba6bf6e0ce68e1afdd13787f6c6} 
+\index{dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}}
+\index{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classdense_1_1matrix}{typename}} \mbox{\hyperlink{classdense_1_1matrix}{T}} $>$ \\
+template$<$\mbox{\hyperlink{classdense_1_1matrix}{typename}} \mbox{\hyperlink{classdense_1_1matrix}{U}} $>$ \\
+std\+::enable\+\_\+if\+\_\+t$<$ std\+::is\+\_\+same\+\_\+v$<$ \mbox{\hyperlink{classdense_1_1matrix}{U}}, \mbox{\hyperlink{classdense_1_1matrix}{T}} $>$, \mbox{\hyperlink{classdense_1_1matrix}{matrix}}$<$ \mbox{\hyperlink{classdense_1_1matrix}{T}} $>$ $>$ \mbox{\hyperlink{classdense_1_1matrix_a2f5c551af9f436909bd076a03f90e946}{matrix\+::operator}}\texorpdfstring{$\ast$}{*} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classdense_1_1matrix}{const}} \mbox{\hyperlink{classdense_1_1matrix}{matrix}}$<$ \mbox{\hyperlink{classdense_1_1matrix}{T}} $>$ \&}]{A }\end{DoxyParamCaption}) const}
+
+
+
+Operator \texorpdfstring{$\ast$}{*}, multiplies two 2D dense matrices. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em A} & A constant matrix reference used after the operator \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{gemm__high_8cpp_source_l00007}{7}} of file \mbox{\hyperlink{gemm__high_8cpp_source}{gemm\+\_\+high.\+cpp}}.
+
+\Hypertarget{classdense_1_1matrix_a40aeeedc95ca4a884b0c84b895ce66ec}\label{classdense_1_1matrix_a40aeeedc95ca4a884b0c84b895ce66ec} 
+\index{dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}}
+\index{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classdense_1_1matrix}{typename}} \mbox{\hyperlink{classdense_1_1matrix}{T}} $>$ \\
+std\+::vector$<$ \mbox{\hyperlink{classdense_1_1matrix}{T}} $>$ \mbox{\hyperlink{classdense_1_1matrix_a2f5c551af9f436909bd076a03f90e946}{matrix\+::operator}}\texorpdfstring{$\ast$}{*} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classdense_1_1matrix}{const}} std\+::vector$<$ \mbox{\hyperlink{classdense_1_1matrix}{T}} $>$}]{x }\end{DoxyParamCaption})}
+
+
+
+Operator \texorpdfstring{$\ast$}{*}, multiplies a matrix of n collumns by a vector of n rows. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & A vector used after the operator \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & encompasses all primitive numerical data types //\+Victor \\
+\hline
+\end{DoxyTemplParams}
+
+
+Definition at line \mbox{\hyperlink{gemv_8cpp_source_l00005}{5}} of file \mbox{\hyperlink{gemv_8cpp_source}{gemv.\+cpp}}.
+
+\Hypertarget{classdense_1_1matrix_adf62d5d2d773f698616ab834df464629}\label{classdense_1_1matrix_adf62d5d2d773f698616ab834df464629} 
+\index{dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}}
+\index{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classdense_1_1matrix}{typename}} \mbox{\hyperlink{classdense_1_1matrix}{T}} $>$ \\
+\mbox{\hyperlink{classdense_1_1matrix}{matrix}}$<$ \mbox{\hyperlink{classdense_1_1matrix}{T}} $>$ \mbox{\hyperlink{classdense_1_1matrix_a2f5c551af9f436909bd076a03f90e946}{matrix\+::operator}}\texorpdfstring{$\ast$}{*} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classdense_1_1matrix}{T}}}]{x }\end{DoxyParamCaption})}
+
+
+
+Operator \texorpdfstring{$\ast$}{*}, multiplies a matrix by a number. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & A numerical primitive used after the operator \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & encompasses all primitive numerical data types //\+Victor \\
+\hline
+\end{DoxyTemplParams}
+
+
+Definition at line \mbox{\hyperlink{scal__mn_8cpp_source_l00005}{5}} of file \mbox{\hyperlink{scal__mn_8cpp_source}{scal\+\_\+mn.\+cpp}}.
+
+\Hypertarget{classdense_1_1matrix_aff3f92d1bcd6b9d633f838dabff1a82e}\label{classdense_1_1matrix_aff3f92d1bcd6b9d633f838dabff1a82e} 
+\index{dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}!operator+@{operator+}}
+\index{operator+@{operator+}!dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classdense_1_1matrix}{typename}} \mbox{\hyperlink{classdense_1_1matrix}{T}} $>$ \\
+\mbox{\hyperlink{classdense_1_1matrix}{matrix}}$<$ \mbox{\hyperlink{classdense_1_1matrix}{T}} $>$ \mbox{\hyperlink{classdense_1_1matrix_a2f5c551af9f436909bd076a03f90e946}{matrix\+::operator}}+ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classdense_1_1matrix}{matrix}}$<$ \mbox{\hyperlink{classdense_1_1matrix}{T}} $>$ \mbox{\hyperlink{classdense_1_1matrix}{const}} \&}]{A }\end{DoxyParamCaption})}
+
+
+
+Operator +, adds the values of two matrices of same size and dimensions. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em A} & A constant matrix reference used after the operator \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{axpy__add_8cpp_source_l00005}{5}} of file \mbox{\hyperlink{axpy__add_8cpp_source}{axpy\+\_\+add.\+cpp}}.
+
+\Hypertarget{classdense_1_1matrix_a1543e27fe6aa0097c3b3c1ad9dc7402f}\label{classdense_1_1matrix_a1543e27fe6aa0097c3b3c1ad9dc7402f} 
+\index{dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator-\/()}{operator-()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classdense_1_1matrix}{typename}} \mbox{\hyperlink{classdense_1_1matrix}{T}} $>$ \\
+\mbox{\hyperlink{classdense_1_1matrix}{matrix}}$<$ \mbox{\hyperlink{classdense_1_1matrix}{T}} $>$ \mbox{\hyperlink{classdense_1_1matrix_a2f5c551af9f436909bd076a03f90e946}{matrix\+::operator}}-\/ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classdense_1_1matrix}{matrix}}$<$ \mbox{\hyperlink{classdense_1_1matrix}{T}} $>$ \mbox{\hyperlink{classdense_1_1matrix}{const}} \&}]{A }\end{DoxyParamCaption})}
+
+
+
+Operator -\/, subtracts the values of second matrix from the first, both must have same size and dimensions. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em A} & A constant matrix reference used after the operator \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{axpy__sub_8cpp_source_l00005}{5}} of file \mbox{\hyperlink{axpy__sub_8cpp_source}{axpy\+\_\+sub.\+cpp}}.
+
+\Hypertarget{classdense_1_1matrix_afe1c55f9300b04f3e4c88204a8a98c8c}\label{classdense_1_1matrix_afe1c55f9300b04f3e4c88204a8a98c8c} 
+\index{dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}!operator/@{operator/}}
+\index{operator/@{operator/}!dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator/()}{operator/()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classdense_1_1matrix}{typename}} \mbox{\hyperlink{classdense_1_1matrix}{T}} $>$ \\
+\mbox{\hyperlink{classdense_1_1matrix}{matrix}} \mbox{\hyperlink{classdense_1_1matrix}{dense\+::matrix}}$<$ \mbox{\hyperlink{classdense_1_1matrix}{T}} $>$\mbox{\hyperlink{classdense_1_1matrix_a2f5c551af9f436909bd076a03f90e946}{\+::operator}}/ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classdense_1_1matrix}{matrix}}$<$ \mbox{\hyperlink{classdense_1_1matrix}{T}} $>$ \mbox{\hyperlink{classdense_1_1matrix}{const}} \&}]{A }\end{DoxyParamCaption})}
+
+
+
+Operator /, Performs column-\/wise augmentation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em A} & A constant matrix reference to be combined. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classdense_1_1matrix_a7b5922d3d4f77d8f83c9a60894ef9764}\label{classdense_1_1matrix_a7b5922d3d4f77d8f83c9a60894ef9764} 
+\index{dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classdense_1_1matrix}{typename}} \mbox{\hyperlink{classdense_1_1matrix}{T}} $>$ \\
+\mbox{\hyperlink{classdense_1_1matrix}{matrix}}$<$ \mbox{\hyperlink{classdense_1_1matrix}{T}} $>$ \& \mbox{\hyperlink{classdense_1_1matrix_a2f5c551af9f436909bd076a03f90e946}{matrix\+::operator}}= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classdense_1_1matrix}{matrix}}$<$ \mbox{\hyperlink{classdense_1_1matrix}{T}} $>$ \mbox{\hyperlink{classdense_1_1matrix}{const}} \&}]{A }\end{DoxyParamCaption})}
+
+
+
+Operator =, creates a deep copy of the matrix and assigns it. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em A} & A constant matrix reference used after the operator \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{dense__AssignmentOP_8cpp_source_l00005}{5}} of file \mbox{\hyperlink{dense__AssignmentOP_8cpp_source}{dense\+\_\+\+Assignment\+OP.\+cpp}}.
+
+\Hypertarget{classdense_1_1matrix_ab31ab44a2927bf765f8ef0590428c413}\label{classdense_1_1matrix_ab31ab44a2927bf765f8ef0590428c413} 
+\index{dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}!operator==@{operator==}}
+\index{operator==@{operator==}!dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classdense_1_1matrix}{typename}} \mbox{\hyperlink{classdense_1_1matrix}{T}} $>$ \\
+\mbox{\hyperlink{classdense_1_1matrix}{bool}} \mbox{\hyperlink{classdense_1_1matrix}{dense\+::matrix}}$<$ \mbox{\hyperlink{classdense_1_1matrix}{T}} $>$\mbox{\hyperlink{classdense_1_1matrix_a2f5c551af9f436909bd076a03f90e946}{\+::operator}}== (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classdense_1_1matrix}{matrix}}$<$ \mbox{\hyperlink{classdense_1_1matrix}{T}} $>$ \mbox{\hyperlink{classdense_1_1matrix}{const}} \&}]{A }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Operator ==, compares two matricies. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em A} & A constant matrix reference used after the operator \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{dense_8hpp_source_l00144}{144}} of file \mbox{\hyperlink{dense_8hpp_source}{dense.\+hpp}}.
+
+\Hypertarget{classdense_1_1matrix_ad486d623111dfb0fdbd0ad3ae691bd1f}\label{classdense_1_1matrix_ad486d623111dfb0fdbd0ad3ae691bd1f} 
+\index{dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}!operator\texorpdfstring{$^\wedge$}{\string^}@{operator\texorpdfstring{$^\wedge$}{\string^}}}
+\index{operator\texorpdfstring{$^\wedge$}{\string^}@{operator\texorpdfstring{$^\wedge$}{\string^}}!dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$^\wedge$}{\string^}()}{operator\string^()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classdense_1_1matrix}{typename}} \mbox{\hyperlink{classdense_1_1matrix}{T}} $>$ \\
+\mbox{\hyperlink{classdense_1_1matrix}{matrix}}$<$ \mbox{\hyperlink{classdense_1_1matrix}{T}} $>$ \mbox{\hyperlink{classdense_1_1matrix_a2f5c551af9f436909bd076a03f90e946}{matrix\+::operator}}\texorpdfstring{$^\wedge$}{\string^} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classdense_1_1matrix}{int}}}]{n }\end{DoxyParamCaption})}
+
+
+
+Returns A\texorpdfstring{$^\wedge$}{\string^}n. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em A} & n integer power, negative values return (inv(\+A))\texorpdfstring{$^\wedge$}{\string^}(-\/n) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{exp__operator_8cpp_source_l00006}{6}} of file \mbox{\hyperlink{exp__operator_8cpp_source}{exp\+\_\+operator.\+cpp}}.
+
+\Hypertarget{classdense_1_1matrix_a4921c8ceda25edc5a3bede5210c50d43}\label{classdense_1_1matrix_a4921c8ceda25edc5a3bede5210c50d43} 
+\index{dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}!operator\texttt{"|}@{operator\texttt{"|}}}
+\index{operator\texttt{"|}@{operator\texttt{"|}}!dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator\texttt{"|}()}{operator|()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classdense_1_1matrix}{typename}} \mbox{\hyperlink{classdense_1_1matrix}{T}} $>$ \\
+\mbox{\hyperlink{classdense_1_1matrix}{matrix}} \mbox{\hyperlink{classdense_1_1matrix}{dense\+::matrix}}$<$ \mbox{\hyperlink{classdense_1_1matrix}{T}} $>$\mbox{\hyperlink{classdense_1_1matrix_a2f5c551af9f436909bd076a03f90e946}{\+::operator}}\texorpdfstring{$\vert$}{|} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classdense_1_1matrix}{matrix}}$<$ \mbox{\hyperlink{classdense_1_1matrix}{T}} $>$ \mbox{\hyperlink{classdense_1_1matrix}{const}} \&}]{A }\end{DoxyParamCaption})}
+
+
+
+Operator \texorpdfstring{$\vert$}{|}, Performs row-\/wise augmentation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em A} & A constant matrix reference to be combined. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classdense_1_1matrix_a32aa6617957165f9bdef07326b558730}\label{classdense_1_1matrix_a32aa6617957165f9bdef07326b558730} 
+\index{dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}!print2D@{print2D}}
+\index{print2D@{print2D}!dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{print2D()}{print2D()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classdense_1_1matrix}{typename}} \mbox{\hyperlink{classdense_1_1matrix}{T}} $>$ \\
+\mbox{\hyperlink{classdense_1_1matrix}{template}} \mbox{\hyperlink{classdense_1_1matrix}{void}} \mbox{\hyperlink{classdense_1_1matrix}{dense\+::matrix}}$<$ \mbox{\hyperlink{classdense_1_1matrix}{T}} $>$\+::print2D (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Prints the values of 2D array. 
+
+
+
+Definition at line \mbox{\hyperlink{print2D_8cpp_source_l00006}{6}} of file \mbox{\hyperlink{print2D_8cpp_source}{print2\+D.\+cpp}}.
+
+\Hypertarget{classdense_1_1matrix_a9eb86d15d2742284cf23ef041f4aac83}\label{classdense_1_1matrix_a9eb86d15d2742284cf23ef041f4aac83} 
+\index{dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}!reshape@{reshape}}
+\index{reshape@{reshape}!dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{reshape()}{reshape()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classdense_1_1matrix}{typename}} \mbox{\hyperlink{classdense_1_1matrix}{T}} $>$ \\
+template$<$typename... Dims$>$ \\
+\mbox{\hyperlink{classdense_1_1matrix}{void}} \mbox{\hyperlink{classdense_1_1matrix}{dense\+::matrix}}$<$ \mbox{\hyperlink{classdense_1_1matrix}{T}} $>$\+::reshape (\begin{DoxyParamCaption}\item[{Dims...}]{dims }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Reshapes matrix after default constuctor initialisation. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Dims} & A variadic pack representing dimension sizes. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em dims} & The sizes of each dimension. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{dense_8hpp_source_l00285}{285}} of file \mbox{\hyperlink{dense_8hpp_source}{dense.\+hpp}}.
+
+\Hypertarget{classdense_1_1matrix_a7b92c63ace1144eb27f9767443f63045}\label{classdense_1_1matrix_a7b92c63ace1144eb27f9767443f63045} 
+\index{dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}!set\_value\_at@{set\_value\_at}}
+\index{set\_value\_at@{set\_value\_at}!dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{set\_value\_at()}{set\_value\_at()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classdense_1_1matrix}{typename}} \mbox{\hyperlink{classdense_1_1matrix}{T}} $>$ \\
+\mbox{\hyperlink{classdense_1_1matrix}{void}} \mbox{\hyperlink{classdense_1_1matrix}{dense\+::matrix}}$<$ \mbox{\hyperlink{classdense_1_1matrix}{T}} $>$\+::set\+\_\+value\+\_\+at (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classdense_1_1matrix}{size\+\_\+t}}}]{index,  }\item[{\mbox{\hyperlink{classdense_1_1matrix}{T}}}]{value }\end{DoxyParamCaption})}
+
+
+
+Sets value at a given index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & The linear 0-\/based index in the flat values vector. \\
+\hline
+{\em value} & The templated value to set.\\
+\hline
+{\em index} & The linear 0-\/based index in the flat values vector. \\
+\hline
+{\em value} & The long double value to set. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{set__value__at_8cpp_source_l00010}{10}} of file \mbox{\hyperlink{set__value__at_8cpp_source}{set\+\_\+value\+\_\+at.\+cpp}}.
+
+\Hypertarget{classdense_1_1matrix_ac2defaf221866d3b2ca222a62651cf5b}\label{classdense_1_1matrix_ac2defaf221866d3b2ca222a62651cf5b} 
+\index{dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}!set\_values@{set\_values}}
+\index{set\_values@{set\_values}!dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{set\_values()}{set\_values()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classdense_1_1matrix}{typename}} \mbox{\hyperlink{classdense_1_1matrix}{T}} $>$ \\
+template$<$typename... Types$>$ \\
+\mbox{\hyperlink{classdense_1_1matrix}{void}} \mbox{\hyperlink{classdense_1_1matrix}{dense\+::matrix}}$<$ \mbox{\hyperlink{classdense_1_1matrix}{T}} $>$\+::set\+\_\+values (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classdense_1_1matrix}{Types}} \&\&...}]{valuess }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets all matrix values, clearing any previously stored values and then filling with zeros for the rest. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Types} & Variadic template arguments for the values to set. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em valuess} & The values to set into the matrix \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{dense_8hpp_source_l00263}{263}} of file \mbox{\hyperlink{dense_8hpp_source}{dense.\+hpp}}.
+
+\Hypertarget{classdense_1_1matrix_a486b9b0f1440800bbfa89d860e5b26c2}\label{classdense_1_1matrix_a486b9b0f1440800bbfa89d860e5b26c2} 
+\index{dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}!svd@{svd}}
+\index{svd@{svd}!dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{svd()}{svd()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classdense_1_1matrix}{typename}} \mbox{\hyperlink{classdense_1_1matrix}{T}} $>$ \\
+\mbox{\hyperlink{classdense_1_1matrix}{void}} matrix\+::svd (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classdense_1_1matrix}{matrix}}$<$ \mbox{\hyperlink{classdense_1_1matrix}{T}} $>$ \&}]{u,  }\item[{\mbox{\hyperlink{classdense_1_1matrix}{matrix}}$<$ \mbox{\hyperlink{classdense_1_1matrix}{T}} $>$ \&}]{s,  }\item[{\mbox{\hyperlink{classdense_1_1matrix}{matrix}}$<$ \mbox{\hyperlink{classdense_1_1matrix}{T}} $>$ \&}]{v }\end{DoxyParamCaption})}
+
+
+
+Computes the SVD of the matrix. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em u} & A dense matrix, will store the left side singular vectors \\
+\hline
+{\em s} & A dense matrix, will store the singular values in its main diagonal \\
+\hline
+{\em v} & A dense matrix, will store the right side singular vectors \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{svd_8cpp_source_l00007}{7}} of file \mbox{\hyperlink{svd_8cpp_source}{svd.\+cpp}}.
+
+\Hypertarget{classdense_1_1matrix_a953334cf57cffd0907fa26d676d7bbe7}\label{classdense_1_1matrix_a953334cf57cffd0907fa26d676d7bbe7} 
+\index{dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}!transpose@{transpose}}
+\index{transpose@{transpose}!dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{transpose()}{transpose()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classdense_1_1matrix}{typename}} \mbox{\hyperlink{classdense_1_1matrix}{T}} $>$ \\
+\mbox{\hyperlink{classdense_1_1matrix}{matrix}}$<$ \mbox{\hyperlink{classdense_1_1matrix}{T}} $>$ matrix\+::transpose (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Function that transposes the matrix in 2D. 
+
+
+
+Definition at line \mbox{\hyperlink{transpose_8cpp_source_l00005}{5}} of file \mbox{\hyperlink{transpose_8cpp_source}{transpose.\+cpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/johnzik/\+Dev/\+Cpp-\/\+Project/inc/\mbox{\hyperlink{dense_8hpp}{dense.\+hpp}}\item 
+/home/johnzik/\+Dev/\+Cpp-\/\+Project/src/axpy\+\_\+add.\+cpp\item 
+/home/johnzik/\+Dev/\+Cpp-\/\+Project/src/axpy\+\_\+sub.\+cpp\item 
+/home/johnzik/\+Dev/\+Cpp-\/\+Project/src/copy\+\_\+constructor.\+cpp\item 
+/home/johnzik/\+Dev/\+Cpp-\/\+Project/src/dense\+\_\+\+Assignment\+OP.\+cpp\item 
+/home/johnzik/\+Dev/\+Cpp-\/\+Project/src/dense\+\_\+diagonal\+\_\+construct.\+cpp\item 
+/home/johnzik/\+Dev/\+Cpp-\/\+Project/src/dense\+\_\+read\+MM.\+cpp\item 
+/home/johnzik/\+Dev/\+Cpp-\/\+Project/src/exp\+\_\+operator.\+cpp\item 
+/home/johnzik/\+Dev/\+Cpp-\/\+Project/src/gemm\+\_\+high.\+cpp\item 
+/home/johnzik/\+Dev/\+Cpp-\/\+Project/src/gemv.\+cpp\item 
+/home/johnzik/\+Dev/\+Cpp-\/\+Project/src/get\+\_\+dim\+\_\+size.\+cpp\item 
+/home/johnzik/\+Dev/\+Cpp-\/\+Project/src/get\+\_\+nod.\+cpp\item 
+/home/johnzik/\+Dev/\+Cpp-\/\+Project/src/get\+\_\+size.\+cpp\item 
+/home/johnzik/\+Dev/\+Cpp-\/\+Project/src/get\+\_\+value\+\_\+at.\+cpp\item 
+/home/johnzik/\+Dev/\+Cpp-\/\+Project/src/get\+\_\+values\+\_\+data.\+cpp\item 
+/home/johnzik/\+Dev/\+Cpp-\/\+Project/src/get\+\_\+values\+\_\+data\+\_\+const.\+cpp\item 
+/home/johnzik/\+Dev/\+Cpp-\/\+Project/src/identity\+\_\+constructor.\+cpp\item 
+/home/johnzik/\+Dev/\+Cpp-\/\+Project/src/low\+\_\+level\+\_\+multiplication.\+cpp\item 
+/home/johnzik/\+Dev/\+Cpp-\/\+Project/src/print2\+D.\+cpp\item 
+/home/johnzik/\+Dev/\+Cpp-\/\+Project/src/scal\+\_\+mn.\+cpp\item 
+/home/johnzik/\+Dev/\+Cpp-\/\+Project/src/set\+\_\+value\+\_\+at.\+cpp\item 
+/home/johnzik/\+Dev/\+Cpp-\/\+Project/src/svd.\+cpp\item 
+/home/johnzik/\+Dev/\+Cpp-\/\+Project/src/transpose.\+cpp\item 
+/home/johnzik/\+Dev/\+Cpp-\/\+Project/src/vectors\+\_\+constructor.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,215 @@
+\@ifundefined {etoctocstyle}{\let \etoc@startlocaltoc \@gobble \let \etoc@settocdepth \@gobble \let \etoc@depthtag \@gobble \let \etoc@setlocaltop \@gobble }{}
+\contentsline {chapter}{\numberline {1}Dense and CSR Sparse matrix library in C++ leveraging Intel one\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}MKL (CBLAS)}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}What this project does}{1}{section.1.1}%
+\contentsline {section}{\numberline {1.2}How to build \& compile the project}{1}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}Requirements}{1}{subsection.1.2.1}%
+\contentsline {subsection}{\numberline {1.2.2}Setup Instructions}{2}{subsection.1.2.2}%
+\contentsline {subsection}{\numberline {1.2.3}Build \& Linking Instructions}{2}{subsection.1.2.3}%
+\contentsline {subsection}{\numberline {1.2.4}Run a test (optional)}{2}{subsection.1.2.4}%
+\contentsline {chapter}{\numberline {2}Class Index}{3}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Class List}{3}{section.2.1}%
+\contentsline {chapter}{\numberline {3}File Index}{5}{chapter.3}%
+\contentsline {section}{\numberline {3.1}File List}{5}{section.3.1}%
+\contentsline {chapter}{\numberline {4}Class Documentation}{7}{chapter.4}%
+\contentsline {section}{\numberline {4.1}dense\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::matrix$<$ T $>$ Class Template Reference}{7}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Detailed Description}{9}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}Constructor \& Destructor Documentation}{9}{subsection.4.1.2}%
+\contentsline {subsubsection}{\numberline {4.1.2.1}matrix()\hspace {0.1cm}{\footnotesize \ttfamily [1/6]}}{9}{subsubsection.4.1.2.1}%
+\contentsline {subsubsection}{\numberline {4.1.2.2}matrix()\hspace {0.1cm}{\footnotesize \ttfamily [2/6]}}{9}{subsubsection.4.1.2.2}%
+\contentsline {subsubsection}{\numberline {4.1.2.3}matrix()\hspace {0.1cm}{\footnotesize \ttfamily [3/6]}}{10}{subsubsection.4.1.2.3}%
+\contentsline {subsubsection}{\numberline {4.1.2.4}matrix()\hspace {0.1cm}{\footnotesize \ttfamily [4/6]}}{10}{subsubsection.4.1.2.4}%
+\contentsline {subsubsection}{\numberline {4.1.2.5}matrix()\hspace {0.1cm}{\footnotesize \ttfamily [5/6]}}{10}{subsubsection.4.1.2.5}%
+\contentsline {subsubsection}{\numberline {4.1.2.6}matrix()\hspace {0.1cm}{\footnotesize \ttfamily [6/6]}}{11}{subsubsection.4.1.2.6}%
+\contentsline {subsection}{\numberline {4.1.3}Member Function Documentation}{11}{subsection.4.1.3}%
+\contentsline {subsubsection}{\numberline {4.1.3.1}dense\_readMM()}{11}{subsubsection.4.1.3.1}%
+\contentsline {subsubsection}{\numberline {4.1.3.2}get\_const\_values\_data()}{11}{subsubsection.4.1.3.2}%
+\contentsline {subsubsection}{\numberline {4.1.3.3}get\_dim\_size()}{12}{subsubsection.4.1.3.3}%
+\contentsline {subsubsection}{\numberline {4.1.3.4}get\_nod()}{12}{subsubsection.4.1.3.4}%
+\contentsline {subsubsection}{\numberline {4.1.3.5}get\_size()}{12}{subsubsection.4.1.3.5}%
+\contentsline {subsubsection}{\numberline {4.1.3.6}get\_value\_at()}{12}{subsubsection.4.1.3.6}%
+\contentsline {subsubsection}{\numberline {4.1.3.7}get\_values\_data()}{12}{subsubsection.4.1.3.7}%
+\contentsline {subsubsection}{\numberline {4.1.3.8}I()}{13}{subsubsection.4.1.3.8}%
+\contentsline {subsubsection}{\numberline {4.1.3.9}low\_level\_matrix\_multiplication()}{13}{subsubsection.4.1.3.9}%
+\contentsline {subsubsection}{\numberline {4.1.3.10}operator()()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{13}{subsubsection.4.1.3.10}%
+\contentsline {subsubsection}{\numberline {4.1.3.11}operator()()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{14}{subsubsection.4.1.3.11}%
+\contentsline {subsubsection}{\numberline {4.1.3.12}operator$\ast $()\hspace {0.1cm}{\footnotesize \ttfamily [1/3]}}{14}{subsubsection.4.1.3.12}%
+\contentsline {subsubsection}{\numberline {4.1.3.13}operator$\ast $()\hspace {0.1cm}{\footnotesize \ttfamily [2/3]}}{14}{subsubsection.4.1.3.13}%
+\contentsline {subsubsection}{\numberline {4.1.3.14}operator$\ast $()\hspace {0.1cm}{\footnotesize \ttfamily [3/3]}}{15}{subsubsection.4.1.3.14}%
+\contentsline {subsubsection}{\numberline {4.1.3.15}operator+()}{15}{subsubsection.4.1.3.15}%
+\contentsline {subsubsection}{\numberline {4.1.3.16}operator-\/()}{15}{subsubsection.4.1.3.16}%
+\contentsline {subsubsection}{\numberline {4.1.3.17}operator/()}{16}{subsubsection.4.1.3.17}%
+\contentsline {subsubsection}{\numberline {4.1.3.18}operator=()}{16}{subsubsection.4.1.3.18}%
+\contentsline {subsubsection}{\numberline {4.1.3.19}operator==()}{16}{subsubsection.4.1.3.19}%
+\contentsline {subsubsection}{\numberline {4.1.3.20}operator$^\wedge $()}{16}{subsubsection.4.1.3.20}%
+\contentsline {subsubsection}{\numberline {4.1.3.21}operator\texttt {"|}()}{17}{subsubsection.4.1.3.21}%
+\contentsline {subsubsection}{\numberline {4.1.3.22}print2D()}{17}{subsubsection.4.1.3.22}%
+\contentsline {subsubsection}{\numberline {4.1.3.23}reshape()}{17}{subsubsection.4.1.3.23}%
+\contentsline {subsubsection}{\numberline {4.1.3.24}set\_value\_at()}{18}{subsubsection.4.1.3.24}%
+\contentsline {subsubsection}{\numberline {4.1.3.25}set\_values()}{18}{subsubsection.4.1.3.25}%
+\contentsline {subsubsection}{\numberline {4.1.3.26}svd()}{18}{subsubsection.4.1.3.26}%
+\contentsline {subsubsection}{\numberline {4.1.3.27}transpose()}{19}{subsubsection.4.1.3.27}%
+\contentsline {section}{\numberline {4.2}sparse\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::matrix$<$ T $>$ Class Template Reference}{19}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Detailed Description}{21}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Constructor \& Destructor Documentation}{21}{subsection.4.2.2}%
+\contentsline {subsubsection}{\numberline {4.2.2.1}matrix()\hspace {0.1cm}{\footnotesize \ttfamily [1/4]}}{21}{subsubsection.4.2.2.1}%
+\contentsline {subsubsection}{\numberline {4.2.2.2}matrix()\hspace {0.1cm}{\footnotesize \ttfamily [2/4]}}{22}{subsubsection.4.2.2.2}%
+\contentsline {subsubsection}{\numberline {4.2.2.3}$\sim $matrix()}{22}{subsubsection.4.2.2.3}%
+\contentsline {subsubsection}{\numberline {4.2.2.4}matrix()\hspace {0.1cm}{\footnotesize \ttfamily [3/4]}}{22}{subsubsection.4.2.2.4}%
+\contentsline {subsubsection}{\numberline {4.2.2.5}matrix()\hspace {0.1cm}{\footnotesize \ttfamily [4/4]}}{22}{subsubsection.4.2.2.5}%
+\contentsline {subsection}{\numberline {4.2.3}Member Function Documentation}{23}{subsection.4.2.3}%
+\contentsline {subsubsection}{\numberline {4.2.3.1}banded()}{23}{subsubsection.4.2.3.1}%
+\contentsline {subsubsection}{\numberline {4.2.3.2}diag()}{23}{subsubsection.4.2.3.2}%
+\contentsline {subsubsection}{\numberline {4.2.3.3}get\_handle()}{23}{subsubsection.4.2.3.3}%
+\contentsline {subsubsection}{\numberline {4.2.3.4}get\_value\_at()}{24}{subsubsection.4.2.3.4}%
+\contentsline {subsubsection}{\numberline {4.2.3.5}get\_values\_data()}{24}{subsubsection.4.2.3.5}%
+\contentsline {subsubsection}{\numberline {4.2.3.6}get\_values\_data\_const()}{24}{subsubsection.4.2.3.6}%
+\contentsline {subsubsection}{\numberline {4.2.3.7}I()}{24}{subsubsection.4.2.3.7}%
+\contentsline {subsubsection}{\numberline {4.2.3.8}invalidate\_handle()}{24}{subsubsection.4.2.3.8}%
+\contentsline {subsubsection}{\numberline {4.2.3.9}operator()()}{25}{subsubsection.4.2.3.9}%
+\contentsline {subsubsection}{\numberline {4.2.3.10}operator$\ast $()\hspace {0.1cm}{\footnotesize \ttfamily [1/3]}}{25}{subsubsection.4.2.3.10}%
+\contentsline {subsubsection}{\numberline {4.2.3.11}operator$\ast $()\hspace {0.1cm}{\footnotesize \ttfamily [2/3]}}{25}{subsubsection.4.2.3.11}%
+\contentsline {subsubsection}{\numberline {4.2.3.12}operator$\ast $()\hspace {0.1cm}{\footnotesize \ttfamily [3/3]}}{26}{subsubsection.4.2.3.12}%
+\contentsline {subsubsection}{\numberline {4.2.3.13}operator+()}{26}{subsubsection.4.2.3.13}%
+\contentsline {subsubsection}{\numberline {4.2.3.14}operator-\/()}{26}{subsubsection.4.2.3.14}%
+\contentsline {subsubsection}{\numberline {4.2.3.15}operator=()}{27}{subsubsection.4.2.3.15}%
+\contentsline {subsubsection}{\numberline {4.2.3.16}operator==()}{27}{subsubsection.4.2.3.16}%
+\contentsline {subsubsection}{\numberline {4.2.3.17}print2D()}{27}{subsubsection.4.2.3.17}%
+\contentsline {subsubsection}{\numberline {4.2.3.18}print\_matrix()}{27}{subsubsection.4.2.3.18}%
+\contentsline {subsubsection}{\numberline {4.2.3.19}refresh\_handle()}{28}{subsubsection.4.2.3.19}%
+\contentsline {subsubsection}{\numberline {4.2.3.20}set\_value\_at()}{28}{subsubsection.4.2.3.20}%
+\contentsline {subsubsection}{\numberline {4.2.3.21}shape()}{28}{subsubsection.4.2.3.21}%
+\contentsline {subsubsection}{\numberline {4.2.3.22}sparse\_readMM()}{28}{subsubsection.4.2.3.22}%
+\contentsline {subsubsection}{\numberline {4.2.3.23}transpose()}{29}{subsubsection.4.2.3.23}%
+\contentsline {chapter}{\numberline {5}File Documentation}{31}{chapter.5}%
+\contentsline {section}{\numberline {5.1}/home/johnzik/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Dev/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Cpp-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Project/inc/cross.hpp File Reference}{31}{section.5.1}%
+\contentsline {section}{\numberline {5.2}cross.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}hpp}{31}{section.5.2}%
+\contentsline {section}{\numberline {5.3}/home/johnzik/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Dev/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Cpp-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Project/inc/def.hpp File Reference}{31}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}Detailed Description}{33}{subsection.5.3.1}%
+\contentsline {subsection}{\numberline {5.3.2}Macro Definition Documentation}{33}{subsection.5.3.2}%
+\contentsline {subsubsection}{\numberline {5.3.2.1}caxpy}{33}{subsubsection.5.3.2.1}%
+\contentsline {subsubsection}{\numberline {5.3.2.2}ccsrmv}{33}{subsubsection.5.3.2.2}%
+\contentsline {subsubsection}{\numberline {5.3.2.3}cgemm}{33}{subsubsection.5.3.2.3}%
+\contentsline {subsubsection}{\numberline {5.3.2.4}cgemv}{33}{subsubsection.5.3.2.4}%
+\contentsline {subsubsection}{\numberline {5.3.2.5}comatcopy}{33}{subsubsection.5.3.2.5}%
+\contentsline {subsubsection}{\numberline {5.3.2.6}cscal}{33}{subsubsection.5.3.2.6}%
+\contentsline {subsubsection}{\numberline {5.3.2.7}daxpy}{34}{subsubsection.5.3.2.7}%
+\contentsline {subsubsection}{\numberline {5.3.2.8}dcsrmv}{34}{subsubsection.5.3.2.8}%
+\contentsline {subsubsection}{\numberline {5.3.2.9}dgemm}{34}{subsubsection.5.3.2.9}%
+\contentsline {subsubsection}{\numberline {5.3.2.10}dgemv}{34}{subsubsection.5.3.2.10}%
+\contentsline {subsubsection}{\numberline {5.3.2.11}domatcopy}{34}{subsubsection.5.3.2.11}%
+\contentsline {subsubsection}{\numberline {5.3.2.12}dscal}{34}{subsubsection.5.3.2.12}%
+\contentsline {subsubsection}{\numberline {5.3.2.13}saxpy}{34}{subsubsection.5.3.2.13}%
+\contentsline {subsubsection}{\numberline {5.3.2.14}scsrmv}{34}{subsubsection.5.3.2.14}%
+\contentsline {subsubsection}{\numberline {5.3.2.15}sgemm}{35}{subsubsection.5.3.2.15}%
+\contentsline {subsubsection}{\numberline {5.3.2.16}sgemv}{35}{subsubsection.5.3.2.16}%
+\contentsline {subsubsection}{\numberline {5.3.2.17}somatcopy}{35}{subsubsection.5.3.2.17}%
+\contentsline {subsubsection}{\numberline {5.3.2.18}sparse\_c\_add}{35}{subsubsection.5.3.2.18}%
+\contentsline {subsubsection}{\numberline {5.3.2.19}sparse\_c\_create\_csr}{35}{subsubsection.5.3.2.19}%
+\contentsline {subsubsection}{\numberline {5.3.2.20}sparse\_c\_export\_csr\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{35}{subsubsection.5.3.2.20}%
+\contentsline {subsubsection}{\numberline {5.3.2.21}sparse\_c\_export\_csr\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{35}{subsubsection.5.3.2.21}%
+\contentsline {subsubsection}{\numberline {5.3.2.22}sparse\_c\_mm}{35}{subsubsection.5.3.2.22}%
+\contentsline {subsubsection}{\numberline {5.3.2.23}sparse\_c\_mv}{36}{subsubsection.5.3.2.23}%
+\contentsline {subsubsection}{\numberline {5.3.2.24}sparse\_convert\_csr}{36}{subsubsection.5.3.2.24}%
+\contentsline {subsubsection}{\numberline {5.3.2.25}sparse\_d\_add}{36}{subsubsection.5.3.2.25}%
+\contentsline {subsubsection}{\numberline {5.3.2.26}sparse\_d\_create\_csr}{36}{subsubsection.5.3.2.26}%
+\contentsline {subsubsection}{\numberline {5.3.2.27}sparse\_d\_export\_csr\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{36}{subsubsection.5.3.2.27}%
+\contentsline {subsubsection}{\numberline {5.3.2.28}sparse\_d\_export\_csr\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{36}{subsubsection.5.3.2.28}%
+\contentsline {subsubsection}{\numberline {5.3.2.29}sparse\_d\_mm}{36}{subsubsection.5.3.2.29}%
+\contentsline {subsubsection}{\numberline {5.3.2.30}sparse\_d\_mv}{36}{subsubsection.5.3.2.30}%
+\contentsline {subsubsection}{\numberline {5.3.2.31}sparse\_destroy}{37}{subsubsection.5.3.2.31}%
+\contentsline {subsubsection}{\numberline {5.3.2.32}sparse\_s\_add}{37}{subsubsection.5.3.2.32}%
+\contentsline {subsubsection}{\numberline {5.3.2.33}sparse\_s\_create\_csr}{37}{subsubsection.5.3.2.33}%
+\contentsline {subsubsection}{\numberline {5.3.2.34}sparse\_s\_export\_csr\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{37}{subsubsection.5.3.2.34}%
+\contentsline {subsubsection}{\numberline {5.3.2.35}sparse\_s\_export\_csr\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{37}{subsubsection.5.3.2.35}%
+\contentsline {subsubsection}{\numberline {5.3.2.36}sparse\_s\_mm}{37}{subsubsection.5.3.2.36}%
+\contentsline {subsubsection}{\numberline {5.3.2.37}sparse\_s\_mv}{37}{subsubsection.5.3.2.37}%
+\contentsline {subsubsection}{\numberline {5.3.2.38}sparse\_spmm}{37}{subsubsection.5.3.2.38}%
+\contentsline {subsubsection}{\numberline {5.3.2.39}sparse\_z\_add}{38}{subsubsection.5.3.2.39}%
+\contentsline {subsubsection}{\numberline {5.3.2.40}sparse\_z\_create\_csr}{38}{subsubsection.5.3.2.40}%
+\contentsline {subsubsection}{\numberline {5.3.2.41}sparse\_z\_export\_csr\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{38}{subsubsection.5.3.2.41}%
+\contentsline {subsubsection}{\numberline {5.3.2.42}sparse\_z\_export\_csr\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{38}{subsubsection.5.3.2.42}%
+\contentsline {subsubsection}{\numberline {5.3.2.43}sparse\_z\_mm}{38}{subsubsection.5.3.2.43}%
+\contentsline {subsubsection}{\numberline {5.3.2.44}sparse\_z\_mv}{38}{subsubsection.5.3.2.44}%
+\contentsline {subsubsection}{\numberline {5.3.2.45}sscal}{38}{subsubsection.5.3.2.45}%
+\contentsline {subsubsection}{\numberline {5.3.2.46}zaxpy}{38}{subsubsection.5.3.2.46}%
+\contentsline {subsubsection}{\numberline {5.3.2.47}zcsrmv}{39}{subsubsection.5.3.2.47}%
+\contentsline {subsubsection}{\numberline {5.3.2.48}zgemm}{39}{subsubsection.5.3.2.48}%
+\contentsline {subsubsection}{\numberline {5.3.2.49}zgemv}{39}{subsubsection.5.3.2.49}%
+\contentsline {subsubsection}{\numberline {5.3.2.50}zomatcopy}{39}{subsubsection.5.3.2.50}%
+\contentsline {subsubsection}{\numberline {5.3.2.51}zscal}{39}{subsubsection.5.3.2.51}%
+\contentsline {section}{\numberline {5.4}def.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}hpp}{39}{section.5.4}%
+\contentsline {section}{\numberline {5.5}/home/johnzik/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Dev/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Cpp-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Project/inc/dense.hpp File Reference}{40}{section.5.5}%
+\contentsline {subsection}{\numberline {5.5.1}Detailed Description}{41}{subsection.5.5.1}%
+\contentsline {subsection}{\numberline {5.5.2}Function Documentation}{41}{subsection.5.5.2}%
+\contentsline {subsubsection}{\numberline {5.5.2.1}LU\_solver()}{41}{subsubsection.5.5.2.1}%
+\contentsline {subsubsection}{\numberline {5.5.2.2}operator$\ast $()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{41}{subsubsection.5.5.2.2}%
+\contentsline {subsubsection}{\numberline {5.5.2.3}operator$\ast $()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{42}{subsubsection.5.5.2.3}%
+\contentsline {section}{\numberline {5.6}dense.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}hpp}{42}{section.5.6}%
+\contentsline {section}{\numberline {5.7}/home/johnzik/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Dev/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Cpp-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Project/inc/matrix.hpp File Reference}{44}{section.5.7}%
+\contentsline {subsection}{\numberline {5.7.1}Detailed Description}{44}{subsection.5.7.1}%
+\contentsline {section}{\numberline {5.8}matrix.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}hpp}{44}{section.5.8}%
+\contentsline {section}{\numberline {5.9}mmio.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{45}{section.5.9}%
+\contentsline {section}{\numberline {5.10}/home/johnzik/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Dev/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Cpp-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Project/inc/sparse.hpp File Reference}{46}{section.5.10}%
+\contentsline {subsection}{\numberline {5.10.1}Detailed Description}{47}{subsection.5.10.1}%
+\contentsline {subsection}{\numberline {5.10.2}Function Documentation}{47}{subsection.5.10.2}%
+\contentsline {subsubsection}{\numberline {5.10.2.1}CG\_dsolve()}{47}{subsubsection.5.10.2.1}%
+\contentsline {subsubsection}{\numberline {5.10.2.2}FGMRES\_dsolve()}{47}{subsubsection.5.10.2.2}%
+\contentsline {subsubsection}{\numberline {5.10.2.3}operator$\ast $()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{48}{subsubsection.5.10.2.3}%
+\contentsline {subsubsection}{\numberline {5.10.2.4}operator$\ast $()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{48}{subsubsection.5.10.2.4}%
+\contentsline {section}{\numberline {5.11}sparse.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}hpp}{48}{section.5.11}%
+\contentsline {section}{\numberline {5.12}axpy\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}add.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{50}{section.5.12}%
+\contentsline {section}{\numberline {5.13}axpy\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}sub.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{50}{section.5.13}%
+\contentsline {section}{\numberline {5.14}CG\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}dsolve.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{51}{section.5.14}%
+\contentsline {section}{\numberline {5.15}copy\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}constructor.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{52}{section.5.15}%
+\contentsline {section}{\numberline {5.16}dense\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Assignment\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}OP.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{52}{section.5.16}%
+\contentsline {section}{\numberline {5.17}dense\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}diagonal\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}construct.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{52}{section.5.17}%
+\contentsline {section}{\numberline {5.18}dense\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}read\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}MM.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{52}{section.5.18}%
+\contentsline {section}{\numberline {5.19}dense\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}vm\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}gemv.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{54}{section.5.19}%
+\contentsline {section}{\numberline {5.20}exp\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}operator.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{55}{section.5.20}%
+\contentsline {section}{\numberline {5.21}FGMRES\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}dsolve.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{56}{section.5.21}%
+\contentsline {section}{\numberline {5.22}gemm\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}high.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{56}{section.5.22}%
+\contentsline {section}{\numberline {5.23}gemm\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}low.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{57}{section.5.23}%
+\contentsline {section}{\numberline {5.24}gemv.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{57}{section.5.24}%
+\contentsline {section}{\numberline {5.25}get\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}dim\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}size.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{58}{section.5.25}%
+\contentsline {section}{\numberline {5.26}get\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}nod.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{58}{section.5.26}%
+\contentsline {section}{\numberline {5.27}get\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}size.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{58}{section.5.27}%
+\contentsline {section}{\numberline {5.28}get\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}value\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}at.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{59}{section.5.28}%
+\contentsline {section}{\numberline {5.29}get\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}values\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}data.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{59}{section.5.29}%
+\contentsline {section}{\numberline {5.30}get\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}values\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}data\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}const.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{59}{section.5.30}%
+\contentsline {section}{\numberline {5.31}identity\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}constructor.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{59}{section.5.31}%
+\contentsline {section}{\numberline {5.32}low\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}level\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}multiplication.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{59}{section.5.32}%
+\contentsline {section}{\numberline {5.33}LU\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}solver.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{60}{section.5.33}%
+\contentsline {section}{\numberline {5.34}mmio.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c}{61}{section.5.34}%
+\contentsline {section}{\numberline {5.35}print2\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}D.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{67}{section.5.35}%
+\contentsline {section}{\numberline {5.36}print\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}matrix.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{67}{section.5.36}%
+\contentsline {section}{\numberline {5.37}scal\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}mn.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{67}{section.5.37}%
+\contentsline {section}{\numberline {5.38}scal\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}nm.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{68}{section.5.38}%
+\contentsline {section}{\numberline {5.39}set\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}value\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}at.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{68}{section.5.39}%
+\contentsline {section}{\numberline {5.40}sparse-\/diagonal-\/getter.cpp}{69}{section.5.40}%
+\contentsline {section}{\numberline {5.41}sparse-\/get-\/value.cpp}{69}{section.5.41}%
+\contentsline {section}{\numberline {5.42}sparse-\/parentheses-\/operator.cpp}{69}{section.5.42}%
+\contentsline {section}{\numberline {5.43}sparse-\/set-\/value.cpp}{69}{section.5.43}%
+\contentsline {section}{\numberline {5.44}sparse\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}add.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{70}{section.5.44}%
+\contentsline {section}{\numberline {5.45}sparse\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}assignment\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}operator.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{70}{section.5.45}%
+\contentsline {section}{\numberline {5.46}sparse\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}banded\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}matrix.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{71}{section.5.46}%
+\contentsline {section}{\numberline {5.47}sparse\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}comparison\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}operator.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{71}{section.5.47}%
+\contentsline {section}{\numberline {5.48}sparse\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}constant\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}mul.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{72}{section.5.48}%
+\contentsline {section}{\numberline {5.49}sparse\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}copy\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}constructor.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{72}{section.5.49}%
+\contentsline {section}{\numberline {5.50}sparse\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}handle\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}constructor.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{72}{section.5.50}%
+\contentsline {section}{\numberline {5.51}sparse\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}identity\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}matrix.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{73}{section.5.51}%
+\contentsline {section}{\numberline {5.52}sparse\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}mm\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}dxs.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{74}{section.5.52}%
+\contentsline {section}{\numberline {5.53}sparse\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}mm\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}sxd.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{74}{section.5.53}%
+\contentsline {section}{\numberline {5.54}sparse\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}mul\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}nxs.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{74}{section.5.54}%
+\contentsline {section}{\numberline {5.55}sparse\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}mul\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}sxn.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{75}{section.5.55}%
+\contentsline {section}{\numberline {5.56}sparse\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}mv.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{75}{section.5.56}%
+\contentsline {section}{\numberline {5.57}sparse\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}print2\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}D.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{76}{section.5.57}%
+\contentsline {section}{\numberline {5.58}sparse\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}read\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}MM.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{77}{section.5.58}%
+\contentsline {section}{\numberline {5.59}sparse\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}refresh\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}handle.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{79}{section.5.59}%
+\contentsline {section}{\numberline {5.60}sparse\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}shape.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{79}{section.5.60}%
+\contentsline {section}{\numberline {5.61}sparse\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}spmm.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{79}{section.5.61}%
+\contentsline {section}{\numberline {5.62}sparse\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}sub.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{80}{section.5.62}%
+\contentsline {section}{\numberline {5.63}sparse\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}transpose.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{80}{section.5.63}%
+\contentsline {section}{\numberline {5.64}sparse\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}vxs.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{81}{section.5.64}%
+\contentsline {section}{\numberline {5.65}svd.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{81}{section.5.65}%
+\contentsline {section}{\numberline {5.66}transpose.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{82}{section.5.66}%
+\contentsline {section}{\numberline {5.67}vectors\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}constructor.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{82}{section.5.67}%

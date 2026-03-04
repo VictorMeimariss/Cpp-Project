@@ -1,0 +1,54 @@
+\doxysection{LU\+\_\+solver.\+cpp}
+\hypertarget{LU__solver_8cpp_source}{}\label{LU__solver_8cpp_source}\index{/home/johnzik/Dev/Cpp-\/Project/src/LU\_solver.cpp@{/home/johnzik/Dev/Cpp-\/Project/src/LU\_solver.cpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{LU__solver_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{dense_8hpp}{dense.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{LU__solver_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ <cstring>}\ }
+\DoxyCodeLine{\Hypertarget{LU__solver_8cpp_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{LU__solver_8cpp_source_l00004}00004\ \textcolor{keyword}{namespace\ }dense\{}
+\DoxyCodeLine{\Hypertarget{LU__solver_8cpp_source_l00005}00005\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{LU__solver_8cpp_source_l00006}00006\ std::vector<T>\ LU\_solver\ (\mbox{\hyperlink{classdense_1_1matrix}{dense::matrix<T>}}\&\ A,\ std::vector<T>\ b)\{}
+\DoxyCodeLine{\Hypertarget{LU__solver_8cpp_source_l00007}00007\ \ \ \ \ \textcolor{keywordflow}{if}\ (A.\mbox{\hyperlink{classdense_1_1matrix_afeebe71f33c56388aba63e72c10b8456}{get\_dim\_size}}(1)!=A.\mbox{\hyperlink{classdense_1_1matrix_afeebe71f33c56388aba63e72c10b8456}{get\_dim\_size}}(0))\{}
+\DoxyCodeLine{\Hypertarget{LU__solver_8cpp_source_l00008}00008\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::invalid\_argument(\textcolor{stringliteral}{"{}Can\ only\ solve\ square\ matrices"{}});}
+\DoxyCodeLine{\Hypertarget{LU__solver_8cpp_source_l00009}00009\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{LU__solver_8cpp_source_l00010}00010\ \ \ \ \ lapack\_int\ info;}
+\DoxyCodeLine{\Hypertarget{LU__solver_8cpp_source_l00011}00011\ \ \ \ \ lapack\_int\ r\ =\ A.\mbox{\hyperlink{classdense_1_1matrix_afeebe71f33c56388aba63e72c10b8456}{get\_dim\_size}}(0);}
+\DoxyCodeLine{\Hypertarget{LU__solver_8cpp_source_l00012}00012\ \ \ \ \ lapack\_int\ *\ ipiv\ =\ \textcolor{keyword}{new}\ lapack\_int[r];}
+\DoxyCodeLine{\Hypertarget{LU__solver_8cpp_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{LU__solver_8cpp_source_l00014}00014\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ mem1\ =\ r*r*\textcolor{keyword}{sizeof}(T);}
+\DoxyCodeLine{\Hypertarget{LU__solver_8cpp_source_l00015}00015\ \ \ \ \ T*\ A\_data\ =\ (T*)\ mkl\_malloc(mem1,\ 64);}
+\DoxyCodeLine{\Hypertarget{LU__solver_8cpp_source_l00016}00016\ \ \ \ \ memcpy(A\_data,\ A.\mbox{\hyperlink{classdense_1_1matrix_a079c880557b10d257fe69d09de15ee9b}{get\_values\_data}}(),\ mem1);}
+\DoxyCodeLine{\Hypertarget{LU__solver_8cpp_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{LU__solver_8cpp_source_l00018}00018\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ mem2\ =\ b.size()*\textcolor{keyword}{sizeof}(T);}
+\DoxyCodeLine{\Hypertarget{LU__solver_8cpp_source_l00019}00019\ \ \ \ \ T*\ b\_data\ =\ (T*)\ mkl\_malloc(mem2,\ 64);}
+\DoxyCodeLine{\Hypertarget{LU__solver_8cpp_source_l00020}00020\ \ \ \ \ memcpy(b\_data,\ b.data(),\ mem2);}
+\DoxyCodeLine{\Hypertarget{LU__solver_8cpp_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{LU__solver_8cpp_source_l00022}00022\ \ \ \ \ \textcolor{keywordflow}{if}\ \textcolor{keyword}{constexpr}\ (std::is\_same\_v<T,\ float>)\{}
+\DoxyCodeLine{\Hypertarget{LU__solver_8cpp_source_l00023}00023\ \ \ \ \ info\ =\ LAPACKE\_sgetrf\ (LAPACK\_ROW\_MAJOR\ ,\ r\ ,\ r,\ A\_data\ ,r\ ,\ ipiv);}
+\DoxyCodeLine{\Hypertarget{LU__solver_8cpp_source_l00024}00024\ \ \ \ \ info\ =\ LAPACKE\_sgetrs(LAPACK\_ROW\_MAJOR,\ \textcolor{charliteral}{'N'},\ r,\ 1,\ A\_data,\ r,\ ipiv,\ b\_data,\ 1);}
+\DoxyCodeLine{\Hypertarget{LU__solver_8cpp_source_l00025}00025\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{LU__solver_8cpp_source_l00026}00026\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ \textcolor{keyword}{constexpr}\ (std::is\_same\_v<T,\ double>)\{}
+\DoxyCodeLine{\Hypertarget{LU__solver_8cpp_source_l00027}00027\ \ \ \ \ info\ =\ LAPACKE\_dgetrf\ (LAPACK\_ROW\_MAJOR\ ,\ r\ ,\ r,\ A\_data\ ,r\ ,\ ipiv);}
+\DoxyCodeLine{\Hypertarget{LU__solver_8cpp_source_l00028}00028\ \ \ \ \ info\ =\ LAPACKE\_dgetrs(LAPACK\_ROW\_MAJOR,\ \textcolor{charliteral}{'N'},\ r,\ 1,\ A\_data,\ r,\ ipiv,\ b\_data,\ 1);}
+\DoxyCodeLine{\Hypertarget{LU__solver_8cpp_source_l00029}00029\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{LU__solver_8cpp_source_l00030}00030\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ \textcolor{keyword}{constexpr}\ (std::is\_same\_v<T,\ std::complex<float>>)\{}
+\DoxyCodeLine{\Hypertarget{LU__solver_8cpp_source_l00031}00031\ \ \ \ \ info\ =\ LAPACKE\_cgetrf\ (LAPACK\_ROW\_MAJOR\ ,\ r\ ,\ r,\ \textcolor{keyword}{reinterpret\_cast<}MKL\_Complex8*\textcolor{keyword}{>}\ (A\_data)\ ,r\ ,\ ipiv);}
+\DoxyCodeLine{\Hypertarget{LU__solver_8cpp_source_l00032}00032\ \ \ \ \ info\ =\ LAPACKE\_cgetrs(LAPACK\_ROW\_MAJOR,\ \textcolor{charliteral}{'N'},\ r,\ 1,\ \textcolor{keyword}{reinterpret\_cast<}MKL\_Complex8*\textcolor{keyword}{>}\ (A\_data),\ r,\ ipiv,\ \textcolor{keyword}{reinterpret\_cast<}MKL\_Complex8*\textcolor{keyword}{>}\ (b\_data),\ 1);}
+\DoxyCodeLine{\Hypertarget{LU__solver_8cpp_source_l00033}00033\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{LU__solver_8cpp_source_l00034}00034\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ \textcolor{keyword}{constexpr}\ (std::is\_same\_v<T,\ std::complex<double>>)\{}
+\DoxyCodeLine{\Hypertarget{LU__solver_8cpp_source_l00035}00035\ \ \ \ \ info\ =\ LAPACKE\_zgetrf\ (LAPACK\_ROW\_MAJOR\ ,\ r\ ,\ r,\ \textcolor{keyword}{reinterpret\_cast<}MKL\_Complex16*\textcolor{keyword}{>}\ (A\_data)\ ,r\ ,\ ipiv);}
+\DoxyCodeLine{\Hypertarget{LU__solver_8cpp_source_l00036}00036\ \ \ \ \ info\ =\ LAPACKE\_zgetrs(LAPACK\_ROW\_MAJOR,\ \textcolor{charliteral}{'N'},\ r,\ 1,\ \textcolor{keyword}{reinterpret\_cast<}MKL\_Complex16*\textcolor{keyword}{>}\ (A\_data),\ r,\ ipiv,\ \textcolor{keyword}{reinterpret\_cast<}MKL\_Complex16*\textcolor{keyword}{>}\ (b\_data),\ 1);}
+\DoxyCodeLine{\Hypertarget{LU__solver_8cpp_source_l00037}00037\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{LU__solver_8cpp_source_l00038}00038\ \ \ \ \ std::vector<T>\ ret(b\_data,\ b\_data\ +\ r);}
+\DoxyCodeLine{\Hypertarget{LU__solver_8cpp_source_l00039}00039\ \ \ \ \ mkl\_free(A\_data);}
+\DoxyCodeLine{\Hypertarget{LU__solver_8cpp_source_l00040}00040\ \ \ \ \ mkl\_free(b\_data);\ \ }
+\DoxyCodeLine{\Hypertarget{LU__solver_8cpp_source_l00041}00041\ \ \ \ \ \textcolor{keywordflow}{return}\ ret;}
+\DoxyCodeLine{\Hypertarget{LU__solver_8cpp_source_l00042}00042\ \}}
+\DoxyCodeLine{\Hypertarget{LU__solver_8cpp_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{LU__solver_8cpp_source_l00044}00044\ \textcolor{keyword}{template}\ std::vector<float>\ LU\_solver(\mbox{\hyperlink{classdense_1_1matrix}{dense::matrix<float>}}\&,\ std::vector<float>\ b);}
+\DoxyCodeLine{\Hypertarget{LU__solver_8cpp_source_l00045}00045\ \textcolor{keyword}{template}\ std::vector<double>\ LU\_solver(\mbox{\hyperlink{classdense_1_1matrix}{dense::matrix<double>}}\&,\ std::vector<double>\ b);}
+\DoxyCodeLine{\Hypertarget{LU__solver_8cpp_source_l00046}00046\ \textcolor{keyword}{template}\ std::vector<std::complex<float>>\ LU\_solver(\mbox{\hyperlink{classdense_1_1matrix}{dense::matrix}}<std::complex<float>>\&,\ std::vector<std::complex<float>>\ b);}
+\DoxyCodeLine{\Hypertarget{LU__solver_8cpp_source_l00047}00047\ \textcolor{keyword}{template}\ std::vector<std::complex<double>>\ LU\_solver(\mbox{\hyperlink{classdense_1_1matrix}{dense::matrix}}<std::complex<double>>\&,\ std::vector<std::complex<double>>\ b);}
+\DoxyCodeLine{\Hypertarget{LU__solver_8cpp_source_l00048}00048\ \}}
+
+\end{DoxyCode}

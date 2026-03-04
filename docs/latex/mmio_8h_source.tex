@@ -1,0 +1,139 @@
+\doxysection{mmio.\+h}
+\hypertarget{mmio_8h_source}{}\label{mmio_8h_source}\index{/home/johnzik/Dev/Cpp-\/Project/inc/mmio.h@{/home/johnzik/Dev/Cpp-\/Project/inc/mmio.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00001}00001\ \textcolor{comment}{/*\ }}
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00002}00002\ \textcolor{comment}{*\ \ \ Matrix\ Market\ I/O\ library\ for\ ANSI\ C}}
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00003}00003\ \textcolor{comment}{*}}
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00004}00004\ \textcolor{comment}{*\ \ \ See\ http://math.nist.gov/MatrixMarket\ for\ details.}}
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00005}00005\ \textcolor{comment}{*}}
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00006}00006\ \textcolor{comment}{*}}
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00007}00007\ \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00009}00009\ \textcolor{preprocessor}{\#ifndef\ MM\_IO\_H}}
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00010}00010\ \textcolor{preprocessor}{\#define\ MM\_IO\_H}}
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00012}00012\ \textcolor{preprocessor}{\#define\ MM\_MAX\_LINE\_LENGTH\ 1025}}
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00013}00013\ \textcolor{preprocessor}{\#define\ MatrixMarketBanner\ "{}\%\%MatrixMarket"{}}}
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00014}00014\ \textcolor{preprocessor}{\#define\ MM\_MAX\_TOKEN\_LENGTH\ 64}}
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00016}00016\ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{char}\ MM\_typecode[4];}
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00018}00018\ \textcolor{keywordtype}{char}\ *mm\_typecode\_to\_str(MM\_typecode\ matcode);}
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00020}00020\ \textcolor{keywordtype}{int}\ mm\_read\_banner(FILE\ *f,\ MM\_typecode\ *matcode);}
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00021}00021\ \textcolor{keywordtype}{int}\ mm\_read\_mtx\_crd\_size(FILE\ *f,\ \textcolor{keywordtype}{int}\ *M,\ \textcolor{keywordtype}{int}\ *N,\ \textcolor{keywordtype}{int}\ *nz);}
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00022}00022\ \textcolor{keywordtype}{int}\ mm\_read\_mtx\_array\_size(FILE\ *f,\ \textcolor{keywordtype}{int}\ *M,\ \textcolor{keywordtype}{int}\ *N);}
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00024}00024\ \textcolor{keywordtype}{int}\ mm\_write\_banner(FILE\ *f,\ MM\_typecode\ matcode);}
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00025}00025\ \textcolor{keywordtype}{int}\ mm\_write\_mtx\_crd\_size(FILE\ *f,\ \textcolor{keywordtype}{int}\ M,\ \textcolor{keywordtype}{int}\ N,\ \textcolor{keywordtype}{int}\ nz);}
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00026}00026\ \textcolor{keywordtype}{int}\ mm\_write\_mtx\_array\_size(FILE\ *f,\ \textcolor{keywordtype}{int}\ M,\ \textcolor{keywordtype}{int}\ N);}
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00029}00029\ \textcolor{comment}{/*********************\ MM\_typecode\ query\ fucntions\ ***************************/}}
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00031}00031\ \textcolor{preprocessor}{\#define\ mm\_is\_matrix(typecode)\ \ ((typecode)[0]=='M')}}
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00033}00033\ \textcolor{preprocessor}{\#define\ mm\_is\_sparse(typecode)\ \ ((typecode)[1]=='C')}}
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00034}00034\ \textcolor{preprocessor}{\#define\ mm\_is\_coordinate(typecode)((typecode)[1]=='C')}}
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00035}00035\ \textcolor{preprocessor}{\#define\ mm\_is\_dense(typecode)\ \ \ ((typecode)[1]=='A')}}
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00036}00036\ \textcolor{preprocessor}{\#define\ mm\_is\_array(typecode)\ \ \ ((typecode)[1]=='A')}}
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00038}00038\ \textcolor{preprocessor}{\#define\ mm\_is\_complex(typecode)\ ((typecode)[2]=='C')}}
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00039}00039\ \textcolor{preprocessor}{\#define\ mm\_is\_real(typecode)\ \ \ \ \ \ \ \ ((typecode)[2]=='R')}}
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00040}00040\ \textcolor{preprocessor}{\#define\ mm\_is\_pattern(typecode)\ ((typecode)[2]=='P')}}
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00041}00041\ \textcolor{preprocessor}{\#define\ mm\_is\_integer(typecode)\ ((typecode)[2]=='I')}}
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00043}00043\ \textcolor{preprocessor}{\#define\ mm\_is\_symmetric(typecode)((typecode)[3]=='S')}}
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00044}00044\ \textcolor{preprocessor}{\#define\ mm\_is\_general(typecode)\ ((typecode)[3]=='G')}}
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00045}00045\ \textcolor{preprocessor}{\#define\ mm\_is\_skew(typecode)\ \ \ \ ((typecode)[3]=='K')}}
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00046}00046\ \textcolor{preprocessor}{\#define\ mm\_is\_hermitian(typecode)((typecode)[3]=='H')}}
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00048}00048\ \textcolor{keywordtype}{int}\ mm\_is\_valid(MM\_typecode\ matcode);\ \ \ \ \ \ \ \textcolor{comment}{/*\ too\ complex\ for\ a\ macro\ */}}
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00051}00051\ \textcolor{comment}{/*********************\ MM\_typecode\ modify\ fucntions\ ***************************/}}
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00053}00053\ \textcolor{preprocessor}{\#define\ mm\_set\_matrix(typecode)\ ((*typecode)[0]='M')}}
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00054}00054\ \textcolor{preprocessor}{\#define\ mm\_set\_coordinate(typecode)\ ((*typecode)[1]='C')}}
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00055}00055\ \textcolor{preprocessor}{\#define\ mm\_set\_array(typecode)\ \ ((*typecode)[1]='A')}}
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00056}00056\ \textcolor{preprocessor}{\#define\ mm\_set\_dense(typecode)\ \ mm\_set\_array(typecode)}}
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00057}00057\ \textcolor{preprocessor}{\#define\ mm\_set\_sparse(typecode)\ mm\_set\_coordinate(typecode)}}
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00059}00059\ \textcolor{preprocessor}{\#define\ mm\_set\_complex(typecode)((*typecode)[2]='C')}}
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00060}00060\ \textcolor{preprocessor}{\#define\ mm\_set\_real(typecode)\ \ \ ((*typecode)[2]='R')}}
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00061}00061\ \textcolor{preprocessor}{\#define\ mm\_set\_pattern(typecode)((*typecode)[2]='P')}}
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00062}00062\ \textcolor{preprocessor}{\#define\ mm\_set\_integer(typecode)((*typecode)[2]='I')}}
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00065}00065\ \textcolor{preprocessor}{\#define\ mm\_set\_symmetric(typecode)((*typecode)[3]='S')}}
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00066}00066\ \textcolor{preprocessor}{\#define\ mm\_set\_general(typecode)((*typecode)[3]='G')}}
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00067}00067\ \textcolor{preprocessor}{\#define\ mm\_set\_skew(typecode)\ \ \ ((*typecode)[3]='K')}}
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00068}00068\ \textcolor{preprocessor}{\#define\ mm\_set\_hermitian(typecode)((*typecode)[3]='H')}}
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00070}00070\ \textcolor{preprocessor}{\#define\ mm\_clear\_typecode(typecode)\ ((*typecode)[0]=(*typecode)[1]=\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00071}00071\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (*typecode)[2]='\ ',(*typecode)[3]='G')}}
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00072}00072\ }
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00073}00073\ \textcolor{preprocessor}{\#define\ mm\_initialize\_typecode(typecode)\ mm\_clear\_typecode(typecode)}}
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00076}00076\ \textcolor{comment}{/*********************\ Matrix\ Market\ error\ codes\ ***************************/}}
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00077}00077\ }
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00078}00078\ }
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00079}00079\ \textcolor{preprocessor}{\#define\ MM\_COULD\_NOT\_READ\_FILE\ \ 11}}
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00080}00080\ \textcolor{preprocessor}{\#define\ MM\_PREMATURE\_EOF\ \ \ \ \ \ \ \ 12}}
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00081}00081\ \textcolor{preprocessor}{\#define\ MM\_NOT\_MTX\ \ \ \ \ \ \ \ \ \ \ \ \ \ 13}}
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00082}00082\ \textcolor{preprocessor}{\#define\ MM\_NO\_HEADER\ \ \ \ \ \ \ \ \ \ \ \ 14}}
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00083}00083\ \textcolor{preprocessor}{\#define\ MM\_UNSUPPORTED\_TYPE\ \ \ \ \ 15}}
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00084}00084\ \textcolor{preprocessor}{\#define\ MM\_LINE\_TOO\_LONG\ \ \ \ \ \ \ \ 16}}
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00085}00085\ \textcolor{preprocessor}{\#define\ MM\_COULD\_NOT\_WRITE\_FILE\ 17}}
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00086}00086\ }
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00087}00087\ }
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00088}00088\ \textcolor{comment}{/********************\ Matrix\ Market\ internal\ definitions\ ********************}}
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00089}00089\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00090}00090\ \textcolor{comment}{\ \ \ MM\_matrix\_typecode:\ 4-\/character\ sequence}}
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00091}00091\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00092}00092\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ojbect\ \ \ \ \ \ sparse/\ \ \ \ \ data\ \ \ \ \ \ \ \ storage\ }}
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00093}00093\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dense\ \ \ \ \ \ \ type\ \ \ \ \ \ \ \ scheme}}
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00094}00094\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00095}00095\ \textcolor{comment}{\ \ \ string\ position:\ \ [0]\ \ \ \ \ \ \ \ [1]\ \ \ \ \ \ \ \ \ [2]\ \ \ \ \ \ \ \ \ [3]}}
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00096}00096\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00097}00097\ \textcolor{comment}{\ \ \ Matrix\ typecode:\ \ M(atrix)\ \ C(oord)\ \ \ \ \ \ R(eal)\ \ \ \ \ \ G(eneral)}}
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00098}00098\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ A(array)\ \ \ \ C(omplex)\ \ \ H(ermitian)}}
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00099}00099\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ P(attern)\ \ \ S(ymmetric)}}
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00100}00100\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ I(nteger)\ \ \ K(kew)}}
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00101}00101\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00102}00102\ \textcolor{comment}{\ ***********************************************************************/}}
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00103}00103\ }
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00104}00104\ \textcolor{preprocessor}{\#define\ MM\_MTX\_STR\ \ \ \ \ \ "{}matrix"{}}}
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00105}00105\ \textcolor{preprocessor}{\#define\ MM\_ARRAY\_STR\ \ \ \ "{}array"{}}}
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00106}00106\ \textcolor{preprocessor}{\#define\ MM\_DENSE\_STR\ \ \ \ "{}array"{}}}
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00107}00107\ \textcolor{preprocessor}{\#define\ MM\_COORDINATE\_STR\ "{}coordinate"{}\ }}
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00108}00108\ \textcolor{preprocessor}{\#define\ MM\_SPARSE\_STR\ \ \ "{}coordinate"{}}}
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00109}00109\ \textcolor{preprocessor}{\#define\ MM\_COMPLEX\_STR\ \ "{}complex"{}}}
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00110}00110\ \textcolor{preprocessor}{\#define\ MM\_REAL\_STR\ \ \ \ \ "{}real"{}}}
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00111}00111\ \textcolor{preprocessor}{\#define\ MM\_INT\_STR\ \ \ \ \ \ "{}integer"{}}}
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00112}00112\ \textcolor{preprocessor}{\#define\ MM\_GENERAL\_STR\ \ "{}general"{}}}
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00113}00113\ \textcolor{preprocessor}{\#define\ MM\_SYMM\_STR\ \ \ \ \ "{}symmetric"{}}}
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00114}00114\ \textcolor{preprocessor}{\#define\ MM\_HERM\_STR\ \ \ \ \ "{}hermitian"{}}}
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00115}00115\ \textcolor{preprocessor}{\#define\ MM\_SKEW\_STR\ \ \ \ \ "{}skew-\/symmetric"{}}}
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00116}00116\ \textcolor{preprocessor}{\#define\ MM\_PATTERN\_STR\ \ "{}pattern"{}}}
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00117}00117\ }
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00118}00118\ }
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00119}00119\ \textcolor{comment}{/*\ \ high\ level\ routines\ */}}
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00120}00120\ }
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00121}00121\ \textcolor{keywordtype}{int}\ mm\_write\_mtx\_crd(\textcolor{keywordtype}{char}\ fname[],\ \textcolor{keywordtype}{int}\ M,\ \textcolor{keywordtype}{int}\ N,\ \textcolor{keywordtype}{int}\ nz,\ \textcolor{keywordtype}{int}\ I[],\ \textcolor{keywordtype}{int}\ J[],}
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00122}00122\ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ val[],\ MM\_typecode\ matcode);}
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00123}00123\ \textcolor{keywordtype}{int}\ mm\_read\_mtx\_crd\_data(FILE\ *f,\ \textcolor{keywordtype}{int}\ M,\ \textcolor{keywordtype}{int}\ N,\ \textcolor{keywordtype}{int}\ nz,\ \textcolor{keywordtype}{int}\ I[],\ \textcolor{keywordtype}{int}\ J[],}
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00124}00124\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ val[],\ MM\_typecode\ matcode);}
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00125}00125\ \textcolor{keywordtype}{int}\ mm\_read\_mtx\_crd\_entry(FILE\ *f,\ \textcolor{keywordtype}{int}\ *I,\ \textcolor{keywordtype}{int}\ *J,\ \textcolor{keywordtype}{double}\ *real,\ \textcolor{keywordtype}{double}\ *img,}
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00126}00126\ \ \ \ \ \ \ \ \ \ \ \ \ MM\_typecode\ matcode);}
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00127}00127\ }
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00128}00128\ \textcolor{keywordtype}{int}\ mm\_read\_unsymmetric\_sparse(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *fname,\ \textcolor{keywordtype}{int}\ *M\_,\ \textcolor{keywordtype}{int}\ *N\_,\ \textcolor{keywordtype}{int}\ *nz\_,}
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00129}00129\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ **val\_,\ \textcolor{keywordtype}{int}\ **I\_,\ \textcolor{keywordtype}{int}\ **J\_);}
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00130}00130\ }
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00131}00131\ }
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00132}00132\ }
+\DoxyCodeLine{\Hypertarget{mmio_8h_source_l00133}00133\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

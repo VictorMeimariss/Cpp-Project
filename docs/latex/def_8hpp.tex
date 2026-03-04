@@ -1,0 +1,640 @@
+\doxysection{/home/johnzik/\+Dev/\+Cpp-\/\+Project/inc/def.hpp File Reference}
+\hypertarget{def_8hpp}{}\label{def_8hpp}\index{/home/johnzik/Dev/Cpp-\/Project/inc/def.hpp@{/home/johnzik/Dev/Cpp-\/Project/inc/def.hpp}}
+
+
+Wrapper header file for the blass functions.  
+
+
+{\ttfamily \#include $<$mkl.\+h$>$}\newline
+{\ttfamily \#include $<$mkl\+\_\+spblas.\+h$>$}\newline
+Include dependency graph for def.\+hpp\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{def_8hpp_a6b17ec16284bd05ba457c33e249f018a}{saxpy}}~cblas\+\_\+saxpy
+\item 
+\#define \mbox{\hyperlink{def_8hpp_a2c9a4b979712484aed01ff997337e104}{daxpy}}~cblas\+\_\+daxpy
+\item 
+\#define \mbox{\hyperlink{def_8hpp_aad73c757fdaa684924f6570cd1ae56d3}{caxpy}}~cblas\+\_\+caxpy
+\item 
+\#define \mbox{\hyperlink{def_8hpp_aebf805f71dcfc592f9ee3beb2a74ff83}{zaxpy}}~cblas\+\_\+zaxpy
+\item 
+\#define \mbox{\hyperlink{def_8hpp_adab006a360daf3d424c0f8c2efd68259}{sscal}}~cblas\+\_\+sscal
+\item 
+\#define \mbox{\hyperlink{def_8hpp_ace5c466c4b32fde57f81850d43fd3010}{dscal}}~cblas\+\_\+dscal
+\item 
+\#define \mbox{\hyperlink{def_8hpp_a20bcac84e2a9485f5155ea52dcbfc7b1}{cscal}}~cblas\+\_\+cscal
+\item 
+\#define \mbox{\hyperlink{def_8hpp_aa57aa6716f5e7bd27d6243cecb45c4e2}{zscal}}~cblas\+\_\+zscal
+\item 
+\#define \mbox{\hyperlink{def_8hpp_a1fe514549f39a6a2e1768310d6f38a38}{sgemm}}~cblas\+\_\+sgemm
+\item 
+\#define \mbox{\hyperlink{def_8hpp_a9a33f149d5a4fa1fd71e2c739b84afc0}{dgemm}}~cblas\+\_\+dgemm
+\item 
+\#define \mbox{\hyperlink{def_8hpp_a89c1f93c782a3a3d3fd26a81d38addc4}{cgemm}}~cblas\+\_\+cgemm
+\item 
+\#define \mbox{\hyperlink{def_8hpp_a53740e32dc90d2a2098c71798333fda7}{zgemm}}~cblas\+\_\+zgemm
+\item 
+\#define \mbox{\hyperlink{def_8hpp_a172a2ceb382ae6e253499cc4d392ea70}{sgemv}}~cblas\+\_\+sgemv
+\item 
+\#define \mbox{\hyperlink{def_8hpp_ab3539d1506c44b6e24a71809594c0f9a}{dgemv}}~cblas\+\_\+dgemv
+\item 
+\#define \mbox{\hyperlink{def_8hpp_a42dc4889b938c8fc5297120dab1ce755}{cgemv}}~cblas\+\_\+cgemv
+\item 
+\#define \mbox{\hyperlink{def_8hpp_adeae6c92948adaa2059e666b15b96ca3}{zgemv}}~cblas\+\_\+zgemv
+\item 
+\#define \mbox{\hyperlink{def_8hpp_a7924e7895ee64c4911773fff83386a5c}{somatcopy}}~mkl\+\_\+somatcopy
+\item 
+\#define \mbox{\hyperlink{def_8hpp_a9fa4a84bb0be9fa61dec15afef7b8adb}{domatcopy}}~mkl\+\_\+domatcopy
+\item 
+\#define \mbox{\hyperlink{def_8hpp_ade2e50d947c20198d7e6255cb0869d64}{comatcopy}}~mkl\+\_\+comatcopy
+\item 
+\#define \mbox{\hyperlink{def_8hpp_ace6d6e12898441d35076fc9e419646ac}{zomatcopy}}~mkl\+\_\+zomatcopy
+\item 
+\#define \mbox{\hyperlink{def_8hpp_acaaa4fd0d7e9cfa2b53259840bc5e868}{sparse\+\_\+s\+\_\+create\+\_\+csr}}~mkl\+\_\+sparse\+\_\+s\+\_\+create\+\_\+csr
+\item 
+\#define \mbox{\hyperlink{def_8hpp_a54e60ff1609ad2ff4db2b7287dc48358}{sparse\+\_\+d\+\_\+create\+\_\+csr}}~mkl\+\_\+sparse\+\_\+d\+\_\+create\+\_\+csr
+\item 
+\#define \mbox{\hyperlink{def_8hpp_a1d35349f7fa396d5084dd63b9323b039}{sparse\+\_\+c\+\_\+create\+\_\+csr}}~mkl\+\_\+sparse\+\_\+c\+\_\+create\+\_\+csr
+\item 
+\#define \mbox{\hyperlink{def_8hpp_a874bfba92548582c35db5d3a5dd5cfdd}{sparse\+\_\+z\+\_\+create\+\_\+csr}}~mkl\+\_\+sparse\+\_\+z\+\_\+create\+\_\+csr
+\item 
+\#define \mbox{\hyperlink{def_8hpp_ac19081e236c3ea86a34efdb5cf9a037e}{sparse\+\_\+destroy}}~mkl\+\_\+sparse\+\_\+destroy
+\item 
+\#define \mbox{\hyperlink{def_8hpp_a97d369509fe597ff8864fcd2826c14a5}{sparse\+\_\+convert\+\_\+csr}}~mkl\+\_\+sparse\+\_\+convert\+\_\+csr
+\item 
+\#define \mbox{\hyperlink{def_8hpp_a93c643e1c50be4c2a6c007b25d5b84aa}{sparse\+\_\+spmm}}~mkl\+\_\+sparse\+\_\+spmm
+\item 
+\#define \mbox{\hyperlink{def_8hpp_aa4f7ea62aebce32b1a3f89667e26d0ff}{sparse\+\_\+s\+\_\+export\+\_\+csr}}~mkl\+\_\+sparse\+\_\+s\+\_\+export\+\_\+csr
+\item 
+\#define \mbox{\hyperlink{def_8hpp_aea8efe33f749c6d9c21bd0a12d208f99}{sparse\+\_\+d\+\_\+export\+\_\+csr}}~mkl\+\_\+sparse\+\_\+d\+\_\+export\+\_\+csr
+\item 
+\#define \mbox{\hyperlink{def_8hpp_acb001639e3e918038e6990f95648c365}{sparse\+\_\+c\+\_\+export\+\_\+csr}}~mkl\+\_\+sparse\+\_\+c\+\_\+export\+\_\+csr
+\item 
+\#define \mbox{\hyperlink{def_8hpp_a6336da630f769f7f18694f46dfe82736}{sparse\+\_\+z\+\_\+export\+\_\+csr}}~mkl\+\_\+sparse\+\_\+z\+\_\+export\+\_\+csr
+\item 
+\#define \mbox{\hyperlink{def_8hpp_aa4f7ea62aebce32b1a3f89667e26d0ff}{sparse\+\_\+s\+\_\+export\+\_\+csr}}~mkl\+\_\+sparse\+\_\+s\+\_\+export\+\_\+csr
+\item 
+\#define \mbox{\hyperlink{def_8hpp_aea8efe33f749c6d9c21bd0a12d208f99}{sparse\+\_\+d\+\_\+export\+\_\+csr}}~mkl\+\_\+sparse\+\_\+d\+\_\+export\+\_\+csr
+\item 
+\#define \mbox{\hyperlink{def_8hpp_acb001639e3e918038e6990f95648c365}{sparse\+\_\+c\+\_\+export\+\_\+csr}}~mkl\+\_\+sparse\+\_\+c\+\_\+export\+\_\+csr
+\item 
+\#define \mbox{\hyperlink{def_8hpp_a6336da630f769f7f18694f46dfe82736}{sparse\+\_\+z\+\_\+export\+\_\+csr}}~mkl\+\_\+sparse\+\_\+z\+\_\+export\+\_\+csr
+\item 
+\#define \mbox{\hyperlink{def_8hpp_a02318301b83f0281d8af310efb9a6e28}{sparse\+\_\+s\+\_\+add}}~mkl\+\_\+sparse\+\_\+s\+\_\+add
+\item 
+\#define \mbox{\hyperlink{def_8hpp_ad2ab1797810820c7e008624403de92db}{sparse\+\_\+d\+\_\+add}}~mkl\+\_\+sparse\+\_\+d\+\_\+add
+\item 
+\#define \mbox{\hyperlink{def_8hpp_a2a2731802f2303bdeb09cbd731903e9e}{sparse\+\_\+c\+\_\+add}}~mkl\+\_\+sparse\+\_\+c\+\_\+add
+\item 
+\#define \mbox{\hyperlink{def_8hpp_a2adf252c4932f3369dea6b3b2dcbff3b}{sparse\+\_\+z\+\_\+add}}~mkl\+\_\+sparse\+\_\+z\+\_\+add
+\item 
+\#define \mbox{\hyperlink{def_8hpp_af3c4edcb374b6bc55f3e517afbcc2d0a}{scsrmv}}~mkl\+\_\+scsrmv
+\item 
+\#define \mbox{\hyperlink{def_8hpp_a203da0ff9f97fba606fade3a69e4f778}{dcsrmv}}~mkl\+\_\+dcsrmv
+\item 
+\#define \mbox{\hyperlink{def_8hpp_af4bff1ea20138ed66302a39ab89a363f}{ccsrmv}}~mkl\+\_\+ccsrmv
+\item 
+\#define \mbox{\hyperlink{def_8hpp_a617ff5a6790ec2525ff11270c4774344}{zcsrmv}}~mkl\+\_\+zcsrmv
+\item 
+\#define \mbox{\hyperlink{def_8hpp_aebd7382a9d8eb41129ca0787ae5bf15c}{sparse\+\_\+s\+\_\+mm}}~mkl\+\_\+sparse\+\_\+s\+\_\+mm
+\item 
+\#define \mbox{\hyperlink{def_8hpp_abe7b5cf9a6f859914bb985cc4cd7d6a0}{sparse\+\_\+d\+\_\+mm}}~mkl\+\_\+sparse\+\_\+d\+\_\+mm
+\item 
+\#define \mbox{\hyperlink{def_8hpp_abefef35128903061c668aaac3a2d683c}{sparse\+\_\+c\+\_\+mm}}~mkl\+\_\+sparse\+\_\+c\+\_\+mm
+\item 
+\#define \mbox{\hyperlink{def_8hpp_a0a301fab7d86b7bd5ad66450cb4fc7c7}{sparse\+\_\+z\+\_\+mm}}~mkl\+\_\+sparse\+\_\+z\+\_\+mm
+\item 
+\#define \mbox{\hyperlink{def_8hpp_adbf55e12a9f14c31cabb0ec73e0b724e}{sparse\+\_\+s\+\_\+mv}}~mkl\+\_\+sparse\+\_\+s\+\_\+mv
+\item 
+\#define \mbox{\hyperlink{def_8hpp_a127cb65e30711ba138ada712004452cb}{sparse\+\_\+d\+\_\+mv}}~mkl\+\_\+sparse\+\_\+d\+\_\+mv
+\item 
+\#define \mbox{\hyperlink{def_8hpp_a60aa0ad62ae4b4f4c6a832c1b41a1d80}{sparse\+\_\+c\+\_\+mv}}~mkl\+\_\+sparse\+\_\+c\+\_\+mv
+\item 
+\#define \mbox{\hyperlink{def_8hpp_a6646a0da3343ddcc0b727b34eec62716}{sparse\+\_\+z\+\_\+mv}}~mkl\+\_\+sparse\+\_\+z\+\_\+mv
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Wrapper header file for the blass functions. 
+
+
+
+Definition in file \mbox{\hyperlink{def_8hpp_source}{def.\+hpp}}.
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{def_8hpp_aad73c757fdaa684924f6570cd1ae56d3}\label{def_8hpp_aad73c757fdaa684924f6570cd1ae56d3} 
+\index{def.hpp@{def.hpp}!caxpy@{caxpy}}
+\index{caxpy@{caxpy}!def.hpp@{def.hpp}}
+\doxysubsubsection{\texorpdfstring{caxpy}{caxpy}}
+{\footnotesize\ttfamily \#define caxpy~cblas\+\_\+caxpy}
+
+
+
+Definition at line \mbox{\hyperlink{def_8hpp_source_l00013}{13}} of file \mbox{\hyperlink{def_8hpp_source}{def.\+hpp}}.
+
+\Hypertarget{def_8hpp_af4bff1ea20138ed66302a39ab89a363f}\label{def_8hpp_af4bff1ea20138ed66302a39ab89a363f} 
+\index{def.hpp@{def.hpp}!ccsrmv@{ccsrmv}}
+\index{ccsrmv@{ccsrmv}!def.hpp@{def.hpp}}
+\doxysubsubsection{\texorpdfstring{ccsrmv}{ccsrmv}}
+{\footnotesize\ttfamily \#define ccsrmv~mkl\+\_\+ccsrmv}
+
+
+
+Definition at line \mbox{\hyperlink{def_8hpp_source_l00066}{66}} of file \mbox{\hyperlink{def_8hpp_source}{def.\+hpp}}.
+
+\Hypertarget{def_8hpp_a89c1f93c782a3a3d3fd26a81d38addc4}\label{def_8hpp_a89c1f93c782a3a3d3fd26a81d38addc4} 
+\index{def.hpp@{def.hpp}!cgemm@{cgemm}}
+\index{cgemm@{cgemm}!def.hpp@{def.hpp}}
+\doxysubsubsection{\texorpdfstring{cgemm}{cgemm}}
+{\footnotesize\ttfamily \#define cgemm~cblas\+\_\+cgemm}
+
+
+
+Definition at line \mbox{\hyperlink{def_8hpp_source_l00023}{23}} of file \mbox{\hyperlink{def_8hpp_source}{def.\+hpp}}.
+
+\Hypertarget{def_8hpp_a42dc4889b938c8fc5297120dab1ce755}\label{def_8hpp_a42dc4889b938c8fc5297120dab1ce755} 
+\index{def.hpp@{def.hpp}!cgemv@{cgemv}}
+\index{cgemv@{cgemv}!def.hpp@{def.hpp}}
+\doxysubsubsection{\texorpdfstring{cgemv}{cgemv}}
+{\footnotesize\ttfamily \#define cgemv~cblas\+\_\+cgemv}
+
+
+
+Definition at line \mbox{\hyperlink{def_8hpp_source_l00028}{28}} of file \mbox{\hyperlink{def_8hpp_source}{def.\+hpp}}.
+
+\Hypertarget{def_8hpp_ade2e50d947c20198d7e6255cb0869d64}\label{def_8hpp_ade2e50d947c20198d7e6255cb0869d64} 
+\index{def.hpp@{def.hpp}!comatcopy@{comatcopy}}
+\index{comatcopy@{comatcopy}!def.hpp@{def.hpp}}
+\doxysubsubsection{\texorpdfstring{comatcopy}{comatcopy}}
+{\footnotesize\ttfamily \#define comatcopy~mkl\+\_\+comatcopy}
+
+
+
+Definition at line \mbox{\hyperlink{def_8hpp_source_l00033}{33}} of file \mbox{\hyperlink{def_8hpp_source}{def.\+hpp}}.
+
+\Hypertarget{def_8hpp_a20bcac84e2a9485f5155ea52dcbfc7b1}\label{def_8hpp_a20bcac84e2a9485f5155ea52dcbfc7b1} 
+\index{def.hpp@{def.hpp}!cscal@{cscal}}
+\index{cscal@{cscal}!def.hpp@{def.hpp}}
+\doxysubsubsection{\texorpdfstring{cscal}{cscal}}
+{\footnotesize\ttfamily \#define cscal~cblas\+\_\+cscal}
+
+
+
+Definition at line \mbox{\hyperlink{def_8hpp_source_l00018}{18}} of file \mbox{\hyperlink{def_8hpp_source}{def.\+hpp}}.
+
+\Hypertarget{def_8hpp_a2c9a4b979712484aed01ff997337e104}\label{def_8hpp_a2c9a4b979712484aed01ff997337e104} 
+\index{def.hpp@{def.hpp}!daxpy@{daxpy}}
+\index{daxpy@{daxpy}!def.hpp@{def.hpp}}
+\doxysubsubsection{\texorpdfstring{daxpy}{daxpy}}
+{\footnotesize\ttfamily \#define daxpy~cblas\+\_\+daxpy}
+
+
+
+Definition at line \mbox{\hyperlink{def_8hpp_source_l00012}{12}} of file \mbox{\hyperlink{def_8hpp_source}{def.\+hpp}}.
+
+\Hypertarget{def_8hpp_a203da0ff9f97fba606fade3a69e4f778}\label{def_8hpp_a203da0ff9f97fba606fade3a69e4f778} 
+\index{def.hpp@{def.hpp}!dcsrmv@{dcsrmv}}
+\index{dcsrmv@{dcsrmv}!def.hpp@{def.hpp}}
+\doxysubsubsection{\texorpdfstring{dcsrmv}{dcsrmv}}
+{\footnotesize\ttfamily \#define dcsrmv~mkl\+\_\+dcsrmv}
+
+
+
+Definition at line \mbox{\hyperlink{def_8hpp_source_l00065}{65}} of file \mbox{\hyperlink{def_8hpp_source}{def.\+hpp}}.
+
+\Hypertarget{def_8hpp_a9a33f149d5a4fa1fd71e2c739b84afc0}\label{def_8hpp_a9a33f149d5a4fa1fd71e2c739b84afc0} 
+\index{def.hpp@{def.hpp}!dgemm@{dgemm}}
+\index{dgemm@{dgemm}!def.hpp@{def.hpp}}
+\doxysubsubsection{\texorpdfstring{dgemm}{dgemm}}
+{\footnotesize\ttfamily \#define dgemm~cblas\+\_\+dgemm}
+
+
+
+Definition at line \mbox{\hyperlink{def_8hpp_source_l00022}{22}} of file \mbox{\hyperlink{def_8hpp_source}{def.\+hpp}}.
+
+\Hypertarget{def_8hpp_ab3539d1506c44b6e24a71809594c0f9a}\label{def_8hpp_ab3539d1506c44b6e24a71809594c0f9a} 
+\index{def.hpp@{def.hpp}!dgemv@{dgemv}}
+\index{dgemv@{dgemv}!def.hpp@{def.hpp}}
+\doxysubsubsection{\texorpdfstring{dgemv}{dgemv}}
+{\footnotesize\ttfamily \#define dgemv~cblas\+\_\+dgemv}
+
+
+
+Definition at line \mbox{\hyperlink{def_8hpp_source_l00027}{27}} of file \mbox{\hyperlink{def_8hpp_source}{def.\+hpp}}.
+
+\Hypertarget{def_8hpp_a9fa4a84bb0be9fa61dec15afef7b8adb}\label{def_8hpp_a9fa4a84bb0be9fa61dec15afef7b8adb} 
+\index{def.hpp@{def.hpp}!domatcopy@{domatcopy}}
+\index{domatcopy@{domatcopy}!def.hpp@{def.hpp}}
+\doxysubsubsection{\texorpdfstring{domatcopy}{domatcopy}}
+{\footnotesize\ttfamily \#define domatcopy~mkl\+\_\+domatcopy}
+
+
+
+Definition at line \mbox{\hyperlink{def_8hpp_source_l00032}{32}} of file \mbox{\hyperlink{def_8hpp_source}{def.\+hpp}}.
+
+\Hypertarget{def_8hpp_ace5c466c4b32fde57f81850d43fd3010}\label{def_8hpp_ace5c466c4b32fde57f81850d43fd3010} 
+\index{def.hpp@{def.hpp}!dscal@{dscal}}
+\index{dscal@{dscal}!def.hpp@{def.hpp}}
+\doxysubsubsection{\texorpdfstring{dscal}{dscal}}
+{\footnotesize\ttfamily \#define dscal~cblas\+\_\+dscal}
+
+
+
+Definition at line \mbox{\hyperlink{def_8hpp_source_l00017}{17}} of file \mbox{\hyperlink{def_8hpp_source}{def.\+hpp}}.
+
+\Hypertarget{def_8hpp_a6b17ec16284bd05ba457c33e249f018a}\label{def_8hpp_a6b17ec16284bd05ba457c33e249f018a} 
+\index{def.hpp@{def.hpp}!saxpy@{saxpy}}
+\index{saxpy@{saxpy}!def.hpp@{def.hpp}}
+\doxysubsubsection{\texorpdfstring{saxpy}{saxpy}}
+{\footnotesize\ttfamily \#define saxpy~cblas\+\_\+saxpy}
+
+
+
+Definition at line \mbox{\hyperlink{def_8hpp_source_l00011}{11}} of file \mbox{\hyperlink{def_8hpp_source}{def.\+hpp}}.
+
+\Hypertarget{def_8hpp_af3c4edcb374b6bc55f3e517afbcc2d0a}\label{def_8hpp_af3c4edcb374b6bc55f3e517afbcc2d0a} 
+\index{def.hpp@{def.hpp}!scsrmv@{scsrmv}}
+\index{scsrmv@{scsrmv}!def.hpp@{def.hpp}}
+\doxysubsubsection{\texorpdfstring{scsrmv}{scsrmv}}
+{\footnotesize\ttfamily \#define scsrmv~mkl\+\_\+scsrmv}
+
+
+
+Definition at line \mbox{\hyperlink{def_8hpp_source_l00064}{64}} of file \mbox{\hyperlink{def_8hpp_source}{def.\+hpp}}.
+
+\Hypertarget{def_8hpp_a1fe514549f39a6a2e1768310d6f38a38}\label{def_8hpp_a1fe514549f39a6a2e1768310d6f38a38} 
+\index{def.hpp@{def.hpp}!sgemm@{sgemm}}
+\index{sgemm@{sgemm}!def.hpp@{def.hpp}}
+\doxysubsubsection{\texorpdfstring{sgemm}{sgemm}}
+{\footnotesize\ttfamily \#define sgemm~cblas\+\_\+sgemm}
+
+
+
+Definition at line \mbox{\hyperlink{def_8hpp_source_l00021}{21}} of file \mbox{\hyperlink{def_8hpp_source}{def.\+hpp}}.
+
+\Hypertarget{def_8hpp_a172a2ceb382ae6e253499cc4d392ea70}\label{def_8hpp_a172a2ceb382ae6e253499cc4d392ea70} 
+\index{def.hpp@{def.hpp}!sgemv@{sgemv}}
+\index{sgemv@{sgemv}!def.hpp@{def.hpp}}
+\doxysubsubsection{\texorpdfstring{sgemv}{sgemv}}
+{\footnotesize\ttfamily \#define sgemv~cblas\+\_\+sgemv}
+
+
+
+Definition at line \mbox{\hyperlink{def_8hpp_source_l00026}{26}} of file \mbox{\hyperlink{def_8hpp_source}{def.\+hpp}}.
+
+\Hypertarget{def_8hpp_a7924e7895ee64c4911773fff83386a5c}\label{def_8hpp_a7924e7895ee64c4911773fff83386a5c} 
+\index{def.hpp@{def.hpp}!somatcopy@{somatcopy}}
+\index{somatcopy@{somatcopy}!def.hpp@{def.hpp}}
+\doxysubsubsection{\texorpdfstring{somatcopy}{somatcopy}}
+{\footnotesize\ttfamily \#define somatcopy~mkl\+\_\+somatcopy}
+
+
+
+Definition at line \mbox{\hyperlink{def_8hpp_source_l00031}{31}} of file \mbox{\hyperlink{def_8hpp_source}{def.\+hpp}}.
+
+\Hypertarget{def_8hpp_a2a2731802f2303bdeb09cbd731903e9e}\label{def_8hpp_a2a2731802f2303bdeb09cbd731903e9e} 
+\index{def.hpp@{def.hpp}!sparse\_c\_add@{sparse\_c\_add}}
+\index{sparse\_c\_add@{sparse\_c\_add}!def.hpp@{def.hpp}}
+\doxysubsubsection{\texorpdfstring{sparse\_c\_add}{sparse\_c\_add}}
+{\footnotesize\ttfamily \#define sparse\+\_\+c\+\_\+add~mkl\+\_\+sparse\+\_\+c\+\_\+add}
+
+
+
+Definition at line \mbox{\hyperlink{def_8hpp_source_l00061}{61}} of file \mbox{\hyperlink{def_8hpp_source}{def.\+hpp}}.
+
+\Hypertarget{def_8hpp_a1d35349f7fa396d5084dd63b9323b039}\label{def_8hpp_a1d35349f7fa396d5084dd63b9323b039} 
+\index{def.hpp@{def.hpp}!sparse\_c\_create\_csr@{sparse\_c\_create\_csr}}
+\index{sparse\_c\_create\_csr@{sparse\_c\_create\_csr}!def.hpp@{def.hpp}}
+\doxysubsubsection{\texorpdfstring{sparse\_c\_create\_csr}{sparse\_c\_create\_csr}}
+{\footnotesize\ttfamily \#define sparse\+\_\+c\+\_\+create\+\_\+csr~mkl\+\_\+sparse\+\_\+c\+\_\+create\+\_\+csr}
+
+
+
+Definition at line \mbox{\hyperlink{def_8hpp_source_l00040}{40}} of file \mbox{\hyperlink{def_8hpp_source}{def.\+hpp}}.
+
+\Hypertarget{def_8hpp_acb001639e3e918038e6990f95648c365}\label{def_8hpp_acb001639e3e918038e6990f95648c365} 
+\index{def.hpp@{def.hpp}!sparse\_c\_export\_csr@{sparse\_c\_export\_csr}}
+\index{sparse\_c\_export\_csr@{sparse\_c\_export\_csr}!def.hpp@{def.hpp}}
+\doxysubsubsection{\texorpdfstring{sparse\_c\_export\_csr}{sparse\_c\_export\_csr}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \#define sparse\+\_\+c\+\_\+export\+\_\+csr~mkl\+\_\+sparse\+\_\+c\+\_\+export\+\_\+csr}
+
+
+
+Definition at line \mbox{\hyperlink{def_8hpp_source_l00051}{51}} of file \mbox{\hyperlink{def_8hpp_source}{def.\+hpp}}.
+
+\Hypertarget{def_8hpp_acb001639e3e918038e6990f95648c365}\label{def_8hpp_acb001639e3e918038e6990f95648c365} 
+\index{def.hpp@{def.hpp}!sparse\_c\_export\_csr@{sparse\_c\_export\_csr}}
+\index{sparse\_c\_export\_csr@{sparse\_c\_export\_csr}!def.hpp@{def.hpp}}
+\doxysubsubsection{\texorpdfstring{sparse\_c\_export\_csr}{sparse\_c\_export\_csr}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \#define sparse\+\_\+c\+\_\+export\+\_\+csr~mkl\+\_\+sparse\+\_\+c\+\_\+export\+\_\+csr}
+
+
+
+Definition at line \mbox{\hyperlink{def_8hpp_source_l00051}{51}} of file \mbox{\hyperlink{def_8hpp_source}{def.\+hpp}}.
+
+\Hypertarget{def_8hpp_abefef35128903061c668aaac3a2d683c}\label{def_8hpp_abefef35128903061c668aaac3a2d683c} 
+\index{def.hpp@{def.hpp}!sparse\_c\_mm@{sparse\_c\_mm}}
+\index{sparse\_c\_mm@{sparse\_c\_mm}!def.hpp@{def.hpp}}
+\doxysubsubsection{\texorpdfstring{sparse\_c\_mm}{sparse\_c\_mm}}
+{\footnotesize\ttfamily \#define sparse\+\_\+c\+\_\+mm~mkl\+\_\+sparse\+\_\+c\+\_\+mm}
+
+
+
+Definition at line \mbox{\hyperlink{def_8hpp_source_l00071}{71}} of file \mbox{\hyperlink{def_8hpp_source}{def.\+hpp}}.
+
+\Hypertarget{def_8hpp_a60aa0ad62ae4b4f4c6a832c1b41a1d80}\label{def_8hpp_a60aa0ad62ae4b4f4c6a832c1b41a1d80} 
+\index{def.hpp@{def.hpp}!sparse\_c\_mv@{sparse\_c\_mv}}
+\index{sparse\_c\_mv@{sparse\_c\_mv}!def.hpp@{def.hpp}}
+\doxysubsubsection{\texorpdfstring{sparse\_c\_mv}{sparse\_c\_mv}}
+{\footnotesize\ttfamily \#define sparse\+\_\+c\+\_\+mv~mkl\+\_\+sparse\+\_\+c\+\_\+mv}
+
+
+
+Definition at line \mbox{\hyperlink{def_8hpp_source_l00076}{76}} of file \mbox{\hyperlink{def_8hpp_source}{def.\+hpp}}.
+
+\Hypertarget{def_8hpp_a97d369509fe597ff8864fcd2826c14a5}\label{def_8hpp_a97d369509fe597ff8864fcd2826c14a5} 
+\index{def.hpp@{def.hpp}!sparse\_convert\_csr@{sparse\_convert\_csr}}
+\index{sparse\_convert\_csr@{sparse\_convert\_csr}!def.hpp@{def.hpp}}
+\doxysubsubsection{\texorpdfstring{sparse\_convert\_csr}{sparse\_convert\_csr}}
+{\footnotesize\ttfamily \#define sparse\+\_\+convert\+\_\+csr~mkl\+\_\+sparse\+\_\+convert\+\_\+csr}
+
+
+
+Definition at line \mbox{\hyperlink{def_8hpp_source_l00045}{45}} of file \mbox{\hyperlink{def_8hpp_source}{def.\+hpp}}.
+
+\Hypertarget{def_8hpp_ad2ab1797810820c7e008624403de92db}\label{def_8hpp_ad2ab1797810820c7e008624403de92db} 
+\index{def.hpp@{def.hpp}!sparse\_d\_add@{sparse\_d\_add}}
+\index{sparse\_d\_add@{sparse\_d\_add}!def.hpp@{def.hpp}}
+\doxysubsubsection{\texorpdfstring{sparse\_d\_add}{sparse\_d\_add}}
+{\footnotesize\ttfamily \#define sparse\+\_\+d\+\_\+add~mkl\+\_\+sparse\+\_\+d\+\_\+add}
+
+
+
+Definition at line \mbox{\hyperlink{def_8hpp_source_l00060}{60}} of file \mbox{\hyperlink{def_8hpp_source}{def.\+hpp}}.
+
+\Hypertarget{def_8hpp_a54e60ff1609ad2ff4db2b7287dc48358}\label{def_8hpp_a54e60ff1609ad2ff4db2b7287dc48358} 
+\index{def.hpp@{def.hpp}!sparse\_d\_create\_csr@{sparse\_d\_create\_csr}}
+\index{sparse\_d\_create\_csr@{sparse\_d\_create\_csr}!def.hpp@{def.hpp}}
+\doxysubsubsection{\texorpdfstring{sparse\_d\_create\_csr}{sparse\_d\_create\_csr}}
+{\footnotesize\ttfamily \#define sparse\+\_\+d\+\_\+create\+\_\+csr~mkl\+\_\+sparse\+\_\+d\+\_\+create\+\_\+csr}
+
+
+
+Definition at line \mbox{\hyperlink{def_8hpp_source_l00039}{39}} of file \mbox{\hyperlink{def_8hpp_source}{def.\+hpp}}.
+
+\Hypertarget{def_8hpp_aea8efe33f749c6d9c21bd0a12d208f99}\label{def_8hpp_aea8efe33f749c6d9c21bd0a12d208f99} 
+\index{def.hpp@{def.hpp}!sparse\_d\_export\_csr@{sparse\_d\_export\_csr}}
+\index{sparse\_d\_export\_csr@{sparse\_d\_export\_csr}!def.hpp@{def.hpp}}
+\doxysubsubsection{\texorpdfstring{sparse\_d\_export\_csr}{sparse\_d\_export\_csr}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \#define sparse\+\_\+d\+\_\+export\+\_\+csr~mkl\+\_\+sparse\+\_\+d\+\_\+export\+\_\+csr}
+
+
+
+Definition at line \mbox{\hyperlink{def_8hpp_source_l00050}{50}} of file \mbox{\hyperlink{def_8hpp_source}{def.\+hpp}}.
+
+\Hypertarget{def_8hpp_aea8efe33f749c6d9c21bd0a12d208f99}\label{def_8hpp_aea8efe33f749c6d9c21bd0a12d208f99} 
+\index{def.hpp@{def.hpp}!sparse\_d\_export\_csr@{sparse\_d\_export\_csr}}
+\index{sparse\_d\_export\_csr@{sparse\_d\_export\_csr}!def.hpp@{def.hpp}}
+\doxysubsubsection{\texorpdfstring{sparse\_d\_export\_csr}{sparse\_d\_export\_csr}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \#define sparse\+\_\+d\+\_\+export\+\_\+csr~mkl\+\_\+sparse\+\_\+d\+\_\+export\+\_\+csr}
+
+
+
+Definition at line \mbox{\hyperlink{def_8hpp_source_l00050}{50}} of file \mbox{\hyperlink{def_8hpp_source}{def.\+hpp}}.
+
+\Hypertarget{def_8hpp_abe7b5cf9a6f859914bb985cc4cd7d6a0}\label{def_8hpp_abe7b5cf9a6f859914bb985cc4cd7d6a0} 
+\index{def.hpp@{def.hpp}!sparse\_d\_mm@{sparse\_d\_mm}}
+\index{sparse\_d\_mm@{sparse\_d\_mm}!def.hpp@{def.hpp}}
+\doxysubsubsection{\texorpdfstring{sparse\_d\_mm}{sparse\_d\_mm}}
+{\footnotesize\ttfamily \#define sparse\+\_\+d\+\_\+mm~mkl\+\_\+sparse\+\_\+d\+\_\+mm}
+
+
+
+Definition at line \mbox{\hyperlink{def_8hpp_source_l00070}{70}} of file \mbox{\hyperlink{def_8hpp_source}{def.\+hpp}}.
+
+\Hypertarget{def_8hpp_a127cb65e30711ba138ada712004452cb}\label{def_8hpp_a127cb65e30711ba138ada712004452cb} 
+\index{def.hpp@{def.hpp}!sparse\_d\_mv@{sparse\_d\_mv}}
+\index{sparse\_d\_mv@{sparse\_d\_mv}!def.hpp@{def.hpp}}
+\doxysubsubsection{\texorpdfstring{sparse\_d\_mv}{sparse\_d\_mv}}
+{\footnotesize\ttfamily \#define sparse\+\_\+d\+\_\+mv~mkl\+\_\+sparse\+\_\+d\+\_\+mv}
+
+
+
+Definition at line \mbox{\hyperlink{def_8hpp_source_l00075}{75}} of file \mbox{\hyperlink{def_8hpp_source}{def.\+hpp}}.
+
+\Hypertarget{def_8hpp_ac19081e236c3ea86a34efdb5cf9a037e}\label{def_8hpp_ac19081e236c3ea86a34efdb5cf9a037e} 
+\index{def.hpp@{def.hpp}!sparse\_destroy@{sparse\_destroy}}
+\index{sparse\_destroy@{sparse\_destroy}!def.hpp@{def.hpp}}
+\doxysubsubsection{\texorpdfstring{sparse\_destroy}{sparse\_destroy}}
+{\footnotesize\ttfamily \#define sparse\+\_\+destroy~mkl\+\_\+sparse\+\_\+destroy}
+
+
+
+Definition at line \mbox{\hyperlink{def_8hpp_source_l00043}{43}} of file \mbox{\hyperlink{def_8hpp_source}{def.\+hpp}}.
+
+\Hypertarget{def_8hpp_a02318301b83f0281d8af310efb9a6e28}\label{def_8hpp_a02318301b83f0281d8af310efb9a6e28} 
+\index{def.hpp@{def.hpp}!sparse\_s\_add@{sparse\_s\_add}}
+\index{sparse\_s\_add@{sparse\_s\_add}!def.hpp@{def.hpp}}
+\doxysubsubsection{\texorpdfstring{sparse\_s\_add}{sparse\_s\_add}}
+{\footnotesize\ttfamily \#define sparse\+\_\+s\+\_\+add~mkl\+\_\+sparse\+\_\+s\+\_\+add}
+
+
+
+Definition at line \mbox{\hyperlink{def_8hpp_source_l00059}{59}} of file \mbox{\hyperlink{def_8hpp_source}{def.\+hpp}}.
+
+\Hypertarget{def_8hpp_acaaa4fd0d7e9cfa2b53259840bc5e868}\label{def_8hpp_acaaa4fd0d7e9cfa2b53259840bc5e868} 
+\index{def.hpp@{def.hpp}!sparse\_s\_create\_csr@{sparse\_s\_create\_csr}}
+\index{sparse\_s\_create\_csr@{sparse\_s\_create\_csr}!def.hpp@{def.hpp}}
+\doxysubsubsection{\texorpdfstring{sparse\_s\_create\_csr}{sparse\_s\_create\_csr}}
+{\footnotesize\ttfamily \#define sparse\+\_\+s\+\_\+create\+\_\+csr~mkl\+\_\+sparse\+\_\+s\+\_\+create\+\_\+csr}
+
+
+
+Definition at line \mbox{\hyperlink{def_8hpp_source_l00038}{38}} of file \mbox{\hyperlink{def_8hpp_source}{def.\+hpp}}.
+
+\Hypertarget{def_8hpp_aa4f7ea62aebce32b1a3f89667e26d0ff}\label{def_8hpp_aa4f7ea62aebce32b1a3f89667e26d0ff} 
+\index{def.hpp@{def.hpp}!sparse\_s\_export\_csr@{sparse\_s\_export\_csr}}
+\index{sparse\_s\_export\_csr@{sparse\_s\_export\_csr}!def.hpp@{def.hpp}}
+\doxysubsubsection{\texorpdfstring{sparse\_s\_export\_csr}{sparse\_s\_export\_csr}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \#define sparse\+\_\+s\+\_\+export\+\_\+csr~mkl\+\_\+sparse\+\_\+s\+\_\+export\+\_\+csr}
+
+
+
+Definition at line \mbox{\hyperlink{def_8hpp_source_l00049}{49}} of file \mbox{\hyperlink{def_8hpp_source}{def.\+hpp}}.
+
+\Hypertarget{def_8hpp_aa4f7ea62aebce32b1a3f89667e26d0ff}\label{def_8hpp_aa4f7ea62aebce32b1a3f89667e26d0ff} 
+\index{def.hpp@{def.hpp}!sparse\_s\_export\_csr@{sparse\_s\_export\_csr}}
+\index{sparse\_s\_export\_csr@{sparse\_s\_export\_csr}!def.hpp@{def.hpp}}
+\doxysubsubsection{\texorpdfstring{sparse\_s\_export\_csr}{sparse\_s\_export\_csr}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \#define sparse\+\_\+s\+\_\+export\+\_\+csr~mkl\+\_\+sparse\+\_\+s\+\_\+export\+\_\+csr}
+
+
+
+Definition at line \mbox{\hyperlink{def_8hpp_source_l00049}{49}} of file \mbox{\hyperlink{def_8hpp_source}{def.\+hpp}}.
+
+\Hypertarget{def_8hpp_aebd7382a9d8eb41129ca0787ae5bf15c}\label{def_8hpp_aebd7382a9d8eb41129ca0787ae5bf15c} 
+\index{def.hpp@{def.hpp}!sparse\_s\_mm@{sparse\_s\_mm}}
+\index{sparse\_s\_mm@{sparse\_s\_mm}!def.hpp@{def.hpp}}
+\doxysubsubsection{\texorpdfstring{sparse\_s\_mm}{sparse\_s\_mm}}
+{\footnotesize\ttfamily \#define sparse\+\_\+s\+\_\+mm~mkl\+\_\+sparse\+\_\+s\+\_\+mm}
+
+
+
+Definition at line \mbox{\hyperlink{def_8hpp_source_l00069}{69}} of file \mbox{\hyperlink{def_8hpp_source}{def.\+hpp}}.
+
+\Hypertarget{def_8hpp_adbf55e12a9f14c31cabb0ec73e0b724e}\label{def_8hpp_adbf55e12a9f14c31cabb0ec73e0b724e} 
+\index{def.hpp@{def.hpp}!sparse\_s\_mv@{sparse\_s\_mv}}
+\index{sparse\_s\_mv@{sparse\_s\_mv}!def.hpp@{def.hpp}}
+\doxysubsubsection{\texorpdfstring{sparse\_s\_mv}{sparse\_s\_mv}}
+{\footnotesize\ttfamily \#define sparse\+\_\+s\+\_\+mv~mkl\+\_\+sparse\+\_\+s\+\_\+mv}
+
+
+
+Definition at line \mbox{\hyperlink{def_8hpp_source_l00074}{74}} of file \mbox{\hyperlink{def_8hpp_source}{def.\+hpp}}.
+
+\Hypertarget{def_8hpp_a93c643e1c50be4c2a6c007b25d5b84aa}\label{def_8hpp_a93c643e1c50be4c2a6c007b25d5b84aa} 
+\index{def.hpp@{def.hpp}!sparse\_spmm@{sparse\_spmm}}
+\index{sparse\_spmm@{sparse\_spmm}!def.hpp@{def.hpp}}
+\doxysubsubsection{\texorpdfstring{sparse\_spmm}{sparse\_spmm}}
+{\footnotesize\ttfamily \#define sparse\+\_\+spmm~mkl\+\_\+sparse\+\_\+spmm}
+
+
+
+Definition at line \mbox{\hyperlink{def_8hpp_source_l00047}{47}} of file \mbox{\hyperlink{def_8hpp_source}{def.\+hpp}}.
+
+\Hypertarget{def_8hpp_a2adf252c4932f3369dea6b3b2dcbff3b}\label{def_8hpp_a2adf252c4932f3369dea6b3b2dcbff3b} 
+\index{def.hpp@{def.hpp}!sparse\_z\_add@{sparse\_z\_add}}
+\index{sparse\_z\_add@{sparse\_z\_add}!def.hpp@{def.hpp}}
+\doxysubsubsection{\texorpdfstring{sparse\_z\_add}{sparse\_z\_add}}
+{\footnotesize\ttfamily \#define sparse\+\_\+z\+\_\+add~mkl\+\_\+sparse\+\_\+z\+\_\+add}
+
+
+
+Definition at line \mbox{\hyperlink{def_8hpp_source_l00062}{62}} of file \mbox{\hyperlink{def_8hpp_source}{def.\+hpp}}.
+
+\Hypertarget{def_8hpp_a874bfba92548582c35db5d3a5dd5cfdd}\label{def_8hpp_a874bfba92548582c35db5d3a5dd5cfdd} 
+\index{def.hpp@{def.hpp}!sparse\_z\_create\_csr@{sparse\_z\_create\_csr}}
+\index{sparse\_z\_create\_csr@{sparse\_z\_create\_csr}!def.hpp@{def.hpp}}
+\doxysubsubsection{\texorpdfstring{sparse\_z\_create\_csr}{sparse\_z\_create\_csr}}
+{\footnotesize\ttfamily \#define sparse\+\_\+z\+\_\+create\+\_\+csr~mkl\+\_\+sparse\+\_\+z\+\_\+create\+\_\+csr}
+
+
+
+Definition at line \mbox{\hyperlink{def_8hpp_source_l00041}{41}} of file \mbox{\hyperlink{def_8hpp_source}{def.\+hpp}}.
+
+\Hypertarget{def_8hpp_a6336da630f769f7f18694f46dfe82736}\label{def_8hpp_a6336da630f769f7f18694f46dfe82736} 
+\index{def.hpp@{def.hpp}!sparse\_z\_export\_csr@{sparse\_z\_export\_csr}}
+\index{sparse\_z\_export\_csr@{sparse\_z\_export\_csr}!def.hpp@{def.hpp}}
+\doxysubsubsection{\texorpdfstring{sparse\_z\_export\_csr}{sparse\_z\_export\_csr}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \#define sparse\+\_\+z\+\_\+export\+\_\+csr~mkl\+\_\+sparse\+\_\+z\+\_\+export\+\_\+csr}
+
+
+
+Definition at line \mbox{\hyperlink{def_8hpp_source_l00052}{52}} of file \mbox{\hyperlink{def_8hpp_source}{def.\+hpp}}.
+
+\Hypertarget{def_8hpp_a6336da630f769f7f18694f46dfe82736}\label{def_8hpp_a6336da630f769f7f18694f46dfe82736} 
+\index{def.hpp@{def.hpp}!sparse\_z\_export\_csr@{sparse\_z\_export\_csr}}
+\index{sparse\_z\_export\_csr@{sparse\_z\_export\_csr}!def.hpp@{def.hpp}}
+\doxysubsubsection{\texorpdfstring{sparse\_z\_export\_csr}{sparse\_z\_export\_csr}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \#define sparse\+\_\+z\+\_\+export\+\_\+csr~mkl\+\_\+sparse\+\_\+z\+\_\+export\+\_\+csr}
+
+
+
+Definition at line \mbox{\hyperlink{def_8hpp_source_l00052}{52}} of file \mbox{\hyperlink{def_8hpp_source}{def.\+hpp}}.
+
+\Hypertarget{def_8hpp_a0a301fab7d86b7bd5ad66450cb4fc7c7}\label{def_8hpp_a0a301fab7d86b7bd5ad66450cb4fc7c7} 
+\index{def.hpp@{def.hpp}!sparse\_z\_mm@{sparse\_z\_mm}}
+\index{sparse\_z\_mm@{sparse\_z\_mm}!def.hpp@{def.hpp}}
+\doxysubsubsection{\texorpdfstring{sparse\_z\_mm}{sparse\_z\_mm}}
+{\footnotesize\ttfamily \#define sparse\+\_\+z\+\_\+mm~mkl\+\_\+sparse\+\_\+z\+\_\+mm}
+
+
+
+Definition at line \mbox{\hyperlink{def_8hpp_source_l00072}{72}} of file \mbox{\hyperlink{def_8hpp_source}{def.\+hpp}}.
+
+\Hypertarget{def_8hpp_a6646a0da3343ddcc0b727b34eec62716}\label{def_8hpp_a6646a0da3343ddcc0b727b34eec62716} 
+\index{def.hpp@{def.hpp}!sparse\_z\_mv@{sparse\_z\_mv}}
+\index{sparse\_z\_mv@{sparse\_z\_mv}!def.hpp@{def.hpp}}
+\doxysubsubsection{\texorpdfstring{sparse\_z\_mv}{sparse\_z\_mv}}
+{\footnotesize\ttfamily \#define sparse\+\_\+z\+\_\+mv~mkl\+\_\+sparse\+\_\+z\+\_\+mv}
+
+
+
+Definition at line \mbox{\hyperlink{def_8hpp_source_l00077}{77}} of file \mbox{\hyperlink{def_8hpp_source}{def.\+hpp}}.
+
+\Hypertarget{def_8hpp_adab006a360daf3d424c0f8c2efd68259}\label{def_8hpp_adab006a360daf3d424c0f8c2efd68259} 
+\index{def.hpp@{def.hpp}!sscal@{sscal}}
+\index{sscal@{sscal}!def.hpp@{def.hpp}}
+\doxysubsubsection{\texorpdfstring{sscal}{sscal}}
+{\footnotesize\ttfamily \#define sscal~cblas\+\_\+sscal}
+
+
+
+Definition at line \mbox{\hyperlink{def_8hpp_source_l00016}{16}} of file \mbox{\hyperlink{def_8hpp_source}{def.\+hpp}}.
+
+\Hypertarget{def_8hpp_aebf805f71dcfc592f9ee3beb2a74ff83}\label{def_8hpp_aebf805f71dcfc592f9ee3beb2a74ff83} 
+\index{def.hpp@{def.hpp}!zaxpy@{zaxpy}}
+\index{zaxpy@{zaxpy}!def.hpp@{def.hpp}}
+\doxysubsubsection{\texorpdfstring{zaxpy}{zaxpy}}
+{\footnotesize\ttfamily \#define zaxpy~cblas\+\_\+zaxpy}
+
+
+
+Definition at line \mbox{\hyperlink{def_8hpp_source_l00014}{14}} of file \mbox{\hyperlink{def_8hpp_source}{def.\+hpp}}.
+
+\Hypertarget{def_8hpp_a617ff5a6790ec2525ff11270c4774344}\label{def_8hpp_a617ff5a6790ec2525ff11270c4774344} 
+\index{def.hpp@{def.hpp}!zcsrmv@{zcsrmv}}
+\index{zcsrmv@{zcsrmv}!def.hpp@{def.hpp}}
+\doxysubsubsection{\texorpdfstring{zcsrmv}{zcsrmv}}
+{\footnotesize\ttfamily \#define zcsrmv~mkl\+\_\+zcsrmv}
+
+
+
+Definition at line \mbox{\hyperlink{def_8hpp_source_l00067}{67}} of file \mbox{\hyperlink{def_8hpp_source}{def.\+hpp}}.
+
+\Hypertarget{def_8hpp_a53740e32dc90d2a2098c71798333fda7}\label{def_8hpp_a53740e32dc90d2a2098c71798333fda7} 
+\index{def.hpp@{def.hpp}!zgemm@{zgemm}}
+\index{zgemm@{zgemm}!def.hpp@{def.hpp}}
+\doxysubsubsection{\texorpdfstring{zgemm}{zgemm}}
+{\footnotesize\ttfamily \#define zgemm~cblas\+\_\+zgemm}
+
+
+
+Definition at line \mbox{\hyperlink{def_8hpp_source_l00024}{24}} of file \mbox{\hyperlink{def_8hpp_source}{def.\+hpp}}.
+
+\Hypertarget{def_8hpp_adeae6c92948adaa2059e666b15b96ca3}\label{def_8hpp_adeae6c92948adaa2059e666b15b96ca3} 
+\index{def.hpp@{def.hpp}!zgemv@{zgemv}}
+\index{zgemv@{zgemv}!def.hpp@{def.hpp}}
+\doxysubsubsection{\texorpdfstring{zgemv}{zgemv}}
+{\footnotesize\ttfamily \#define zgemv~cblas\+\_\+zgemv}
+
+
+
+Definition at line \mbox{\hyperlink{def_8hpp_source_l00029}{29}} of file \mbox{\hyperlink{def_8hpp_source}{def.\+hpp}}.
+
+\Hypertarget{def_8hpp_ace6d6e12898441d35076fc9e419646ac}\label{def_8hpp_ace6d6e12898441d35076fc9e419646ac} 
+\index{def.hpp@{def.hpp}!zomatcopy@{zomatcopy}}
+\index{zomatcopy@{zomatcopy}!def.hpp@{def.hpp}}
+\doxysubsubsection{\texorpdfstring{zomatcopy}{zomatcopy}}
+{\footnotesize\ttfamily \#define zomatcopy~mkl\+\_\+zomatcopy}
+
+
+
+Definition at line \mbox{\hyperlink{def_8hpp_source_l00034}{34}} of file \mbox{\hyperlink{def_8hpp_source}{def.\+hpp}}.
+
+\Hypertarget{def_8hpp_aa57aa6716f5e7bd27d6243cecb45c4e2}\label{def_8hpp_aa57aa6716f5e7bd27d6243cecb45c4e2} 
+\index{def.hpp@{def.hpp}!zscal@{zscal}}
+\index{zscal@{zscal}!def.hpp@{def.hpp}}
+\doxysubsubsection{\texorpdfstring{zscal}{zscal}}
+{\footnotesize\ttfamily \#define zscal~cblas\+\_\+zscal}
+
+
+
+Definition at line \mbox{\hyperlink{def_8hpp_source_l00019}{19}} of file \mbox{\hyperlink{def_8hpp_source}{def.\+hpp}}.
+

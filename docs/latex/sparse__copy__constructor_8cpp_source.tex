@@ -1,0 +1,21 @@
+\doxysection{sparse\+\_\+copy\+\_\+constructor.\+cpp}
+\hypertarget{sparse__copy__constructor_8cpp_source}{}\label{sparse__copy__constructor_8cpp_source}\index{/home/johnzik/Dev/Cpp-\/Project/src/sparse\_copy\_constructor.cpp@{/home/johnzik/Dev/Cpp-\/Project/src/sparse\_copy\_constructor.cpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{sparse__copy__constructor_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}../inc/sparse.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{sparse__copy__constructor_8cpp_source_l00002}00002\ \textcolor{keyword}{using\ namespace\ }sparse;}
+\DoxyCodeLine{\Hypertarget{sparse__copy__constructor_8cpp_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{sparse__copy__constructor_8cpp_source_l00004}00004\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{sparse__copy__constructor_8cpp_source_l00005}\mbox{\hyperlink{classsparse_1_1matrix_afec396e982faca429ca46abe38a817d4}{00005}}\ \mbox{\hyperlink{classsparse_1_1matrix_ae479d6e63c6c755205240ec74b0b31f6}{matrix<T>::matrix}}\ (\mbox{\hyperlink{classsparse_1_1matrix}{matrix}}\ \textcolor{keyword}{const}\&\ \mbox{\hyperlink{classsparse_1_1matrix}{A}})}
+\DoxyCodeLine{\Hypertarget{sparse__copy__constructor_8cpp_source_l00006}00006\ \ \ \ \ :values(\mbox{\hyperlink{classsparse_1_1matrix}{A}}.values),\ col\_idx(\mbox{\hyperlink{classsparse_1_1matrix}{A}}.col\_idx),\ row\_idx(\mbox{\hyperlink{classsparse_1_1matrix}{A}}.row\_idx),\ }
+\DoxyCodeLine{\Hypertarget{sparse__copy__constructor_8cpp_source_l00007}00007\ \ \ \ \ \ row\_size(\mbox{\hyperlink{classsparse_1_1matrix}{A}}.row\_size),\ col\_size(\mbox{\hyperlink{classsparse_1_1matrix}{A}}.col\_size),\ ownership(\mbox{\hyperlink{classsparse_1_1matrix}{A}}.ownership)}
+\DoxyCodeLine{\Hypertarget{sparse__copy__constructor_8cpp_source_l00008}00008\ \{}
+\DoxyCodeLine{\Hypertarget{sparse__copy__constructor_8cpp_source_l00009}00009\ \ \ \ \ handle\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{sparse__copy__constructor_8cpp_source_l00010}00010\ \ \ \ \ valid\_handle\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{sparse__copy__constructor_8cpp_source_l00011}00011\ \}}
+\DoxyCodeLine{\Hypertarget{sparse__copy__constructor_8cpp_source_l00012}00012\ \textcolor{keyword}{template}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classsparse_1_1matrix}{sparse::matrix<float>}};}
+\DoxyCodeLine{\Hypertarget{sparse__copy__constructor_8cpp_source_l00013}00013\ \textcolor{keyword}{template}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classsparse_1_1matrix}{sparse::matrix<double>}};}
+\DoxyCodeLine{\Hypertarget{sparse__copy__constructor_8cpp_source_l00014}00014\ \textcolor{keyword}{template}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classsparse_1_1matrix}{sparse::matrix<std::complex<float>}}>;}
+\DoxyCodeLine{\Hypertarget{sparse__copy__constructor_8cpp_source_l00015}00015\ \textcolor{keyword}{template}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classsparse_1_1matrix}{sparse::matrix<std::complex<double>}}>;}
+
+\end{DoxyCode}

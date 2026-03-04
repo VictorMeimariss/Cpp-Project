@@ -1,0 +1,37 @@
+\doxysection{sparse\+\_\+assignment\+\_\+operator.\+cpp}
+\hypertarget{sparse__assignment__operator_8cpp_source}{}\label{sparse__assignment__operator_8cpp_source}\index{/home/johnzik/Dev/Cpp-\/Project/src/sparse\_assignment\_operator.cpp@{/home/johnzik/Dev/Cpp-\/Project/src/sparse\_assignment\_operator.cpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{sparse__assignment__operator_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}../inc/sparse.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{sparse__assignment__operator_8cpp_source_l00002}00002\ \textcolor{keyword}{using\ namespace\ }sparse;}
+\DoxyCodeLine{\Hypertarget{sparse__assignment__operator_8cpp_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{sparse__assignment__operator_8cpp_source_l00004}00004\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{sparse__assignment__operator_8cpp_source_l00005}\mbox{\hyperlink{classsparse_1_1matrix_a7b5922d3d4f77d8f83c9a60894ef9764}{00005}}\ \mbox{\hyperlink{classsparse_1_1matrix}{matrix<T>}}\&\ \mbox{\hyperlink{classsparse_1_1matrix_a7b5922d3d4f77d8f83c9a60894ef9764}{matrix<T>::operator=}}(\mbox{\hyperlink{classsparse_1_1matrix}{matrix}}\ \textcolor{keyword}{const}\&\ \mbox{\hyperlink{classsparse_1_1matrix}{A}})}
+\DoxyCodeLine{\Hypertarget{sparse__assignment__operator_8cpp_source_l00006}00006\ \{}
+\DoxyCodeLine{\Hypertarget{sparse__assignment__operator_8cpp_source_l00007}00007\ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{this}\ ==\ \&\mbox{\hyperlink{classsparse_1_1matrix}{A}})\ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};\ \ \textcolor{comment}{//\ self-\/assignment\ guard}}
+\DoxyCodeLine{\Hypertarget{sparse__assignment__operator_8cpp_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{sparse__assignment__operator_8cpp_source_l00009}00009\ \ \ \ \ values\ =\ \mbox{\hyperlink{classsparse_1_1matrix}{A}}.values;}
+\DoxyCodeLine{\Hypertarget{sparse__assignment__operator_8cpp_source_l00010}00010\ \ \ \ \ col\_idx\ =\ \mbox{\hyperlink{classsparse_1_1matrix}{A}}.col\_idx;}
+\DoxyCodeLine{\Hypertarget{sparse__assignment__operator_8cpp_source_l00011}00011\ \ \ \ \ row\_idx\ =\ \mbox{\hyperlink{classsparse_1_1matrix}{A}}.row\_idx;}
+\DoxyCodeLine{\Hypertarget{sparse__assignment__operator_8cpp_source_l00012}00012\ \ \ \ \ row\_size\ =\ \mbox{\hyperlink{classsparse_1_1matrix}{A}}.row\_size;}
+\DoxyCodeLine{\Hypertarget{sparse__assignment__operator_8cpp_source_l00013}00013\ \ \ \ \ col\_size\ =\ \mbox{\hyperlink{classsparse_1_1matrix}{A}}.col\_size;}
+\DoxyCodeLine{\Hypertarget{sparse__assignment__operator_8cpp_source_l00014}00014\ \ \ \ \ ownership\ =\ \mbox{\hyperlink{classsparse_1_1matrix}{A}}.ownership;}
+\DoxyCodeLine{\Hypertarget{sparse__assignment__operator_8cpp_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{sparse__assignment__operator_8cpp_source_l00016}00016\ \ \ \ \ \textcolor{comment}{//\ Destroy\ existing\ handle\ if\ it\ was\ valid}}
+\DoxyCodeLine{\Hypertarget{sparse__assignment__operator_8cpp_source_l00017}00017\ \ \ \ \ \textcolor{keywordflow}{if}\ (\ valid\_handle\ \&\&\ handle\ !=\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{\Hypertarget{sparse__assignment__operator_8cpp_source_l00018}00018\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{sparse__assignment__operator_8cpp_source_l00019}00019\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classsparse_1_1matrix_ae479d6e63c6c755205240ec74b0b31f6}{mkl\_sparse\_destroy}}(handle);}
+\DoxyCodeLine{\Hypertarget{sparse__assignment__operator_8cpp_source_l00020}00020\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{sparse__assignment__operator_8cpp_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{sparse__assignment__operator_8cpp_source_l00022}00022\ \ \ \ \ handle\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{sparse__assignment__operator_8cpp_source_l00023}00023\ \ \ \ \ valid\_handle\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{sparse__assignment__operator_8cpp_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{sparse__assignment__operator_8cpp_source_l00025}00025\ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{sparse__assignment__operator_8cpp_source_l00026}00026\ \}}
+\DoxyCodeLine{\Hypertarget{sparse__assignment__operator_8cpp_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{sparse__assignment__operator_8cpp_source_l00028}00028\ \textcolor{keyword}{template}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classsparse_1_1matrix}{sparse::matrix<float>}};}
+\DoxyCodeLine{\Hypertarget{sparse__assignment__operator_8cpp_source_l00029}00029\ \textcolor{keyword}{template}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classsparse_1_1matrix}{sparse::matrix<double>}};}
+\DoxyCodeLine{\Hypertarget{sparse__assignment__operator_8cpp_source_l00030}00030\ \textcolor{keyword}{template}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classsparse_1_1matrix}{sparse::matrix<std::complex<float>}}>;}
+\DoxyCodeLine{\Hypertarget{sparse__assignment__operator_8cpp_source_l00031}00031\ \textcolor{keyword}{template}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classsparse_1_1matrix}{sparse::matrix<std::complex<double>}}>;}
+
+\end{DoxyCode}

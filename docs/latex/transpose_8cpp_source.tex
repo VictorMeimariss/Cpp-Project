@@ -1,0 +1,36 @@
+\doxysection{transpose.\+cpp}
+\hypertarget{transpose_8cpp_source}{}\label{transpose_8cpp_source}\index{/home/johnzik/Dev/Cpp-\/Project/src/transpose.cpp@{/home/johnzik/Dev/Cpp-\/Project/src/transpose.cpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{transpose_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{dense_8hpp}{dense.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{transpose_8cpp_source_l00002}00002\ \textcolor{keyword}{using\ namespace\ }dense;}
+\DoxyCodeLine{\Hypertarget{transpose_8cpp_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{transpose_8cpp_source_l00004}00004\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{transpose_8cpp_source_l00005}\mbox{\hyperlink{classdense_1_1matrix_a953334cf57cffd0907fa26d676d7bbe7}{00005}}\ \mbox{\hyperlink{classdense_1_1matrix}{matrix<T>}}\ \mbox{\hyperlink{classdense_1_1matrix_a953334cf57cffd0907fa26d676d7bbe7}{matrix<T>::\ transpose}}()\textcolor{keyword}{\ const}\{}
+\DoxyCodeLine{\Hypertarget{transpose_8cpp_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{transpose_8cpp_source_l00007}00007\ \ \ \ \ \textcolor{comment}{//\ Transposed\ dimensions}}
+\DoxyCodeLine{\Hypertarget{transpose_8cpp_source_l00008}00008\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classdense_1_1matrix}{rows}}\ =\ this-\/>dim\_size[1];}
+\DoxyCodeLine{\Hypertarget{transpose_8cpp_source_l00009}00009\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classdense_1_1matrix}{cols}}\ =\ this-\/>dim\_size[0];}
+\DoxyCodeLine{\Hypertarget{transpose_8cpp_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{transpose_8cpp_source_l00011}00011\ \ \ \ \ \mbox{\hyperlink{classdense_1_1matrix}{matrix<T>}}\ \mbox{\hyperlink{classdense_1_1matrix_a2f5c551af9f436909bd076a03f90e946}{At}}(\mbox{\hyperlink{classdense_1_1matrix}{rows}},\ \mbox{\hyperlink{classdense_1_1matrix}{cols}});}
+\DoxyCodeLine{\Hypertarget{transpose_8cpp_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{transpose_8cpp_source_l00013}00013\ \ \ \ \ \textcolor{keywordflow}{if}\ \textcolor{keyword}{constexpr}\ (std::is\_same\_v<T,\ float>)\{}
+\DoxyCodeLine{\Hypertarget{transpose_8cpp_source_l00014}00014\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classdense_1_1matrix}{a}}\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{transpose_8cpp_source_l00015}00015\ \ \ \ \ \ \ \ \ somatcopy(\textcolor{charliteral}{'R'},\ \textcolor{charliteral}{'T'},\ \mbox{\hyperlink{classdense_1_1matrix}{rows}},\ \mbox{\hyperlink{classdense_1_1matrix}{cols}},\ \mbox{\hyperlink{classdense_1_1matrix}{a}},\ this-\/>values.data(),\ \mbox{\hyperlink{classdense_1_1matrix}{cols}},\ \mbox{\hyperlink{classdense_1_1matrix}{At}}.values.data(),\ \mbox{\hyperlink{classdense_1_1matrix}{rows}});\}}
+\DoxyCodeLine{\Hypertarget{transpose_8cpp_source_l00016}00016\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ \textcolor{keyword}{constexpr}\ (std::is\_same\_v<T,\ double>)\{}
+\DoxyCodeLine{\Hypertarget{transpose_8cpp_source_l00017}00017\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classdense_1_1matrix}{a}}\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{transpose_8cpp_source_l00018}00018\ \ \ \ \ \ \ \ \ domatcopy(\textcolor{charliteral}{'R'},\ \textcolor{charliteral}{'T'},\ \mbox{\hyperlink{classdense_1_1matrix}{rows}},\ \mbox{\hyperlink{classdense_1_1matrix}{cols}},\ \mbox{\hyperlink{classdense_1_1matrix}{a}},\ this-\/>values.data(),\ \mbox{\hyperlink{classdense_1_1matrix}{cols}},\ \mbox{\hyperlink{classdense_1_1matrix}{At}}.values.data(),\ \mbox{\hyperlink{classdense_1_1matrix}{rows}});\}}
+\DoxyCodeLine{\Hypertarget{transpose_8cpp_source_l00019}00019\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ \textcolor{keyword}{constexpr}\ (std::is\_same\_v<T,\ std::complex<float>>)\{}
+\DoxyCodeLine{\Hypertarget{transpose_8cpp_source_l00020}00020\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdense_1_1matrix}{MKL\_Complex8}}\ \mbox{\hyperlink{classdense_1_1matrix}{a}}\ =\ \{1.0f,\ 0.0f\};}
+\DoxyCodeLine{\Hypertarget{transpose_8cpp_source_l00021}00021\ \ \ \ \ \ \ \ \ comatcopy(\textcolor{charliteral}{'R'},\ \textcolor{charliteral}{'T'},\ \mbox{\hyperlink{classdense_1_1matrix}{rows}},\ \mbox{\hyperlink{classdense_1_1matrix}{cols}},\ \mbox{\hyperlink{classdense_1_1matrix}{a}},\ \textcolor{keyword}{reinterpret\_cast<}\mbox{\hyperlink{classdense_1_1matrix}{MKL\_Complex8}}*\textcolor{keyword}{>}(\textcolor{keyword}{const\_cast<}std::complex<float>*\textcolor{keyword}{>}(this-\/>values.data())),\ \mbox{\hyperlink{classdense_1_1matrix}{cols}},\ \textcolor{keyword}{reinterpret\_cast<}\mbox{\hyperlink{classdense_1_1matrix}{MKL\_Complex8}}*\textcolor{keyword}{>}(\mbox{\hyperlink{classdense_1_1matrix}{At}}.values.data()),\ \mbox{\hyperlink{classdense_1_1matrix}{rows}});\}}
+\DoxyCodeLine{\Hypertarget{transpose_8cpp_source_l00022}00022\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ \textcolor{keyword}{constexpr}\ (std::is\_same\_v<T,\ std::complex<double>>)\{}
+\DoxyCodeLine{\Hypertarget{transpose_8cpp_source_l00023}00023\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdense_1_1matrix}{MKL\_Complex16}}\ \mbox{\hyperlink{classdense_1_1matrix}{a}}\ =\ \{1.0,\ 0.0\};}
+\DoxyCodeLine{\Hypertarget{transpose_8cpp_source_l00024}00024\ \ \ \ \ \ \ \ \ zomatcopy(\textcolor{charliteral}{'R'},\ \textcolor{charliteral}{'T'},\ \mbox{\hyperlink{classdense_1_1matrix}{rows}},\ \mbox{\hyperlink{classdense_1_1matrix}{cols}},\ \mbox{\hyperlink{classdense_1_1matrix}{a}},\ \textcolor{keyword}{reinterpret\_cast<}\mbox{\hyperlink{classdense_1_1matrix}{MKL\_Complex16}}*\textcolor{keyword}{>}(\textcolor{keyword}{const\_cast<}std::complex<double>*\textcolor{keyword}{>}(this-\/>values.data())),\ \mbox{\hyperlink{classdense_1_1matrix}{cols}},\ \textcolor{keyword}{reinterpret\_cast<}\mbox{\hyperlink{classdense_1_1matrix}{MKL\_Complex16}}*\textcolor{keyword}{>}(\mbox{\hyperlink{classdense_1_1matrix}{At}}.values.data()),\ \mbox{\hyperlink{classdense_1_1matrix}{rows}});\}}
+\DoxyCodeLine{\Hypertarget{transpose_8cpp_source_l00025}00025\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classdense_1_1matrix_a2f5c551af9f436909bd076a03f90e946}{At}};}
+\DoxyCodeLine{\Hypertarget{transpose_8cpp_source_l00026}00026\ \}}
+\DoxyCodeLine{\Hypertarget{transpose_8cpp_source_l00027}00027\ \textcolor{keyword}{template}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classdense_1_1matrix}{dense::matrix<float>}};}
+\DoxyCodeLine{\Hypertarget{transpose_8cpp_source_l00028}00028\ \textcolor{keyword}{template}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classdense_1_1matrix}{dense::matrix<double>}};}
+\DoxyCodeLine{\Hypertarget{transpose_8cpp_source_l00029}00029\ \textcolor{keyword}{template}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classdense_1_1matrix}{dense::matrix<std::complex<float>}}>;}
+\DoxyCodeLine{\Hypertarget{transpose_8cpp_source_l00030}00030\ \textcolor{keyword}{template}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classdense_1_1matrix}{dense::matrix<std::complex<double>}}>;}
+
+\end{DoxyCode}
