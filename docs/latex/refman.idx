@@ -1,0 +1,308 @@
+\indexentry{Dense and CSR Sparse matrix library in C++ leveraging Intel oneMKL (CBLAS)@{Dense and CSR Sparse matrix library in C++ leveraging Intel oneMKL (CBLAS)}|hyperpage}{1}
+\indexentry{dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}|hyperpage}{7}
+\indexentry{dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}!matrix@{matrix}|hyperpage}{9}
+\indexentry{matrix@{matrix}!dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}|hyperpage}{9}
+\indexentry{dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}!matrix@{matrix}|hyperpage}{9}
+\indexentry{matrix@{matrix}!dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}|hyperpage}{9}
+\indexentry{dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}!matrix@{matrix}|hyperpage}{9}
+\indexentry{matrix@{matrix}!dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}|hyperpage}{9}
+\indexentry{dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}!matrix@{matrix}|hyperpage}{10}
+\indexentry{matrix@{matrix}!dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}|hyperpage}{10}
+\indexentry{dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}!matrix@{matrix}|hyperpage}{10}
+\indexentry{matrix@{matrix}!dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}|hyperpage}{10}
+\indexentry{dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}!matrix@{matrix}|hyperpage}{10}
+\indexentry{matrix@{matrix}!dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}|hyperpage}{10}
+\indexentry{dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}!dense\_readMM@{dense\_readMM}|hyperpage}{11}
+\indexentry{dense\_readMM@{dense\_readMM}!dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}|hyperpage}{11}
+\indexentry{dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}!get\_const\_values\_data@{get\_const\_values\_data}|hyperpage}{11}
+\indexentry{get\_const\_values\_data@{get\_const\_values\_data}!dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}|hyperpage}{11}
+\indexentry{dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}!get\_dim\_size@{get\_dim\_size}|hyperpage}{11}
+\indexentry{get\_dim\_size@{get\_dim\_size}!dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}|hyperpage}{11}
+\indexentry{dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}!get\_nod@{get\_nod}|hyperpage}{12}
+\indexentry{get\_nod@{get\_nod}!dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}|hyperpage}{12}
+\indexentry{dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}!get\_size@{get\_size}|hyperpage}{12}
+\indexentry{get\_size@{get\_size}!dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}|hyperpage}{12}
+\indexentry{dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}!get\_value\_at@{get\_value\_at}|hyperpage}{12}
+\indexentry{get\_value\_at@{get\_value\_at}!dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}|hyperpage}{12}
+\indexentry{dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}!get\_values\_data@{get\_values\_data}|hyperpage}{12}
+\indexentry{get\_values\_data@{get\_values\_data}!dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}|hyperpage}{12}
+\indexentry{dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}!I@{I}|hyperpage}{13}
+\indexentry{I@{I}!dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}|hyperpage}{13}
+\indexentry{dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}!low\_level\_matrix\_multiplication@{low\_level\_matrix\_multiplication}|hyperpage}{13}
+\indexentry{low\_level\_matrix\_multiplication@{low\_level\_matrix\_multiplication}!dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}|hyperpage}{13}
+\indexentry{dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}!operator()@{operator()}|hyperpage}{13}
+\indexentry{operator()@{operator()}!dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}|hyperpage}{13}
+\indexentry{dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}!operator()@{operator()}|hyperpage}{14}
+\indexentry{operator()@{operator()}!dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}|hyperpage}{14}
+\indexentry{dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}|hyperpage}{14}
+\indexentry{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}|hyperpage}{14}
+\indexentry{dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}|hyperpage}{14}
+\indexentry{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}|hyperpage}{14}
+\indexentry{dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}|hyperpage}{15}
+\indexentry{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}|hyperpage}{15}
+\indexentry{dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}!operator+@{operator+}|hyperpage}{15}
+\indexentry{operator+@{operator+}!dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}|hyperpage}{15}
+\indexentry{dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}!operator-\/@{operator-\/}|hyperpage}{15}
+\indexentry{operator-\/@{operator-\/}!dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}|hyperpage}{15}
+\indexentry{dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}!operator/@{operator/}|hyperpage}{15}
+\indexentry{operator/@{operator/}!dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}|hyperpage}{15}
+\indexentry{dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}!operator=@{operator=}|hyperpage}{16}
+\indexentry{operator=@{operator=}!dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}|hyperpage}{16}
+\indexentry{dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}!operator==@{operator==}|hyperpage}{16}
+\indexentry{operator==@{operator==}!dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}|hyperpage}{16}
+\indexentry{dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}!operator\texorpdfstring{$^\wedge$}{\string^}@{operator\texorpdfstring{$^\wedge$}{\string^}}|hyperpage}{16}
+\indexentry{operator\texorpdfstring{$^\wedge$}{\string^}@{operator\texorpdfstring{$^\wedge$}{\string^}}!dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}|hyperpage}{16}
+\indexentry{dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}!operator\texttt{"|}@{operator\texttt{"|}}|hyperpage}{17}
+\indexentry{operator\texttt{"|}@{operator\texttt{"|}}!dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}|hyperpage}{17}
+\indexentry{dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}!print2D@{print2D}|hyperpage}{17}
+\indexentry{print2D@{print2D}!dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}|hyperpage}{17}
+\indexentry{dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}!reshape@{reshape}|hyperpage}{17}
+\indexentry{reshape@{reshape}!dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}|hyperpage}{17}
+\indexentry{dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}!set\_value\_at@{set\_value\_at}|hyperpage}{17}
+\indexentry{set\_value\_at@{set\_value\_at}!dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}|hyperpage}{17}
+\indexentry{dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}!set\_values@{set\_values}|hyperpage}{18}
+\indexentry{set\_values@{set\_values}!dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}|hyperpage}{18}
+\indexentry{dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}!svd@{svd}|hyperpage}{18}
+\indexentry{svd@{svd}!dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}|hyperpage}{18}
+\indexentry{dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}!transpose@{transpose}|hyperpage}{19}
+\indexentry{transpose@{transpose}!dense::matrix$<$ T $>$@{dense::matrix$<$ T $>$}|hyperpage}{19}
+\indexentry{sparse::matrix$<$ T $>$@{sparse::matrix$<$ T $>$}|hyperpage}{19}
+\indexentry{sparse::matrix$<$ T $>$@{sparse::matrix$<$ T $>$}!matrix@{matrix}|hyperpage}{21}
+\indexentry{matrix@{matrix}!sparse::matrix$<$ T $>$@{sparse::matrix$<$ T $>$}|hyperpage}{21}
+\indexentry{sparse::matrix$<$ T $>$@{sparse::matrix$<$ T $>$}!matrix@{matrix}|hyperpage}{22}
+\indexentry{matrix@{matrix}!sparse::matrix$<$ T $>$@{sparse::matrix$<$ T $>$}|hyperpage}{22}
+\indexentry{sparse::matrix$<$ T $>$@{sparse::matrix$<$ T $>$}!````~matrix@{\texorpdfstring{$\sim$}{\string~}matrix}|hyperpage}{22}
+\indexentry{````~matrix@{\texorpdfstring{$\sim$}{\string~}matrix}!sparse::matrix$<$ T $>$@{sparse::matrix$<$ T $>$}|hyperpage}{22}
+\indexentry{sparse::matrix$<$ T $>$@{sparse::matrix$<$ T $>$}!matrix@{matrix}|hyperpage}{22}
+\indexentry{matrix@{matrix}!sparse::matrix$<$ T $>$@{sparse::matrix$<$ T $>$}|hyperpage}{22}
+\indexentry{sparse::matrix$<$ T $>$@{sparse::matrix$<$ T $>$}!matrix@{matrix}|hyperpage}{22}
+\indexentry{matrix@{matrix}!sparse::matrix$<$ T $>$@{sparse::matrix$<$ T $>$}|hyperpage}{22}
+\indexentry{sparse::matrix$<$ T $>$@{sparse::matrix$<$ T $>$}!banded@{banded}|hyperpage}{23}
+\indexentry{banded@{banded}!sparse::matrix$<$ T $>$@{sparse::matrix$<$ T $>$}|hyperpage}{23}
+\indexentry{sparse::matrix$<$ T $>$@{sparse::matrix$<$ T $>$}!diag@{diag}|hyperpage}{23}
+\indexentry{diag@{diag}!sparse::matrix$<$ T $>$@{sparse::matrix$<$ T $>$}|hyperpage}{23}
+\indexentry{sparse::matrix$<$ T $>$@{sparse::matrix$<$ T $>$}!get\_handle@{get\_handle}|hyperpage}{23}
+\indexentry{get\_handle@{get\_handle}!sparse::matrix$<$ T $>$@{sparse::matrix$<$ T $>$}|hyperpage}{23}
+\indexentry{sparse::matrix$<$ T $>$@{sparse::matrix$<$ T $>$}!get\_value\_at@{get\_value\_at}|hyperpage}{23}
+\indexentry{get\_value\_at@{get\_value\_at}!sparse::matrix$<$ T $>$@{sparse::matrix$<$ T $>$}|hyperpage}{23}
+\indexentry{sparse::matrix$<$ T $>$@{sparse::matrix$<$ T $>$}!get\_values\_data@{get\_values\_data}|hyperpage}{24}
+\indexentry{get\_values\_data@{get\_values\_data}!sparse::matrix$<$ T $>$@{sparse::matrix$<$ T $>$}|hyperpage}{24}
+\indexentry{sparse::matrix$<$ T $>$@{sparse::matrix$<$ T $>$}!get\_values\_data\_const@{get\_values\_data\_const}|hyperpage}{24}
+\indexentry{get\_values\_data\_const@{get\_values\_data\_const}!sparse::matrix$<$ T $>$@{sparse::matrix$<$ T $>$}|hyperpage}{24}
+\indexentry{sparse::matrix$<$ T $>$@{sparse::matrix$<$ T $>$}!I@{I}|hyperpage}{24}
+\indexentry{I@{I}!sparse::matrix$<$ T $>$@{sparse::matrix$<$ T $>$}|hyperpage}{24}
+\indexentry{sparse::matrix$<$ T $>$@{sparse::matrix$<$ T $>$}!invalidate\_handle@{invalidate\_handle}|hyperpage}{24}
+\indexentry{invalidate\_handle@{invalidate\_handle}!sparse::matrix$<$ T $>$@{sparse::matrix$<$ T $>$}|hyperpage}{24}
+\indexentry{sparse::matrix$<$ T $>$@{sparse::matrix$<$ T $>$}!operator()@{operator()}|hyperpage}{25}
+\indexentry{operator()@{operator()}!sparse::matrix$<$ T $>$@{sparse::matrix$<$ T $>$}|hyperpage}{25}
+\indexentry{sparse::matrix$<$ T $>$@{sparse::matrix$<$ T $>$}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}|hyperpage}{25}
+\indexentry{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!sparse::matrix$<$ T $>$@{sparse::matrix$<$ T $>$}|hyperpage}{25}
+\indexentry{sparse::matrix$<$ T $>$@{sparse::matrix$<$ T $>$}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}|hyperpage}{25}
+\indexentry{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!sparse::matrix$<$ T $>$@{sparse::matrix$<$ T $>$}|hyperpage}{25}
+\indexentry{sparse::matrix$<$ T $>$@{sparse::matrix$<$ T $>$}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}|hyperpage}{26}
+\indexentry{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!sparse::matrix$<$ T $>$@{sparse::matrix$<$ T $>$}|hyperpage}{26}
+\indexentry{sparse::matrix$<$ T $>$@{sparse::matrix$<$ T $>$}!operator+@{operator+}|hyperpage}{26}
+\indexentry{operator+@{operator+}!sparse::matrix$<$ T $>$@{sparse::matrix$<$ T $>$}|hyperpage}{26}
+\indexentry{sparse::matrix$<$ T $>$@{sparse::matrix$<$ T $>$}!operator-\/@{operator-\/}|hyperpage}{26}
+\indexentry{operator-\/@{operator-\/}!sparse::matrix$<$ T $>$@{sparse::matrix$<$ T $>$}|hyperpage}{26}
+\indexentry{sparse::matrix$<$ T $>$@{sparse::matrix$<$ T $>$}!operator=@{operator=}|hyperpage}{27}
+\indexentry{operator=@{operator=}!sparse::matrix$<$ T $>$@{sparse::matrix$<$ T $>$}|hyperpage}{27}
+\indexentry{sparse::matrix$<$ T $>$@{sparse::matrix$<$ T $>$}!operator==@{operator==}|hyperpage}{27}
+\indexentry{operator==@{operator==}!sparse::matrix$<$ T $>$@{sparse::matrix$<$ T $>$}|hyperpage}{27}
+\indexentry{sparse::matrix$<$ T $>$@{sparse::matrix$<$ T $>$}!print2D@{print2D}|hyperpage}{27}
+\indexentry{print2D@{print2D}!sparse::matrix$<$ T $>$@{sparse::matrix$<$ T $>$}|hyperpage}{27}
+\indexentry{sparse::matrix$<$ T $>$@{sparse::matrix$<$ T $>$}!print\_matrix@{print\_matrix}|hyperpage}{27}
+\indexentry{print\_matrix@{print\_matrix}!sparse::matrix$<$ T $>$@{sparse::matrix$<$ T $>$}|hyperpage}{27}
+\indexentry{sparse::matrix$<$ T $>$@{sparse::matrix$<$ T $>$}!refresh\_handle@{refresh\_handle}|hyperpage}{27}
+\indexentry{refresh\_handle@{refresh\_handle}!sparse::matrix$<$ T $>$@{sparse::matrix$<$ T $>$}|hyperpage}{27}
+\indexentry{sparse::matrix$<$ T $>$@{sparse::matrix$<$ T $>$}!set\_value\_at@{set\_value\_at}|hyperpage}{28}
+\indexentry{set\_value\_at@{set\_value\_at}!sparse::matrix$<$ T $>$@{sparse::matrix$<$ T $>$}|hyperpage}{28}
+\indexentry{sparse::matrix$<$ T $>$@{sparse::matrix$<$ T $>$}!shape@{shape}|hyperpage}{28}
+\indexentry{shape@{shape}!sparse::matrix$<$ T $>$@{sparse::matrix$<$ T $>$}|hyperpage}{28}
+\indexentry{sparse::matrix$<$ T $>$@{sparse::matrix$<$ T $>$}!sparse\_readMM@{sparse\_readMM}|hyperpage}{28}
+\indexentry{sparse\_readMM@{sparse\_readMM}!sparse::matrix$<$ T $>$@{sparse::matrix$<$ T $>$}|hyperpage}{28}
+\indexentry{sparse::matrix$<$ T $>$@{sparse::matrix$<$ T $>$}!transpose@{transpose}|hyperpage}{29}
+\indexentry{transpose@{transpose}!sparse::matrix$<$ T $>$@{sparse::matrix$<$ T $>$}|hyperpage}{29}
+\indexentry{/home/johnzik/Dev/Cpp-\/Project/inc/cross.hpp@{/home/johnzik/Dev/Cpp-\/Project/inc/cross.hpp}|hyperpage}{31}
+\indexentry{/home/johnzik/Dev/Cpp-\/Project/inc/cross.hpp@{/home/johnzik/Dev/Cpp-\/Project/inc/cross.hpp}|hyperpage}{31}
+\indexentry{/home/johnzik/Dev/Cpp-\/Project/inc/def.hpp@{/home/johnzik/Dev/Cpp-\/Project/inc/def.hpp}|hyperpage}{31}
+\indexentry{def.hpp@{def.hpp}!caxpy@{caxpy}|hyperpage}{33}
+\indexentry{caxpy@{caxpy}!def.hpp@{def.hpp}|hyperpage}{33}
+\indexentry{def.hpp@{def.hpp}!ccsrmv@{ccsrmv}|hyperpage}{33}
+\indexentry{ccsrmv@{ccsrmv}!def.hpp@{def.hpp}|hyperpage}{33}
+\indexentry{def.hpp@{def.hpp}!cgemm@{cgemm}|hyperpage}{33}
+\indexentry{cgemm@{cgemm}!def.hpp@{def.hpp}|hyperpage}{33}
+\indexentry{def.hpp@{def.hpp}!cgemv@{cgemv}|hyperpage}{33}
+\indexentry{cgemv@{cgemv}!def.hpp@{def.hpp}|hyperpage}{33}
+\indexentry{def.hpp@{def.hpp}!comatcopy@{comatcopy}|hyperpage}{33}
+\indexentry{comatcopy@{comatcopy}!def.hpp@{def.hpp}|hyperpage}{33}
+\indexentry{def.hpp@{def.hpp}!cscal@{cscal}|hyperpage}{33}
+\indexentry{cscal@{cscal}!def.hpp@{def.hpp}|hyperpage}{33}
+\indexentry{def.hpp@{def.hpp}!daxpy@{daxpy}|hyperpage}{33}
+\indexentry{daxpy@{daxpy}!def.hpp@{def.hpp}|hyperpage}{33}
+\indexentry{def.hpp@{def.hpp}!dcsrmv@{dcsrmv}|hyperpage}{34}
+\indexentry{dcsrmv@{dcsrmv}!def.hpp@{def.hpp}|hyperpage}{34}
+\indexentry{def.hpp@{def.hpp}!dgemm@{dgemm}|hyperpage}{34}
+\indexentry{dgemm@{dgemm}!def.hpp@{def.hpp}|hyperpage}{34}
+\indexentry{def.hpp@{def.hpp}!dgemv@{dgemv}|hyperpage}{34}
+\indexentry{dgemv@{dgemv}!def.hpp@{def.hpp}|hyperpage}{34}
+\indexentry{def.hpp@{def.hpp}!domatcopy@{domatcopy}|hyperpage}{34}
+\indexentry{domatcopy@{domatcopy}!def.hpp@{def.hpp}|hyperpage}{34}
+\indexentry{def.hpp@{def.hpp}!dscal@{dscal}|hyperpage}{34}
+\indexentry{dscal@{dscal}!def.hpp@{def.hpp}|hyperpage}{34}
+\indexentry{def.hpp@{def.hpp}!saxpy@{saxpy}|hyperpage}{34}
+\indexentry{saxpy@{saxpy}!def.hpp@{def.hpp}|hyperpage}{34}
+\indexentry{def.hpp@{def.hpp}!scsrmv@{scsrmv}|hyperpage}{34}
+\indexentry{scsrmv@{scsrmv}!def.hpp@{def.hpp}|hyperpage}{34}
+\indexentry{def.hpp@{def.hpp}!sgemm@{sgemm}|hyperpage}{34}
+\indexentry{sgemm@{sgemm}!def.hpp@{def.hpp}|hyperpage}{34}
+\indexentry{def.hpp@{def.hpp}!sgemv@{sgemv}|hyperpage}{35}
+\indexentry{sgemv@{sgemv}!def.hpp@{def.hpp}|hyperpage}{35}
+\indexentry{def.hpp@{def.hpp}!somatcopy@{somatcopy}|hyperpage}{35}
+\indexentry{somatcopy@{somatcopy}!def.hpp@{def.hpp}|hyperpage}{35}
+\indexentry{def.hpp@{def.hpp}!sparse\_c\_add@{sparse\_c\_add}|hyperpage}{35}
+\indexentry{sparse\_c\_add@{sparse\_c\_add}!def.hpp@{def.hpp}|hyperpage}{35}
+\indexentry{def.hpp@{def.hpp}!sparse\_c\_create\_csr@{sparse\_c\_create\_csr}|hyperpage}{35}
+\indexentry{sparse\_c\_create\_csr@{sparse\_c\_create\_csr}!def.hpp@{def.hpp}|hyperpage}{35}
+\indexentry{def.hpp@{def.hpp}!sparse\_c\_export\_csr@{sparse\_c\_export\_csr}|hyperpage}{35}
+\indexentry{sparse\_c\_export\_csr@{sparse\_c\_export\_csr}!def.hpp@{def.hpp}|hyperpage}{35}
+\indexentry{def.hpp@{def.hpp}!sparse\_c\_export\_csr@{sparse\_c\_export\_csr}|hyperpage}{35}
+\indexentry{sparse\_c\_export\_csr@{sparse\_c\_export\_csr}!def.hpp@{def.hpp}|hyperpage}{35}
+\indexentry{def.hpp@{def.hpp}!sparse\_c\_mm@{sparse\_c\_mm}|hyperpage}{35}
+\indexentry{sparse\_c\_mm@{sparse\_c\_mm}!def.hpp@{def.hpp}|hyperpage}{35}
+\indexentry{def.hpp@{def.hpp}!sparse\_c\_mv@{sparse\_c\_mv}|hyperpage}{35}
+\indexentry{sparse\_c\_mv@{sparse\_c\_mv}!def.hpp@{def.hpp}|hyperpage}{35}
+\indexentry{def.hpp@{def.hpp}!sparse\_convert\_csr@{sparse\_convert\_csr}|hyperpage}{36}
+\indexentry{sparse\_convert\_csr@{sparse\_convert\_csr}!def.hpp@{def.hpp}|hyperpage}{36}
+\indexentry{def.hpp@{def.hpp}!sparse\_d\_add@{sparse\_d\_add}|hyperpage}{36}
+\indexentry{sparse\_d\_add@{sparse\_d\_add}!def.hpp@{def.hpp}|hyperpage}{36}
+\indexentry{def.hpp@{def.hpp}!sparse\_d\_create\_csr@{sparse\_d\_create\_csr}|hyperpage}{36}
+\indexentry{sparse\_d\_create\_csr@{sparse\_d\_create\_csr}!def.hpp@{def.hpp}|hyperpage}{36}
+\indexentry{def.hpp@{def.hpp}!sparse\_d\_export\_csr@{sparse\_d\_export\_csr}|hyperpage}{36}
+\indexentry{sparse\_d\_export\_csr@{sparse\_d\_export\_csr}!def.hpp@{def.hpp}|hyperpage}{36}
+\indexentry{def.hpp@{def.hpp}!sparse\_d\_export\_csr@{sparse\_d\_export\_csr}|hyperpage}{36}
+\indexentry{sparse\_d\_export\_csr@{sparse\_d\_export\_csr}!def.hpp@{def.hpp}|hyperpage}{36}
+\indexentry{def.hpp@{def.hpp}!sparse\_d\_mm@{sparse\_d\_mm}|hyperpage}{36}
+\indexentry{sparse\_d\_mm@{sparse\_d\_mm}!def.hpp@{def.hpp}|hyperpage}{36}
+\indexentry{def.hpp@{def.hpp}!sparse\_d\_mv@{sparse\_d\_mv}|hyperpage}{36}
+\indexentry{sparse\_d\_mv@{sparse\_d\_mv}!def.hpp@{def.hpp}|hyperpage}{36}
+\indexentry{def.hpp@{def.hpp}!sparse\_destroy@{sparse\_destroy}|hyperpage}{36}
+\indexentry{sparse\_destroy@{sparse\_destroy}!def.hpp@{def.hpp}|hyperpage}{36}
+\indexentry{def.hpp@{def.hpp}!sparse\_s\_add@{sparse\_s\_add}|hyperpage}{37}
+\indexentry{sparse\_s\_add@{sparse\_s\_add}!def.hpp@{def.hpp}|hyperpage}{37}
+\indexentry{def.hpp@{def.hpp}!sparse\_s\_create\_csr@{sparse\_s\_create\_csr}|hyperpage}{37}
+\indexentry{sparse\_s\_create\_csr@{sparse\_s\_create\_csr}!def.hpp@{def.hpp}|hyperpage}{37}
+\indexentry{def.hpp@{def.hpp}!sparse\_s\_export\_csr@{sparse\_s\_export\_csr}|hyperpage}{37}
+\indexentry{sparse\_s\_export\_csr@{sparse\_s\_export\_csr}!def.hpp@{def.hpp}|hyperpage}{37}
+\indexentry{def.hpp@{def.hpp}!sparse\_s\_export\_csr@{sparse\_s\_export\_csr}|hyperpage}{37}
+\indexentry{sparse\_s\_export\_csr@{sparse\_s\_export\_csr}!def.hpp@{def.hpp}|hyperpage}{37}
+\indexentry{def.hpp@{def.hpp}!sparse\_s\_mm@{sparse\_s\_mm}|hyperpage}{37}
+\indexentry{sparse\_s\_mm@{sparse\_s\_mm}!def.hpp@{def.hpp}|hyperpage}{37}
+\indexentry{def.hpp@{def.hpp}!sparse\_s\_mv@{sparse\_s\_mv}|hyperpage}{37}
+\indexentry{sparse\_s\_mv@{sparse\_s\_mv}!def.hpp@{def.hpp}|hyperpage}{37}
+\indexentry{def.hpp@{def.hpp}!sparse\_spmm@{sparse\_spmm}|hyperpage}{37}
+\indexentry{sparse\_spmm@{sparse\_spmm}!def.hpp@{def.hpp}|hyperpage}{37}
+\indexentry{def.hpp@{def.hpp}!sparse\_z\_add@{sparse\_z\_add}|hyperpage}{37}
+\indexentry{sparse\_z\_add@{sparse\_z\_add}!def.hpp@{def.hpp}|hyperpage}{37}
+\indexentry{def.hpp@{def.hpp}!sparse\_z\_create\_csr@{sparse\_z\_create\_csr}|hyperpage}{38}
+\indexentry{sparse\_z\_create\_csr@{sparse\_z\_create\_csr}!def.hpp@{def.hpp}|hyperpage}{38}
+\indexentry{def.hpp@{def.hpp}!sparse\_z\_export\_csr@{sparse\_z\_export\_csr}|hyperpage}{38}
+\indexentry{sparse\_z\_export\_csr@{sparse\_z\_export\_csr}!def.hpp@{def.hpp}|hyperpage}{38}
+\indexentry{def.hpp@{def.hpp}!sparse\_z\_export\_csr@{sparse\_z\_export\_csr}|hyperpage}{38}
+\indexentry{sparse\_z\_export\_csr@{sparse\_z\_export\_csr}!def.hpp@{def.hpp}|hyperpage}{38}
+\indexentry{def.hpp@{def.hpp}!sparse\_z\_mm@{sparse\_z\_mm}|hyperpage}{38}
+\indexentry{sparse\_z\_mm@{sparse\_z\_mm}!def.hpp@{def.hpp}|hyperpage}{38}
+\indexentry{def.hpp@{def.hpp}!sparse\_z\_mv@{sparse\_z\_mv}|hyperpage}{38}
+\indexentry{sparse\_z\_mv@{sparse\_z\_mv}!def.hpp@{def.hpp}|hyperpage}{38}
+\indexentry{def.hpp@{def.hpp}!sscal@{sscal}|hyperpage}{38}
+\indexentry{sscal@{sscal}!def.hpp@{def.hpp}|hyperpage}{38}
+\indexentry{def.hpp@{def.hpp}!zaxpy@{zaxpy}|hyperpage}{38}
+\indexentry{zaxpy@{zaxpy}!def.hpp@{def.hpp}|hyperpage}{38}
+\indexentry{def.hpp@{def.hpp}!zcsrmv@{zcsrmv}|hyperpage}{38}
+\indexentry{zcsrmv@{zcsrmv}!def.hpp@{def.hpp}|hyperpage}{38}
+\indexentry{def.hpp@{def.hpp}!zgemm@{zgemm}|hyperpage}{39}
+\indexentry{zgemm@{zgemm}!def.hpp@{def.hpp}|hyperpage}{39}
+\indexentry{def.hpp@{def.hpp}!zgemv@{zgemv}|hyperpage}{39}
+\indexentry{zgemv@{zgemv}!def.hpp@{def.hpp}|hyperpage}{39}
+\indexentry{def.hpp@{def.hpp}!zomatcopy@{zomatcopy}|hyperpage}{39}
+\indexentry{zomatcopy@{zomatcopy}!def.hpp@{def.hpp}|hyperpage}{39}
+\indexentry{def.hpp@{def.hpp}!zscal@{zscal}|hyperpage}{39}
+\indexentry{zscal@{zscal}!def.hpp@{def.hpp}|hyperpage}{39}
+\indexentry{/home/johnzik/Dev/Cpp-\/Project/inc/def.hpp@{/home/johnzik/Dev/Cpp-\/Project/inc/def.hpp}|hyperpage}{39}
+\indexentry{/home/johnzik/Dev/Cpp-\/Project/inc/dense.hpp@{/home/johnzik/Dev/Cpp-\/Project/inc/dense.hpp}|hyperpage}{40}
+\indexentry{dense.hpp@{dense.hpp}!LU\_solver@{LU\_solver}|hyperpage}{41}
+\indexentry{LU\_solver@{LU\_solver}!dense.hpp@{dense.hpp}|hyperpage}{41}
+\indexentry{dense.hpp@{dense.hpp}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}|hyperpage}{41}
+\indexentry{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!dense.hpp@{dense.hpp}|hyperpage}{41}
+\indexentry{dense.hpp@{dense.hpp}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}|hyperpage}{41}
+\indexentry{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!dense.hpp@{dense.hpp}|hyperpage}{41}
+\indexentry{/home/johnzik/Dev/Cpp-\/Project/inc/dense.hpp@{/home/johnzik/Dev/Cpp-\/Project/inc/dense.hpp}|hyperpage}{42}
+\indexentry{/home/johnzik/Dev/Cpp-\/Project/inc/matrix.hpp@{/home/johnzik/Dev/Cpp-\/Project/inc/matrix.hpp}|hyperpage}{44}
+\indexentry{/home/johnzik/Dev/Cpp-\/Project/inc/matrix.hpp@{/home/johnzik/Dev/Cpp-\/Project/inc/matrix.hpp}|hyperpage}{44}
+\indexentry{/home/johnzik/Dev/Cpp-\/Project/inc/mmio.h@{/home/johnzik/Dev/Cpp-\/Project/inc/mmio.h}|hyperpage}{45}
+\indexentry{/home/johnzik/Dev/Cpp-\/Project/inc/sparse.hpp@{/home/johnzik/Dev/Cpp-\/Project/inc/sparse.hpp}|hyperpage}{46}
+\indexentry{sparse.hpp@{sparse.hpp}!CG\_dsolve@{CG\_dsolve}|hyperpage}{47}
+\indexentry{CG\_dsolve@{CG\_dsolve}!sparse.hpp@{sparse.hpp}|hyperpage}{47}
+\indexentry{sparse.hpp@{sparse.hpp}!FGMRES\_dsolve@{FGMRES\_dsolve}|hyperpage}{47}
+\indexentry{FGMRES\_dsolve@{FGMRES\_dsolve}!sparse.hpp@{sparse.hpp}|hyperpage}{47}
+\indexentry{sparse.hpp@{sparse.hpp}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}|hyperpage}{48}
+\indexentry{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!sparse.hpp@{sparse.hpp}|hyperpage}{48}
+\indexentry{sparse.hpp@{sparse.hpp}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}|hyperpage}{48}
+\indexentry{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!sparse.hpp@{sparse.hpp}|hyperpage}{48}
+\indexentry{/home/johnzik/Dev/Cpp-\/Project/inc/sparse.hpp@{/home/johnzik/Dev/Cpp-\/Project/inc/sparse.hpp}|hyperpage}{48}
+\indexentry{/home/johnzik/Dev/Cpp-\/Project/src/axpy\_add.cpp@{/home/johnzik/Dev/Cpp-\/Project/src/axpy\_add.cpp}|hyperpage}{50}
+\indexentry{/home/johnzik/Dev/Cpp-\/Project/src/axpy\_sub.cpp@{/home/johnzik/Dev/Cpp-\/Project/src/axpy\_sub.cpp}|hyperpage}{50}
+\indexentry{/home/johnzik/Dev/Cpp-\/Project/src/CG\_dsolve.cpp@{/home/johnzik/Dev/Cpp-\/Project/src/CG\_dsolve.cpp}|hyperpage}{51}
+\indexentry{/home/johnzik/Dev/Cpp-\/Project/src/copy\_constructor.cpp@{/home/johnzik/Dev/Cpp-\/Project/src/copy\_constructor.cpp}|hyperpage}{52}
+\indexentry{/home/johnzik/Dev/Cpp-\/Project/src/dense\_AssignmentOP.cpp@{/home/johnzik/Dev/Cpp-\/Project/src/dense\_AssignmentOP.cpp}|hyperpage}{52}
+\indexentry{/home/johnzik/Dev/Cpp-\/Project/src/dense\_diagonal\_construct.cpp@{/home/johnzik/Dev/Cpp-\/Project/src/dense\_diagonal\_construct.cpp}|hyperpage}{52}
+\indexentry{/home/johnzik/Dev/Cpp-\/Project/src/dense\_readMM.cpp@{/home/johnzik/Dev/Cpp-\/Project/src/dense\_readMM.cpp}|hyperpage}{52}
+\indexentry{/home/johnzik/Dev/Cpp-\/Project/src/dense\_vm\_gemv.cpp@{/home/johnzik/Dev/Cpp-\/Project/src/dense\_vm\_gemv.cpp}|hyperpage}{54}
+\indexentry{/home/johnzik/Dev/Cpp-\/Project/src/exp\_operator.cpp@{/home/johnzik/Dev/Cpp-\/Project/src/exp\_operator.cpp}|hyperpage}{55}
+\indexentry{/home/johnzik/Dev/Cpp-\/Project/src/FGMRES\_dsolve.cpp@{/home/johnzik/Dev/Cpp-\/Project/src/FGMRES\_dsolve.cpp}|hyperpage}{56}
+\indexentry{/home/johnzik/Dev/Cpp-\/Project/src/gemm\_high.cpp@{/home/johnzik/Dev/Cpp-\/Project/src/gemm\_high.cpp}|hyperpage}{56}
+\indexentry{/home/johnzik/Dev/Cpp-\/Project/src/gemm\_low.cpp@{/home/johnzik/Dev/Cpp-\/Project/src/gemm\_low.cpp}|hyperpage}{57}
+\indexentry{/home/johnzik/Dev/Cpp-\/Project/src/gemv.cpp@{/home/johnzik/Dev/Cpp-\/Project/src/gemv.cpp}|hyperpage}{57}
+\indexentry{/home/johnzik/Dev/Cpp-\/Project/src/get\_dim\_size.cpp@{/home/johnzik/Dev/Cpp-\/Project/src/get\_dim\_size.cpp}|hyperpage}{58}
+\indexentry{/home/johnzik/Dev/Cpp-\/Project/src/get\_nod.cpp@{/home/johnzik/Dev/Cpp-\/Project/src/get\_nod.cpp}|hyperpage}{58}
+\indexentry{/home/johnzik/Dev/Cpp-\/Project/src/get\_size.cpp@{/home/johnzik/Dev/Cpp-\/Project/src/get\_size.cpp}|hyperpage}{58}
+\indexentry{/home/johnzik/Dev/Cpp-\/Project/src/get\_value\_at.cpp@{/home/johnzik/Dev/Cpp-\/Project/src/get\_value\_at.cpp}|hyperpage}{59}
+\indexentry{/home/johnzik/Dev/Cpp-\/Project/src/get\_values\_data.cpp@{/home/johnzik/Dev/Cpp-\/Project/src/get\_values\_data.cpp}|hyperpage}{59}
+\indexentry{/home/johnzik/Dev/Cpp-\/Project/src/get\_values\_data\_const.cpp@{/home/johnzik/Dev/Cpp-\/Project/src/get\_values\_data\_const.cpp}|hyperpage}{59}
+\indexentry{/home/johnzik/Dev/Cpp-\/Project/src/identity\_constructor.cpp@{/home/johnzik/Dev/Cpp-\/Project/src/identity\_constructor.cpp}|hyperpage}{59}
+\indexentry{/home/johnzik/Dev/Cpp-\/Project/src/low\_level\_multiplication.cpp@{/home/johnzik/Dev/Cpp-\/Project/src/low\_level\_multiplication.cpp}|hyperpage}{59}
+\indexentry{/home/johnzik/Dev/Cpp-\/Project/src/LU\_solver.cpp@{/home/johnzik/Dev/Cpp-\/Project/src/LU\_solver.cpp}|hyperpage}{60}
+\indexentry{/home/johnzik/Dev/Cpp-\/Project/src/mmio.c@{/home/johnzik/Dev/Cpp-\/Project/src/mmio.c}|hyperpage}{61}
+\indexentry{/home/johnzik/Dev/Cpp-\/Project/src/print2D.cpp@{/home/johnzik/Dev/Cpp-\/Project/src/print2D.cpp}|hyperpage}{67}
+\indexentry{/home/johnzik/Dev/Cpp-\/Project/src/print\_matrix.cpp@{/home/johnzik/Dev/Cpp-\/Project/src/print\_matrix.cpp}|hyperpage}{67}
+\indexentry{/home/johnzik/Dev/Cpp-\/Project/src/scal\_mn.cpp@{/home/johnzik/Dev/Cpp-\/Project/src/scal\_mn.cpp}|hyperpage}{67}
+\indexentry{/home/johnzik/Dev/Cpp-\/Project/src/scal\_nm.cpp@{/home/johnzik/Dev/Cpp-\/Project/src/scal\_nm.cpp}|hyperpage}{68}
+\indexentry{/home/johnzik/Dev/Cpp-\/Project/src/set\_value\_at.cpp@{/home/johnzik/Dev/Cpp-\/Project/src/set\_value\_at.cpp}|hyperpage}{68}
+\indexentry{/home/johnzik/Dev/Cpp-\/Project/src/sparse-\/diagonal-\/getter.cpp@{/home/johnzik/Dev/Cpp-\/Project/src/sparse-\/diagonal-\/getter.cpp}|hyperpage}{69}
+\indexentry{/home/johnzik/Dev/Cpp-\/Project/src/sparse-\/get-\/value.cpp@{/home/johnzik/Dev/Cpp-\/Project/src/sparse-\/get-\/value.cpp}|hyperpage}{69}
+\indexentry{/home/johnzik/Dev/Cpp-\/Project/src/sparse-\/parentheses-\/operator.cpp@{/home/johnzik/Dev/Cpp-\/Project/src/sparse-\/parentheses-\/operator.cpp}|hyperpage}{69}
+\indexentry{/home/johnzik/Dev/Cpp-\/Project/src/sparse-\/set-\/value.cpp@{/home/johnzik/Dev/Cpp-\/Project/src/sparse-\/set-\/value.cpp}|hyperpage}{69}
+\indexentry{/home/johnzik/Dev/Cpp-\/Project/src/sparse\_add.cpp@{/home/johnzik/Dev/Cpp-\/Project/src/sparse\_add.cpp}|hyperpage}{70}
+\indexentry{/home/johnzik/Dev/Cpp-\/Project/src/sparse\_assignment\_operator.cpp@{/home/johnzik/Dev/Cpp-\/Project/src/sparse\_assignment\_operator.cpp}|hyperpage}{70}
+\indexentry{/home/johnzik/Dev/Cpp-\/Project/src/sparse\_banded\_matrix.cpp@{/home/johnzik/Dev/Cpp-\/Project/src/sparse\_banded\_matrix.cpp}|hyperpage}{71}
+\indexentry{/home/johnzik/Dev/Cpp-\/Project/src/sparse\_comparison\_operator.cpp@{/home/johnzik/Dev/Cpp-\/Project/src/sparse\_comparison\_operator.cpp}|hyperpage}{71}
+\indexentry{/home/johnzik/Dev/Cpp-\/Project/src/sparse\_constant\_mul.cpp@{/home/johnzik/Dev/Cpp-\/Project/src/sparse\_constant\_mul.cpp}|hyperpage}{72}
+\indexentry{/home/johnzik/Dev/Cpp-\/Project/src/sparse\_copy\_constructor.cpp@{/home/johnzik/Dev/Cpp-\/Project/src/sparse\_copy\_constructor.cpp}|hyperpage}{72}
+\indexentry{/home/johnzik/Dev/Cpp-\/Project/src/sparse\_handle\_constructor.cpp@{/home/johnzik/Dev/Cpp-\/Project/src/sparse\_handle\_constructor.cpp}|hyperpage}{72}
+\indexentry{/home/johnzik/Dev/Cpp-\/Project/src/sparse\_identity\_matrix.cpp@{/home/johnzik/Dev/Cpp-\/Project/src/sparse\_identity\_matrix.cpp}|hyperpage}{73}
+\indexentry{/home/johnzik/Dev/Cpp-\/Project/src/sparse\_mm\_dxs.cpp@{/home/johnzik/Dev/Cpp-\/Project/src/sparse\_mm\_dxs.cpp}|hyperpage}{74}
+\indexentry{/home/johnzik/Dev/Cpp-\/Project/src/sparse\_mm\_sxd.cpp@{/home/johnzik/Dev/Cpp-\/Project/src/sparse\_mm\_sxd.cpp}|hyperpage}{74}
+\indexentry{/home/johnzik/Dev/Cpp-\/Project/src/sparse\_mul\_nxs.cpp@{/home/johnzik/Dev/Cpp-\/Project/src/sparse\_mul\_nxs.cpp}|hyperpage}{74}
+\indexentry{/home/johnzik/Dev/Cpp-\/Project/src/sparse\_mul\_sxn.cpp@{/home/johnzik/Dev/Cpp-\/Project/src/sparse\_mul\_sxn.cpp}|hyperpage}{75}
+\indexentry{/home/johnzik/Dev/Cpp-\/Project/src/sparse\_mv.cpp@{/home/johnzik/Dev/Cpp-\/Project/src/sparse\_mv.cpp}|hyperpage}{75}
+\indexentry{/home/johnzik/Dev/Cpp-\/Project/src/sparse\_print2D.cpp@{/home/johnzik/Dev/Cpp-\/Project/src/sparse\_print2D.cpp}|hyperpage}{76}
+\indexentry{/home/johnzik/Dev/Cpp-\/Project/src/sparse\_readMM.cpp@{/home/johnzik/Dev/Cpp-\/Project/src/sparse\_readMM.cpp}|hyperpage}{77}
+\indexentry{/home/johnzik/Dev/Cpp-\/Project/src/sparse\_refresh\_handle.cpp@{/home/johnzik/Dev/Cpp-\/Project/src/sparse\_refresh\_handle.cpp}|hyperpage}{79}
+\indexentry{/home/johnzik/Dev/Cpp-\/Project/src/sparse\_shape.cpp@{/home/johnzik/Dev/Cpp-\/Project/src/sparse\_shape.cpp}|hyperpage}{79}
+\indexentry{/home/johnzik/Dev/Cpp-\/Project/src/sparse\_spmm.cpp@{/home/johnzik/Dev/Cpp-\/Project/src/sparse\_spmm.cpp}|hyperpage}{79}
+\indexentry{/home/johnzik/Dev/Cpp-\/Project/src/sparse\_sub.cpp@{/home/johnzik/Dev/Cpp-\/Project/src/sparse\_sub.cpp}|hyperpage}{80}
+\indexentry{/home/johnzik/Dev/Cpp-\/Project/src/sparse\_transpose.cpp@{/home/johnzik/Dev/Cpp-\/Project/src/sparse\_transpose.cpp}|hyperpage}{80}
+\indexentry{/home/johnzik/Dev/Cpp-\/Project/src/sparse\_vxs.cpp@{/home/johnzik/Dev/Cpp-\/Project/src/sparse\_vxs.cpp}|hyperpage}{81}
+\indexentry{/home/johnzik/Dev/Cpp-\/Project/src/svd.cpp@{/home/johnzik/Dev/Cpp-\/Project/src/svd.cpp}|hyperpage}{81}
+\indexentry{/home/johnzik/Dev/Cpp-\/Project/src/transpose.cpp@{/home/johnzik/Dev/Cpp-\/Project/src/transpose.cpp}|hyperpage}{82}
+\indexentry{/home/johnzik/Dev/Cpp-\/Project/src/vectors\_constructor.cpp@{/home/johnzik/Dev/Cpp-\/Project/src/vectors\_constructor.cpp}|hyperpage}{82}
