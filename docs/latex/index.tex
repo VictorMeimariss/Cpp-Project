@@ -1,0 +1,89 @@
+\chapter{Dense and CSR Sparse matrix library in C++ leveraging Intel one\+MKL (CBLAS)}
+\hypertarget{index}{}\label{index}\index{Dense and CSR Sparse matrix library in C++ leveraging Intel oneMKL (CBLAS)@{Dense and CSR Sparse matrix library in C++ leveraging Intel oneMKL (CBLAS)}}
+\label{index_md__2home_2johnzik_2Dev_2Cpp-Project_2README}%
+\Hypertarget{index_md__2home_2johnzik_2Dev_2Cpp-Project_2README}%
+ \hypertarget{index_autotoc_md1}{}\doxysection{\texorpdfstring{What this project does}{What this project does}}\label{index_autotoc_md1}
+In this project of ours we are developing a high-\/perfomance Dense and CSR Sparse matrix library in modern C++ (icpx), leveraging Intel one\+MKL (CBLAS + MKL Sparse BLAS) for numerical computing and HPC applications.\hypertarget{index_autotoc_md2}{}\doxysection{\texorpdfstring{How to build \& compile the project}{How to build \& compile the project}}\label{index_autotoc_md2}
+The following build and compile instructions are for Linux (we will assume that you are using Ubuntu/\+Debian like distros). If you use Windows you may encounter problems.\hypertarget{index_autotoc_md3}{}\doxysubsection{\texorpdfstring{Requirements}{Requirements}}\label{index_autotoc_md3}
+Make sure you have {\bfseries{all of the following installed}} before reading the Setup Instructions section.
+\begin{DoxyItemize}
+\item {\bfseries{Git\+:}}
+
+\href{https://git-scm.com/install/linux}{\texttt{ https\+://git-\/scm.\+com/install/linux}}
+
+or
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{sudo\ apt-\/get\ install\ git}
+
+\end{DoxyCode}
+
+\item {\bfseries{CMake\+:}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{sudo\ apt-\/get\ install\ cmake}
+
+\end{DoxyCode}
+
+\item {\bfseries{Intel one\+API Base Toolkit\+:}}
+
+\href{https://www.intel.com/content/www/us/en/developer/tools/oneapi/base-toolkit-download.html}{\texttt{ https\+://www.\+intel.\+com/content/www/us/en/developer/tools/oneapi/base-\/toolkit-\/download.\+html}}
+\item {\bfseries{VS Code}} (or you IDE of preference but we will assume you use VS Code below)
+
+You usually can install it directly from the App Center or from \href{https://code.visualstudio.com/download}{\texttt{ here}}
+\end{DoxyItemize}\hypertarget{index_autotoc_md4}{}\doxysubsection{\texorpdfstring{Setup Instructions}{Setup Instructions}}\label{index_autotoc_md4}
+
+\begin{DoxyEnumerate}
+\item {\bfseries{First you will need to clone the repository to your desired destination.}}
+
+Go to the directory you want to clone the project\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{cd\ <path\_to\_your\_dir>}
+
+\end{DoxyCode}
+
+
+Clone the repo\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{git\ clone\ https://github.com/VictorMeimariss/Cpp-\/Project.git}
+
+\end{DoxyCode}
+
+
+Then get inside the project root folder\+: {\ttfamily  cd Cpp-\/\+Project }
+\item {\bfseries{Next, you need to source/setup the one\+API variables\+:}} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{source\ /opt/intel/oneapi/setvars.sh}
+
+\end{DoxyCode}
+ The path above is usually the default, it may vary if you changed anything in the installation process
+\item {\bfseries{Open your IDE\+:}}
+
+For VS Code do\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{code\ .}
+
+\end{DoxyCode}
+
+\end{DoxyEnumerate}\hypertarget{index_autotoc_md5}{}\doxysubsection{\texorpdfstring{Build \& Linking Instructions}{Build \& Linking Instructions}}\label{index_autotoc_md5}
+Now to run the CMake Configuration run the following command in the VScode terminal\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{cmake\ -\/S\ .\ -\/B\ obj}
+
+\end{DoxyCode}
+ this will create a directory called /obj where all the .o files will go.
+
+Next, Build and Link everything with the following command\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{cmake\ -\/-\/build\ obj}
+
+\end{DoxyCode}
+\hypertarget{index_autotoc_md6}{}\doxysubsection{\texorpdfstring{Run a test (optional)}{Run a test (optional)}}\label{index_autotoc_md6}
+Now to confirm that everything went well you can run one of the test functions .cpp files (all the executables are inside /bin) 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{./bin/test\_CG\_dsolve\ }
+
+\end{DoxyCode}
+ it doesn\textquotesingle{}t need to be test\+\_\+\+CG\+\_\+dsolve, this was just used as an example. 

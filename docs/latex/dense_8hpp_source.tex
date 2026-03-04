@@ -1,0 +1,170 @@
+\doxysection{dense.\+hpp}
+\hypertarget{dense_8hpp_source}{}\label{dense_8hpp_source}\index{/home/johnzik/Dev/Cpp-\/Project/inc/dense.hpp@{/home/johnzik/Dev/Cpp-\/Project/inc/dense.hpp}}
+\mbox{\hyperlink{dense_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00001}00001\ \textcolor{preprocessor}{\#ifndef\ DENSE\_HPP}}
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00002}00002\ \textcolor{preprocessor}{\#define\ DENSE\_HPP}}
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00009}00009\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00010}00010\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00011}00011\ \textcolor{preprocessor}{\#include\ <complex>}}
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00012}00012\ \textcolor{preprocessor}{\#include\ <stdexcept>}}
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00013}00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{def_8hpp}{def.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00015}00015\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ }
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00016}00016\ \{}
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00017}00017\ \textcolor{preprocessor}{\ \ \ \ \ \ \#include\ "{}../inc/mmio.h"{}}}
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00018}00018\ \}}
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00020}00020\ \textcolor{keyword}{namespace\ }sparse\ \{}
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00021}00021\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00022}00022\ \ \ \ \ \textcolor{keyword}{class\ }matrix;\ \ \textcolor{comment}{//\ forward\ declaration}}
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00023}00023\ \}}
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00025}00025\ \textcolor{keyword}{namespace\ }dense\{}
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00031}00031\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00032}\mbox{\hyperlink{classdense_1_1matrix}{00032}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classdense_1_1matrix}{matrix}}\ \{}
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00033}00033\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00037}00037\ \ \ \ \ \ \ \ \ std::vector<T>\ values;\ }
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00042}00042\ \ \ \ \ \ \ \ \ std::vector<size\_t>\ dim\_size;}
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00047}00047\ \ \ \ \ \ \ \ \ std::vector<int>\ precomputed\_strides;}
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00049}00049\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00054}\mbox{\hyperlink{classdense_1_1matrix_a2f5c551af9f436909bd076a03f90e946}{00054}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdense_1_1matrix_a2f5c551af9f436909bd076a03f90e946}{matrix}}\ ()\{\};}
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00061}00061\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdense_1_1matrix_a2f5c551af9f436909bd076a03f90e946}{matrix}}(std::vector<T>\ diag,\ \textcolor{keywordtype}{int}\ n,\ \textcolor{keywordtype}{int}\ m);}
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00068}00068\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}...\ Dims>}
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00069}\mbox{\hyperlink{classdense_1_1matrix_aba58d5a6b7f8e77b8ffb35f436f6cacd}{00069}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdense_1_1matrix_aba58d5a6b7f8e77b8ffb35f436f6cacd}{matrix}}(Dims...\ dims)\{\ \textcolor{comment}{//\ Vic}}
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Add\ dimension\ sizes\ to\ the\ dim\_size\ vector}}
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ (dim\_size.push\_back(dims),\ ...);}
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Resizing\ to\ the\ size\ of\ the\ matrix\ using\ a\ fold\ expression\ and\ initialising\ to\ 0.0.}}
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ values.resize((\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{size\_t}\textcolor{keyword}{>}(1)\ *\ ...\ *\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{size\_t}\textcolor{keyword}{>}(dims)));}
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Resizing\ to\ number\ of\ dimensions}}
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ precomputed\_strides.resize(dim\_size.size());}
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!precomputed\_strides.empty())\ \{\ }
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ precomputed\_strides.back()\ =\ 1;\ \textcolor{comment}{//\ Last\ dimension\ has\ stride\ 1}}
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ precomputed\_strides.size()\ -\/\ 2;\ i\ >=\ 0;\ -\/-\/i)\ \{}
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ precomputed\_strides[i]\ =\ precomputed\_strides[i\ +\ 1]\ *\ dim\_size[i\ +\ 1];}
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00086}00086\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00087}00087\ }
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00092}\mbox{\hyperlink{classdense_1_1matrix_afa3eb619ad0653e0ff1e2ee469ac9401}{00092}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdense_1_1matrix_afa3eb619ad0653e0ff1e2ee469ac9401}{matrix}}\ (\mbox{\hyperlink{classdense_1_1matrix}{matrix}}\&\&\ A)\ noexcept}
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00093}00093\ \ \ \ \ \ \ \ \ :\ values(std::move(A.values)),\ dim\_size(std::move(A.dim\_size)),\ precomputed\_strides(std::move(A.precomputed\_strides))\ \{\}}
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00094}00094\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00099}00099\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdense_1_1matrix_a2f5c551af9f436909bd076a03f90e946}{matrix}}\ (\mbox{\hyperlink{classdense_1_1matrix}{matrix}}\ \textcolor{keyword}{const}\&\ A);\ \textcolor{comment}{//\ Ioannis}}
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00100}00100\ }
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00105}\mbox{\hyperlink{classdense_1_1matrix_aa0f4e7b608f9c54facb7acb5726f9e3f}{00105}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdense_1_1matrix_aa0f4e7b608f9c54facb7acb5726f9e3f}{\string~matrix}}()\ =\ \textcolor{keywordflow}{default};\ \textcolor{comment}{//\ Vic}}
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00112}00112\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdense_1_1matrix_a2f5c551af9f436909bd076a03f90e946}{matrix}}\ (std::vector<T>\ v,\ std::vector<size\_t>\ d,\ std::vector<int>\ p);\ \textcolor{comment}{//Thanasis}}
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00113}00113\ }
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00118}00118\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdense_1_1matrix}{matrix}}\ \mbox{\hyperlink{classdense_1_1matrix_aab2e012dbfb09e7f56728d793dbe92d6}{I}}(\textcolor{keywordtype}{int}\ N);\ \textcolor{comment}{//\ Thanasis\ }}
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00119}00119\ }
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00124}00124\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdense_1_1matrix}{matrix}}\&\ \mbox{\hyperlink{classdense_1_1matrix_a7b5922d3d4f77d8f83c9a60894ef9764}{operator=}}(\mbox{\hyperlink{classdense_1_1matrix}{matrix}}\ \textcolor{keyword}{const}\&\ A);\ \textcolor{comment}{//\ Ioannis}}
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00125}00125\ }
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00130}00130\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdense_1_1matrix}{matrix}}\ \mbox{\hyperlink{classdense_1_1matrix_aff3f92d1bcd6b9d633f838dabff1a82e}{operator+}}(\mbox{\hyperlink{classdense_1_1matrix}{matrix}}\ \textcolor{keyword}{const}\&\ A);\ \textcolor{comment}{//\ Vic}}
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00131}00131\ }
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00136}00136\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ U\ =\ T>}
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00137}00137\ \ \ \ \ \ \ \ \ std::enable\_if\_t<std::is\_same\_v<U,\ T>,\ \mbox{\hyperlink{classdense_1_1matrix}{matrix<T>}}>}
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00138}00138\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdense_1_1matrix_acadefba6bf6e0ce68e1afdd13787f6c6}{operator*}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classdense_1_1matrix}{matrix<T>}}\&\ A)\ \textcolor{keyword}{const};\ \textcolor{comment}{//\ Vic}}
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00139}00139\ }
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00144}\mbox{\hyperlink{classdense_1_1matrix_ab31ab44a2927bf765f8ef0590428c413}{00144}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classdense_1_1matrix_ab31ab44a2927bf765f8ef0590428c413}{operator==}}(\mbox{\hyperlink{classdense_1_1matrix}{matrix}}\ \textcolor{keyword}{const}\&\ A)\{}
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00145}00145\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (dim\_size.size()\ !=\ A.dim\_size.size())}
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00146}00146\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00147}00147\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00148}00148\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i<dim\_size.size();\ i++)\{}
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00149}00149\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (dim\_size[i]!=A.dim\_size[i])\{}
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00150}00150\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00151}00151\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00152}00152\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00153}00153\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i=0;\ i<values.size();\ i++)\{}
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00154}00154\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (values[i]!=A.values[i])}
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00155}00155\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00156}00156\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00157}00157\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00158}00158\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00159}00159\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00165}00165\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdense_1_1matrix}{matrix}}\ \mbox{\hyperlink{classdense_1_1matrix_acadefba6bf6e0ce68e1afdd13787f6c6}{operator*}}(T\ x);}
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00166}00166\ }
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00172}00172\ \ \ \ \ \ \ \ \ std::vector<T>\ \mbox{\hyperlink{classdense_1_1matrix_acadefba6bf6e0ce68e1afdd13787f6c6}{operator*}}(\textcolor{keyword}{const}\ std::vector<T>\ x);}
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00173}00173\ }
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00178}00178\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdense_1_1matrix}{matrix}}\ \mbox{\hyperlink{classdense_1_1matrix_a1543e27fe6aa0097c3b3c1ad9dc7402f}{operator-\/}}(\mbox{\hyperlink{classdense_1_1matrix}{matrix}}\ \textcolor{keyword}{const}\&\ A);\ \textcolor{comment}{//Ioannis}}
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00179}00179\ }
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00184}00184\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdense_1_1matrix}{matrix}}\ \mbox{\hyperlink{classdense_1_1matrix_a953334cf57cffd0907fa26d676d7bbe7}{transpose}}()\ \textcolor{keyword}{const};\ \textcolor{comment}{//\ Victor}}
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00189}00189\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdense_1_1matrix}{matrix}}\ \mbox{\hyperlink{classdense_1_1matrix_ad486d623111dfb0fdbd0ad3ae691bd1f}{operator\ \string^}}(\textcolor{keywordtype}{int}\ n);\ \textcolor{comment}{//Thanasis}}
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00194}\mbox{\hyperlink{classdense_1_1matrix_afe1c55f9300b04f3e4c88204a8a98c8c}{00194}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdense_1_1matrix}{matrix}}\ \mbox{\hyperlink{classdense_1_1matrix_afe1c55f9300b04f3e4c88204a8a98c8c}{operator/}}(\mbox{\hyperlink{classdense_1_1matrix}{matrix}}\ \textcolor{keyword}{const}\&\ A);}
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00195}00195\ }
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00200}\mbox{\hyperlink{classdense_1_1matrix_a4921c8ceda25edc5a3bede5210c50d43}{00200}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdense_1_1matrix}{matrix}}\ \mbox{\hyperlink{classdense_1_1matrix_a4921c8ceda25edc5a3bede5210c50d43}{operator|}}(\mbox{\hyperlink{classdense_1_1matrix}{matrix}}\ \textcolor{keyword}{const}\&\ A);}
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00201}00201\ }
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00206}\mbox{\hyperlink{classdense_1_1matrix_a10b77097e03561b0c0c4fb83b1cbd966}{00206}}\ \ \ \ \ \ \ \ \ T\&\ \mbox{\hyperlink{classdense_1_1matrix_a10b77097e03561b0c0c4fb83b1cbd966}{operator()\ }}(\textcolor{keywordtype}{size\_t}\ index);\ \textcolor{comment}{//Vic}}
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00207}00207\ }
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00212}00212\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}...\ Indices>}
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00213}\mbox{\hyperlink{classdense_1_1matrix_a0141a7309a3b9c9022eb62c8c32bb640}{00213}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ T\&\ \mbox{\hyperlink{classdense_1_1matrix_a10b77097e03561b0c0c4fb83b1cbd966}{operator()\ }}(Indices...\ indices);}
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00214}00214\ }
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00215}00215\ }
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00219}00219\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classdense_1_1matrix_a9437766c61180bd2ce4bb15810b572d8}{get\_size}}()\ \textcolor{keyword}{const};\ \textcolor{comment}{//Victor}}
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00220}00220\ }
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00224}00224\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classdense_1_1matrix_a7fbe9eeacd7041173694b7b992d66ea9}{get\_nod}}()\ \textcolor{keyword}{const};\ \textcolor{comment}{//\ Ioanis}}
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00225}00225\ }
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00230}00230\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classdense_1_1matrix_afeebe71f33c56388aba63e72c10b8456}{get\_dim\_size}}(\textcolor{keywordtype}{size\_t}\ index)\ \textcolor{keyword}{const};\ \textcolor{comment}{//\ Thanasis}}
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00231}00231\ }
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00236}00236\ \ \ \ \ \ \ \ \ T\ \mbox{\hyperlink{classdense_1_1matrix_a0769b47965c785ca0422ad3e30c344ba}{get\_value\_at}}(\textcolor{keywordtype}{size\_t}\ index)\ \textcolor{keyword}{const};\ \textcolor{comment}{//\ Thanasis}}
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00243}00243\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classdense_1_1matrix_a486b9b0f1440800bbfa89d860e5b26c2}{svd}}(\mbox{\hyperlink{classdense_1_1matrix}{matrix<T>}}\&\ u,\ \mbox{\hyperlink{classdense_1_1matrix}{matrix<T>}}\&\ s,\ \mbox{\hyperlink{classdense_1_1matrix}{matrix<T>}}\&\ v);\ \textcolor{comment}{//\ Thansis}}
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00244}00244\ }
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00248}00248\ \ \ \ \ \ \ \ \ T*\ \mbox{\hyperlink{classdense_1_1matrix_a079c880557b10d257fe69d09de15ee9b}{get\_values\_data}}();\ \textcolor{comment}{//\ Victor}}
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00249}00249\ }
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00255}00255\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classdense_1_1matrix_a7b92c63ace1144eb27f9767443f63045}{set\_value\_at}}(\textcolor{keywordtype}{size\_t}\ index,\ T\ value);\ \textcolor{comment}{//\ Ioannis}}
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00256}00256\ }
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00262}00262\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}...\ Types>}
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00263}\mbox{\hyperlink{classdense_1_1matrix_ac2defaf221866d3b2ca222a62651cf5b}{00263}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classdense_1_1matrix_ac2defaf221866d3b2ca222a62651cf5b}{set\_values}}(Types\&\&...\ valuess)\{}
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00264}00264\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<T>\ v;}
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00265}00265\ \ \ \ \ \ \ \ \ \ \ \ \ (v.push\_back(valuess),\ ...);}
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00266}00266\ \ \ \ \ \ \ \ \ \ \ \ \ values\ =\ std::move(v);}
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00267}00267\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00268}00268\ }
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00272}00272\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ T*\ \mbox{\hyperlink{classdense_1_1matrix_ab453610a31cb54bb61fe94a3cf0b117c}{get\_const\_values\_data}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00273}00273\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00277}00277\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classdense_1_1matrix_a32aa6617957165f9bdef07326b558730}{print2D}}();}
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00278}00278\ }
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00284}00284\ \ \ \ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}...\ Dims>}
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00285}\mbox{\hyperlink{classdense_1_1matrix_a9eb86d15d2742284cf23ef041f4aac83}{00285}}\ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classdense_1_1matrix_a9eb86d15d2742284cf23ef041f4aac83}{reshape}}(Dims...\ dims)\{}
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00286}00286\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Clear\ previous\ dimensions\ size}}
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00287}00287\ \ \ \ \ \ \ \ \ \ \ \ \ dim\_size.clear();}
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00288}00288\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Add\ dimension\ sizes\ to\ the\ dim\_size\ vector}}
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00289}00289\ \ \ \ \ \ \ \ \ \ \ \ \ (dim\_size.push\_back(dims),\ ...);}
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00290}00290\ }
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00291}00291\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Resizing\ to\ the\ size\ of\ the\ matrix\ using\ a\ fold\ expression\ and\ initialising\ to\ 0.0.}}
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00292}00292\ \ \ \ \ \ \ \ \ \ \ \ \ values.resize((\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{size\_t}\textcolor{keyword}{>}(1)\ *\ ...\ *\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{size\_t}\textcolor{keyword}{>}(dims)));}
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00293}00293\ }
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00294}00294\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Resizing\ to\ number\ of\ dimensions}}
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00295}00295\ \ \ \ \ \ \ \ \ \ \ \ \ precomputed\_strides.resize(dim\_size.size());}
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00296}00296\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!precomputed\_strides.empty())\ \{\ }
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00297}00297\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ precomputed\_strides.back()\ =\ 1;\ \textcolor{comment}{//\ Last\ dimension\ has\ stride\ 1}}
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00298}00298\ }
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00299}00299\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ precomputed\_strides.size()\ -\/\ 2;\ i\ >=\ 0;\ -\/-\/i)\ \{}
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00300}00300\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ precomputed\_strides[i]\ =\ precomputed\_strides[i\ +\ 1]\ *\ dim\_size[i\ +\ 1];}
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00301}00301\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00302}00302\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00303}00303\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00304}00304\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00309}00309\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classdense_1_1matrix_a7516a8a752919975dd10afd4c91aaae2}{low\_level\_matrix\_multiplication}}(\textcolor{keyword}{const}\ CBLAS\_TRANSPOSE\ transa,\ \textcolor{keyword}{const}\ CBLAS\_TRANSPOSE\ transb,\ \textcolor{keyword}{const}\ T\ beta,\ \mbox{\hyperlink{classdense_1_1matrix}{matrix<T>}}\ \textcolor{keyword}{const}\ \&A,\ \mbox{\hyperlink{classdense_1_1matrix}{matrix<T>}}\ \textcolor{keyword}{const}\ \&B,\ \mbox{\hyperlink{classdense_1_1matrix}{matrix<T>}}\ \&C,\ \textcolor{keyword}{const}\ T\ alpha);}
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00310}00310\ }
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00317}00317\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classdense_1_1matrix}{matrix}}\ \mbox{\hyperlink{classdense_1_1matrix_a74d5ad01c6b272f4ef61ef82115762e2}{dense\_readMM}}(\textcolor{keyword}{const}\ std::string\&\ MMpath);}
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00318}00318\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00319}00319\ }
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00325}00325\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ \textcolor{keyword}{typename}\ U>}
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00326}00326\ \ \ \ \ matrix<T>\ operator*(U\ x,\ \textcolor{keyword}{const}\ matrix<T>\&\ A);\ \textcolor{comment}{//\ Victor}}
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00327}00327\ }
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00333}00333\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00334}00334\ \ \ \ \ std::vector<T>\ operator*(\textcolor{keyword}{const}\ std::vector<T>\ x,\ \textcolor{keyword}{const}\ matrix<T>\&\ A);\ \textcolor{comment}{//\ John}}
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00335}00335\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00336}00336\ \ \ \ \ std::vector<T>\ LU\_solver\ (\mbox{\hyperlink{classdense_1_1matrix}{dense::matrix<T>}}\&\ A,std::vector<T>\ b);\ \textcolor{comment}{//\ Thanasis}}
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00337}00337\ \}}
+\DoxyCodeLine{\Hypertarget{dense_8hpp_source_l00338}00338\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,21 @@
+\doxysection{sparse-\/diagonal-\/getter.cpp}
+\hypertarget{sparse-diagonal-getter_8cpp_source}{}\label{sparse-diagonal-getter_8cpp_source}\index{/home/johnzik/Dev/Cpp-\/Project/src/sparse-\/diagonal-\/getter.cpp@{/home/johnzik/Dev/Cpp-\/Project/src/sparse-\/diagonal-\/getter.cpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{sparse-diagonal-getter_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}../inc/sparse.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{sparse-diagonal-getter_8cpp_source_l00002}00002\ \textcolor{keyword}{using\ namespace\ }sparse;}
+\DoxyCodeLine{\Hypertarget{sparse-diagonal-getter_8cpp_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{sparse-diagonal-getter_8cpp_source_l00004}00004\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{sparse-diagonal-getter_8cpp_source_l00005}\mbox{\hyperlink{classsparse_1_1matrix_abf597d3b12fc19b2b9facfdddbb8a39b}{00005}}\ std::vector<T>\ \mbox{\hyperlink{classsparse_1_1matrix_abf597d3b12fc19b2b9facfdddbb8a39b}{matrix<T>::diag}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{sparse-diagonal-getter_8cpp_source_l00006}00006\ \ \ \ \ std::vector<T>\ \mbox{\hyperlink{classsparse_1_1matrix_ae479d6e63c6c755205240ec74b0b31f6}{ret}};}
+\DoxyCodeLine{\Hypertarget{sparse-diagonal-getter_8cpp_source_l00007}00007\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ \mbox{\hyperlink{classsparse_1_1matrix}{i}}\ =\ 0;\ \mbox{\hyperlink{classsparse_1_1matrix}{i}}\ <\ col\_size;\ \mbox{\hyperlink{classsparse_1_1matrix}{i}}++)}
+\DoxyCodeLine{\Hypertarget{sparse-diagonal-getter_8cpp_source_l00008}00008\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classsparse_1_1matrix}{ret}}.push\_back(\mbox{\hyperlink{classsparse_1_1matrix}{this}}-\/>\mbox{\hyperlink{classsparse_1_1matrix_a0769b47965c785ca0422ad3e30c344ba}{get\_value\_at}}(\mbox{\hyperlink{classsparse_1_1matrix}{i}}\ *\ col\_size\ +\ \mbox{\hyperlink{classsparse_1_1matrix}{i}}));}
+\DoxyCodeLine{\Hypertarget{sparse-diagonal-getter_8cpp_source_l00009}00009\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classsparse_1_1matrix_ae479d6e63c6c755205240ec74b0b31f6}{ret}};}
+\DoxyCodeLine{\Hypertarget{sparse-diagonal-getter_8cpp_source_l00010}00010\ \}}
+\DoxyCodeLine{\Hypertarget{sparse-diagonal-getter_8cpp_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{sparse-diagonal-getter_8cpp_source_l00012}00012\ \textcolor{keyword}{template}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classsparse_1_1matrix}{sparse::matrix<float>}};}
+\DoxyCodeLine{\Hypertarget{sparse-diagonal-getter_8cpp_source_l00013}00013\ \textcolor{keyword}{template}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classsparse_1_1matrix}{sparse::matrix<double>}};}
+\DoxyCodeLine{\Hypertarget{sparse-diagonal-getter_8cpp_source_l00014}00014\ \textcolor{keyword}{template}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classsparse_1_1matrix}{sparse::matrix<std::complex<float>}}>;}
+\DoxyCodeLine{\Hypertarget{sparse-diagonal-getter_8cpp_source_l00015}00015\ \textcolor{keyword}{template}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classsparse_1_1matrix}{sparse::matrix<std::complex<double>}}>;}
+
+\end{DoxyCode}

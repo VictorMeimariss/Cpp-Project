@@ -1,0 +1,24 @@
+\doxysection{sparse\+\_\+mm\+\_\+dxs.\+cpp}
+\hypertarget{sparse__mm__dxs_8cpp_source}{}\label{sparse__mm__dxs_8cpp_source}\index{/home/johnzik/Dev/Cpp-\/Project/src/sparse\_mm\_dxs.cpp@{/home/johnzik/Dev/Cpp-\/Project/src/sparse\_mm\_dxs.cpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{sparse__mm__dxs_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{matrix_8hpp}{matrix.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{sparse__mm__dxs_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ <mkl.h>}}
+\DoxyCodeLine{\Hypertarget{sparse__mm__dxs_8cpp_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{sparse__mm__dxs_8cpp_source_l00004}00004\ \textcolor{keyword}{namespace\ }dense\ \{}
+\DoxyCodeLine{\Hypertarget{sparse__mm__dxs_8cpp_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{sparse__mm__dxs_8cpp_source_l00006}00006\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{sparse__mm__dxs_8cpp_source_l00007}\mbox{\hyperlink{cross_8hpp_a75aab3432ded295cb06a541df4852536}{00007}}\ \mbox{\hyperlink{classdense_1_1matrix}{dense::matrix<T>}}\ \mbox{\hyperlink{cross_8hpp_a75aab3432ded295cb06a541df4852536}{operator*}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classdense_1_1matrix}{dense::matrix<T>}}\&\ \mbox{\hyperlink{classdense_1_1matrix}{A}},\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classsparse_1_1matrix}{sparse::matrix<T>}}\&\ \mbox{\hyperlink{classdense_1_1matrix}{B}})\ \{}
+\DoxyCodeLine{\Hypertarget{sparse__mm__dxs_8cpp_source_l00008}00008\ \ \ \ \ \mbox{\hyperlink{classdense_1_1matrix}{B}}.refresh\_handle();}
+\DoxyCodeLine{\Hypertarget{sparse__mm__dxs_8cpp_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{sparse__mm__dxs_8cpp_source_l00010}00010\ \ \ \ \ \textcolor{comment}{//\ Εxisting\ sparse\ ×\ dense\ operator}}
+\DoxyCodeLine{\Hypertarget{sparse__mm__dxs_8cpp_source_l00011}00011\ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classdense_1_1matrix}{result}}\ =\ (\mbox{\hyperlink{classdense_1_1matrix}{B}}.\mbox{\hyperlink{classdense_1_1matrix_a953334cf57cffd0907fa26d676d7bbe7}{transpose}}()\ *\ \mbox{\hyperlink{classdense_1_1matrix}{A}}.\mbox{\hyperlink{classdense_1_1matrix_a953334cf57cffd0907fa26d676d7bbe7}{transpose}}()).transpose();}
+\DoxyCodeLine{\Hypertarget{sparse__mm__dxs_8cpp_source_l00012}00012\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classdense_1_1matrix}{result}};}
+\DoxyCodeLine{\Hypertarget{sparse__mm__dxs_8cpp_source_l00013}00013\ \}}
+\DoxyCodeLine{\Hypertarget{sparse__mm__dxs_8cpp_source_l00014}00014\ \textcolor{keyword}{template}\ \mbox{\hyperlink{classdense_1_1matrix}{dense::matrix<float>}}\ operator*(\textcolor{keyword}{const}\ \mbox{\hyperlink{classdense_1_1matrix}{dense::matrix<float>}}\&,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classsparse_1_1matrix}{sparse::matrix<float>}}\&);}
+\DoxyCodeLine{\Hypertarget{sparse__mm__dxs_8cpp_source_l00015}00015\ \textcolor{keyword}{template}\ \mbox{\hyperlink{classdense_1_1matrix}{dense::matrix<double>}}\ operator*(\textcolor{keyword}{const}\ \mbox{\hyperlink{classdense_1_1matrix}{dense::matrix<double>}}\&,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classsparse_1_1matrix}{sparse::matrix<double>}}\&);}
+\DoxyCodeLine{\Hypertarget{sparse__mm__dxs_8cpp_source_l00016}00016\ \textcolor{keyword}{template}\ \mbox{\hyperlink{classdense_1_1matrix}{dense::matrix<std::complex<float>}}>\ operator*(\textcolor{keyword}{const}\ \mbox{\hyperlink{classdense_1_1matrix}{dense::matrix}}<std::complex<float>>\&,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classsparse_1_1matrix}{sparse::matrix}}<std::complex<float>>\&);}
+\DoxyCodeLine{\Hypertarget{sparse__mm__dxs_8cpp_source_l00017}00017\ \textcolor{keyword}{template}\ \mbox{\hyperlink{classdense_1_1matrix}{dense::matrix<std::complex<double>}}>\ operator*(\textcolor{keyword}{const}\ \mbox{\hyperlink{classdense_1_1matrix}{dense::matrix}}<std::complex<double>>\&,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classsparse_1_1matrix}{sparse::matrix}}<std::complex<double>>\&);}
+\DoxyCodeLine{\Hypertarget{sparse__mm__dxs_8cpp_source_l00018}00018\ \}}
+
+\end{DoxyCode}

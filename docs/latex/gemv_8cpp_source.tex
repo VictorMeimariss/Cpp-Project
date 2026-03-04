@@ -1,0 +1,31 @@
+\doxysection{gemv.\+cpp}
+\hypertarget{gemv_8cpp_source}{}\label{gemv_8cpp_source}\index{/home/johnzik/Dev/Cpp-\/Project/src/gemv.cpp@{/home/johnzik/Dev/Cpp-\/Project/src/gemv.cpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{gemv_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{dense_8hpp}{dense.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{gemv_8cpp_source_l00002}00002\ \textcolor{keyword}{using\ namespace\ }dense;}
+\DoxyCodeLine{\Hypertarget{gemv_8cpp_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{gemv_8cpp_source_l00004}00004\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{gemv_8cpp_source_l00005}\mbox{\hyperlink{classdense_1_1matrix_a40aeeedc95ca4a884b0c84b895ce66ec}{00005}}\ std::vector<T>\ \mbox{\hyperlink{classdense_1_1matrix_acadefba6bf6e0ce68e1afdd13787f6c6}{matrix<T>::\ operator*}}(\textcolor{keyword}{const}\ std::vector<T>\ \mbox{\hyperlink{classdense_1_1matrix}{x}})\{}
+\DoxyCodeLine{\Hypertarget{gemv_8cpp_source_l00006}00006\ \ \ \ \ std::vector<T>\ \mbox{\hyperlink{classdense_1_1matrix_a2f5c551af9f436909bd076a03f90e946}{result}}((*this).dim\_size[0]);}
+\DoxyCodeLine{\Hypertarget{gemv_8cpp_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{gemv_8cpp_source_l00008}00008\ \ \ \ \ \textcolor{keywordflow}{if}\ \textcolor{keyword}{constexpr}\ (std::is\_same\_v<T,\ float>)\{}
+\DoxyCodeLine{\Hypertarget{gemv_8cpp_source_l00009}00009\ \ \ \ \ \ \ \ \ sgemv(\mbox{\hyperlink{classdense_1_1matrix}{CblasRowMajor}},\ \mbox{\hyperlink{classdense_1_1matrix}{CblasNoTrans}},\ (*this).dim\_size[0],\ (*this).dim\_size[1],\ 1.0f,\ (*this).values.data(),\ (*this).dim\_size[1],\ \mbox{\hyperlink{classdense_1_1matrix}{x}}.data(),\ 1,\ 0.0f,\ \mbox{\hyperlink{classdense_1_1matrix}{result}}.data(),\ 1);\}}
+\DoxyCodeLine{\Hypertarget{gemv_8cpp_source_l00010}00010\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ \textcolor{keyword}{constexpr}\ (std::is\_same\_v<T,\ double>)\{}
+\DoxyCodeLine{\Hypertarget{gemv_8cpp_source_l00011}00011\ \ \ \ \ \ \ \ \ dgemv(\mbox{\hyperlink{classdense_1_1matrix}{CblasRowMajor}},\ \mbox{\hyperlink{classdense_1_1matrix}{CblasNoTrans}},\ (*this).dim\_size[0],\ (*this).dim\_size[1],\ 1.0,\ (*this).values.data(),\ (*this).dim\_size[1],\ \mbox{\hyperlink{classdense_1_1matrix}{x}}.data(),\ 1,\ 0.0,\ \mbox{\hyperlink{classdense_1_1matrix}{result}}.data(),\ 1);\}}
+\DoxyCodeLine{\Hypertarget{gemv_8cpp_source_l00012}00012\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ \textcolor{keyword}{constexpr}\ (std::is\_same\_v<T,\ std::complex<float>>)\{}
+\DoxyCodeLine{\Hypertarget{gemv_8cpp_source_l00013}00013\ \ \ \ \ \ \ \ \ std::complex<float>\ \mbox{\hyperlink{classdense_1_1matrix_a2f5c551af9f436909bd076a03f90e946}{a}}(1,\ 0);}
+\DoxyCodeLine{\Hypertarget{gemv_8cpp_source_l00014}00014\ \ \ \ \ \ \ \ \ std::complex<float>\ \mbox{\hyperlink{classdense_1_1matrix_a2f5c551af9f436909bd076a03f90e946}{b}}(0,\ 0);}
+\DoxyCodeLine{\Hypertarget{gemv_8cpp_source_l00015}00015\ \ \ \ \ \ \ \ \ cgemv(\mbox{\hyperlink{classdense_1_1matrix}{CblasRowMajor}},\ \mbox{\hyperlink{classdense_1_1matrix}{CblasNoTrans}},\ (*this).dim\_size[0],\ (*this).dim\_size[1],\ \&\mbox{\hyperlink{classdense_1_1matrix}{a}},\ (*this).values.data(),\ (*this).dim\_size[1],\ \mbox{\hyperlink{classdense_1_1matrix}{x}}.data(),\ 1,\ \&\mbox{\hyperlink{classdense_1_1matrix}{b}},\ \mbox{\hyperlink{classdense_1_1matrix}{result}}.data(),\ 1);\}}
+\DoxyCodeLine{\Hypertarget{gemv_8cpp_source_l00016}00016\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ \textcolor{keyword}{constexpr}\ (std::is\_same\_v<T,\ std::complex<double>>)\{}
+\DoxyCodeLine{\Hypertarget{gemv_8cpp_source_l00017}00017\ \ \ \ \ \ \ \ \ std::complex<double>\ \mbox{\hyperlink{classdense_1_1matrix_a2f5c551af9f436909bd076a03f90e946}{a}}(1,\ 0);}
+\DoxyCodeLine{\Hypertarget{gemv_8cpp_source_l00018}00018\ \ \ \ \ \ \ \ \ std::complex<double>\ \mbox{\hyperlink{classdense_1_1matrix_a2f5c551af9f436909bd076a03f90e946}{b}}(0,\ 0);}
+\DoxyCodeLine{\Hypertarget{gemv_8cpp_source_l00019}00019\ \ \ \ \ \ \ \ \ zgemv(\mbox{\hyperlink{classdense_1_1matrix}{CblasRowMajor}},\ \mbox{\hyperlink{classdense_1_1matrix}{CblasNoTrans}},\ (*this).dim\_size[0],\ (*this).dim\_size[1],\ \&\mbox{\hyperlink{classdense_1_1matrix}{a}},\ (*this).values.data(),\ (*this).dim\_size[1],\ \mbox{\hyperlink{classdense_1_1matrix}{x}}.data(),\ 1,\ \&\mbox{\hyperlink{classdense_1_1matrix}{b}},\ \mbox{\hyperlink{classdense_1_1matrix}{result}}.data(),\ 1);\}}
+\DoxyCodeLine{\Hypertarget{gemv_8cpp_source_l00020}00020\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classdense_1_1matrix_a2f5c551af9f436909bd076a03f90e946}{result}};}
+\DoxyCodeLine{\Hypertarget{gemv_8cpp_source_l00021}00021\ \}}
+\DoxyCodeLine{\Hypertarget{gemv_8cpp_source_l00022}00022\ \textcolor{keyword}{template}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classdense_1_1matrix}{dense::matrix<float>}};}
+\DoxyCodeLine{\Hypertarget{gemv_8cpp_source_l00023}00023\ \textcolor{keyword}{template}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classdense_1_1matrix}{dense::matrix<double>}};}
+\DoxyCodeLine{\Hypertarget{gemv_8cpp_source_l00024}00024\ \textcolor{keyword}{template}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classdense_1_1matrix}{dense::matrix<std::complex<float>}}>;}
+\DoxyCodeLine{\Hypertarget{gemv_8cpp_source_l00025}00025\ \textcolor{keyword}{template}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classdense_1_1matrix}{dense::matrix<std::complex<double>}}>;}
+
+\end{DoxyCode}

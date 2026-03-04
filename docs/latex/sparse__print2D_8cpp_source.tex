@@ -1,0 +1,37 @@
+\doxysection{sparse\+\_\+print2\+D.\+cpp}
+\hypertarget{sparse__print2D_8cpp_source}{}\label{sparse__print2D_8cpp_source}\index{/home/johnzik/Dev/Cpp-\/Project/src/sparse\_print2D.cpp@{/home/johnzik/Dev/Cpp-\/Project/src/sparse\_print2D.cpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{sparse__print2D_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}../inc/sparse.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{sparse__print2D_8cpp_source_l00002}00002\ \textcolor{keyword}{using\ namespace\ }sparse;}
+\DoxyCodeLine{\Hypertarget{sparse__print2D_8cpp_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{sparse__print2D_8cpp_source_l00004}00004\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{sparse__print2D_8cpp_source_l00005}\mbox{\hyperlink{classsparse_1_1matrix_abfd8a0f6e22c74e1310fdae0141b1a43}{00005}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classsparse_1_1matrix_abfd8a0f6e22c74e1310fdae0141b1a43}{matrix<T>::print2D}}()\ }
+\DoxyCodeLine{\Hypertarget{sparse__print2D_8cpp_source_l00006}00006\ \{}
+\DoxyCodeLine{\Hypertarget{sparse__print2D_8cpp_source_l00007}00007\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Values:\ "{}}\ ;}
+\DoxyCodeLine{\Hypertarget{sparse__print2D_8cpp_source_l00008}00008\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classsparse_1_1matrix}{n}}\ =\ 0;\ \mbox{\hyperlink{classsparse_1_1matrix}{n}}\ <\ values.size();\ \mbox{\hyperlink{classsparse_1_1matrix}{n}}++)}
+\DoxyCodeLine{\Hypertarget{sparse__print2D_8cpp_source_l00009}00009\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{sparse__print2D_8cpp_source_l00010}00010\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ values[\mbox{\hyperlink{classsparse_1_1matrix_ae479d6e63c6c755205240ec74b0b31f6}{n}}]\ <<\ \textcolor{stringliteral}{"{}\ "{}};}
+\DoxyCodeLine{\Hypertarget{sparse__print2D_8cpp_source_l00011}00011\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{sparse__print2D_8cpp_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{sparse__print2D_8cpp_source_l00013}00013\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)nCol\_idx:\ "{}}\ ;}
+\DoxyCodeLine{\Hypertarget{sparse__print2D_8cpp_source_l00014}00014\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classsparse_1_1matrix}{n}}\ =\ 0;\ \mbox{\hyperlink{classsparse_1_1matrix}{n}}\ <\ col\_idx.size();\ \mbox{\hyperlink{classsparse_1_1matrix}{n}}++)}
+\DoxyCodeLine{\Hypertarget{sparse__print2D_8cpp_source_l00015}00015\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{sparse__print2D_8cpp_source_l00016}00016\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ col\_idx[\mbox{\hyperlink{classsparse_1_1matrix_ae479d6e63c6c755205240ec74b0b31f6}{n}}]\ <<\ \textcolor{stringliteral}{"{}\ "{}};}
+\DoxyCodeLine{\Hypertarget{sparse__print2D_8cpp_source_l00017}00017\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{sparse__print2D_8cpp_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{sparse__print2D_8cpp_source_l00019}00019\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)nRow\_idx:\ "{}}\ ;}
+\DoxyCodeLine{\Hypertarget{sparse__print2D_8cpp_source_l00020}00020\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classsparse_1_1matrix}{n}}\ =\ 0;\ \mbox{\hyperlink{classsparse_1_1matrix}{n}}\ <\ row\_idx.size();\ \mbox{\hyperlink{classsparse_1_1matrix}{n}}++)}
+\DoxyCodeLine{\Hypertarget{sparse__print2D_8cpp_source_l00021}00021\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{sparse__print2D_8cpp_source_l00022}00022\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ row\_idx[\mbox{\hyperlink{classsparse_1_1matrix_ae479d6e63c6c755205240ec74b0b31f6}{n}}]\ <<\ \textcolor{stringliteral}{"{}\ "{}};}
+\DoxyCodeLine{\Hypertarget{sparse__print2D_8cpp_source_l00023}00023\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{sparse__print2D_8cpp_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{sparse__print2D_8cpp_source_l00025}00025\ \ \ \ \ std::cout\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{sparse__print2D_8cpp_source_l00026}00026\ \}}
+\DoxyCodeLine{\Hypertarget{sparse__print2D_8cpp_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{sparse__print2D_8cpp_source_l00028}00028\ \textcolor{keyword}{template}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classsparse_1_1matrix_abfd8a0f6e22c74e1310fdae0141b1a43}{sparse::matrix<float>::print2D}}();}
+\DoxyCodeLine{\Hypertarget{sparse__print2D_8cpp_source_l00029}00029\ \textcolor{keyword}{template}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classsparse_1_1matrix_abfd8a0f6e22c74e1310fdae0141b1a43}{sparse::matrix<double>::print2D}}();}
+\DoxyCodeLine{\Hypertarget{sparse__print2D_8cpp_source_l00030}00030\ \textcolor{keyword}{template}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classsparse_1_1matrix}{sparse::matrix<std::complex<float>}}>::print2D();}
+\DoxyCodeLine{\Hypertarget{sparse__print2D_8cpp_source_l00031}00031\ \textcolor{keyword}{template}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classsparse_1_1matrix}{sparse::matrix<std::complex<double>}}>::print2D();}
+
+\end{DoxyCode}

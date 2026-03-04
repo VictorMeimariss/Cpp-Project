@@ -1,0 +1,104 @@
+\doxysection{/home/johnzik/\+Dev/\+Cpp-\/\+Project/inc/dense.hpp File Reference}
+\hypertarget{dense_8hpp}{}\label{dense_8hpp}\index{/home/johnzik/Dev/Cpp-\/Project/inc/dense.hpp@{/home/johnzik/Dev/Cpp-\/Project/inc/dense.hpp}}
+
+
+Header file for the matrix class for dense matrices and its associated functions.  
+
+
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$complex$>$}\newline
+{\ttfamily \#include $<$stdexcept$>$}\newline
+{\ttfamily \#include "{}def.\+hpp"{}}\newline
+{\ttfamily \#include "{}../inc/mmio.\+h"{}}\newline
+Include dependency graph for dense.\+hpp\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classdense_1_1matrix}{dense\+::matrix$<$ T $>$}}
+\begin{DoxyCompactList}\small\item\em A class to create a dense matrix object of any number of dimensions. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$\mbox{\hyperlink{classdense_1_1matrix}{typename}} \mbox{\hyperlink{classdense_1_1matrix}{T}} , \mbox{\hyperlink{classdense_1_1matrix}{typename}} \mbox{\hyperlink{classdense_1_1matrix}{U}} $>$ }\\\mbox{\hyperlink{classdense_1_1matrix}{matrix}}$<$ \mbox{\hyperlink{classdense_1_1matrix}{T}} $>$ \mbox{\hyperlink{dense_8hpp_a63e08377a891c62a6b6a05c7525a88a1}{dense\+::operator\texorpdfstring{$\ast$}{*}}} (\mbox{\hyperlink{classdense_1_1matrix}{U}} \mbox{\hyperlink{classdense_1_1matrix}{x}}, \mbox{\hyperlink{classdense_1_1matrix}{const}} \mbox{\hyperlink{classdense_1_1matrix}{matrix}}$<$ \mbox{\hyperlink{classdense_1_1matrix}{T}} $>$ \&\mbox{\hyperlink{classdense_1_1matrix}{A}})
+\begin{DoxyCompactList}\small\item\em Operator \texorpdfstring{$\ast$}{*}, multiplies a number by a dense matrix. \end{DoxyCompactList}\item 
+{\footnotesize template$<$\mbox{\hyperlink{classdense_1_1matrix}{typename}} \mbox{\hyperlink{classdense_1_1matrix}{T}} $>$ }\\std\+::vector$<$ \mbox{\hyperlink{classdense_1_1matrix}{T}} $>$ \mbox{\hyperlink{dense_8hpp_a4261003ed857ec4e30b64a47b70f95e8}{dense\+::operator\texorpdfstring{$\ast$}{*}}} (\mbox{\hyperlink{classdense_1_1matrix}{const}} std\+::vector$<$ \mbox{\hyperlink{classdense_1_1matrix}{T}} $>$ \mbox{\hyperlink{classdense_1_1matrix}{x}}, \mbox{\hyperlink{classdense_1_1matrix}{const}} \mbox{\hyperlink{classdense_1_1matrix}{matrix}}$<$ \mbox{\hyperlink{classdense_1_1matrix}{T}} $>$ \&\mbox{\hyperlink{classdense_1_1matrix}{A}})
+\begin{DoxyCompactList}\small\item\em Operator \texorpdfstring{$\ast$}{*}, multiplies a vector of n collumns by a dense matrix of n rows. \end{DoxyCompactList}\item 
+{\footnotesize template$<$\mbox{\hyperlink{classdense_1_1matrix}{typename}} \mbox{\hyperlink{classdense_1_1matrix}{T}} $>$ }\\std\+::vector$<$ \mbox{\hyperlink{classdense_1_1matrix}{T}} $>$ \mbox{\hyperlink{dense_8hpp_a53c9fd1941e0285efa7ff254400e221b}{dense\+::\+LU\+\_\+solver}} (\mbox{\hyperlink{classdense_1_1matrix}{dense\+::matrix}}$<$ \mbox{\hyperlink{classdense_1_1matrix}{T}} $>$ \&\mbox{\hyperlink{classdense_1_1matrix}{A}}, std\+::vector$<$ \mbox{\hyperlink{classdense_1_1matrix}{T}} $>$ \mbox{\hyperlink{classdense_1_1matrix}{b}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header file for the matrix class for dense matrices and its associated functions. 
+
+
+
+Definition in file \mbox{\hyperlink{dense_8hpp_source}{dense.\+hpp}}.
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{dense_8hpp_a53c9fd1941e0285efa7ff254400e221b}\label{dense_8hpp_a53c9fd1941e0285efa7ff254400e221b} 
+\index{dense.hpp@{dense.hpp}!LU\_solver@{LU\_solver}}
+\index{LU\_solver@{LU\_solver}!dense.hpp@{dense.hpp}}
+\doxysubsubsection{\texorpdfstring{LU\_solver()}{LU\_solver()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::vector$<$ T $>$ dense\+::\+LU\+\_\+solver (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classdense_1_1matrix}{dense\+::matrix}}$<$ \mbox{\hyperlink{classdense_1_1matrix}{T}} $>$ \&}]{A,  }\item[{std\+::vector$<$ \mbox{\hyperlink{classdense_1_1matrix}{T}} $>$}]{b }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{LU__solver_8cpp_source_l00006}{6}} of file \mbox{\hyperlink{LU__solver_8cpp_source}{LU\+\_\+solver.\+cpp}}.
+
+\Hypertarget{dense_8hpp_a4261003ed857ec4e30b64a47b70f95e8}\label{dense_8hpp_a4261003ed857ec4e30b64a47b70f95e8} 
+\index{dense.hpp@{dense.hpp}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}}
+\index{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!dense.hpp@{dense.hpp}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::vector$<$ T $>$ \mbox{\hyperlink{classdense_1_1matrix}{dense\+::operator}}\texorpdfstring{$\ast$}{*} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classdense_1_1matrix}{const}} std\+::vector$<$ \mbox{\hyperlink{classdense_1_1matrix}{T}} $>$}]{x,  }\item[{\mbox{\hyperlink{classdense_1_1matrix}{const}} \mbox{\hyperlink{classdense_1_1matrix}{matrix}}$<$ \mbox{\hyperlink{classdense_1_1matrix}{T}} $>$ \&}]{A }\end{DoxyParamCaption})}
+
+
+
+Operator \texorpdfstring{$\ast$}{*}, multiplies a vector of n collumns by a dense matrix of n rows. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & A vector used before the operator \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & encompasses all primitive numerical data types and the matrix type \\
+\hline
+\end{DoxyTemplParams}
+
+
+Definition at line \mbox{\hyperlink{dense__vm__gemv_8cpp_source_l00006}{6}} of file \mbox{\hyperlink{dense__vm__gemv_8cpp_source}{dense\+\_\+vm\+\_\+gemv.\+cpp}}.
+
+\Hypertarget{dense_8hpp_a63e08377a891c62a6b6a05c7525a88a1}\label{dense_8hpp_a63e08377a891c62a6b6a05c7525a88a1} 
+\index{dense.hpp@{dense.hpp}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}}
+\index{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!dense.hpp@{dense.hpp}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T , typename U $>$ \\
+matrix$<$ T $>$ \mbox{\hyperlink{classdense_1_1matrix}{dense\+::operator}}\texorpdfstring{$\ast$}{*} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classdense_1_1matrix}{U}}}]{x,  }\item[{\mbox{\hyperlink{classdense_1_1matrix}{const}} \mbox{\hyperlink{classdense_1_1matrix}{matrix}}$<$ \mbox{\hyperlink{classdense_1_1matrix}{T}} $>$ \&}]{A }\end{DoxyParamCaption})}
+
+
+
+Operator \texorpdfstring{$\ast$}{*}, multiplies a number by a dense matrix. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & A numerical primitive used before the operator \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em U} & encompasses all primitive numerical data types and T, the matrix type \\
+\hline
+\end{DoxyTemplParams}
+
+
+Definition at line \mbox{\hyperlink{scal__nm_8cpp_source_l00006}{6}} of file \mbox{\hyperlink{scal__nm_8cpp_source}{scal\+\_\+nm.\+cpp}}.
+

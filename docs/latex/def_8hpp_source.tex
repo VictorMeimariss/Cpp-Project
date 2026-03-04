@@ -1,0 +1,79 @@
+\doxysection{def.\+hpp}
+\hypertarget{def_8hpp_source}{}\label{def_8hpp_source}\index{/home/johnzik/Dev/Cpp-\/Project/inc/def.hpp@{/home/johnzik/Dev/Cpp-\/Project/inc/def.hpp}}
+\mbox{\hyperlink{def_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{def_8hpp_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{def_8hpp_source_l00002}00002\ \textcolor{comment}{//\ Victor\ }}
+\DoxyCodeLine{\Hypertarget{def_8hpp_source_l00007}00007\ \textcolor{preprocessor}{\#include\ <mkl.h>}}
+\DoxyCodeLine{\Hypertarget{def_8hpp_source_l00008}00008\ \textcolor{preprocessor}{\#include\ <mkl\_spblas.h>}}
+\DoxyCodeLine{\Hypertarget{def_8hpp_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{def_8hpp_source_l00010}00010\ \textcolor{comment}{//\ Dense\ blass\ functions}}
+\DoxyCodeLine{\Hypertarget{def_8hpp_source_l00011}00011\ \textcolor{preprocessor}{\#define\ saxpy\ cblas\_saxpy}}
+\DoxyCodeLine{\Hypertarget{def_8hpp_source_l00012}00012\ \textcolor{preprocessor}{\#define\ daxpy\ cblas\_daxpy}}
+\DoxyCodeLine{\Hypertarget{def_8hpp_source_l00013}00013\ \textcolor{preprocessor}{\#define\ caxpy\ cblas\_caxpy}}
+\DoxyCodeLine{\Hypertarget{def_8hpp_source_l00014}00014\ \textcolor{preprocessor}{\#define\ zaxpy\ cblas\_zaxpy}}
+\DoxyCodeLine{\Hypertarget{def_8hpp_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{def_8hpp_source_l00016}00016\ \textcolor{preprocessor}{\#define\ sscal\ cblas\_sscal}}
+\DoxyCodeLine{\Hypertarget{def_8hpp_source_l00017}00017\ \textcolor{preprocessor}{\#define\ dscal\ cblas\_dscal}}
+\DoxyCodeLine{\Hypertarget{def_8hpp_source_l00018}00018\ \textcolor{preprocessor}{\#define\ cscal\ cblas\_cscal}}
+\DoxyCodeLine{\Hypertarget{def_8hpp_source_l00019}00019\ \textcolor{preprocessor}{\#define\ zscal\ cblas\_zscal}}
+\DoxyCodeLine{\Hypertarget{def_8hpp_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{def_8hpp_source_l00021}00021\ \textcolor{preprocessor}{\#define\ sgemm\ cblas\_sgemm}}
+\DoxyCodeLine{\Hypertarget{def_8hpp_source_l00022}00022\ \textcolor{preprocessor}{\#define\ dgemm\ cblas\_dgemm}}
+\DoxyCodeLine{\Hypertarget{def_8hpp_source_l00023}00023\ \textcolor{preprocessor}{\#define\ cgemm\ cblas\_cgemm}}
+\DoxyCodeLine{\Hypertarget{def_8hpp_source_l00024}00024\ \textcolor{preprocessor}{\#define\ zgemm\ cblas\_zgemm}}
+\DoxyCodeLine{\Hypertarget{def_8hpp_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{def_8hpp_source_l00026}00026\ \textcolor{preprocessor}{\#define\ sgemv\ cblas\_sgemv}}
+\DoxyCodeLine{\Hypertarget{def_8hpp_source_l00027}00027\ \textcolor{preprocessor}{\#define\ dgemv\ cblas\_dgemv}}
+\DoxyCodeLine{\Hypertarget{def_8hpp_source_l00028}00028\ \textcolor{preprocessor}{\#define\ cgemv\ cblas\_cgemv}}
+\DoxyCodeLine{\Hypertarget{def_8hpp_source_l00029}00029\ \textcolor{preprocessor}{\#define\ zgemv\ cblas\_zgemv}}
+\DoxyCodeLine{\Hypertarget{def_8hpp_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{def_8hpp_source_l00031}00031\ \textcolor{preprocessor}{\#define\ somatcopy\ mkl\_somatcopy}}
+\DoxyCodeLine{\Hypertarget{def_8hpp_source_l00032}00032\ \textcolor{preprocessor}{\#define\ domatcopy\ mkl\_domatcopy}}
+\DoxyCodeLine{\Hypertarget{def_8hpp_source_l00033}00033\ \textcolor{preprocessor}{\#define\ comatcopy\ mkl\_comatcopy}}
+\DoxyCodeLine{\Hypertarget{def_8hpp_source_l00034}00034\ \textcolor{preprocessor}{\#define\ zomatcopy\ mkl\_zomatcopy}}
+\DoxyCodeLine{\Hypertarget{def_8hpp_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{def_8hpp_source_l00036}00036\ \textcolor{comment}{//\ Sparse\ functions}}
+\DoxyCodeLine{\Hypertarget{def_8hpp_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{def_8hpp_source_l00038}00038\ \textcolor{preprocessor}{\#define\ sparse\_s\_create\_csr\ mkl\_sparse\_s\_create\_csr}}
+\DoxyCodeLine{\Hypertarget{def_8hpp_source_l00039}00039\ \textcolor{preprocessor}{\#define\ sparse\_d\_create\_csr\ mkl\_sparse\_d\_create\_csr}}
+\DoxyCodeLine{\Hypertarget{def_8hpp_source_l00040}00040\ \textcolor{preprocessor}{\#define\ sparse\_c\_create\_csr\ mkl\_sparse\_c\_create\_csr}}
+\DoxyCodeLine{\Hypertarget{def_8hpp_source_l00041}00041\ \textcolor{preprocessor}{\#define\ sparse\_z\_create\_csr\ mkl\_sparse\_z\_create\_csr}}
+\DoxyCodeLine{\Hypertarget{def_8hpp_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{def_8hpp_source_l00043}00043\ \textcolor{preprocessor}{\#define\ sparse\_destroy\ mkl\_sparse\_destroy}}
+\DoxyCodeLine{\Hypertarget{def_8hpp_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{def_8hpp_source_l00045}00045\ \textcolor{preprocessor}{\#define\ sparse\_convert\_csr\ mkl\_sparse\_convert\_csr}}
+\DoxyCodeLine{\Hypertarget{def_8hpp_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{def_8hpp_source_l00047}00047\ \textcolor{preprocessor}{\#define\ sparse\_spmm\ mkl\_sparse\_spmm}}
+\DoxyCodeLine{\Hypertarget{def_8hpp_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{def_8hpp_source_l00049}00049\ \textcolor{preprocessor}{\#define\ sparse\_s\_export\_csr\ mkl\_sparse\_s\_export\_csr}}
+\DoxyCodeLine{\Hypertarget{def_8hpp_source_l00050}00050\ \textcolor{preprocessor}{\#define\ sparse\_d\_export\_csr\ mkl\_sparse\_d\_export\_csr}}
+\DoxyCodeLine{\Hypertarget{def_8hpp_source_l00051}00051\ \textcolor{preprocessor}{\#define\ sparse\_c\_export\_csr\ mkl\_sparse\_c\_export\_csr}}
+\DoxyCodeLine{\Hypertarget{def_8hpp_source_l00052}00052\ \textcolor{preprocessor}{\#define\ sparse\_z\_export\_csr\ mkl\_sparse\_z\_export\_csr}}
+\DoxyCodeLine{\Hypertarget{def_8hpp_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{def_8hpp_source_l00054}00054\ \textcolor{preprocessor}{\#define\ sparse\_s\_export\_csr\ mkl\_sparse\_s\_export\_csr}}
+\DoxyCodeLine{\Hypertarget{def_8hpp_source_l00055}00055\ \textcolor{preprocessor}{\#define\ sparse\_d\_export\_csr\ mkl\_sparse\_d\_export\_csr}}
+\DoxyCodeLine{\Hypertarget{def_8hpp_source_l00056}00056\ \textcolor{preprocessor}{\#define\ sparse\_c\_export\_csr\ mkl\_sparse\_c\_export\_csr}}
+\DoxyCodeLine{\Hypertarget{def_8hpp_source_l00057}00057\ \textcolor{preprocessor}{\#define\ sparse\_z\_export\_csr\ mkl\_sparse\_z\_export\_csr}}
+\DoxyCodeLine{\Hypertarget{def_8hpp_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{def_8hpp_source_l00059}00059\ \textcolor{preprocessor}{\#define\ sparse\_s\_add\ mkl\_sparse\_s\_add}}
+\DoxyCodeLine{\Hypertarget{def_8hpp_source_l00060}00060\ \textcolor{preprocessor}{\#define\ sparse\_d\_add\ mkl\_sparse\_d\_add}}
+\DoxyCodeLine{\Hypertarget{def_8hpp_source_l00061}00061\ \textcolor{preprocessor}{\#define\ sparse\_c\_add\ mkl\_sparse\_c\_add}}
+\DoxyCodeLine{\Hypertarget{def_8hpp_source_l00062}00062\ \textcolor{preprocessor}{\#define\ sparse\_z\_add\ mkl\_sparse\_z\_add}}
+\DoxyCodeLine{\Hypertarget{def_8hpp_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{def_8hpp_source_l00064}00064\ \textcolor{preprocessor}{\#define\ scsrmv\ mkl\_scsrmv}}
+\DoxyCodeLine{\Hypertarget{def_8hpp_source_l00065}00065\ \textcolor{preprocessor}{\#define\ dcsrmv\ mkl\_dcsrmv}}
+\DoxyCodeLine{\Hypertarget{def_8hpp_source_l00066}00066\ \textcolor{preprocessor}{\#define\ ccsrmv\ mkl\_ccsrmv}}
+\DoxyCodeLine{\Hypertarget{def_8hpp_source_l00067}00067\ \textcolor{preprocessor}{\#define\ zcsrmv\ mkl\_zcsrmv}}
+\DoxyCodeLine{\Hypertarget{def_8hpp_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{def_8hpp_source_l00069}00069\ \textcolor{preprocessor}{\#define\ sparse\_s\_mm\ mkl\_sparse\_s\_mm}}
+\DoxyCodeLine{\Hypertarget{def_8hpp_source_l00070}00070\ \textcolor{preprocessor}{\#define\ sparse\_d\_mm\ mkl\_sparse\_d\_mm}}
+\DoxyCodeLine{\Hypertarget{def_8hpp_source_l00071}00071\ \textcolor{preprocessor}{\#define\ sparse\_c\_mm\ mkl\_sparse\_c\_mm}}
+\DoxyCodeLine{\Hypertarget{def_8hpp_source_l00072}00072\ \textcolor{preprocessor}{\#define\ sparse\_z\_mm\ mkl\_sparse\_z\_mm}}
+\DoxyCodeLine{\Hypertarget{def_8hpp_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{def_8hpp_source_l00074}00074\ \textcolor{preprocessor}{\#define\ sparse\_s\_mv\ mkl\_sparse\_s\_mv}}
+\DoxyCodeLine{\Hypertarget{def_8hpp_source_l00075}00075\ \textcolor{preprocessor}{\#define\ sparse\_d\_mv\ mkl\_sparse\_d\_mv}}
+\DoxyCodeLine{\Hypertarget{def_8hpp_source_l00076}00076\ \textcolor{preprocessor}{\#define\ sparse\_c\_mv\ mkl\_sparse\_c\_mv}}
+\DoxyCodeLine{\Hypertarget{def_8hpp_source_l00077}00077\ \textcolor{preprocessor}{\#define\ sparse\_z\_mv\ mkl\_sparse\_z\_mv}}
+
+\end{DoxyCode}

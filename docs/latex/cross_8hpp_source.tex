@@ -1,0 +1,24 @@
+\doxysection{cross.\+hpp}
+\hypertarget{cross_8hpp_source}{}\label{cross_8hpp_source}\index{/home/johnzik/Dev/Cpp-\/Project/inc/cross.hpp@{/home/johnzik/Dev/Cpp-\/Project/inc/cross.hpp}}
+\mbox{\hyperlink{cross_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{cross_8hpp_source_l00001}00001\ \textcolor{preprocessor}{\#ifndef\ CROSS\_HPP}}
+\DoxyCodeLine{\Hypertarget{cross_8hpp_source_l00002}00002\ \textcolor{preprocessor}{\#define\ CROSS\_HPP}}
+\DoxyCodeLine{\Hypertarget{cross_8hpp_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{cross_8hpp_source_l00009}00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{dense_8hpp}{dense.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{cross_8hpp_source_l00010}00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{sparse_8hpp}{sparse.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{cross_8hpp_source_l00011}00011\ \textcolor{preprocessor}{\#include\ <mkl.h>}}
+\DoxyCodeLine{\Hypertarget{cross_8hpp_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{cross_8hpp_source_l00013}00013\ \textcolor{keyword}{namespace\ }dense\{}
+\DoxyCodeLine{\Hypertarget{cross_8hpp_source_l00019}00019\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{cross_8hpp_source_l00020}00020\ \mbox{\hyperlink{classdense_1_1matrix}{dense::matrix<T>}}\ \mbox{\hyperlink{cross_8hpp_a75aab3432ded295cb06a541df4852536}{operator*}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classdense_1_1matrix}{dense::matrix<T>}}\&\ A,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classsparse_1_1matrix}{sparse::matrix<T>}}\&\ B);\ \textcolor{comment}{//\ Victor}}
+\DoxyCodeLine{\Hypertarget{cross_8hpp_source_l00021}00021\ \}}
+\DoxyCodeLine{\Hypertarget{cross_8hpp_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{cross_8hpp_source_l00023}00023\ \textcolor{keyword}{namespace\ }sparse\{}
+\DoxyCodeLine{\Hypertarget{cross_8hpp_source_l00029}00029\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{cross_8hpp_source_l00030}00030\ \mbox{\hyperlink{classdense_1_1matrix}{dense::matrix<T>}}\ \mbox{\hyperlink{cross_8hpp_a75aab3432ded295cb06a541df4852536}{operator*}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classsparse_1_1matrix}{sparse::matrix<T>}}\&\ B,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classdense_1_1matrix}{dense::matrix<T>}}\&\ A);\textcolor{comment}{//\ Victor}}
+\DoxyCodeLine{\Hypertarget{cross_8hpp_source_l00031}00031\ \}}
+\DoxyCodeLine{\Hypertarget{cross_8hpp_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{cross_8hpp_source_l00033}00033\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

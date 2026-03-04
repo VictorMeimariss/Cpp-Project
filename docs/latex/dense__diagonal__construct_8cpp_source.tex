@@ -1,0 +1,24 @@
+\doxysection{dense\+\_\+diagonal\+\_\+construct.\+cpp}
+\hypertarget{dense__diagonal__construct_8cpp_source}{}\label{dense__diagonal__construct_8cpp_source}\index{/home/johnzik/Dev/Cpp-\/Project/src/dense\_diagonal\_construct.cpp@{/home/johnzik/Dev/Cpp-\/Project/src/dense\_diagonal\_construct.cpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{dense__diagonal__construct_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}../inc/dense.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{dense__diagonal__construct_8cpp_source_l00002}00002\ \textcolor{keyword}{using\ namespace\ }dense;}
+\DoxyCodeLine{\Hypertarget{dense__diagonal__construct_8cpp_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{dense__diagonal__construct_8cpp_source_l00004}00004\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{dense__diagonal__construct_8cpp_source_l00005}\mbox{\hyperlink{classdense_1_1matrix_a134f4a884a4cb976880d9855ce07cd3e}{00005}}\ \mbox{\hyperlink{classdense_1_1matrix_a2f5c551af9f436909bd076a03f90e946}{matrix<T>::matrix}}(std::vector<T>\ diag,\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classdense_1_1matrix}{n}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classdense_1_1matrix}{m}})\{}
+\DoxyCodeLine{\Hypertarget{dense__diagonal__construct_8cpp_source_l00006}00006\ \ \ \ \ values\ =\ std::vector<T>\ (\mbox{\hyperlink{classdense_1_1matrix}{n}}*\mbox{\hyperlink{classdense_1_1matrix}{m}},\ 0);}
+\DoxyCodeLine{\Hypertarget{dense__diagonal__construct_8cpp_source_l00007}00007\ \ \ \ \ precomputed\_strides\ =\ \{\mbox{\hyperlink{classdense_1_1matrix_a2f5c551af9f436909bd076a03f90e946}{m}},1\};}
+\DoxyCodeLine{\Hypertarget{dense__diagonal__construct_8cpp_source_l00008}00008\ \ \ \ \ dim\_size\ =\ \{\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{size\_t}\textcolor{keyword}{>}(\mbox{\hyperlink{classdense_1_1matrix_a2f5c551af9f436909bd076a03f90e946}{n}}),\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{size\_t}\textcolor{keyword}{>}(\mbox{\hyperlink{classdense_1_1matrix}{m}})\};}
+\DoxyCodeLine{\Hypertarget{dense__diagonal__construct_8cpp_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{dense__diagonal__construct_8cpp_source_l00010}00010\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ \mbox{\hyperlink{classdense_1_1matrix}{i}}=0;\ \mbox{\hyperlink{classdense_1_1matrix}{i}}<\mbox{\hyperlink{classdense_1_1matrix_a2f5c551af9f436909bd076a03f90e946}{n}};\mbox{\hyperlink{classdense_1_1matrix}{i}}++)\{}
+\DoxyCodeLine{\Hypertarget{dense__diagonal__construct_8cpp_source_l00011}00011\ \ \ \ \ values[\mbox{\hyperlink{classdense_1_1matrix}{i}}*\mbox{\hyperlink{classdense_1_1matrix}{m}}+\mbox{\hyperlink{classdense_1_1matrix_a2f5c551af9f436909bd076a03f90e946}{i}}]\ =\ diag[\mbox{\hyperlink{classdense_1_1matrix_a2f5c551af9f436909bd076a03f90e946}{i}}];}
+\DoxyCodeLine{\Hypertarget{dense__diagonal__construct_8cpp_source_l00012}00012\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dense__diagonal__construct_8cpp_source_l00013}00013\ \}}
+\DoxyCodeLine{\Hypertarget{dense__diagonal__construct_8cpp_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{dense__diagonal__construct_8cpp_source_l00015}00015\ \textcolor{keyword}{template}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classdense_1_1matrix}{dense::matrix<float>}};}
+\DoxyCodeLine{\Hypertarget{dense__diagonal__construct_8cpp_source_l00016}00016\ \textcolor{keyword}{template}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classdense_1_1matrix}{dense::matrix<double>}};}
+\DoxyCodeLine{\Hypertarget{dense__diagonal__construct_8cpp_source_l00017}00017\ \textcolor{keyword}{template}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classdense_1_1matrix}{dense::matrix<std::complex<float>}}>;}
+\DoxyCodeLine{\Hypertarget{dense__diagonal__construct_8cpp_source_l00018}00018\ \textcolor{keyword}{template}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classdense_1_1matrix}{dense::matrix<std::complex<double>}}>;}
+
+\end{DoxyCode}

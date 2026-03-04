@@ -1,0 +1,669 @@
+\doxysection{sparse\+::matrix\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{classsparse_1_1matrix}{}\label{classsparse_1_1matrix}\index{sparse::matrix$<$ T $>$@{sparse::matrix$<$ T $>$}}
+
+
+A class to create a sparse matrix object in csr form.  
+
+
+
+
+{\ttfamily \#include $<$sparse.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classsparse_1_1matrix_ae479d6e63c6c755205240ec74b0b31f6}\label{classsparse_1_1matrix_ae479d6e63c6c755205240ec74b0b31f6} 
+{\bfseries matrix} ()=\mbox{\hyperlink{classsparse_1_1matrix}{default}}
+\begin{DoxyCompactList}\small\item\em Default sparse matrix constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsparse_1_1matrix}{void}} \mbox{\hyperlink{classsparse_1_1matrix_aeb52bb689ef894bbd434702360639bcc}{refresh\+\_\+handle}} () \mbox{\hyperlink{classsparse_1_1matrix}{const}}
+\begin{DoxyCompactList}\small\item\em rebuilds a valid handle according to csr vectors. \end{DoxyCompactList}\item 
+{\footnotesize template$<$\mbox{\hyperlink{classsparse_1_1matrix}{typename}} \mbox{\hyperlink{classsparse_1_1matrix}{U}} $>$ }\\\mbox{\hyperlink{classsparse_1_1matrix_a29963ddfe3c381f7e164724413341e26}{matrix}} (\mbox{\hyperlink{classsparse_1_1matrix}{const}} std\+::vector$<$ \mbox{\hyperlink{classsparse_1_1matrix}{T}} $>$ \&values, \mbox{\hyperlink{classsparse_1_1matrix}{const}} std\+::vector$<$ \mbox{\hyperlink{classsparse_1_1matrix}{U}} $>$ \&col\+\_\+idx, \mbox{\hyperlink{classsparse_1_1matrix}{const}} std\+::vector$<$ \mbox{\hyperlink{classsparse_1_1matrix}{U}} $>$ \&row\+\_\+idx, \mbox{\hyperlink{classsparse_1_1matrix}{size\+\_\+t}} \mbox{\hyperlink{classsparse_1_1matrix}{rows}}, \mbox{\hyperlink{classsparse_1_1matrix}{size\+\_\+t}} \mbox{\hyperlink{classsparse_1_1matrix}{cols}})
+\begin{DoxyCompactList}\small\item\em Sparse matrix constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsparse_1_1matrix_a44758f5e17ec32b7fc7ae46081697940}{matrix}} (\mbox{\hyperlink{classsparse_1_1matrix}{const}} \mbox{\hyperlink{classsparse_1_1matrix}{sparse\+\_\+matrix\+\_\+t}} \mbox{\hyperlink{classsparse_1_1matrix}{h}}, \mbox{\hyperlink{classsparse_1_1matrix}{size\+\_\+t}} \mbox{\hyperlink{classsparse_1_1matrix}{rows}}, \mbox{\hyperlink{classsparse_1_1matrix}{size\+\_\+t}} \mbox{\hyperlink{classsparse_1_1matrix}{cols}}, \mbox{\hyperlink{classsparse_1_1matrix}{bool}} \mbox{\hyperlink{classsparse_1_1matrix}{own}})
+\begin{DoxyCompactList}\small\item\em Sparse matrix object constructor from MKL handle. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsparse_1_1matrix_ad6deaa288237027dd793c5a32e83b3a6}{\texorpdfstring{$\sim$}{\string~}matrix}} ()
+\begin{DoxyCompactList}\small\item\em Sparse matrix destructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsparse_1_1matrix_aafb589b6020a8f6946695de42f9c2178}{matrix}} (\mbox{\hyperlink{classsparse_1_1matrix}{matrix}} \&\&\mbox{\hyperlink{classsparse_1_1matrix}{A}}) \mbox{\hyperlink{classsparse_1_1matrix}{noexcept}}
+\begin{DoxyCompactList}\small\item\em Move constructor, transfers the ownership of matrix A. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsparse_1_1matrix_afec396e982faca429ca46abe38a817d4}{matrix}} (\mbox{\hyperlink{classsparse_1_1matrix}{matrix}} \mbox{\hyperlink{classsparse_1_1matrix}{const}} \&\mbox{\hyperlink{classsparse_1_1matrix}{A}})
+\begin{DoxyCompactList}\small\item\em Matrix copy constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsparse_1_1matrix}{matrix}} \& \mbox{\hyperlink{classsparse_1_1matrix_a7b5922d3d4f77d8f83c9a60894ef9764}{operator=}} (\mbox{\hyperlink{classsparse_1_1matrix}{matrix}} \mbox{\hyperlink{classsparse_1_1matrix}{const}} \&\mbox{\hyperlink{classsparse_1_1matrix}{A}})
+\begin{DoxyCompactList}\small\item\em Operator =, creates a deep copy of the matrix and assigns it. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsparse_1_1matrix}{matrix}} \mbox{\hyperlink{classsparse_1_1matrix_aa3cfc452cfa232eb0bfcabdbe615b76a}{operator+}} (\mbox{\hyperlink{classsparse_1_1matrix}{matrix}} \mbox{\hyperlink{classsparse_1_1matrix}{const}} \&\mbox{\hyperlink{classsparse_1_1matrix}{A}})
+\begin{DoxyCompactList}\small\item\em Operator +, adds the values of two matrices of same size and dimensions. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsparse_1_1matrix}{matrix}} \mbox{\hyperlink{classsparse_1_1matrix_a308b63aeb387863be931a99fa154be59}{operator\texorpdfstring{$\ast$}{*}}} (\mbox{\hyperlink{classsparse_1_1matrix}{matrix}} \mbox{\hyperlink{classsparse_1_1matrix}{const}} \&\mbox{\hyperlink{classsparse_1_1matrix}{A}})
+\begin{DoxyCompactList}\small\item\em Operator \texorpdfstring{$\ast$}{*}, multiplies two 2D sparse matrices. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsparse_1_1matrix}{matrix}} \mbox{\hyperlink{classsparse_1_1matrix_adf62d5d2d773f698616ab834df464629}{operator\texorpdfstring{$\ast$}{*}}} (\mbox{\hyperlink{classsparse_1_1matrix}{T}} \mbox{\hyperlink{classsparse_1_1matrix}{x}})
+\begin{DoxyCompactList}\small\item\em Operator \texorpdfstring{$\ast$}{*}, multiplies a sparse matrix by a number. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{classsparse_1_1matrix}{T}} $>$ \mbox{\hyperlink{classsparse_1_1matrix_a40aeeedc95ca4a884b0c84b895ce66ec}{operator\texorpdfstring{$\ast$}{*}}} (\mbox{\hyperlink{classsparse_1_1matrix}{const}} std\+::vector$<$ \mbox{\hyperlink{classsparse_1_1matrix}{T}} $>$ \mbox{\hyperlink{classsparse_1_1matrix}{x}})
+\begin{DoxyCompactList}\small\item\em Operator \texorpdfstring{$\ast$}{*}, multiplies a sparse matrix by a vector. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsparse_1_1matrix}{matrix}} \mbox{\hyperlink{classsparse_1_1matrix_a58871214a0fd75df5caafdb123820437}{operator-\/}} (\mbox{\hyperlink{classsparse_1_1matrix}{matrix}} \mbox{\hyperlink{classsparse_1_1matrix}{const}} \&\mbox{\hyperlink{classsparse_1_1matrix}{A}})
+\begin{DoxyCompactList}\small\item\em Operator -\/, subtracts the values of second matrix from the first, both must have same size and dimensions. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsparse_1_1matrix}{bool}} \mbox{\hyperlink{classsparse_1_1matrix_a1b40956797f5fd30919e89c93afaf683}{operator==}} (\mbox{\hyperlink{classsparse_1_1matrix}{matrix}} \mbox{\hyperlink{classsparse_1_1matrix}{const}} \&\mbox{\hyperlink{classsparse_1_1matrix}{A}})
+\begin{DoxyCompactList}\small\item\em Operator ==, compares two matricies. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsparse_1_1matrix}{T}} \mbox{\hyperlink{classsparse_1_1matrix_a0769b47965c785ca0422ad3e30c344ba}{get\+\_\+value\+\_\+at}} (\mbox{\hyperlink{classsparse_1_1matrix}{size\+\_\+t}} index) \mbox{\hyperlink{classsparse_1_1matrix}{const}}
+\begin{DoxyCompactList}\small\item\em Gets value at a given index. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsparse_1_1matrix}{void}} \mbox{\hyperlink{classsparse_1_1matrix_a84ce64aba83d6570b54d9f3941abb5fe}{set\+\_\+value\+\_\+at}} (\mbox{\hyperlink{classsparse_1_1matrix}{size\+\_\+t}} index, \mbox{\hyperlink{classsparse_1_1matrix}{T}} \mbox{\hyperlink{classsparse_1_1matrix}{value}})
+\begin{DoxyCompactList}\small\item\em Sets value at a given index. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsparse_1_1matrix}{const}} \mbox{\hyperlink{classsparse_1_1matrix}{T}} \mbox{\hyperlink{classsparse_1_1matrix_a672c8f3d16fa0cb343d72c4e55a3024d}{operator()}} (\mbox{\hyperlink{classsparse_1_1matrix}{size\+\_\+t}} \mbox{\hyperlink{classsparse_1_1matrix}{r}}, \mbox{\hyperlink{classsparse_1_1matrix}{size\+\_\+t}} \mbox{\hyperlink{classsparse_1_1matrix}{c}}) \mbox{\hyperlink{classsparse_1_1matrix}{const}}
+\begin{DoxyCompactList}\small\item\em Returns a constant value in the matrix. \end{DoxyCompactList}\item 
+std\+::pair$<$ \mbox{\hyperlink{classsparse_1_1matrix}{size\+\_\+t}}, \mbox{\hyperlink{classsparse_1_1matrix}{size\+\_\+t}} $>$ \mbox{\hyperlink{classsparse_1_1matrix_a75c405f72f89d967922ee244b2db4816}{shape}} () \mbox{\hyperlink{classsparse_1_1matrix}{const}}
+\begin{DoxyCompactList}\small\item\em Returns the shape (dimensions) of a matrix. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{classsparse_1_1matrix}{T}} $>$ \mbox{\hyperlink{classsparse_1_1matrix_abf597d3b12fc19b2b9facfdddbb8a39b}{diag}} () \mbox{\hyperlink{classsparse_1_1matrix}{const}}
+\begin{DoxyCompactList}\small\item\em Returns a constant vector reference containing the diagonal elements of a matrix. For reading. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsparse_1_1matrix}{void}} \mbox{\hyperlink{classsparse_1_1matrix_abfd8a0f6e22c74e1310fdae0141b1a43}{print2D}} ()
+\begin{DoxyCompactList}\small\item\em Prints the values of 2D array. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsparse_1_1matrix}{void}} \mbox{\hyperlink{classsparse_1_1matrix_a276c213d68b70e99499fb01b10bcba0c}{print\+\_\+matrix}} ()
+\begin{DoxyCompactList}\small\item\em Prints the sparse matrix row by row. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsparse_1_1matrix}{const}} \mbox{\hyperlink{classsparse_1_1matrix}{sparse\+\_\+matrix\+\_\+t}} \& \mbox{\hyperlink{classsparse_1_1matrix_afc446799e9c0d88d61ebf482d3fed093}{get\+\_\+handle}} () \mbox{\hyperlink{classsparse_1_1matrix}{const}}
+\begin{DoxyCompactList}\small\item\em Returns MKL handle (const access for read-\/only use in operations). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsparse_1_1matrix}{void}} \mbox{\hyperlink{classsparse_1_1matrix_a1f6c8e4534653603b011104bc619dc81}{invalidate\+\_\+handle}} ()
+\begin{DoxyCompactList}\small\item\em Invalidates handle. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsparse_1_1matrix}{const}} std\+::vector$<$ \mbox{\hyperlink{classsparse_1_1matrix}{T}} $>$ \mbox{\hyperlink{classsparse_1_1matrix_a012f435e75270008e52a94d82f6b9e8f}{get\+\_\+values\+\_\+data\+\_\+const}} () \mbox{\hyperlink{classsparse_1_1matrix}{const}}
+\begin{DoxyCompactList}\small\item\em Gets values\textquotesingle{} data const. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{classsparse_1_1matrix}{T}} $>$ \& \mbox{\hyperlink{classsparse_1_1matrix_a45366051faca81c1a39342fc7272addb}{get\+\_\+values\+\_\+data}} ()
+\begin{DoxyCompactList}\small\item\em Gets values\textquotesingle{} non const. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsparse_1_1matrix}{matrix}} \mbox{\hyperlink{classsparse_1_1matrix_a953334cf57cffd0907fa26d676d7bbe7}{transpose}} () \mbox{\hyperlink{classsparse_1_1matrix}{const}}
+\begin{DoxyCompactList}\small\item\em Function that transposes the matrix in 2D. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsparse_1_1matrix}{static}} \mbox{\hyperlink{classsparse_1_1matrix}{matrix}} \mbox{\hyperlink{classsparse_1_1matrix_acd5bfe9feec9d2775057cef28b13e1c7}{I}} (\mbox{\hyperlink{classsparse_1_1matrix}{int}} \mbox{\hyperlink{classsparse_1_1matrix}{N}})
+\begin{DoxyCompactList}\small\item\em Constructs an N by N identity matrix. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsparse_1_1matrix}{static}} \mbox{\hyperlink{classsparse_1_1matrix}{matrix}} \mbox{\hyperlink{classsparse_1_1matrix_a9cfad89a44b25c309a6bc3f48c4b3421}{banded}} (\mbox{\hyperlink{classsparse_1_1matrix}{int}} \mbox{\hyperlink{classsparse_1_1matrix}{N}}, \mbox{\hyperlink{classsparse_1_1matrix}{int}} \mbox{\hyperlink{classsparse_1_1matrix}{kl}}, \mbox{\hyperlink{classsparse_1_1matrix}{int}} \mbox{\hyperlink{classsparse_1_1matrix}{ku}}, \mbox{\hyperlink{classsparse_1_1matrix}{T}} \mbox{\hyperlink{classsparse_1_1matrix}{val}})
+\begin{DoxyCompactList}\small\item\em Contsructs an N by N banded matrix. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsparse_1_1matrix}{static}} \mbox{\hyperlink{classsparse_1_1matrix}{matrix}} \mbox{\hyperlink{classsparse_1_1matrix_a77fd60a4d1f784a5422c0a760a516025}{sparse\+\_\+read\+MM}} (\mbox{\hyperlink{classsparse_1_1matrix}{const}} std\+::string \&\mbox{\hyperlink{classsparse_1_1matrix}{MMpath}})
+\begin{DoxyCompactList}\small\item\em Reads a Matrix Market (MM) sparse matrix, converts it from COO to CSR format and returns a CSR matrix obj (with a handle cosntructor) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$\mbox{\hyperlink{classsparse_1_1matrix_ae479d6e63c6c755205240ec74b0b31f6}{typename}} \mbox{\hyperlink{classsparse_1_1matrix_ae479d6e63c6c755205240ec74b0b31f6}{T}}$>$\newline
+class sparse\+::matrix$<$ T $>$}
+A class to create a sparse matrix object in csr form. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The scalar type used for matrix elements. \\
+\hline
+\end{DoxyTemplParams}
+
+
+Definition at line \mbox{\hyperlink{sparse_8hpp_source_l00033}{33}} of file \mbox{\hyperlink{sparse_8hpp_source}{sparse.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classsparse_1_1matrix_a29963ddfe3c381f7e164724413341e26}\label{classsparse_1_1matrix_a29963ddfe3c381f7e164724413341e26} 
+\index{sparse::matrix$<$ T $>$@{sparse::matrix$<$ T $>$}!matrix@{matrix}}
+\index{matrix@{matrix}!sparse::matrix$<$ T $>$@{sparse::matrix$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{matrix()}{matrix()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classsparse_1_1matrix}{typename}} \mbox{\hyperlink{classsparse_1_1matrix}{T}} $>$ \\
+template$<$\mbox{\hyperlink{classsparse_1_1matrix}{typename}} \mbox{\hyperlink{classsparse_1_1matrix}{U}} $>$ \\
+\mbox{\hyperlink{classsparse_1_1matrix}{sparse\+::matrix}}$<$ \mbox{\hyperlink{classsparse_1_1matrix}{T}} $>$\+::matrix (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsparse_1_1matrix}{const}} std\+::vector$<$ \mbox{\hyperlink{classsparse_1_1matrix}{T}} $>$ \&}]{values,  }\item[{\mbox{\hyperlink{classsparse_1_1matrix}{const}} std\+::vector$<$ \mbox{\hyperlink{classsparse_1_1matrix}{U}} $>$ \&}]{col\+\_\+idx,  }\item[{\mbox{\hyperlink{classsparse_1_1matrix}{const}} std\+::vector$<$ \mbox{\hyperlink{classsparse_1_1matrix}{U}} $>$ \&}]{row\+\_\+idx,  }\item[{\mbox{\hyperlink{classsparse_1_1matrix}{size\+\_\+t}}}]{rows,  }\item[{\mbox{\hyperlink{classsparse_1_1matrix}{size\+\_\+t}}}]{cols }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sparse matrix constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em values} & sets the values vector \\
+\hline
+{\em col\+\_\+idx} & sets the col\+\_\+idx vector \\
+\hline
+{\em row\+\_\+idx} & sets the row\+\_\+idx vector \\
+\hline
+{\em rows} & sets row size \\
+\hline
+{\em cols} & sets column size \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{sparse_8hpp_source_l00095}{95}} of file \mbox{\hyperlink{sparse_8hpp_source}{sparse.\+hpp}}.
+
+\Hypertarget{classsparse_1_1matrix_a44758f5e17ec32b7fc7ae46081697940}\label{classsparse_1_1matrix_a44758f5e17ec32b7fc7ae46081697940} 
+\index{sparse::matrix$<$ T $>$@{sparse::matrix$<$ T $>$}!matrix@{matrix}}
+\index{matrix@{matrix}!sparse::matrix$<$ T $>$@{sparse::matrix$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{matrix()}{matrix()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classsparse_1_1matrix}{typename}} \mbox{\hyperlink{classsparse_1_1matrix}{T}} $>$ \\
+matrix\+::matrix (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsparse_1_1matrix}{const}} \mbox{\hyperlink{classsparse_1_1matrix}{sparse\+\_\+matrix\+\_\+t}}}]{h,  }\item[{\mbox{\hyperlink{classsparse_1_1matrix}{size\+\_\+t}}}]{rows,  }\item[{\mbox{\hyperlink{classsparse_1_1matrix}{size\+\_\+t}}}]{cols,  }\item[{\mbox{\hyperlink{classsparse_1_1matrix}{bool}}}]{own }\end{DoxyParamCaption})}
+
+
+
+Sparse matrix object constructor from MKL handle. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em h} & MKL sparse matrix handle. \\
+\hline
+{\em rows} & number of rows. \\
+\hline
+{\em cols} & number of columns. \\
+\hline
+{\em own} & CSR arrays ownership. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{sparse__handle__constructor_8cpp_source_l00006}{6}} of file \mbox{\hyperlink{sparse__handle__constructor_8cpp_source}{sparse\+\_\+handle\+\_\+constructor.\+cpp}}.
+
+\Hypertarget{classsparse_1_1matrix_ad6deaa288237027dd793c5a32e83b3a6}\label{classsparse_1_1matrix_ad6deaa288237027dd793c5a32e83b3a6} 
+\index{sparse::matrix$<$ T $>$@{sparse::matrix$<$ T $>$}!````~matrix@{\texorpdfstring{$\sim$}{\string~}matrix}}
+\index{````~matrix@{\texorpdfstring{$\sim$}{\string~}matrix}!sparse::matrix$<$ T $>$@{sparse::matrix$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}matrix()}{\string~matrix()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classsparse_1_1matrix}{typename}} \mbox{\hyperlink{classsparse_1_1matrix}{T}} $>$ \\
+\mbox{\hyperlink{classsparse_1_1matrix}{sparse\+::matrix}}$<$ \mbox{\hyperlink{classsparse_1_1matrix}{T}} $>$\+::\texorpdfstring{$\sim$}{\string~}\mbox{\hyperlink{classsparse_1_1matrix}{matrix}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sparse matrix destructor. 
+
+
+
+Definition at line \mbox{\hyperlink{sparse_8hpp_source_l00111}{111}} of file \mbox{\hyperlink{sparse_8hpp_source}{sparse.\+hpp}}.
+
+\Hypertarget{classsparse_1_1matrix_aafb589b6020a8f6946695de42f9c2178}\label{classsparse_1_1matrix_aafb589b6020a8f6946695de42f9c2178} 
+\index{sparse::matrix$<$ T $>$@{sparse::matrix$<$ T $>$}!matrix@{matrix}}
+\index{matrix@{matrix}!sparse::matrix$<$ T $>$@{sparse::matrix$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{matrix()}{matrix()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classsparse_1_1matrix}{typename}} \mbox{\hyperlink{classsparse_1_1matrix}{T}} $>$ \\
+\mbox{\hyperlink{classsparse_1_1matrix}{sparse\+::matrix}}$<$ \mbox{\hyperlink{classsparse_1_1matrix}{T}} $>$\+::matrix (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsparse_1_1matrix}{matrix}}$<$ \mbox{\hyperlink{classsparse_1_1matrix}{T}} $>$ \&\&}]{A }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Move constructor, transfers the ownership of matrix A. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em A} & A matrix reference to be moved \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{sparse_8hpp_source_l00121}{121}} of file \mbox{\hyperlink{sparse_8hpp_source}{sparse.\+hpp}}.
+
+\Hypertarget{classsparse_1_1matrix_afec396e982faca429ca46abe38a817d4}\label{classsparse_1_1matrix_afec396e982faca429ca46abe38a817d4} 
+\index{sparse::matrix$<$ T $>$@{sparse::matrix$<$ T $>$}!matrix@{matrix}}
+\index{matrix@{matrix}!sparse::matrix$<$ T $>$@{sparse::matrix$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{matrix()}{matrix()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classsparse_1_1matrix}{typename}} \mbox{\hyperlink{classsparse_1_1matrix}{T}} $>$ \\
+matrix\+::matrix (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsparse_1_1matrix}{matrix}}$<$ \mbox{\hyperlink{classsparse_1_1matrix}{T}} $>$ \mbox{\hyperlink{classsparse_1_1matrix}{const}} \&}]{A }\end{DoxyParamCaption})}
+
+
+
+Matrix copy constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em A} & A constant sparse matrix reference to be copied \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{sparse__copy__constructor_8cpp_source_l00005}{5}} of file \mbox{\hyperlink{sparse__copy__constructor_8cpp_source}{sparse\+\_\+copy\+\_\+constructor.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classsparse_1_1matrix_a9cfad89a44b25c309a6bc3f48c4b3421}\label{classsparse_1_1matrix_a9cfad89a44b25c309a6bc3f48c4b3421} 
+\index{sparse::matrix$<$ T $>$@{sparse::matrix$<$ T $>$}!banded@{banded}}
+\index{banded@{banded}!sparse::matrix$<$ T $>$@{sparse::matrix$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{banded()}{banded()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classsparse_1_1matrix}{typename}} \mbox{\hyperlink{classsparse_1_1matrix}{T}} $>$ \\
+\mbox{\hyperlink{classsparse_1_1matrix}{matrix}}$<$ \mbox{\hyperlink{classsparse_1_1matrix}{T}} $>$ matrix\+::banded (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsparse_1_1matrix}{int}}}]{N,  }\item[{\mbox{\hyperlink{classsparse_1_1matrix}{int}}}]{kl,  }\item[{\mbox{\hyperlink{classsparse_1_1matrix}{int}}}]{ku,  }\item[{\mbox{\hyperlink{classsparse_1_1matrix}{T}}}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Contsructs an N by N banded matrix. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em N} & The number of rows/columns \\
+\hline
+{\em kl} & The number of elements below the main diagonal \\
+\hline
+{\em ku} & The number of the elements above the main diagonal \\
+\hline
+{\em val} & The type $<$\+T$>$ value of all the bands \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{sparse__banded__matrix_8cpp_source_l00005}{5}} of file \mbox{\hyperlink{sparse__banded__matrix_8cpp_source}{sparse\+\_\+banded\+\_\+matrix.\+cpp}}.
+
+\Hypertarget{classsparse_1_1matrix_abf597d3b12fc19b2b9facfdddbb8a39b}\label{classsparse_1_1matrix_abf597d3b12fc19b2b9facfdddbb8a39b} 
+\index{sparse::matrix$<$ T $>$@{sparse::matrix$<$ T $>$}!diag@{diag}}
+\index{diag@{diag}!sparse::matrix$<$ T $>$@{sparse::matrix$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{diag()}{diag()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classsparse_1_1matrix}{typename}} \mbox{\hyperlink{classsparse_1_1matrix}{T}} $>$ \\
+std\+::vector$<$ \mbox{\hyperlink{classsparse_1_1matrix}{T}} $>$ matrix\+::diag (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns a constant vector reference containing the diagonal elements of a matrix. For reading. 
+
+
+
+Definition at line \mbox{\hyperlink{sparse-diagonal-getter_8cpp_source_l00005}{5}} of file \mbox{\hyperlink{sparse-diagonal-getter_8cpp_source}{sparse-\/diagonal-\/getter.\+cpp}}.
+
+\Hypertarget{classsparse_1_1matrix_afc446799e9c0d88d61ebf482d3fed093}\label{classsparse_1_1matrix_afc446799e9c0d88d61ebf482d3fed093} 
+\index{sparse::matrix$<$ T $>$@{sparse::matrix$<$ T $>$}!get\_handle@{get\_handle}}
+\index{get\_handle@{get\_handle}!sparse::matrix$<$ T $>$@{sparse::matrix$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{get\_handle()}{get\_handle()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classsparse_1_1matrix}{typename}} \mbox{\hyperlink{classsparse_1_1matrix}{T}} $>$ \\
+\mbox{\hyperlink{classsparse_1_1matrix}{const}} \mbox{\hyperlink{classsparse_1_1matrix}{sparse\+\_\+matrix\+\_\+t}} \& \mbox{\hyperlink{classsparse_1_1matrix}{sparse\+::matrix}}$<$ \mbox{\hyperlink{classsparse_1_1matrix}{T}} $>$\+::get\+\_\+handle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns MKL handle (const access for read-\/only use in operations). 
+
+
+
+Definition at line \mbox{\hyperlink{sparse_8hpp_source_l00242}{242}} of file \mbox{\hyperlink{sparse_8hpp_source}{sparse.\+hpp}}.
+
+\Hypertarget{classsparse_1_1matrix_a0769b47965c785ca0422ad3e30c344ba}\label{classsparse_1_1matrix_a0769b47965c785ca0422ad3e30c344ba} 
+\index{sparse::matrix$<$ T $>$@{sparse::matrix$<$ T $>$}!get\_value\_at@{get\_value\_at}}
+\index{get\_value\_at@{get\_value\_at}!sparse::matrix$<$ T $>$@{sparse::matrix$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{get\_value\_at()}{get\_value\_at()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classsparse_1_1matrix}{typename}} \mbox{\hyperlink{classsparse_1_1matrix}{T}} $>$ \\
+\mbox{\hyperlink{classsparse_1_1matrix}{T}} matrix\+::get\+\_\+value\+\_\+at (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsparse_1_1matrix}{size\+\_\+t}}}]{index }\end{DoxyParamCaption}) const}
+
+
+
+Gets value at a given index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & The linear 0-\/based index in the flat values vector. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{sparse-get-value_8cpp_source_l00005}{5}} of file \mbox{\hyperlink{sparse-get-value_8cpp_source}{sparse-\/get-\/value.\+cpp}}.
+
+\Hypertarget{classsparse_1_1matrix_a45366051faca81c1a39342fc7272addb}\label{classsparse_1_1matrix_a45366051faca81c1a39342fc7272addb} 
+\index{sparse::matrix$<$ T $>$@{sparse::matrix$<$ T $>$}!get\_values\_data@{get\_values\_data}}
+\index{get\_values\_data@{get\_values\_data}!sparse::matrix$<$ T $>$@{sparse::matrix$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{get\_values\_data()}{get\_values\_data()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classsparse_1_1matrix}{typename}} \mbox{\hyperlink{classsparse_1_1matrix}{T}} $>$ \\
+std\+::vector$<$ \mbox{\hyperlink{classsparse_1_1matrix}{T}} $>$ \& \mbox{\hyperlink{classsparse_1_1matrix}{sparse\+::matrix}}$<$ \mbox{\hyperlink{classsparse_1_1matrix}{T}} $>$\+::get\+\_\+values\+\_\+data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets values\textquotesingle{} non const. 
+
+
+
+Definition at line \mbox{\hyperlink{sparse_8hpp_source_l00257}{257}} of file \mbox{\hyperlink{sparse_8hpp_source}{sparse.\+hpp}}.
+
+\Hypertarget{classsparse_1_1matrix_a012f435e75270008e52a94d82f6b9e8f}\label{classsparse_1_1matrix_a012f435e75270008e52a94d82f6b9e8f} 
+\index{sparse::matrix$<$ T $>$@{sparse::matrix$<$ T $>$}!get\_values\_data\_const@{get\_values\_data\_const}}
+\index{get\_values\_data\_const@{get\_values\_data\_const}!sparse::matrix$<$ T $>$@{sparse::matrix$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{get\_values\_data\_const()}{get\_values\_data\_const()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classsparse_1_1matrix}{typename}} \mbox{\hyperlink{classsparse_1_1matrix}{T}} $>$ \\
+\mbox{\hyperlink{classsparse_1_1matrix}{const}} std\+::vector$<$ \mbox{\hyperlink{classsparse_1_1matrix}{T}} $>$ \mbox{\hyperlink{classsparse_1_1matrix}{sparse\+::matrix}}$<$ \mbox{\hyperlink{classsparse_1_1matrix}{T}} $>$\+::get\+\_\+values\+\_\+data\+\_\+const (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets values\textquotesingle{} data const. 
+
+
+
+Definition at line \mbox{\hyperlink{sparse_8hpp_source_l00252}{252}} of file \mbox{\hyperlink{sparse_8hpp_source}{sparse.\+hpp}}.
+
+\Hypertarget{classsparse_1_1matrix_acd5bfe9feec9d2775057cef28b13e1c7}\label{classsparse_1_1matrix_acd5bfe9feec9d2775057cef28b13e1c7} 
+\index{sparse::matrix$<$ T $>$@{sparse::matrix$<$ T $>$}!I@{I}}
+\index{I@{I}!sparse::matrix$<$ T $>$@{sparse::matrix$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{I()}{I()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classsparse_1_1matrix}{typename}} \mbox{\hyperlink{classsparse_1_1matrix}{T}} $>$ \\
+\mbox{\hyperlink{classsparse_1_1matrix}{matrix}}$<$ \mbox{\hyperlink{classsparse_1_1matrix}{T}} $>$ matrix\+::I (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsparse_1_1matrix}{int}}}]{N }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Constructs an N by N identity matrix. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em N} & the number of rows/columns in the square identity matrix \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{sparse__identity__matrix_8cpp_source_l00005}{5}} of file \mbox{\hyperlink{sparse__identity__matrix_8cpp_source}{sparse\+\_\+identity\+\_\+matrix.\+cpp}}.
+
+\Hypertarget{classsparse_1_1matrix_a1f6c8e4534653603b011104bc619dc81}\label{classsparse_1_1matrix_a1f6c8e4534653603b011104bc619dc81} 
+\index{sparse::matrix$<$ T $>$@{sparse::matrix$<$ T $>$}!invalidate\_handle@{invalidate\_handle}}
+\index{invalidate\_handle@{invalidate\_handle}!sparse::matrix$<$ T $>$@{sparse::matrix$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{invalidate\_handle()}{invalidate\_handle()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classsparse_1_1matrix}{typename}} \mbox{\hyperlink{classsparse_1_1matrix}{T}} $>$ \\
+\mbox{\hyperlink{classsparse_1_1matrix}{void}} \mbox{\hyperlink{classsparse_1_1matrix}{sparse\+::matrix}}$<$ \mbox{\hyperlink{classsparse_1_1matrix}{T}} $>$\+::invalidate\+\_\+handle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Invalidates handle. 
+
+
+
+Definition at line \mbox{\hyperlink{sparse_8hpp_source_l00247}{247}} of file \mbox{\hyperlink{sparse_8hpp_source}{sparse.\+hpp}}.
+
+\Hypertarget{classsparse_1_1matrix_a672c8f3d16fa0cb343d72c4e55a3024d}\label{classsparse_1_1matrix_a672c8f3d16fa0cb343d72c4e55a3024d} 
+\index{sparse::matrix$<$ T $>$@{sparse::matrix$<$ T $>$}!operator()@{operator()}}
+\index{operator()@{operator()}!sparse::matrix$<$ T $>$@{sparse::matrix$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classsparse_1_1matrix}{typename}} \mbox{\hyperlink{classsparse_1_1matrix}{T}} $>$ \\
+\mbox{\hyperlink{classsparse_1_1matrix}{const}} \mbox{\hyperlink{classsparse_1_1matrix}{T}} \mbox{\hyperlink{classsparse_1_1matrix_ae479d6e63c6c755205240ec74b0b31f6}{matrix\+::operator}}() (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsparse_1_1matrix}{size\+\_\+t}}}]{r,  }\item[{\mbox{\hyperlink{classsparse_1_1matrix}{size\+\_\+t}}}]{c }\end{DoxyParamCaption}) const}
+
+
+
+Returns a constant value in the matrix. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & The column of the value to be returned. \\
+\hline
+{\em r} & The row of the value to be returned. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{sparse-parentheses-operator_8cpp_source_l00005}{5}} of file \mbox{\hyperlink{sparse-parentheses-operator_8cpp_source}{sparse-\/parentheses-\/operator.\+cpp}}.
+
+\Hypertarget{classsparse_1_1matrix_a40aeeedc95ca4a884b0c84b895ce66ec}\label{classsparse_1_1matrix_a40aeeedc95ca4a884b0c84b895ce66ec} 
+\index{sparse::matrix$<$ T $>$@{sparse::matrix$<$ T $>$}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}}
+\index{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!sparse::matrix$<$ T $>$@{sparse::matrix$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classsparse_1_1matrix}{typename}} \mbox{\hyperlink{classsparse_1_1matrix}{T}} $>$ \\
+std\+::vector$<$ \mbox{\hyperlink{classsparse_1_1matrix}{T}} $>$ \mbox{\hyperlink{classsparse_1_1matrix_ae479d6e63c6c755205240ec74b0b31f6}{matrix\+::operator}}\texorpdfstring{$\ast$}{*} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsparse_1_1matrix}{const}} std\+::vector$<$ \mbox{\hyperlink{classsparse_1_1matrix}{T}} $>$}]{x }\end{DoxyParamCaption})}
+
+
+
+Operator \texorpdfstring{$\ast$}{*}, multiplies a sparse matrix by a vector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & A vector used after the operator \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & encompasses all primitive numerical data types \\
+\hline
+\end{DoxyTemplParams}
+
+
+Definition at line \mbox{\hyperlink{sparse__mv_8cpp_source_l00005}{5}} of file \mbox{\hyperlink{sparse__mv_8cpp_source}{sparse\+\_\+mv.\+cpp}}.
+
+\Hypertarget{classsparse_1_1matrix_a308b63aeb387863be931a99fa154be59}\label{classsparse_1_1matrix_a308b63aeb387863be931a99fa154be59} 
+\index{sparse::matrix$<$ T $>$@{sparse::matrix$<$ T $>$}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}}
+\index{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!sparse::matrix$<$ T $>$@{sparse::matrix$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classsparse_1_1matrix}{typename}} \mbox{\hyperlink{classsparse_1_1matrix}{T}} $>$ \\
+\mbox{\hyperlink{classsparse_1_1matrix}{matrix}}$<$ \mbox{\hyperlink{classsparse_1_1matrix}{T}} $>$ \mbox{\hyperlink{classsparse_1_1matrix_ae479d6e63c6c755205240ec74b0b31f6}{matrix\+::operator}}\texorpdfstring{$\ast$}{*} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsparse_1_1matrix}{matrix}}$<$ \mbox{\hyperlink{classsparse_1_1matrix}{T}} $>$ \mbox{\hyperlink{classsparse_1_1matrix}{const}} \&}]{A }\end{DoxyParamCaption})}
+
+
+
+Operator \texorpdfstring{$\ast$}{*}, multiplies two 2D sparse matrices. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em A} & A constant matrix reference used after the operator \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{sparse__spmm_8cpp_source_l00005}{5}} of file \mbox{\hyperlink{sparse__spmm_8cpp_source}{sparse\+\_\+spmm.\+cpp}}.
+
+\Hypertarget{classsparse_1_1matrix_adf62d5d2d773f698616ab834df464629}\label{classsparse_1_1matrix_adf62d5d2d773f698616ab834df464629} 
+\index{sparse::matrix$<$ T $>$@{sparse::matrix$<$ T $>$}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}}
+\index{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!sparse::matrix$<$ T $>$@{sparse::matrix$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classsparse_1_1matrix}{typename}} \mbox{\hyperlink{classsparse_1_1matrix}{T}} $>$ \\
+\mbox{\hyperlink{classsparse_1_1matrix}{matrix}}$<$ \mbox{\hyperlink{classsparse_1_1matrix}{T}} $>$ \mbox{\hyperlink{classsparse_1_1matrix_ae479d6e63c6c755205240ec74b0b31f6}{matrix\+::operator}}\texorpdfstring{$\ast$}{*} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsparse_1_1matrix}{T}}}]{x }\end{DoxyParamCaption})}
+
+
+
+Operator \texorpdfstring{$\ast$}{*}, multiplies a sparse matrix by a number. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & A numerical primitive used after the operator \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & encompasses all primitive numerical data types \\
+\hline
+\end{DoxyTemplParams}
+
+
+Definition at line \mbox{\hyperlink{sparse__constant__mul_8cpp_source_l00005}{5}} of file \mbox{\hyperlink{sparse__constant__mul_8cpp_source}{sparse\+\_\+constant\+\_\+mul.\+cpp}}.
+
+\Hypertarget{classsparse_1_1matrix_aa3cfc452cfa232eb0bfcabdbe615b76a}\label{classsparse_1_1matrix_aa3cfc452cfa232eb0bfcabdbe615b76a} 
+\index{sparse::matrix$<$ T $>$@{sparse::matrix$<$ T $>$}!operator+@{operator+}}
+\index{operator+@{operator+}!sparse::matrix$<$ T $>$@{sparse::matrix$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classsparse_1_1matrix}{typename}} \mbox{\hyperlink{classsparse_1_1matrix}{T}} $>$ \\
+\mbox{\hyperlink{classsparse_1_1matrix}{sparse\+::matrix}}$<$ \mbox{\hyperlink{classsparse_1_1matrix}{T}} $>$ \mbox{\hyperlink{classsparse_1_1matrix}{sparse\+::matrix}}$<$ \mbox{\hyperlink{classsparse_1_1matrix}{T}} $>$\mbox{\hyperlink{classsparse_1_1matrix}{\+::operator}}+ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsparse_1_1matrix}{matrix}}$<$ \mbox{\hyperlink{classsparse_1_1matrix}{T}} $>$ \mbox{\hyperlink{classsparse_1_1matrix}{const}} \&}]{A }\end{DoxyParamCaption})}
+
+
+
+Operator +, adds the values of two matrices of same size and dimensions. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em A} & A constant matrix reference used after the operator \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{sparse__add_8cpp_source_l00005}{5}} of file \mbox{\hyperlink{sparse__add_8cpp_source}{sparse\+\_\+add.\+cpp}}.
+
+\Hypertarget{classsparse_1_1matrix_a58871214a0fd75df5caafdb123820437}\label{classsparse_1_1matrix_a58871214a0fd75df5caafdb123820437} 
+\index{sparse::matrix$<$ T $>$@{sparse::matrix$<$ T $>$}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!sparse::matrix$<$ T $>$@{sparse::matrix$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator-\/()}{operator-()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classsparse_1_1matrix}{typename}} \mbox{\hyperlink{classsparse_1_1matrix}{T}} $>$ \\
+\mbox{\hyperlink{classsparse_1_1matrix}{sparse\+::matrix}}$<$ \mbox{\hyperlink{classsparse_1_1matrix}{T}} $>$ \mbox{\hyperlink{classsparse_1_1matrix}{sparse\+::matrix}}$<$ \mbox{\hyperlink{classsparse_1_1matrix}{T}} $>$\mbox{\hyperlink{classsparse_1_1matrix}{\+::operator}}-\/ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsparse_1_1matrix}{matrix}}$<$ \mbox{\hyperlink{classsparse_1_1matrix}{T}} $>$ \mbox{\hyperlink{classsparse_1_1matrix}{const}} \&}]{A }\end{DoxyParamCaption})}
+
+
+
+Operator -\/, subtracts the values of second matrix from the first, both must have same size and dimensions. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em A} & A constant matrix reference used after the operator \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{sparse__sub_8cpp_source_l00005}{5}} of file \mbox{\hyperlink{sparse__sub_8cpp_source}{sparse\+\_\+sub.\+cpp}}.
+
+\Hypertarget{classsparse_1_1matrix_a7b5922d3d4f77d8f83c9a60894ef9764}\label{classsparse_1_1matrix_a7b5922d3d4f77d8f83c9a60894ef9764} 
+\index{sparse::matrix$<$ T $>$@{sparse::matrix$<$ T $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!sparse::matrix$<$ T $>$@{sparse::matrix$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classsparse_1_1matrix}{typename}} \mbox{\hyperlink{classsparse_1_1matrix}{T}} $>$ \\
+\mbox{\hyperlink{classsparse_1_1matrix}{matrix}}$<$ \mbox{\hyperlink{classsparse_1_1matrix}{T}} $>$ \& \mbox{\hyperlink{classsparse_1_1matrix_ae479d6e63c6c755205240ec74b0b31f6}{matrix\+::operator}}= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsparse_1_1matrix}{matrix}}$<$ \mbox{\hyperlink{classsparse_1_1matrix}{T}} $>$ \mbox{\hyperlink{classsparse_1_1matrix}{const}} \&}]{A }\end{DoxyParamCaption})}
+
+
+
+Operator =, creates a deep copy of the matrix and assigns it. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em A} & A constant matrix reference used after the operator \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{sparse__assignment__operator_8cpp_source_l00005}{5}} of file \mbox{\hyperlink{sparse__assignment__operator_8cpp_source}{sparse\+\_\+assignment\+\_\+operator.\+cpp}}.
+
+\Hypertarget{classsparse_1_1matrix_a1b40956797f5fd30919e89c93afaf683}\label{classsparse_1_1matrix_a1b40956797f5fd30919e89c93afaf683} 
+\index{sparse::matrix$<$ T $>$@{sparse::matrix$<$ T $>$}!operator==@{operator==}}
+\index{operator==@{operator==}!sparse::matrix$<$ T $>$@{sparse::matrix$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classsparse_1_1matrix}{typename}} \mbox{\hyperlink{classsparse_1_1matrix}{T}} $>$ \\
+\mbox{\hyperlink{classsparse_1_1matrix}{template}} \mbox{\hyperlink{classsparse_1_1matrix}{bool}} \mbox{\hyperlink{classsparse_1_1matrix}{sparse\+::matrix}}$<$ \mbox{\hyperlink{classsparse_1_1matrix}{T}} $>$\mbox{\hyperlink{classsparse_1_1matrix}{\+::operator}}== (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsparse_1_1matrix}{matrix}}$<$ \mbox{\hyperlink{classsparse_1_1matrix}{T}} $>$ \mbox{\hyperlink{classsparse_1_1matrix}{const}} \&}]{A }\end{DoxyParamCaption})}
+
+
+
+Operator ==, compares two matricies. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em A} & A constant matrix reference used after the operator \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{sparse__comparison__operator_8cpp_source_l00005}{5}} of file \mbox{\hyperlink{sparse__comparison__operator_8cpp_source}{sparse\+\_\+comparison\+\_\+operator.\+cpp}}.
+
+\Hypertarget{classsparse_1_1matrix_abfd8a0f6e22c74e1310fdae0141b1a43}\label{classsparse_1_1matrix_abfd8a0f6e22c74e1310fdae0141b1a43} 
+\index{sparse::matrix$<$ T $>$@{sparse::matrix$<$ T $>$}!print2D@{print2D}}
+\index{print2D@{print2D}!sparse::matrix$<$ T $>$@{sparse::matrix$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{print2D()}{print2D()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classsparse_1_1matrix}{typename}} \mbox{\hyperlink{classsparse_1_1matrix}{T}} $>$ \\
+\mbox{\hyperlink{classsparse_1_1matrix}{template}} \mbox{\hyperlink{classsparse_1_1matrix}{void}} \mbox{\hyperlink{classsparse_1_1matrix}{sparse\+::matrix}}$<$ \mbox{\hyperlink{classsparse_1_1matrix}{T}} $>$\+::print2D (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Prints the values of 2D array. 
+
+
+
+Definition at line \mbox{\hyperlink{sparse__print2D_8cpp_source_l00005}{5}} of file \mbox{\hyperlink{sparse__print2D_8cpp_source}{sparse\+\_\+print2\+D.\+cpp}}.
+
+\Hypertarget{classsparse_1_1matrix_a276c213d68b70e99499fb01b10bcba0c}\label{classsparse_1_1matrix_a276c213d68b70e99499fb01b10bcba0c} 
+\index{sparse::matrix$<$ T $>$@{sparse::matrix$<$ T $>$}!print\_matrix@{print\_matrix}}
+\index{print\_matrix@{print\_matrix}!sparse::matrix$<$ T $>$@{sparse::matrix$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{print\_matrix()}{print\_matrix()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classsparse_1_1matrix}{typename}} \mbox{\hyperlink{classsparse_1_1matrix}{T}} $>$ \\
+\mbox{\hyperlink{classsparse_1_1matrix}{template}} \mbox{\hyperlink{classsparse_1_1matrix}{void}} \mbox{\hyperlink{classsparse_1_1matrix}{sparse\+::matrix}}$<$ \mbox{\hyperlink{classsparse_1_1matrix}{T}} $>$\+::print\+\_\+matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Prints the sparse matrix row by row. 
+
+
+
+Definition at line \mbox{\hyperlink{print__matrix_8cpp_source_l00005}{5}} of file \mbox{\hyperlink{print__matrix_8cpp_source}{print\+\_\+matrix.\+cpp}}.
+
+\Hypertarget{classsparse_1_1matrix_aeb52bb689ef894bbd434702360639bcc}\label{classsparse_1_1matrix_aeb52bb689ef894bbd434702360639bcc} 
+\index{sparse::matrix$<$ T $>$@{sparse::matrix$<$ T $>$}!refresh\_handle@{refresh\_handle}}
+\index{refresh\_handle@{refresh\_handle}!sparse::matrix$<$ T $>$@{sparse::matrix$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{refresh\_handle()}{refresh\_handle()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classsparse_1_1matrix}{typename}} \mbox{\hyperlink{classsparse_1_1matrix}{T}} $>$ \\
+\mbox{\hyperlink{classsparse_1_1matrix}{void}} matrix\+::refresh\+\_\+handle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+rebuilds a valid handle according to csr vectors. 
+
+
+
+Definition at line \mbox{\hyperlink{sparse__refresh__handle_8cpp_source_l00005}{5}} of file \mbox{\hyperlink{sparse__refresh__handle_8cpp_source}{sparse\+\_\+refresh\+\_\+handle.\+cpp}}.
+
+\Hypertarget{classsparse_1_1matrix_a84ce64aba83d6570b54d9f3941abb5fe}\label{classsparse_1_1matrix_a84ce64aba83d6570b54d9f3941abb5fe} 
+\index{sparse::matrix$<$ T $>$@{sparse::matrix$<$ T $>$}!set\_value\_at@{set\_value\_at}}
+\index{set\_value\_at@{set\_value\_at}!sparse::matrix$<$ T $>$@{sparse::matrix$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{set\_value\_at()}{set\_value\_at()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classsparse_1_1matrix}{typename}} \mbox{\hyperlink{classsparse_1_1matrix}{T}} $>$ \\
+\mbox{\hyperlink{classsparse_1_1matrix}{void}} matrix\+::set\+\_\+value\+\_\+at (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsparse_1_1matrix}{size\+\_\+t}}}]{index,  }\item[{\mbox{\hyperlink{classsparse_1_1matrix}{T}}}]{value }\end{DoxyParamCaption})}
+
+
+
+Sets value at a given index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & The linear 0-\/based index in the flat values vector. \\
+\hline
+{\em value} & The value to set. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{sparse-set-value_8cpp_source_l00005}{5}} of file \mbox{\hyperlink{sparse-set-value_8cpp_source}{sparse-\/set-\/value.\+cpp}}.
+
+\Hypertarget{classsparse_1_1matrix_a75c405f72f89d967922ee244b2db4816}\label{classsparse_1_1matrix_a75c405f72f89d967922ee244b2db4816} 
+\index{sparse::matrix$<$ T $>$@{sparse::matrix$<$ T $>$}!shape@{shape}}
+\index{shape@{shape}!sparse::matrix$<$ T $>$@{sparse::matrix$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{shape()}{shape()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classsparse_1_1matrix}{typename}} \mbox{\hyperlink{classsparse_1_1matrix}{T}} $>$ \\
+std\+::pair$<$ \mbox{\hyperlink{classsparse_1_1matrix}{size\+\_\+t}}, \mbox{\hyperlink{classsparse_1_1matrix}{size\+\_\+t}} $>$ matrix\+::shape (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the shape (dimensions) of a matrix. 
+
+
+
+Definition at line \mbox{\hyperlink{sparse__shape_8cpp_source_l00005}{5}} of file \mbox{\hyperlink{sparse__shape_8cpp_source}{sparse\+\_\+shape.\+cpp}}.
+
+\Hypertarget{classsparse_1_1matrix_a77fd60a4d1f784a5422c0a760a516025}\label{classsparse_1_1matrix_a77fd60a4d1f784a5422c0a760a516025} 
+\index{sparse::matrix$<$ T $>$@{sparse::matrix$<$ T $>$}!sparse\_readMM@{sparse\_readMM}}
+\index{sparse\_readMM@{sparse\_readMM}!sparse::matrix$<$ T $>$@{sparse::matrix$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{sparse\_readMM()}{sparse\_readMM()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classsparse_1_1matrix}{typename}} \mbox{\hyperlink{classsparse_1_1matrix}{T}} $>$ \\
+\mbox{\hyperlink{classsparse_1_1matrix}{matrix}}$<$ \mbox{\hyperlink{classsparse_1_1matrix}{T}} $>$ matrix\+::sparse\+\_\+read\+MM (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsparse_1_1matrix}{const}} std\+::string \&}]{MMpath }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Reads a Matrix Market (MM) sparse matrix, converts it from COO to CSR format and returns a CSR matrix obj (with a handle cosntructor) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em MMpath} & A string with the path to the MM matrix \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A sparse matrix object created with the handle constructor 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{sparse__readMM_8cpp_source_l00006}{6}} of file \mbox{\hyperlink{sparse__readMM_8cpp_source}{sparse\+\_\+read\+MM.\+cpp}}.
+
+\Hypertarget{classsparse_1_1matrix_a953334cf57cffd0907fa26d676d7bbe7}\label{classsparse_1_1matrix_a953334cf57cffd0907fa26d676d7bbe7} 
+\index{sparse::matrix$<$ T $>$@{sparse::matrix$<$ T $>$}!transpose@{transpose}}
+\index{transpose@{transpose}!sparse::matrix$<$ T $>$@{sparse::matrix$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{transpose()}{transpose()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classsparse_1_1matrix}{typename}} \mbox{\hyperlink{classsparse_1_1matrix}{T}} $>$ \\
+\mbox{\hyperlink{classsparse_1_1matrix}{matrix}}$<$ \mbox{\hyperlink{classsparse_1_1matrix}{T}} $>$ matrix\+::transpose (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Function that transposes the matrix in 2D. 
+
+
+
+Definition at line \mbox{\hyperlink{sparse__transpose_8cpp_source_l00005}{5}} of file \mbox{\hyperlink{sparse__transpose_8cpp_source}{sparse\+\_\+transpose.\+cpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/johnzik/\+Dev/\+Cpp-\/\+Project/inc/\mbox{\hyperlink{dense_8hpp}{dense.\+hpp}}\item 
+/home/johnzik/\+Dev/\+Cpp-\/\+Project/inc/\mbox{\hyperlink{sparse_8hpp}{sparse.\+hpp}}\item 
+/home/johnzik/\+Dev/\+Cpp-\/\+Project/src/print\+\_\+matrix.\+cpp\item 
+/home/johnzik/\+Dev/\+Cpp-\/\+Project/src/sparse-\/diagonal-\/getter.\+cpp\item 
+/home/johnzik/\+Dev/\+Cpp-\/\+Project/src/sparse-\/get-\/value.\+cpp\item 
+/home/johnzik/\+Dev/\+Cpp-\/\+Project/src/sparse-\/parentheses-\/operator.\+cpp\item 
+/home/johnzik/\+Dev/\+Cpp-\/\+Project/src/sparse-\/set-\/value.\+cpp\item 
+/home/johnzik/\+Dev/\+Cpp-\/\+Project/src/sparse\+\_\+add.\+cpp\item 
+/home/johnzik/\+Dev/\+Cpp-\/\+Project/src/sparse\+\_\+assignment\+\_\+operator.\+cpp\item 
+/home/johnzik/\+Dev/\+Cpp-\/\+Project/src/sparse\+\_\+banded\+\_\+matrix.\+cpp\item 
+/home/johnzik/\+Dev/\+Cpp-\/\+Project/src/sparse\+\_\+comparison\+\_\+operator.\+cpp\item 
+/home/johnzik/\+Dev/\+Cpp-\/\+Project/src/sparse\+\_\+constant\+\_\+mul.\+cpp\item 
+/home/johnzik/\+Dev/\+Cpp-\/\+Project/src/sparse\+\_\+copy\+\_\+constructor.\+cpp\item 
+/home/johnzik/\+Dev/\+Cpp-\/\+Project/src/sparse\+\_\+handle\+\_\+constructor.\+cpp\item 
+/home/johnzik/\+Dev/\+Cpp-\/\+Project/src/sparse\+\_\+identity\+\_\+matrix.\+cpp\item 
+/home/johnzik/\+Dev/\+Cpp-\/\+Project/src/sparse\+\_\+mul\+\_\+sxn.\+cpp\item 
+/home/johnzik/\+Dev/\+Cpp-\/\+Project/src/sparse\+\_\+mv.\+cpp\item 
+/home/johnzik/\+Dev/\+Cpp-\/\+Project/src/sparse\+\_\+print2\+D.\+cpp\item 
+/home/johnzik/\+Dev/\+Cpp-\/\+Project/src/sparse\+\_\+read\+MM.\+cpp\item 
+/home/johnzik/\+Dev/\+Cpp-\/\+Project/src/sparse\+\_\+refresh\+\_\+handle.\+cpp\item 
+/home/johnzik/\+Dev/\+Cpp-\/\+Project/src/sparse\+\_\+shape.\+cpp\item 
+/home/johnzik/\+Dev/\+Cpp-\/\+Project/src/sparse\+\_\+spmm.\+cpp\item 
+/home/johnzik/\+Dev/\+Cpp-\/\+Project/src/sparse\+\_\+sub.\+cpp\item 
+/home/johnzik/\+Dev/\+Cpp-\/\+Project/src/sparse\+\_\+transpose.\+cpp\end{DoxyCompactItemize}

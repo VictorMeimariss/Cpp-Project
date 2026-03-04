@@ -1,0 +1,54 @@
+\doxysection{sparse\+\_\+banded\+\_\+matrix.\+cpp}
+\hypertarget{sparse__banded__matrix_8cpp_source}{}\label{sparse__banded__matrix_8cpp_source}\index{/home/johnzik/Dev/Cpp-\/Project/src/sparse\_banded\_matrix.cpp@{/home/johnzik/Dev/Cpp-\/Project/src/sparse\_banded\_matrix.cpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{sparse__banded__matrix_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}../inc/sparse.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{sparse__banded__matrix_8cpp_source_l00002}00002\ \textcolor{keyword}{using\ namespace\ }sparse;}
+\DoxyCodeLine{\Hypertarget{sparse__banded__matrix_8cpp_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{sparse__banded__matrix_8cpp_source_l00004}00004\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{sparse__banded__matrix_8cpp_source_l00005}\mbox{\hyperlink{classsparse_1_1matrix_a9cfad89a44b25c309a6bc3f48c4b3421}{00005}}\ \mbox{\hyperlink{classsparse_1_1matrix}{matrix<T>}}\ \mbox{\hyperlink{classsparse_1_1matrix_a9cfad89a44b25c309a6bc3f48c4b3421}{matrix<T>::banded}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{classsparse_1_1matrix}{N}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classsparse_1_1matrix}{kl}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classsparse_1_1matrix}{ku}},\ \mbox{\hyperlink{classsparse_1_1matrix}{T}}\ \mbox{\hyperlink{classsparse_1_1matrix}{val}})}
+\DoxyCodeLine{\Hypertarget{sparse__banded__matrix_8cpp_source_l00006}00006\ \{}
+\DoxyCodeLine{\Hypertarget{sparse__banded__matrix_8cpp_source_l00007}00007\ \ \ \ \ \textcolor{comment}{//\ Estimated\ memory\ (over-\/estimation)\ for\ reservation}}
+\DoxyCodeLine{\Hypertarget{sparse__banded__matrix_8cpp_source_l00008}00008\ \ \ \ \ \mbox{\hyperlink{classsparse_1_1matrix}{MKL\_INT}}\ \mbox{\hyperlink{classsparse_1_1matrix}{estimated\_nnz}}\ =\ \mbox{\hyperlink{classsparse_1_1matrix}{N}}\ *\ (\mbox{\hyperlink{classsparse_1_1matrix}{ku}}\ +\ \mbox{\hyperlink{classsparse_1_1matrix}{kl}}\ +\ 1);}
+\DoxyCodeLine{\Hypertarget{sparse__banded__matrix_8cpp_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{sparse__banded__matrix_8cpp_source_l00010}00010\ \ \ \ \ std::vector<T>\ values;}
+\DoxyCodeLine{\Hypertarget{sparse__banded__matrix_8cpp_source_l00011}00011\ \ \ \ \ std::vector<MKL\_INT>\ col\_idx;}
+\DoxyCodeLine{\Hypertarget{sparse__banded__matrix_8cpp_source_l00012}00012\ \ \ \ \ std::vector<MKL\_INT>\ row\_idx(\mbox{\hyperlink{classsparse_1_1matrix}{N}}+1);}
+\DoxyCodeLine{\Hypertarget{sparse__banded__matrix_8cpp_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{sparse__banded__matrix_8cpp_source_l00014}00014\ \ \ \ \ \textcolor{comment}{//\ Reserve\ memory}}
+\DoxyCodeLine{\Hypertarget{sparse__banded__matrix_8cpp_source_l00015}00015\ \ \ \ \ values.reserve(\mbox{\hyperlink{classsparse_1_1matrix}{estimated\_nnz}});}
+\DoxyCodeLine{\Hypertarget{sparse__banded__matrix_8cpp_source_l00016}00016\ \ \ \ \ col\_idx.reserve(\mbox{\hyperlink{classsparse_1_1matrix}{estimated\_nnz}});}
+\DoxyCodeLine{\Hypertarget{sparse__banded__matrix_8cpp_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{sparse__banded__matrix_8cpp_source_l00018}00018\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classsparse_1_1matrix}{current\_nnz\_count}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{sparse__banded__matrix_8cpp_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{sparse__banded__matrix_8cpp_source_l00020}00020\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ \mbox{\hyperlink{classsparse_1_1matrix}{i}}\ =\ 0;\ \mbox{\hyperlink{classsparse_1_1matrix}{i}}\ <\ \mbox{\hyperlink{classsparse_1_1matrix_ae479d6e63c6c755205240ec74b0b31f6}{N}};\ \mbox{\hyperlink{classsparse_1_1matrix}{i}}++)}
+\DoxyCodeLine{\Hypertarget{sparse__banded__matrix_8cpp_source_l00021}00021\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{sparse__banded__matrix_8cpp_source_l00022}00022\ \ \ \ \ \ \ \ \ row\_idx[\mbox{\hyperlink{classsparse_1_1matrix_ae479d6e63c6c755205240ec74b0b31f6}{i}}]\ =\ \mbox{\hyperlink{classsparse_1_1matrix_ae479d6e63c6c755205240ec74b0b31f6}{current\_nnz\_count}};}
+\DoxyCodeLine{\Hypertarget{sparse__banded__matrix_8cpp_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{sparse__banded__matrix_8cpp_source_l00024}00024\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classsparse_1_1matrix}{start\_col}}\ =\ std::max(0,\ \mbox{\hyperlink{classsparse_1_1matrix}{i}}\ -\/\ \mbox{\hyperlink{classsparse_1_1matrix}{kl}});}
+\DoxyCodeLine{\Hypertarget{sparse__banded__matrix_8cpp_source_l00025}00025\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classsparse_1_1matrix}{end\_col}}\ =\ std::min(\mbox{\hyperlink{classsparse_1_1matrix}{N}}\ -\/\ 1,\ \mbox{\hyperlink{classsparse_1_1matrix}{i}}\ +\ \mbox{\hyperlink{classsparse_1_1matrix}{ku}});}
+\DoxyCodeLine{\Hypertarget{sparse__banded__matrix_8cpp_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{sparse__banded__matrix_8cpp_source_l00027}00027\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ \mbox{\hyperlink{classsparse_1_1matrix}{j}}\ =\ \mbox{\hyperlink{classsparse_1_1matrix}{start\_col}};\ \mbox{\hyperlink{classsparse_1_1matrix}{j}}\ <=\ \mbox{\hyperlink{classsparse_1_1matrix_ae479d6e63c6c755205240ec74b0b31f6}{end\_col}};\ \mbox{\hyperlink{classsparse_1_1matrix}{j}}++)}
+\DoxyCodeLine{\Hypertarget{sparse__banded__matrix_8cpp_source_l00028}00028\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{sparse__banded__matrix_8cpp_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ values.push\_back(\mbox{\hyperlink{classsparse_1_1matrix}{val}});}
+\DoxyCodeLine{\Hypertarget{sparse__banded__matrix_8cpp_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ col\_idx.push\_back(\mbox{\hyperlink{classsparse_1_1matrix}{j}});}
+\DoxyCodeLine{\Hypertarget{sparse__banded__matrix_8cpp_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classsparse_1_1matrix}{current\_nnz\_count}}++;}
+\DoxyCodeLine{\Hypertarget{sparse__banded__matrix_8cpp_source_l00032}00032\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{sparse__banded__matrix_8cpp_source_l00033}00033\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{sparse__banded__matrix_8cpp_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{sparse__banded__matrix_8cpp_source_l00035}00035\ \ \ \ \ row\_idx[\mbox{\hyperlink{classsparse_1_1matrix_ae479d6e63c6c755205240ec74b0b31f6}{N}}]\ =\ \mbox{\hyperlink{classsparse_1_1matrix_ae479d6e63c6c755205240ec74b0b31f6}{current\_nnz\_count}};\ \textcolor{comment}{//\ The\ last\ element\ of\ the\ row\_idx\ vector\ in\ CSR\ must\ always\ be\ nnz,\ }}
+\DoxyCodeLine{\Hypertarget{sparse__banded__matrix_8cpp_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ i.e.\ the\ size\ of\ the\ value\ vector}}
+\DoxyCodeLine{\Hypertarget{sparse__banded__matrix_8cpp_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{sparse__banded__matrix_8cpp_source_l00038}00038\ \ \ \ \ \textcolor{comment}{//\ Shrink\ the\ over-\/estimated\ reserved\ memory}}
+\DoxyCodeLine{\Hypertarget{sparse__banded__matrix_8cpp_source_l00039}00039\ \ \ \ \ values.shrink\_to\_fit();}
+\DoxyCodeLine{\Hypertarget{sparse__banded__matrix_8cpp_source_l00040}00040\ \ \ \ \ col\_idx.shrink\_to\_fit();}
+\DoxyCodeLine{\Hypertarget{sparse__banded__matrix_8cpp_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{sparse__banded__matrix_8cpp_source_l00042}00042\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classsparse_1_1matrix_ae479d6e63c6c755205240ec74b0b31f6}{matrix<T>}}(values,\ col\_idx,\ row\_idx,\ \mbox{\hyperlink{classsparse_1_1matrix}{N}},\ \mbox{\hyperlink{classsparse_1_1matrix}{N}});}
+\DoxyCodeLine{\Hypertarget{sparse__banded__matrix_8cpp_source_l00043}00043\ \}}
+\DoxyCodeLine{\Hypertarget{sparse__banded__matrix_8cpp_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{sparse__banded__matrix_8cpp_source_l00045}00045\ \textcolor{keyword}{template}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classsparse_1_1matrix}{sparse::matrix<float>}};}
+\DoxyCodeLine{\Hypertarget{sparse__banded__matrix_8cpp_source_l00046}00046\ \textcolor{keyword}{template}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classsparse_1_1matrix}{sparse::matrix<double>}};}
+\DoxyCodeLine{\Hypertarget{sparse__banded__matrix_8cpp_source_l00047}00047\ \textcolor{keyword}{template}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classsparse_1_1matrix}{sparse::matrix<std::complex<float>}}>;}
+\DoxyCodeLine{\Hypertarget{sparse__banded__matrix_8cpp_source_l00048}00048\ \textcolor{keyword}{template}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classsparse_1_1matrix}{sparse::matrix<std::complex<double>}}>;}
+
+\end{DoxyCode}

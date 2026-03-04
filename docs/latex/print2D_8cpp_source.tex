@@ -1,0 +1,43 @@
+\doxysection{print2\+D.\+cpp}
+\hypertarget{print2D_8cpp_source}{}\label{print2D_8cpp_source}\index{/home/johnzik/Dev/Cpp-\/Project/src/print2D.cpp@{/home/johnzik/Dev/Cpp-\/Project/src/print2D.cpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{print2D_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{print2D_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ <../inc/dense.hpp>}}
+\DoxyCodeLine{\Hypertarget{print2D_8cpp_source_l00003}00003\ \textcolor{keyword}{using\ namespace\ }dense;}
+\DoxyCodeLine{\Hypertarget{print2D_8cpp_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{print2D_8cpp_source_l00005}00005\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{print2D_8cpp_source_l00006}\mbox{\hyperlink{classdense_1_1matrix_a32aa6617957165f9bdef07326b558730}{00006}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classdense_1_1matrix_a32aa6617957165f9bdef07326b558730}{matrix<T>::print2D}}()}
+\DoxyCodeLine{\Hypertarget{print2D_8cpp_source_l00007}00007\ \{}
+\DoxyCodeLine{\Hypertarget{print2D_8cpp_source_l00008}00008\ \ \ \ \ \textcolor{keywordflow}{if}\ (dim\_size.size()\ ==\ 2)}
+\DoxyCodeLine{\Hypertarget{print2D_8cpp_source_l00009}00009\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{print2D_8cpp_source_l00010}00010\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}["{}}\ ;}
+\DoxyCodeLine{\Hypertarget{print2D_8cpp_source_l00011}00011\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classdense_1_1matrix}{idx}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{print2D_8cpp_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{print2D_8cpp_source_l00013}00013\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ \mbox{\hyperlink{classdense_1_1matrix}{i}}\ =\ 0;\ \mbox{\hyperlink{classdense_1_1matrix}{i}}\ <\ dim\_size[0];\ ++\mbox{\hyperlink{classdense_1_1matrix_a2f5c551af9f436909bd076a03f90e946}{i}})}
+\DoxyCodeLine{\Hypertarget{print2D_8cpp_source_l00014}00014\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{print2D_8cpp_source_l00015}00015\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ \mbox{\hyperlink{classdense_1_1matrix}{j}}\ =\ 0;\ \mbox{\hyperlink{classdense_1_1matrix}{j}}\ <\ dim\_size[1];\ ++\mbox{\hyperlink{classdense_1_1matrix_a2f5c551af9f436909bd076a03f90e946}{j}})}
+\DoxyCodeLine{\Hypertarget{print2D_8cpp_source_l00016}00016\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{print2D_8cpp_source_l00017}00017\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ values[\mbox{\hyperlink{classdense_1_1matrix_a2f5c551af9f436909bd076a03f90e946}{idx}}];}
+\DoxyCodeLine{\Hypertarget{print2D_8cpp_source_l00018}00018\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classdense_1_1matrix}{j}}\ !=\ dim\_size[1]\ -\/\ 1)}
+\DoxyCodeLine{\Hypertarget{print2D_8cpp_source_l00019}00019\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{print2D_8cpp_source_l00020}00020\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{},\ "{}};}
+\DoxyCodeLine{\Hypertarget{print2D_8cpp_source_l00021}00021\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{print2D_8cpp_source_l00022}00022\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdense_1_1matrix}{idx}}++;}
+\DoxyCodeLine{\Hypertarget{print2D_8cpp_source_l00023}00023\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{print2D_8cpp_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{print2D_8cpp_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classdense_1_1matrix}{i}}\ !=\ dim\_size[0]\ -\/\ 1)}
+\DoxyCodeLine{\Hypertarget{print2D_8cpp_source_l00026}00026\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{print2D_8cpp_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{};\ "{}};}
+\DoxyCodeLine{\Hypertarget{print2D_8cpp_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{print2D_8cpp_source_l00029}00029\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{print2D_8cpp_source_l00030}00030\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}]\(\backslash\)n"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{print2D_8cpp_source_l00031}00031\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{print2D_8cpp_source_l00032}00032\ \}}
+\DoxyCodeLine{\Hypertarget{print2D_8cpp_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{print2D_8cpp_source_l00034}00034\ \textcolor{keyword}{template}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classdense_1_1matrix_a32aa6617957165f9bdef07326b558730}{dense::matrix<float>::print2D}}();}
+\DoxyCodeLine{\Hypertarget{print2D_8cpp_source_l00035}00035\ \textcolor{keyword}{template}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classdense_1_1matrix_a32aa6617957165f9bdef07326b558730}{dense::matrix<double>::print2D}}();}
+\DoxyCodeLine{\Hypertarget{print2D_8cpp_source_l00036}00036\ \textcolor{keyword}{template}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classdense_1_1matrix}{dense::matrix<std::complex<float>}}>::print2D();}
+\DoxyCodeLine{\Hypertarget{print2D_8cpp_source_l00037}00037\ \textcolor{keyword}{template}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classdense_1_1matrix}{dense::matrix<std::complex<double>}}>::print2D();}
+
+\end{DoxyCode}
